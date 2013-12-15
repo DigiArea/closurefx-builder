@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="../css/prettify.css">
+<link rel="stylesheet" type="text/css" href="../css/closure.css">
+<script type="text/javascript" src="../js/prettify.js"></script>
+<script type="text/javascript" src="../js/run_prettify.js"></script>
+<title>Build Path Variables - Closure FX Builder</title>
+</head>
+<body>
+    
+    
+	<div class="CasStudioMapleDocumentation">
+		<div class="SolidGreyBox_bottom BigcbSide">
+			<h1 class="MarginBottom">Build Path Variables</h1>
+			<p class="MarginBottom">In this section, you will learn about
+				configuring Build Path Variables in Closure FX Builder.</p>
+			<ul>
+				<li><a href="#AddVariable">Configure a Variable</a></li>
+				<li><a href="#ReservedVariables">Reserved Variables</a></li>
+			</ul>
+		</div>
+		<div class="BigcbSide">
+			<div class="MarginBottom">
+				<div class="MarginBottom">
+					The build path for a JavaScript project can include source code
+					folders and folders containing JavaScript files. Files and Folders
+					can be specified using file system paths, or by using variables
+					that refer to locations on the network.<br /> <br />Build Path
+					variables allow you to avoid references to the location of a
+					JavaScript file or folders on your local file system. By using a
+					Build Path variable, you can specify a JS file or folder using only
+					a variable name, such as JQUERY_LIB, rather than specifying the
+					location on your workstation. In this way, you can share build
+					paths across teams and define the variables to refer to the correct
+					location for your particular computer.
+				</div>
+				<div>
+					<div class="MarginBottom">
+						<a name="AddVariable"></a>
+						<details open="open" class="MarginBottom"> <summary
+							class="h2"> <a name="AddVariable"></a>Configure a
+						Variable </summary>
+						<div>
+							You can define any number of Variable definitions. <br /> <br />
+							<ol>
+								<li>Click <img src="images/gear.png" width="16" height="16" />Settings
+									button to open <span class="bold">Closure FX Preferences</span>
+									dialog.
+								</li>
+								<li>Select <span class="bold">Buildpath Variables</span>
+									tab. <br /> <br /> <img
+									src="images/dialog-preferences-variable.png" width="528"
+									height="384"
+									alt="Installed Variables - Closure FX Builder Preferences" />
+								</li>
+								<li>Click Add... button to open Add Variable dialog.</li>
+								<li>Enter the variable's name of your choose. For example:
+									<span class="bold">jQuery Library</span> <br /> Click <span
+									class="bold">Add...</span> button and locate to the folder
+									(Choose Folder button) or file (Choose File). <br /> <br /> <img
+									src="images/dialog-preferences-variable-new.png" width="262"
+									height="177"
+									alt="New Variable - Closure FX Builder Preferences" />
+								</li>
+								<li>Click <span class="bold">OK</span> and then <span
+									class="bold">Apply</span> button to save configured variables.
+								</li>
+								<li>Go to your build configuration and choose <span
+									class="bold">Build Path</span> tab on the Stylehseets page.
+								</li>
+								<li>Click <span class="bold">Add Variable</span> in the
+									Libraries section.
+								</li>
+								<li>Choose the variable and click <span class="bold">OK</span>.<br />
+									<br /> <img src="images/buildpath-variable.png" width="462"
+									height="272" />
+								</li>
+							</ol>
+							<div class="SolidGreyBox cbSide">
+								Notice <img src="images/decorator-closure.png" width="8"
+									height="8" /> triangle and <img src="images/decorator-js.png"
+									width="8" height="8" /> js icons next to the variable's path.<br />
+								Read <a href="closure-gss-buildpath.html#OrderSection"
+									title="Order - Closure Stylehseets">Order and
+									Externs</a> page to learn how to manage includes filters.
+							</div>
+						</div>
+						</details>
+					</div>
+				</div>
+				<div class="MarginBottom">
+					<a name="ReservedVariables"></a>
+					<details open="open" class="MarginBottom"> <summary
+						class="h2"> <a name="LibrariesSection"></a>Reserved
+					Variables </summary>
+					<div>
+						<div class="MarginBottom">Certain Build Path variables are
+							set internally and can not be changed in the Build Path variables
+							preferences:</div>
+						<ul class="MarginBottom">
+							<li><span>INPUT_DIRECTORY</span> - Input Directory - parent
+								directory of the current input file. (used for Soy Compiler)</li>
+							<li><span>INPUT_FILE_NAME</span> Input File Name - file name
+								of the current input file. (used for Soy Compiler)</li>
+							<li><span>INPUT_FILE_NAME_NO_EXT</span> - Input File Name
+								without Extension - file name without extension of the current
+								input file. (used for Soy Compiler)</li>
+							<li><span>LOCALE</span> - Locale - current locale (pt-BR
+								etc.) (used for Soy Compiler)</li>
+							<li><span>LOCALE_LOWER_CASE</span> - Locale - current locale
+								in lower case(pt_br etc.) (used for Soy Compiler)</li>
+						</ul>
+					</div>
+					</details>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

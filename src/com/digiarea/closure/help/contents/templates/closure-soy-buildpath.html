@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="../css/prettify.css">
+<link rel="stylesheet" type="text/css" href="../css/closure.css">
+<script type="text/javascript" src="../js/prettify.js"></script>
+<script type="text/javascript" src="../js/run_prettify.js"></script>
+<title>Configure Build Path - Closure FX Builder</title>
+</head>
+<body>
+    
+    
+	<div class="CasStudioMapleDocumentation">
+		<div class="SolidGreyBox_bottom BigcbSide">
+			<h1 class="MarginBottom">Configure Build Path</h1>
+			<p class="MarginBottom">In this section, you will learn about
+				configuring Build Path for Closure Templates in Closure FX Builder.</p>
+			<ul>
+				<li><a href="#SourceSection">Source Section</a></li>
+				<li><a href="#LibrariesSection">Libraries Section</a></li>
+				<li><a href="#OutputSection">Output Section</a></li>
+				<li><a href="#OrderSection">Order and Dependencies Section</a></li>
+			</ul>
+		</div>
+		<div class="BigcbSide">
+			<div class="MarginBottom">
+				<div class="MarginBottom">The build path specifies which
+					Templates source files and resource files in a project are
+					considered by the Closure Templates and specifies how to find types
+					outside of the project. In fact, the build path is a list of paths
+					visible to the compiler when building the project. The Closure
+					Templates compiles the JavaScript source files into the output
+					folder. The build path is specified for each Build Configuration
+					i.e. project. You can reach this page on the Templates page
+					(Templates > Build Path) from the Build Configuration file.</div>
+				<div>
+					<div class="MarginBottom">
+						<a name="SourceSection"></a>
+						<details open="open" class="MarginBottom"> <summary
+							class="h2"> <a name="SourceSection"></a>Source Section
+						</summary>
+						<div>
+							<img src="images/buildpath-source.png" width="463" height="180" />
+							<br />
+							<div class="MarginBottom">
+								Source folders are top-level folders which contain .js files to
+								build. The compiler will compile the contained files to the
+								output file that will be written to the output folder. <br />
+								It is highly desirable to place source JavaScript files into
+								Source folders only and separate tests/demos to other folders.
+							</div>
+							<div>
+								<ul>
+									<li><img src="images/buildpath-source-add.png" width="95"
+										height="24" /> Adds a new folder to contain source.</li>
+									<li><img src="images/buildpath-source-add-external.png"
+										width="95" height="24" /> Adds a new folder that links to an
+										location outside of the project's root folder.</li>
+									<li><img src="images/buildpath-source-remove.png"
+										width="95" height="24" /> Removes the selected folders from
+										the build path. This does not delete the folders nor their
+										contents.</li>
+								</ul>
+							</div>
+						</div>
+						</details>
+					</div>
+				</div>
+				<div class="MarginBottom">
+					<a name="LibrariesSection"></a>
+					<details open="open" class="MarginBottom"> <summary
+						class="h2"> <a name="LibrariesSection"></a>Libraries
+					Section </summary>
+					<div>
+						<img src="images/buildpath-library.png" width="505" height="273" />
+						<br />
+						<div class="MarginBottom">On this section, you can add
+							libraries to the build path.</div>
+						<ul class="MarginBottom">
+							<li><img src="images/buildpath-library-folder.png"
+								width="119" height="24" /> Allows to navigate the project
+								hierarchy and select a JavaScript folder for the build path. The
+								selection dialog also allows you to create a new folder.</li>
+							<li><img src="images/buildpath-library-folder-external.png"
+								width="119" height="24" /> Allows to navigate the file system
+								(outside the project) and select a JavaScript folder for the
+								build path. The selection dialog also allows you to create a new
+								folder.</li>
+							<li><img src="images/buildpath-library-file.png" width="119"
+								height="24" /> Allows you to navigate the project hierarchy and
+								select JavaScript files to add to the build path.</li>
+							<li><img src="images/buildpath-library-file-external.png"
+								width="119" height="24" /> Allows you to navigate the file
+								system (outside the project) and select JavaScript files to add
+								to the build path.</li>
+							<li><img src="images/buildpath-library-variable.png"
+								width="119" height="24" /> Allows you to add Build Path
+								variables to the build path. Build Path variables are an
+								indirection to folders or files with the benefit of avoiding
+								local file system paths in a buildpath. This is needed when
+								projects are shared in a team. Variables can be created and
+								edited in the <span class="bold">Closure FX Preferences >
+									Build Path Variables</span> preference page.</li>
+							<li><img src="images/buildpath-library-remove.png"
+								width="119" height="24" /> Removes the selected element from
+								the build path. This does not delete the resource.</li>
+						</ul>
+						<div class="MarginBottom">Libraries have the following
+							attributes (presented as icon decorators):</div>
+						<ul>
+							<li><ul>
+									<li class="MarginBottom"><img
+										src="images/decorator-extern.png" width="8" height="8" />
+										dependency - Specifies a Build Path item as an Dependency.</li>
+								</ul></li>
+						</ul>
+					</div>
+					</details>
+				</div>
+				<div class="MarginBottom">
+					<a name="OutputSection"></a>
+					<details open="open" class="MarginBottom"> <summary
+						class="h2"> <a name="OutputSection"></a>Output Section </summary>
+					<div>
+						<img src="images/buildpath-output.png" width="463" height="116" />
+						<br />
+						<div class="MarginBottom">The sections allows you to define
+							output path format. Use Browse to select an existing location
+							from the current project. Use Placeholders to select a
+							placholder. The Compiler uses Output Path Format with
+							Placeholders and generates path for each output file dynamically.</div>
+					</div>
+					</details>
+				</div>
+				<div class="MarginBottom">
+					<a name="OrderSection"></a>
+					<details open="open" class="MarginBottom"> <summary
+						class="h2"> <a name="OrderSection"></a>Order and
+					Dependencies Section </summary>
+					<div>
+						<img src="images/buildpath-order.png" width="514" height="223" />
+						<br />
+						<div class="MarginBottom">
+							In the Build Path order list, you can click the Up and Down
+							buttons to move the selected path entry up or down in the build
+							path order for this new project.<br /> <br />List entries can
+							be marked as dependency. Dependency entries are not compiled to
+							the output file.
+						</div>
+						<ul>
+							<li><ul>
+									<li class="MarginBottom"><img
+										src="images/buildpath-order-extern.png" width="30" height="23" />
+										Specifies a Build Path item as an dependency. The Compiler
+										will use dependency files/folders for analysis/checking, but
+										will not generate code for these files.</li>
+								</ul></li>
+						</ul>
+					</div>
+					</details>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="../css/prettify.css">
+<link rel="stylesheet" type="text/css" href="../css/closure.css">
+<script type="text/javascript" src="../js/prettify.js"></script>
+<script type="text/javascript" src="../js/run_prettify.js"></script>
+<title>Configure GSS Compiler's Options - Closure FX Builder</title>
+</head>
+<body>
+    
+    
+	<div class="CasStudioMapleDocumentation">
+		<div class="SolidGreyBox_bottom BigcbSide">
+			<h1 class="MarginBottom">Configure GSS Compiler's Options</h1>
+			<p class="MarginBottom">In this section, you will learn and
+				configure available options of Closure Stylesheets.</p>
+			<ul>
+				<li><a href="#Formatting">Formatting</a></li>
+				<li><a href="#CustomFunctions">Custom Functions and
+						Properties</a></li>
+				<li><a href="#Conditionals">Conditionals</a></li>
+			</ul>
+		</div>
+		<div class="BigcbSide">
+			<div class="MarginBottom">
+				<div class="MarginBottom">
+					Closure FX Builder opens access to almost all of the options of
+					Closure Stylesheets. <br /> To bring maximum flexibility for
+					programmers and save simplicity for beginners, the tool provides
+					Compilation Options Helpers. The helpers set the configuration into
+					the particular state. So, you do not need to configure the Compiler
+					from scratch, rather use the helpers to apply a bunch of predefined
+					options at once. <br /> <br /> The beginners can use the helpers
+					to configure the compiler and do not learn hundreds of available
+					options. <br /> The professionals can use the helpers as starting
+					point for their build configurations.
+				</div>
+				<div>
+					<div class="MarginBottom">
+						<a name="CompilationLevels"></a>
+						<details open="open" class="MarginBottom"> <summary
+							class="h2"> <a name="CompilationLevels"></a>Compilation
+						Levels</summary>
+						<div>
+							<h3>
+								<a name="WhitespacesOnly"></a> Whitespaces Only <a
+									href="#WhitespacesOnly" class="section_anchor"></a>
+							</h3>
+							<div>
+								The <span class="bold">Whitespaces Only</span> compilation level
+								minimizes your code by removing comments, line breaks,
+								unnecessary spaces, and other whitespace.<br /> <br /> This
+								level does not check or rewrite your code, so the output
+								JavaScript is functionally identical to the source JavaScript.<br />
+								This compilation level performs vary basic code compression.
+							</div>
+							<h3>
+								<a name="SimpleOptimization"></a> Simple Optimizations <a
+									href="#SimpleOptimization" class="section_anchor"></a>
+							</h3>
+							<div class="MarginBottom">
+								The <span class="bold">Simple Optimizations</span> compilation
+								level performs the same optimizations as <span class="bold">Whitespaces
+									Only</span>, but it also applies other optimizations such as renaming
+								local variables and function parameters to shorter names. This
+								compilation level makes code significantly smaller. Since only
+								arguments of functions and local variables are renamed, the
+								compiled JavaScript code does not interfere or conflict with
+								other JavaScript.
+							</div>
+							<div class="MarginBottom">Explore the following reference
+								to learn which code optimizations are applied:</div>
+							<ul>
+								<li><ul>
+										<li>Process Closure Primitives - processes goog.provide()
+											and goog.require() calls.</li>
+										<li>Rename Local Variables only - renames local variables
+											and function parameters to shorter names.</li>
+										<li>Folds Constants (e.g. (2 + 3) to 5)</li>
+										<li>Coalesce Variable Names - merges two variables
+											together as one.</li>
+										<li>Dead Assignment Elimination - removes assignments to
+											values that can not be referenced.</li>
+										<li>Inline Local Functions - inlines functions defined in
+											local scopes.</li>
+										<li>Inline Local Variables - inlines variables defined in
+											local scopes.</li>
+										<li>Remove Dead Code - removes code that will never
+											execute.</li>
+										<li>Remove Unused Local Variables - removes unused
+											variables in local scope.</li>
+										<li>Collapse Variable Declarations - collapses multiple
+											variable declarations into one declaration.</li>
+										<li>Convert to dotted properties - converts quoted
+											property accesses to dot syntax (a['b'] -> a.b).</li>
+										<li>Optimize arguments array - provides formal names for
+											elements of arguments array.</li>
+									</ul></li>
+							</ul>
+							<h3>
+								<a name="AdvancedOptimization"></a> Advanced Optimizations <a
+									href="#AdvancedOptimization" class="section_anchor"></a>
+							</h3>
+							<div class="MarginBottom">
+								The <span class="bold">Advanced Optimizations</span> compilation
+								level performs the same optimizations as <span class="bold">Simple
+									Optimizations</span>, but it also applies other optimizations such as
+								aggressive renaming, dead code removal and global inlining. This
+								compilation level provides the highest compression, but can
+								cause unexpected behaviors of your code. To be sure that the
+								compiled code will be valid and compatible with uncompiled code,
+								please explore the following articles.
+							</div>
+							<div class="MarginBottom">Explore the following articles on
+								Closure Compiler website for more information:</div>
+							<ul>
+								<li><ul>
+										<li><a
+											href="https://developers.google.com/closure/compiler/docs/limitations"
+											target="_blank">Understanding the Restrictions Imposed by
+												the Closure Compiler</a></li>
+										<li><a
+											href="https://developers.google.com/closure/compiler/docs/api-tutorial3"
+											target="_blank">Advanced Compilation</a></li>
+									</ul></li>
+							</ul>
+							<h3>
+								<a name="ApplyingCompilationLevel"></a> Applying a Compilation
+								Level <a href="#ApplyingCompilationLevel" class="section_anchor"></a>
+							</h3>
+							<div>
+								<ol>
+									<li>Go to the <span class="bold">Basic tab</span> on the
+										Compiler page.
+									</li>
+									<li>Find <span class="bold">Compiler Options Helper</span>
+										section. Click one of the Compilation Levels (Optimization
+										Options). <br /> Use <span class="bold">Whitespaces
+											Only</span> to minimize the code only. Use <span class="bold">Simple
+											Optimization</span> for basic code checking and optimization. <br />
+										<br /> <img src="images/compilation-levels.png"
+										alt="Closure Compiler Compilation Levels - Closure FX Builder"
+										width="426" height="161" />
+									</li>
+									<li>The confirmation dialog will appear. Notice that the
+										applying a Compilation Level will change all of the Compiler's
+										options except Build path settings. Click <span class="bold">OK</span>
+										to continue.<br /> <br /> <img
+										src="images/compilation-levels-confirm.png"
+										alt="Closure Compiler Compilation Levels - Closure FX Builder"
+										width="470" height="117" />
+									</li>
+									<li>The Compilation Level is applied.</li>
+								</ol>
+							</div>
+						</div>
+						</details>
+					</div>
+					<div class="MarginBottom">
+						<a name="WarningLevels"></a>
+						<details open="open" class="MarginBottom"> <summary
+							class="h2"> <a name="WarningLevels"></a>Warning Levels</summary>
+						<div>
+							<div class="MarginBottom">The helpers provide three Warning
+								Levels: Default, Quite, Verbose.</div>
+							<div>
+								The <span class="bold">Default</span> warning level applies
+								basic Warnings and Checks such as checking suspicious and
+								unreachable code.
+							</div>
+							<div>
+								The <span class="bold">Quite</span> warning level silences all
+								non-essential warnings.
+							</div>
+							<div>
+								The <span class="bold">Verbose</span> warning level applies
+								Warnings and Checks such as JavaScript type checking or
+								deprecated code accessing.
+							</div>
+							<h3>
+								<a name="ApplyingWarningLevel"></a> Applying a Warning Level <a
+									href="#ApplyingWarningLevel" class="section_anchor"></a>
+							</h3>
+							<div>
+								<ol>
+									<li>Go to the <span class="bold">Basic tab</span> on the
+										Compiler page.
+									</li>
+									<li>Find <span class="bold">Compiler Options Helper</span>
+										section. Click one of the Warning Levels Options. <br /> <br />
+										<img src="images/compilation-levels.png"
+										alt="Closure Compiler Warning Levels - Closure FX Builder"
+										width="426" height="161" />
+									</li>
+									<li>The Warning Level is applied.</li>
+								</ol>
+							</div>
+						</div>
+						</details>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="SolidGreyBox_bottom BigcbSide">
+			<h2 class="MarginBottom">
+				<a href="closure-compiler-gs-problems.html">Next Steps &raquo;</a>
+			</h2>
+			<p class="MarginBottom">
+				<a href="closure-compiler-gs-problems.html">Identifying problems
+					in your configuration</a><br /> In this section, you will learn what
+				problems can be issued during the configuration process and how to
+				manage them.
+			</p>
+		</div>
+	</div>
+</body>
+</html>
+

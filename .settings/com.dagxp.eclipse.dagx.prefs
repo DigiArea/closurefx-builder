@@ -1,0 +1,16 @@
+com.dagxp.eclipse.dagx.DAG_PROJECT_InputPackage=ClosureFX.replicators
+com.dagxp.eclipse.dagx.JFX_PROJECT_FactoryPackage=com.digiarea.closure.model.bind
+com.dagxp.eclipse.dagx.JFX_PROJECT_InputPackage=com.digiarea.closure.model
+com.dagxp.eclipse.dagx.LMM_PROJECT_InputPackage=com.digiarea.closurefx.model
+com.dagxp.eclipse.dagx.LMM_PROJECT_WithSubfolders=false
+com.dagxp.eclipse.dagx.VIZ_PROJECT_GenericVisitor=true
+com.dagxp.eclipse.dagx.VIZ_PROJECT_GenericVisitorAdapter=true
+com.dagxp.eclipse.dagx.VIZ_PROJECT_IdentityVisitor=true
+com.dagxp.eclipse.dagx.VIZ_PROJECT_InputPackage=com.digiarea.closurefx.model
+com.dagxp.eclipse.dagx.VIZ_PROJECT_PrinterVisitor=true
+com.dagxp.eclipse.dagx.VIZ_PROJECT_ReplicatorVisitor=true
+com.dagxp.eclipse.dagx.VIZ_PROJECT_ToStringVisitor=true
+com.dagxp.eclipse.dagx.VIZ_PROJECT_VoidVisitor=true
+com.dagxp.eclipse.dagx.VIZ_PROJECT_VoidVisitorAdapter=true
+com.dagxp.eclipse.dagx.VIZ_PROJECT_WithSubfolders=false
+eclipse.preferences.version=1

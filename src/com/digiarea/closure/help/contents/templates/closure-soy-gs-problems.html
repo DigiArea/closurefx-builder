@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="../css/prettify.css">
+<link rel="stylesheet" type="text/css" href="../css/closure.css">
+<script type="text/javascript" src="../js/prettify.js"></script>
+<script type="text/javascript" src="../js/run_prettify.js"></script>
+<title>Identifying problems in your code - Closure FX Builder</title>
+</head>
+<body>
+    
+    
+	<div class="CasStudioMapleDocumentation">
+		<div class="SolidGreyBox_bottom BigcbSide">
+			<h1 class="MarginBottom">Identifying problems in your
+				configuration</h1>
+			<p class="MarginBottom">In this section, you will learn what
+				problems can be issued during the configuration process and how to
+				manage them.</p>
+			<ul>
+				<li><a href="#ErrorManager">Error Manager</a></li>
+				<li><a href="#BuildPathValidation">Build Path Validation</a></li>
+			</ul>
+		</div>
+		<div class="BigcbSide">
+			<div class="MarginBottom">
+				<h3>
+					<a name="ErrorManager"></a> Error Manager <a href="#ErrorManager"
+						class="section_anchor"></a>
+				</h3>
+				<div class="MarginBottom">
+					Closure FX Builder provides the Error Manager to manage Build
+					Configuration problems. The problems are displayed in the Header of
+					the Templates page and shown immediately after the editing with no
+					need to run the Compiler. <br /> There are to types of problems:
+					Warnings and Errors.<br /> <br /> <span class="bold">Warnings</span>
+					can be leaved as unresolved, so the Compiler will run correctly.<br />
+					<span class="bold">Errors</span> should be resolved, otherwise the
+					Compiler will not be launched.
+				</div>
+				<div>
+					<ol>
+						<li>Create a new configuration. Notice the following warnings
+							and errors in the Header of the Templates page. <br /> <br /> <img
+							src="images/errors-header.png" width="475" height="44" />
+						</li>
+						<li>Hover one of the labels to explore all issued problems.
+							The message in the shown tooltip specifies the problem and the
+							path where the problem is appeared.<br />For example: <span
+							class="bold">Output File cannot be empty [Build Path >
+								Output Location]</span><br /> <br /> <img
+							src="images/errors-header-tooltip.png" width="588" height="74" />
+						</li>
+						<li>Go to the <span class="bold">Build Path</span> tab.
+							Notice that textfields of the Output Location section are marked
+							as invalid.<br /> Hover one of the textfields to see the
+							message. <br /> <br /> <img src="images/errors-output.png"
+							width="394" height="124" />
+						</li>
+					</ol>
+				</div>
+				<h3>
+					<a name="BuildPathValidation"></a> Build Path Validation <a
+						href="#BuildPathValidation" class="section_anchor"></a>
+				</h3>
+				<div class="MarginBottom">
+					Closure FX Builder performs validation of the configured Build Path
+					such as existence of sources and libraries. All invalid items is
+					marked by red cross.<br /> <br /> <img
+						src="images/errors-buildpath.png" width="463" height="408" />
+				</div>
+			</div>
+		</div>
+		<div class="SolidGreyBox_bottom BigcbSide">
+			<h2 class="MarginBottom">
+				<a href="closure-soy-gs-running.html">Next Steps &raquo;</a>
+			</h2>
+			<p>
+				<a href="closure-soy-gs-running.html">Running Closure Templates</a><br />
+				In this section, you will learn about running Closure Templates in
+				Closure FX Builder.
+			</p>
+		</div>
+	</div>
+</body>
+</html>
+

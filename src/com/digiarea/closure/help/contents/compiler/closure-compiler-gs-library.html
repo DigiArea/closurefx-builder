@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="../css/prettify.css">
+<link rel="stylesheet" type="text/css" href="../css/closure.css">
+<script type="text/javascript" src="../js/prettify.js"></script>
+<script type="text/javascript" src="../js/run_prettify.js"></script>
+<title>Configure Compiler for Closure Library - Closure FX
+	Builder</title>
+</head>
+<body>
+    
+    
+	<div class="CasStudioMapleDocumentation">
+		<div class="SolidGreyBox_bottom BigcbSide">
+			<h1 class="MarginBottom">Configure Compiler for Closure Library</h1>
+			<p class="MarginBottom">
+				This tutorial introduces and lays the groundwork for JavaScript
+				development and compiling with Closure Library using Closure FX
+				Builder. <br />The following step by step instructions show how to
+				configure Closure Compiler for building JavaScript code used Closure
+				Library.
+			</p>
+			<ul>
+				<li><a href="#GetClosureLibrary">Get Closure Library</a></li>
+				<li><a href="#GetClosureLibrary">Get Sample Code</a></li>
+				<li><a href="#CreateProject">Create "Closure Project"</a></li>
+				<li><a href="#InitializeClosureLibrary">Initialize Closure
+						Library</a></li>
+				<li><a href="#ConfigureJavaScriptSources">Configure
+						JavaScript Sources</a></li>
+				<li><a href="#ConfigureCompilerOptions">Configure
+						Compiler's Options</a></li>
+			</ul>
+		</div>
+		<div class="BigcbSide">
+			<div class="MarginBottom">
+				<div>
+					Closure FX Builder automates building of JavaScript code that uses
+					Closure Library. <br />You do not need to use additional build
+					scripts to get dependency tree and pass it to the compiler by hand.
+				</div>
+				<div>
+					<h3>
+						<a name="GetClosureLibrary"></a> Get Closure Library <a
+							href="#GetClosureLibrary" class="section_anchor"></a>
+					</h3>
+					<div>
+						Download the library as a zip from the Closure Library website:<br />
+						<a href="https://code.google.com/p/closure-library/downloads/list">https://code.google.com/p/closure-library/downloads/list</a>
+						<br /> <br /> Unpack the archive into the directory of your
+						choice. <br /> Closure Library is ready to use. <br /> <br />
+						<div class="SolidGreyBox cbSide">
+							Notice: You also can check out Closure Library from the following
+							repository at Google Code: <br /> <a
+								href="https://code.google.com/p/closure-library/source/checkout">https://code.google.com/p/closure-library/source/checkout</a>
+						</div>
+					</div>
+					<h3>
+						<a name="GetCode"></a> Getting the Sample Code <a href="#GetCode"
+							class="section_anchor"></a>
+					</h3>
+					<div>
+						<p class="MarginBottom"></p>
+						<div>
+							In this tutorial we will use Notepad example.<br /> Let's create
+							<span class="bold">Notepad</span> directory with the following
+							structure:
+							<ol>
+								<li>The JavaScript source files are laid out in one
+									directory "src".</li>
+								<li>The output file is in another directory "bin".</li>
+								<li>The HTML page is laid out in the root directory.<br />
+									<br /> <img src="images/folder-notepad.png" width="437" height="175" /></li>
+								<li>Use these links to view the JavaScript source file and
+									the HTML page that are used in this tutorial:
+									<ul>
+										<li><a href="closure-compiler-notepad-js.html">notepad.js</a></li>
+										<li><a href="closure-compiler-notepad-html.html">notepad.html</a></li>
+									</ul>
+								</li>
+							</ol>
+						</div>
+					</div>
+					<h3>
+						<a name="CreateProject"></a> Create "Closure Project" <a
+							href="#CreateProject" class="section_anchor"></a>
+					</h3>
+					<div>
+						Read <a href="closure-compiler-gs-new.html">Create your first
+							Build Configuration</a> to create a new configuration.
+					</div>
+					<h3>
+						<a name="ConfigureJavaScriptSources"></a> Initialize Closure
+						Library <a href="#ConfigureJavaScriptSources"
+							class="section_anchor"></a>
+					</h3>
+					<div>
+						You can define any number of Closure Library definitions.
+						Therefore, you can use different versions or custom builds of the
+						library.<br /> <br />
+						<ol>
+							<li>Click <img src="images/gear.png" width="16" height="16" />
+								Settings button to open <span class="bold">Closure FX
+									Preferences</span> dialog.
+							</li>
+							<li>Select <span class="bold">Installed Closure
+									Libraries</span> tab. <br /> <br /> <img
+								src="images/dialog-preferences-closure.png" width="529"
+								height="403"
+								alt="Installed Closure
+									Libraries - Closure FX Builder Preferences" />
+							</li>
+							<li>Click Add... button to open Add Closure Library dialog.
+							</li>
+							<li>Enter the library's name of your choose. For example: <span
+								class="bold">Closure Library</span> <br /> Click <span
+								class="bold">Add...</span> button and locate to the <span
+								class="bold">goog</span> folder inside Closure Library
+								installation directory: <span class="bold">~/closure/goog</span>
+								<br /> <br /> <img
+								src="images/dialog-preferences-closure-new.png" width="315"
+								height="155"
+								alt="New Closure
+									Library - Closure FX Builder Preferences" />
+							</li>
+							<li>Click <span class="bold">OK</span> and then <span
+								class="bold">Apply</span> button to save configured library.
+							</li>
+							<li>Go to your build configuration and choose <span
+								class="bold">Build Path</span> tab on Compiler page.
+							</li>
+							<li>Click <span class="bold">Add Closure Library</span> in
+								the Libraries section.
+							</li>
+							<li>Choose the library and click <span class="bold">OK</span>.<br />
+								<br /> <img src="images/buildpath-closure.png" width="463"
+								height="273" />
+							</li>
+						</ol>
+						<div class="SolidGreyBox cbSide">
+							Notice <img src="images/decorator-closure.png" width="8"
+								height="8" /> triangle next to the library's path.<br /> The
+							triangle defines that the builder will look for the JavaScript
+							files with <span class="bold">goog.provide</span> only.
+						</div>
+					</div>
+					<h3>
+						<a name="ConfigureJavaScriptSources"></a> Configure JavaScript
+						Sources <a href="#ConfigureJavaScriptSources"
+							class="section_anchor"></a>
+					</h3>
+					<div>
+						<ol>
+							<li>Go to <span class="bold">Build Path</span> tab on the
+								Compiler page. The page contains four sections: Sources,
+								Libraries, Order And Externs and Output Location.
+							</li>
+							<li>Click <span class="bold">Add...</span> button in the
+								Source section.
+							</li>
+							<li>Choose a folder with source files and click OK.<br /> <br />
+								<img src="images/buildpath-source.png" width="463" height="180" /></li>
+							<li>Define <span class="bold">Output file</span> and <span
+								class="bold">Output folder</span> in the <span class="bold">Output
+									Location</span> section. <br /> <br /> <img
+								src="images/buildpath-output.png" width="463" height="116" />
+							</li>
+						</ol>
+					</div>
+					<h3>
+						<a name="ConfigureCompilerOptions"></a> Configure Compiler's
+						Options <a href="#ConfigureCompilerOptions" class="section_anchor"></a>
+					</h3>
+					<div>
+						Ensure that you have configured the following options to be sure
+						that Closure Compiler will build the sources correctly.
+						<ol>
+							<li>Go to Input/Output Language section on Basic tab.</li>
+							<li>Ensure you have chosen <span class="bold">Enforce
+									Closure style rules and conventions</span> and <span class="bold">Process
+									Closure primitives</span> checkboxes. <br /> <br /> <img
+								src="images/buildpath-language.png" width="427" height="233" />
+							</li>
+							<li>Go to Compilation Warnings section on Checks tab.</li>
+							<li>You can configure Compilation Warnings just as you want.
+								Nevertheless, there are several options which are extremely
+								useful for Closure-based code. <br /> Ensure you have chosen <span
+								class="bold">ERROR/WARNING</span> severity level for <span
+								class="bold">brokenClosureRequiresLevel</span>, <span
+								class="bold">checkProvides</span> and <span class="bold">checkRequires</span>
+								checks. <br /> <br /> <img src="images/buildpath-checks.png"
+								width="581" height="482" />
+							</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

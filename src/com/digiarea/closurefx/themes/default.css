@@ -1,0 +1,423 @@
+/*
+ Document   : default
+ Created on : Apr 12, 2013, 8:35:57 PM
+ Author     : daginno
+ Description:
+ Addition styles for default JavaFX theme.
+ */
+
+.root {
+}
+
+.activate_checkbox {
+    -fx-text-fill: white;
+}
+
+.activate_checkbox .box {
+    -fx-background-color: rgb(0.0,0.0,0.0,0.2), -fx-outer-border, -fx-inner-border, -fx-body-color;
+}
+
+.activate_split-menu-button {
+    -fx-background-color: rgb(0.0,0.0,0.0,0.2);
+}
+
+.dialog_back {
+    -fx-background-color: #a6a6a6;
+    -fx-effect: innershadow( three-pass-box , rgba(0.0,0.0,0.0,0.8) , 6.0, 0.0 , 0.0 , 0.0 );
+}
+
+.dialog_back .button {
+    -fx-background-color: rgb(0.0,0.0,0.0,0.2), -fx-outer-border, -fx-inner-border, -fx-body-color;
+}
+
+#SOYTitle {
+    -fx-font-family: Arial;
+    -fx-font-size: 18.0px;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0.0,59.0,153.0,0.9) , 2.0, 0.0 , 0.0 , 1.0 );
+}
+
+#SOYTitleBox {
+    -fx-background-color: #4c8ffd, linear-gradient(rgba(255.0,255.0,255.0,0.7), #1053be), linear-gradient(#4c8ffd, rgba(255.0,255.0,255.0,0.4)), linear-gradient(to top, #4787ed, #4c8ffd);
+    -fx-background-insets: 0.0, 0.0, 1.0, 2.0;
+}
+
+#GSSTitle {
+    -fx-font-family: Arial;
+    -fx-font-size: 18.0px;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(173.0,12.0,0.0,0.9) , 2.0, 0.0 , 0.0 , 1.0 );
+}
+
+#GSSTitleBox {
+    -fx-background-color: #d64036, linear-gradient(rgba(255.0,255.0,255.0,0.7), #8f0a00), linear-gradient(#d64036, rgba(255.0,255.0,255.0,0.4)), linear-gradient(to top, #ca2f25, #d64036);
+    -fx-background-insets: 0.0, 0.0, 1.0, 2.0;
+}
+
+#CompilerTitle {
+    -fx-font-family: Arial;
+    -fx-font-size: 18.0px;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0.0,84.0,44.0,0.9) , 2.0, 0.0 , 0.0 , 1.0 );
+}
+
+#CompilerTitleBox {
+    -fx-background-color: #0aa25a, linear-gradient(rgba(255.0,255.0,255.0,0.7), #00542c), linear-gradient(#0aa25a, rgba(255.0,255.0,255.0,0.4)), linear-gradient(to top, #069350, #0aa25a);
+    -fx-background-insets: 0.0, 0.0, 1.0, 2.0;
+}
+
+.info-label, .info-box {
+    -fx-background-color: #bed4f1, #daeaff, #bed4f1;
+    -fx-background-insets: 0.0, 0.0, 1.0;
+    -fx-background-radius: 5.0, 5.0, 4.0, 3.0;
+    -fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 18 3 10 */
+    -fx-text-fill: #2b7ce7;
+    -fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.5) , 2.0, 0.0 , 0.0 , 1.0 );
+}
+
+.info-label .label, .info-box .label{
+    -fx-text-fill: #2f2f2f;
+}
+
+.error-label, .error-box {
+    -fx-background-color: #f7a29a, #ffc5c0, #f7a29a;
+    -fx-background-insets: 0.0, 0.0, 1.0;
+    -fx-background-radius: 5.0, 5.0, 4.0, 3.0;
+    -fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 18 3 10 */
+    -fx-text-fill: #b10714;
+    -fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.5) , 2.0, 0.0 , 0.0 , 1.0 );
+}
+
+.error-label .label, .error-box .label{
+    -fx-text-fill: #b10714;
+}
+
+
+.warning-label, .warning-box {
+    -fx-background-color: #f3e57c, #fcf3ac, #f3e57c;
+    -fx-background-insets: 0.0, 0.0, 1.0;
+    -fx-background-radius: 5.0, 5.0, 4.0, 3.0;
+    -fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 18 3 10 */
+    -fx-text-fill: #2f2f2f;
+    -fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.5) , 2.0, 0.0 , 0.0 , 1.0 );
+}
+
+.warning-label .label, .warning-box .label{
+    -fx-text-fill: #2f2f2f;
+}
+
+.info-box, .warning-box , .error-box{
+	-fx-padding: 10.0 20.0 10.0 20.0;
+}
+
+
+.error-check-box .box {
+    -fx-background-color: rgb(0.0,0.0,0.0,0.2), -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-effect: dropshadow( three-pass-box , rgba(255.0,0.0,0.0,0.6) , 2.0, 0.5 , 0.0 , 0.0 );
+    -fx-background-image: url("../resources/decorator-error.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: -4.0 bottom;
+}
+
+.warning-check-box .box {
+
+    -fx-background-color: rgb(0.0,0.0,0.0,0.2), -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-effect: dropshadow( three-pass-box , #ffe100 , 2.0, 0.5 , 0.0 , 0.0 );
+    -fx-background-image: url("../resources/decorator-warning.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: -5.0 bottom;
+}
+
+.error-text-field {
+    -fx-effect: dropshadow( three-pass-box , rgba(255.0,0.0,0.0,0.6) , 4.0, 0.2 , 0.0 , 0.0 );
+    -fx-background-color: -fx-shadow-highlight-color, red, -fx-control-inner-background;
+    -fx-background-insets: 0.0, 1.0, 2.0;
+    -fx-background-image: url("../resources/decorator-error.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: -4.0 bottom;
+}
+
+.warning-text-field {
+    -fx-effect: dropshadow( three-pass-box , #ffe100 , 4.0, 0.2 , 0.0 , 0.0 );
+    -fx-background-color: -fx-shadow-highlight-color, #ffe100, -fx-control-inner-background;
+    -fx-background-insets: 0.0, 1.0, 2.0;
+    -fx-padding: 0.0 0.0 0.0 20.0;
+    -fx-background-image: url("../resources/decorator-warning.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: -5.0 bottom;
+}
+
+.error-combo-box {
+    -fx-text-fill: red;
+    -fx-background-color: rgb(0.0,0.0,0.0,0.2), -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-effect: dropshadow( three-pass-box , rgba(255.0,0.0,0.0,0.9) , 4.0, 0.2 , 0.0 , 0.0 );
+}
+
+.error-table-view {
+    -fx-effect: dropshadow( three-pass-box , rgba(255.0,0.0,0.0,0.6) , 4.0, 0.2 , 0.0 , 0.0 );
+    -fx-background-color: red, -fx-control-inner-background;
+    -fx-background-insets: 0.0, 1.0;
+    -fx-background-insets: 0.0, 1.0;
+    -fx-background-image: url("../resources/decorator-error.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: -4.0px bottom;
+}
+
+.warning-table-view {
+    -fx-effect: dropshadow( three-pass-box , #ffe100 , 4.0, 0.2 , 0.0 , 0.0 );
+    -fx-background-color: #ffe100, -fx-control-inner-background;
+    -fx-background-insets: 0.0, 1.0;
+    -fx-background-image: url("../resources/decorator-warning.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: -5.0px bottom;
+}
+
+.error-list-cell {
+    -fx-effect: dropshadow( three-pass-box , rgba(255.0,0.0,0.0,0.6) , 4.0, 0.2 , 0.0 , 0.0 );
+    -fx-background-color: red, -fx-control-inner-background;
+    -fx-background-insets: 0.0, 1.0;
+    -fx-background-insets: 0.0, 1.0;
+    -fx-background-image: url("../resources/decorator-error.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left bottom;
+}
+
+.default-table-view {
+    -fx-background-image: null;
+    -fx-effect: null;
+}
+
+.invisible {
+    visibility: collapse;
+    -fx-background-color: transparent;
+}
+
+.invisible-check-box .box {
+    -fx-background-color: transparent;
+}
+
+.invisible-check-box:hover .box {
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+}
+
+.invisible-radio-button .radio {
+    -fx-background-color: transparent;
+}
+
+.invisible-radio-button:hover .radio {
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+}
+
+.invisible-button {
+    -fx-background-color: transparent;
+}
+
+.invisible-button:hover {
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+}
+
+.invisible-combo-box-base {
+    -fx-background-color: transparent;
+}
+
+.invisible-combo-box-base .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.invisible-combo-box-base:hover {
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-color: -fx-hover-base;
+}
+
+.buildpath-variable-extern, .buildpath-closure-extern, .buildpath-closure, .buildpath-project, .buildpath-package-folder, .buildpath-package-folder-extern, .buildpath-library, .buildpath-library-extern, .buildpath-archive, .buildpath-js, .buildpath-js-extern, .buildpath-gss, .buildpath-gss-extern, .buildpath-soy, .buildpath-soy-extern, .buildpath-variable {
+    -fx-padding: 0.0 0.0 0.0 25.0;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 5.0px center;
+}
+
+.buildpath-closure-error, .buildpath-package-folder-error, .buildpath-library-error, .buildpath-archive-error, .buildpath-js-error, .buildpath-gss-error, .buildpath-soy-error, .buildpath-variable-error {
+    -fx-padding: 0.0 0.0 0.0 25.0;
+}
+
+.buildpath-project {
+    -fx-background-image: url("../resources/buildpath-project.png");
+}
+
+.buildpath-package-folder {
+    -fx-background-image: url("../resources/buildpath-packagefolder.gif");
+}
+.buildpath-package-folder-extern {
+    -fx-background-image: url("../resources/buildpath-packagefolder-extern.png");
+}
+.buildpath-package-folder-error {
+    -fx-background-image: url("../resources/buildpath-packagefolder.gif"), url("../resources/decorator-error.png");
+    -fx-background-repeat: no-repeat, no-repeat;
+    -fx-background-position: 5.0px center, 3.0px bottom;
+}
+.buildpath-library {
+    -fx-background-image: url("../resources/buildpath-library.png");
+}
+.buildpath-library-extern {
+    -fx-background-image: url("../resources/buildpath-library-extern.png");
+}
+.buildpath-library-error {
+    -fx-background-image: url("../resources/buildpath-library.png"), url("../resources/decorator-error.png");
+    -fx-background-repeat: no-repeat, no-repeat;
+    -fx-background-position: 5.0px center, 3.0px bottom;
+}
+.buildpath-archive {
+    -fx-background-image: url("../resources/buildpath-archive.png");
+}
+.buildpath-archive-error {
+    -fx-background-image: url("../resources/buildpath-archive.png"), url("../resources/decorator-error.png");
+    -fx-background-repeat: no-repeat, no-repeat;
+    -fx-background-position: 5.0px center, 3.0px bottom;
+}
+.buildpath-js {
+    -fx-background-image: url("../resources/buildpath-js.png");
+}
+.buildpath-js-extern {
+    -fx-background-image: url("../resources/buildpath-js-extern.png");
+}
+.buildpath-js-error {
+    -fx-background-image: url("../resources/buildpath-js.png"), url("../resources/decorator-error.png");
+    -fx-background-repeat: no-repeat, no-repeat;
+    -fx-background-position: 5.0px center, 3.0px bottom;
+}
+.buildpath-gss {
+    -fx-background-image: url("../resources/buildpath-gss.png");
+}
+.buildpath-gss-extern {
+    -fx-background-image: url("../resources/buildpath-gss-extern.png");
+}
+.buildpath-gss-error {
+    -fx-background-image: url("../resources/buildpath-gss.png"), url("../resources/decorator-error.png");
+    -fx-background-repeat: no-repeat, no-repeat;
+    -fx-background-position: 5.0px center, 3.0px bottom;
+}
+.buildpath-soy {
+    -fx-background-image: url("../resources/buildpath-soy.png");
+}
+.buildpath-soy-extern {
+    -fx-background-image: url("../resources/buildpath-soy-extern.png");
+}
+.buildpath-soy-error {
+    -fx-background-image: url("../resources/buildpath-soy.png"), url("../resources/decorator-error.png");
+    -fx-background-repeat: no-repeat, no-repeat;
+    -fx-background-position: 5.0px center, 3.0px bottom;
+}
+.buildpath-variable {
+    -fx-background-image: url("../resources/buildpath-variable.png");
+}
+
+.buildpath-variable-extern {
+    -fx-background-image: url("../resources/buildpath-variable-extern.png");
+}
+
+.buildpath-variable-error {
+    -fx-background-image: url("../resources/buildpath-variable.png"), url("../resources/decorator-error.png");
+    -fx-background-repeat: no-repeat, no-repeat;
+    -fx-background-position: 5.0px center, 3.0px bottom;
+}
+
+.buildpath-closure {
+    -fx-background-image: url("../resources/closure.png");
+}
+
+.buildpath-closure-extern {
+    -fx-background-image: url("../resources/buildpath-closure-extern.png");
+}
+
+.buildpath-closure-error {
+    -fx-background-image: url("../resources/closure.png"), url("../resources/decorator-error.png");
+    -fx-background-repeat: no-repeat, no-repeat;
+    -fx-background-position: 5.0px center, 3.0px bottom;
+}
+
+#AboutBox {
+    -fx-background-image: url("../resources/splash.png");
+    -fx-background-color: #eaeaea;
+     -fx-background-repeat: no-repeat;
+     -fx-background-position: 20.0px -20.0px;
+}
+
+#AboutBox .text-area{
+     -fx-background-color: rgb(255.0,255.0,255.0,0.7);
+}
+
+#ConsoleBox {
+    -fx-background-color: linear-gradient(to top, #353535, #636363);
+}
+
+#ConsoleBox .label {
+    -fx-text-fill: #d9d9d9;
+}
+
+#ConsoleBox .button {
+    -fx-background-color: rgb(0.0,0.0,0.0,0.2), -fx-outer-border, -fx-inner-border, -fx-body-color;
+}
+
+/* .list-cell:odd {
+ -fx-background-color: white;
+ }
+
+ .list-view:focused .list-cell:focused {
+ -fx-background-color: #0c97fe;
+ -fx-background-insets: 0, 1, 2;
+ }
+
+ .list-view:focused .list-cell:focused:odd {
+ -fx-background-color: #0c97fe;
+ -fx-background-insets: 0, 1, 2;
+ }
+
+ .list-view .list-cell:hover, .list-view:focused .list-cell:hover{
+ -fx-background-color: #cce3f4;
+ }
+
+ .list-view .list-cell:empty:hover, .list-view:focused .list-cell:empty:hover{
+ -fx-background-color: white;
+ } */
+
+.close-button {
+    -fx-padding: 1.0;
+    -fx-background-radius: 0.0;
+}
+
+.dialog-top {
+    -fx-background-color: #d6d6d6;
+}
+
+.dialog-buttons {
+    -fx-background-color: linear-gradient(to top, #353535, #636363);
+}
+
+.dialog-buttons .button {
+    -fx-background-color: rgb(0.0,0.0,0.0,0.2), -fx-outer-border, -fx-inner-border, -fx-body-color;
+}
+
+.tab-bold{
+  -fx-font-weight: bold;
+  -fx-font-style: italic;
+}
+
+.tab-normal{
+  -fx-font-weight: normal;
+  -fx-font-style: normal;
+}
+
+.status-error{
+-fx-text-fill: red;
+}
+
+.status-warning{
+-fx-text-fill: #FFCC00;
+}
+
+.status-info{
+-fx-text-fill: #0066FF;
+}
+
+.status-simple{
+-fx-text-fill: black;
+}

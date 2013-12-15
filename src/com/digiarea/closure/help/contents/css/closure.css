@@ -1,0 +1,345 @@
+* {
+    padding: 0.0;
+    margin: 0.0;
+    border: 0.0px;
+    font-weight: normal;
+}
+
+body {
+    font: 14.0px /18px "Trebuchet MS", Helvetica, sans-serif;
+    color: #444444;
+    min-width: 600px;
+    margin-top: 0px !important;
+}
+
+.CasStudioMapleDocumentation .ReferenceLevelError {
+    color: red;
+}
+
+.CasStudioMapleDocumentation .ReferenceLevelOff {
+    color: blue;
+}
+
+.CasStudioMapleDocumentation .ReferenceLevelWarning {
+    color: orange;
+}
+
+.CasStudioMapleDocumentation  .ReferenceKey {
+	   color: green;
+}
+
+.CasStudioMapleDocumentation  .ReferenceCodeMessage {
+	font-size: 12px;
+}
+
+
+.CasStudioMapleDocumentation .MarginLeft {
+    margin-left: 20.0px;
+}
+
+.CasStudioMapleDocumentation code {
+    color: black;
+}
+
+.CasStudioMapleDocumentation .error {
+    color: red;
+}
+
+.CasStudioMapleDocumentation {
+    font: 14.0px /18px "Trebuchet MS", Helvetica, sans-serif;
+    color: #444444;
+    min-width: 600px;
+    margin-top: 0px !important;
+}
+
+.CasStudioMapleDocumentation ul {
+    list-style-type: none;
+}
+.CasStudioMapleDocumentation ul > li > ul {
+    margin-left: 10.0px;
+    margin-bottom: 5.0px;
+}
+.CasStudioMapleDocumentation h1, .CasStudioMapleDocumentation h2, .CasStudioMapleDocumentation h3, .CasStudioMapleDocumentation h4, .CasStudioMapleDocumentation h5, .CasStudioMapleDocumentation h6 {
+    font-family: Arial;
+    clear: both;
+    color: #222222;
+}
+
+.CasStudioMapleDocumentation .SectionMargin {
+    padding-left: 25.0px;
+}
+
+.CasStudioMapleDocumentation details summary:HOVER {
+    cursor: pointer;
+}
+
+.CasStudioMapleDocumentation details summary.h1, .CasStudioMapleDocumentation details summary.h2, .CasStudioMapleDocumentation details summary.h3, .CasStudioMapleDocumentation details summary.h4, .CasStudioMapleDocumentation details summary.h5, .CasStudioMapleDocumentation details summary.h6 {
+    font-family: Arial;
+    clear: both;
+    color: #222222;
+    outline: none;
+}
+
+.CasStudioMapleDocumentation details summary.h2 {
+    font-size: 28.0px;
+    line-height: 31.0px;
+    padding-bottom: 5.0px;
+     margin-top: 30.0px;
+    border-bottom: 1.0px solid #cccccc;
+}
+
+.CasStudioMapleDocumentation details summary.h2 a{
+     margin-left: 5.0px;
+}
+
+.CasStudioMapleDocumentation details summary::-webkit-details-marker {
+    font-size: 12.0px;
+    line-height: 31.0px;
+    padding-bottom: 5.0px;
+}
+
+.CasStudioMapleDocumentation h1 {
+    font-size: 35.0px;
+    line-height: 37.0px;
+}
+.CasStudioMapleDocumentation h2 {
+    font-size: 28.0px;
+    line-height: 31.0px;
+    padding-bottom: 5.0px;
+    border-bottom: 1.0px solid #cccccc;
+}
+.CasStudioMapleDocumentation h3 {
+    font-size: 20.0px;
+    line-height: 25.0px;
+    margin-bottom: 10.0px;
+    margin-top: 10.0px;
+    font-family: "Trebuchet MS";
+}
+.CasStudioMapleDocumentation h4 {
+    font-size: 16.0px;
+    line-height: 20.0px;
+    font-family: "Trebuchet MS";
+}
+.CasStudioMapleDocumentation a {
+    outline: none;
+    text-decoration: none;
+    color: #1155cc;
+}
+.CasStudioMapleDocumentation a:LINK {
+    color: #006ac8;
+}
+.CasStudioMapleDocumentation a:VISITED {
+    color: #006ac8;
+}
+.CasStudioMapleDocumentation a:HOVER {
+    cursor: pointer;
+    color: #006ac8;
+}
+.CasStudioMapleDocumentation a:ACTIVE {
+    color: #006ac8;
+}
+.CasStudioMapleDocumentation ol {
+    margin-left: 40.0px;
+}
+.CasStudioMapleDocumentation ol li {
+    padding: 5.0px;
+}
+.CasStudioMapleDocumentation .bold {
+    font-weight: bold;
+}
+.CasStudioMapleDocumentation .clear {
+    clear: both;
+}
+.CasStudioMapleDocumentation .BigcbSide {
+    padding: 40.0px;
+}
+.CasStudioMapleDocumentation .cbSide {
+    padding: 20.0px;
+}
+.CasStudioMapleDocumentation .SmallcbSide {
+    padding: 10.0px;
+}
+.CasStudioMapleDocumentation .MarginBottom {
+    margin-bottom: 10.0px;
+}
+
+.CasStudioMapleDocumentation .SolidGreyBox, .CasStudioMapleDocumentation .SolidGreyBox_bottom, .CasStudioMapleDocumentation .SolidGreyBox_top {
+    background: #f1f1f1;
+}
+.CasStudioMapleDocumentation .SolidGreyBox {
+    border: 1.0px solid #d9d9d9;
+}
+.CasStudioMapleDocumentation .SolidGreyBox_bottom {
+    border-bottom: 1.0px solid #d9d9d9;
+}
+.CasStudioMapleDocumentation .SolidGreyBox_top {
+    border-top: 1.0px solid #d9d9d9;
+}
+
+.CasStudioMapleDocumentation .radius3 {
+    -webkit-border-radius: 2.0px;
+    -moz-border-radius: 2.0px;
+    border-radius: 2.0px;
+}
+.CasStudioMapleDocumentation .radius3_left {
+    -webkit-border-top-left-radius: 2.0px;
+    -webkit-border-bottom-left-radius: 2.0px;
+    -moz-border-radius-topleft: 2.0px;
+    -moz-border-radius-bottomleft: 2.0px;
+    border-top-left-radius: 2.0px;
+    border-bottom-left-radius: 2.0px;
+}
+.CasStudioMapleDocumentation .radius3_top {
+    -webkit-border-top-left-radius: 2.0px;
+    -webkit-border-top-right-radius: 2.0px;
+    -moz-border-radius-topleft: 2.0px;
+    -moz-border-radius-topright: 2.0px;
+    border-top-left-radius: 2.0px;
+    border-top-right-radius: 2.0px;
+}
+.CasStudioMapleDocumentation .radius3_bottom {
+    -webkit-border-bottom-right-radius: 2.0px;
+    -webkit-border-bottom-left-radius: 2.0px;
+    -moz-border-radius-bottomright: 2.0px;
+    -moz-border-radius-bottomleft: 2.0px;
+    border-bottom-right-radius: 2.0px;
+    border-bottom-left-radius: 2.0px;
+}
+
+.CasStudioMapleDocumentation div#MapleMainHeader .MainHeader {
+    padding: 35.0px;
+    border-bottom: 1.0px solid #1c1c1c;
+    background: #f1f1f1;
+}
+
+.CasStudioMapleDocumentation .SectionHeader{
+	  padding: 35.0px;
+    border-bottom: 1.0px solid #1c1c1c;
+    background: #444444;
+    color: #f1f1f1;
+}
+
+.CasStudioMapleDocumentation .SectionHeader h1{
+	 color: #f1f1f1;
+}
+
+.CasStudioMapleDocumentation div#MapleMainHeader div.content {
+    background: #444444;
+    padding: 20.0px;
+    border-top: 1.0px solid #494949;
+    clear: both;
+}
+
+.CasStudioMapleDocumentation div#MapleMainHeader div.item {
+    float: left;
+    width: 30.0%;
+    vertical-align: top;
+}
+.CasStudioMapleDocumentation div#MapleMainHeader div.item p {
+    font-size: 14.0px;
+    color: white;
+}
+.CasStudioMapleDocumentation div#MapleMainHeader div.item h2 {
+    font-size: 18.0px;
+    color: white;
+    line-height: 20.0px;
+    margin-bottom: 10.0px;
+    border-bottom: none;
+}
+
+.CasStudioMapleDocumentation div#MapleMainHeader a {
+    color: #c9e6ca;
+}
+
+.CasStudioMapleDocumentation div#MapleMainHeader a:hover {
+    text-decoration: underline;
+}
+
+.CasStudioMapleDocumentation div#MapleMainHeader a:hover h2 {
+    color: #c9e6ca;
+    text-decoration: underline;
+}
+
+.CasStudioMapleDocumentation .marked-list {
+    list-style-type: circle;
+    margin-left: 20.0px;
+}
+
+.CasStudioMapleDocumentation .marked-list li {
+    margin-bottom: 5.0px;
+}
+
+.CasStudioMapleDocumentation .tutor-list {
+    list-style-type: circle;
+    margin-left: 20.0px;
+    color: #444444;
+}
+
+.CasStudioMapleDocumentation .command-link {
+    background: url("../images/command-link.png") left center no-repeat;
+    padding-left: 20.0px;
+}
+
+.help_breadcrumbs {
+    background: #016894;
+    padding: 10.0px;
+    padding-left: 125.0px;
+    margin-bottom: 0.0px !important;
+    color: white;
+    background: #404a5a url("../images/maple-logo.png") 20.0px center no-repeat;
+    border-bottom: 1.0px solid white;
+}
+
+.help_breadcrumbs a, .help_breadcrumbs a:LINK, .help_breadcrumbs a:VISITED, .help_breadcrumbs a:ACTIVE {
+    color: white;
+}
+.help_breadcrumbs a:HOVER {
+    cursor: pointer;
+    color: white;
+    text-decoration: underline;
+}
+
+.CasStudioMapleDocumentation .question {
+    font-size: 18.0px;
+    display: block;
+    padding-bottom: 5.0px;
+}
+
+.CasStudioMapleDocumentation table.basic-table {
+    font-size: 14.0px;
+    border-width: 1.0px;
+    border-spacing: 2.0px;
+    border-style: none;
+    border-color: gray;
+    border-collapse: collapse;
+}
+
+.CasStudioMapleDocumentation table.basic-table th {
+    border-width: 1.0px;
+    padding: 1.0px;
+    border-style: inset;
+    border-color: gray;
+    background-color: white;
+}
+.CasStudioMapleDocumentation table.basic-table td {
+    border-width: 1.0px;
+    padding: 5.0px;
+    border-style: inset;
+    border-color: gray;
+    background-color: white;
+}
+
+
+a.section_anchor:before { content: "\00B6" }
+a.section_anchor {  display: none; text-decoration: none; margin-left: 0.2em; }
+h1:hover a.section_anchor, h2:hover a.section_anchor, h3:hover a.section_anchor,
+h4:hover a.section_anchor, h5:hover a.section_anchor, h6:hover a.section_anchor { display: inline; color: #bbb; }
+h1 a.section_anchor:hover, h2 a.section_anchor:hover, h3 a.section_anchor:hover,
+h4 a.section_anchor:hover, h5 a.section_anchor:hover, h6 a.section_anchor:hover { color: #33c; }
+
+code.prettyprint, pre.prettyprint{
+	display: block;
+	padding: 20.0px;
+	background: #f1f1f1;
+	margin-bottom: 10px;
+}

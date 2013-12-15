@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="../css/prettify.css">
+<link rel="stylesheet" type="text/css" href="../css/closure.css">
+<script type="text/javascript" src="../js/prettify.js"></script>
+<script type="text/javascript" src="../js/run_prettify.js"></script>
+<title>Closure Library - Closure FX Builder</title>
+</head>
+<body>
+    
+    
+	<div class="CasStudioMapleDocumentation">
+		<div class="SolidGreyBox_bottom BigcbSide">
+			<h1 class="MarginBottom">Closure Library</h1>
+			<p class="MarginBottom">In this section, you will learn about
+				configuring Closure Library in Closure FX Builder.</p>
+			<ul>
+				<li><a href="#ConfigureLibrary">Configure Closure Library</a></li>
+			</ul>
+		</div>
+		<div class="BigcbSide">
+			<div class="MarginBottom">
+				<div class="MarginBottom">
+					The build path for a JavaScript project can include folders
+					containing JavaScript files. <br /> <br /> Closure Library is a
+					folder with the library's files to include in the build. Closure FX
+					Builder allows you to avoid references to the location of the
+					library's folder on your local file system. In this way, you can
+					share build paths across teams and define the Closure Library to
+					refer to the correct location for your particular computer.
+				</div>
+				<div>
+					<div class="MarginBottom">
+						<a name="ConfigureLibrary"></a>
+						<details open="open" class="MarginBottom"> <summary
+							class="h2"> <a name="ConfigureLibrary"></a>Configure Closure
+						Library</summary>
+						<div>
+							You can define any number of Closure Library definitions.
+							Therefore, you can use different versions or custom builds of the
+							library.<br /> <br />
+							<ol>
+								<li>Click <img src="images/gear.png" width="16" height="16" />Settings
+									button to open <span class="bold">Closure FX Preferences</span>
+									dialog.
+								</li>
+								<li>Select <span class="bold">Installed Closure
+										Libraries</span> tab. <br /> <br /> <img
+									src="images/dialog-preferences-closure.png" width="529"
+									height="403"
+									alt="Installed Closure
+									Libraries - Closure FX Builder Preferences" />
+								</li>
+								<li>Click Add... button to open Add Closure Library dialog.
+								</li>
+								<li>Enter the library's name of your choose. For example: <span
+									class="bold">Closure Library</span> <br /> Click <span
+									class="bold">Add...</span> button and locate to the <span
+									class="bold">goog</span> folder inside Closure Library
+									installation directory: <span class="bold">~/closure/goog</span>
+									<br /> <br /> <img
+									src="images/dialog-preferences-closure-new.png" width="315"
+									height="155"
+									alt="New Closure
+									Library - Closure FX Builder Preferences" />
+								</li>
+								<li>Click <span class="bold">OK</span> and then <span
+									class="bold">Apply</span> button to save configured library.
+								</li>
+								<li>Go to your build configuration and choose <span
+									class="bold">Build Path</span> tab on Compiler page.
+								</li>
+								<li>Click <span class="bold">Add Closure Library</span> in
+									the Libraries section.
+								</li>
+								<li>Choose the library and click <span class="bold">OK</span>.<br />
+									<br /> <img src="images/buildpath-closure.png" width="463"
+									height="273" />
+								</li>
+							</ol>
+							<div class="SolidGreyBox cbSide">
+								Notice <img src="images/decorator-closure.png" width="8"
+									height="8" /> triangle next to the library's path.<br /> The
+								triangle defines that the builder will look for the JavaScript
+								files with <span class="bold">goog.provide</span> only.
+							</div>
+						</div>
+						</details>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

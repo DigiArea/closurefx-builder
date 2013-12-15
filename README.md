@@ -6,6 +6,6 @@ Closure FX Builder is a stand-alone web development toolkit powered by Google Cl
 License
 =======
 
-Copyright 2013 DigiAre, Inc.
+Copyright 2013 DigiArea, Inc.
 
 This software is licensed under the Apache V2 License. See the LICENSE file for details.

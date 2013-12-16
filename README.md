@@ -9,6 +9,19 @@ Closure FX Builder is a stand-alone web development toolkit powered by [Google C
 
 ![Closure Compiler - Closure FX Builder](http://digi-area.com/images/closurefx/screens_compiler.png)
 
+###For JavaScript Developers
+ - Code Validation
+ - Automatic Dependency Managment
+ - Development Mode
+ - Code Minification
+
+###For Soy Templates Developers
+ - Template Validation
+ - Rich build configuration
+
+###For CSS Developers
+ - Extensive compiling tools for Google Stylesheets
+
 ###Downloading
 
 Go to the [Releases page](https://github.com/DigiArea/closurefx-builder/releases) and download the latest build.

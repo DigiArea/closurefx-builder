@@ -17,6 +17,9 @@ Go to the [Releases page](https://github.com/DigiArea/closurefx-builder/releases
 
 Explore [Getting Started](http://digi-area.com/ClosureFX/getting-started.php) guide for installation instructions.
 
+If you have any problems with installation or running, please explore [Known Issues](https://github.com/DigiArea/closurefx-builder/wiki/Known-Issues) page.
+Still can not resolve your problem? Go to [Issues](https://github.com/DigiArea/closurefx-builder/issues) page and post a request.
+
 ###Usage
 
 Closure FX Builder contains built-in documentation.

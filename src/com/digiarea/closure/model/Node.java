@@ -1,9 +1,9 @@
 package com.digiarea.closure.model;
 
-import com.digiarea.closure.model.visitor.VoidVisitor;
-import com.digiarea.closure.model.visitor.GenericVisitor;
 import com.digiarea.closure.model.visitor.CloneVisitor;
 import com.digiarea.closure.model.visitor.EqualsVisitor;
+import com.digiarea.closure.model.visitor.GenericVisitor;
+import com.digiarea.closure.model.visitor.VoidVisitor;
 
 public abstract class Node {
 

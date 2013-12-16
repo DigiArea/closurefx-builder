@@ -1,18 +1,18 @@
 package com.digiarea.closure.preferences.model.visitor;
 
-import com.digiarea.closure.preferences.model.visitor.GenericVisitor;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.digiarea.closure.preferences.model.ClosureLibraries;
 import com.digiarea.closure.preferences.model.ClosureLibrary;
-import java.util.List;
-import java.util.ArrayList;
 import com.digiarea.closure.preferences.model.Editor;
-import com.digiarea.closure.preferences.model.Editors;
 import com.digiarea.closure.preferences.model.EditorType;
+import com.digiarea.closure.preferences.model.Editors;
 import com.digiarea.closure.preferences.model.OperatingSystem;
 import com.digiarea.closure.preferences.model.OperatingSystemFamily;
 import com.digiarea.closure.preferences.model.Preferences;
-import com.digiarea.closure.preferences.model.Variables;
 import com.digiarea.closure.preferences.model.Variable;
+import com.digiarea.closure.preferences.model.Variables;
 
 public class CloneVisitor implements GenericVisitor<Object, Object> {
 

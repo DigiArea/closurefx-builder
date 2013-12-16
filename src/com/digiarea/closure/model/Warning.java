@@ -1,14 +1,13 @@
 package com.digiarea.closure.model;
 
-import com.digiarea.closure.model.Node;
-import com.digiarea.closure.model.SeverityType;
+import java.io.IOException;
+
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import com.digiarea.closure.model.WarningType;
-import com.digiarea.closure.model.visitor.VoidVisitor;
-import com.digiarea.closure.model.visitor.GenericVisitor;
+
 import com.dagxp.zippy.ZippyBuffer;
-import java.io.IOException;
+import com.digiarea.closure.model.visitor.GenericVisitor;
+import com.digiarea.closure.model.visitor.VoidVisitor;
 
 public class Warning extends Node {
 

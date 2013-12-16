@@ -1,7 +1,8 @@
 package com.digiarea.closure.model.controller;
 
-import com.digiarea.closure.model.bind.ModelFacade;
 import java.util.ResourceBundle;
+
+import com.digiarea.closure.model.bind.ModelFacade;
 
 public abstract class ClosureController {
 

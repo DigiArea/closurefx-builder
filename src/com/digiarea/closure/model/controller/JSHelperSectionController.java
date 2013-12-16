@@ -1,29 +1,33 @@
 package com.digiarea.closure.model.controller;
 
-import java.util.*;
-import javafx.collections.*;
-import javafx.geometry.*;
-import javafx.scene.*;
-import javafx.scene.control.*;
-import javafx.scene.image.*;
-import javafx.scene.layout.*;
-import com.digiarea.closure.model.controller.ClosureController;
-import javafx.fxml.Initializable;
-import javafx.scene.control.TitledPane;
-import javafx.fxml.FXML;
-import com.digiarea.closure.model.bind.ModelFacade;
-import java.util.ResourceBundle;
 import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
-import com.digiarea.closure.model.controller.dialogs.StatusDialogController;
-import com.digiarea.closurefx.build.validation.Status;
-import com.digiarea.closurefx.build.validation.IStatus.StatusType;
-import com.digiarea.closurefx.IConstants;
-import com.digiarea.closure.model.controller.dialogs.DialogFactory;
-import javafx.scene.control.Control;
-import javafx.geometry.Pos;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.control.Control;
+import javafx.scene.control.Label;
+import javafx.scene.control.TitledPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.RowConstraints;
+import javafx.scene.layout.VBox;
+
+import com.digiarea.closure.model.bind.ModelFacade;
+import com.digiarea.closure.model.controller.dialogs.DialogFactory;
+import com.digiarea.closure.model.controller.dialogs.StatusDialogController;
+import com.digiarea.closurefx.IConstants;
+import com.digiarea.closurefx.build.validation.IStatus.StatusType;
+import com.digiarea.closurefx.build.validation.Status;
 
 /**
  * FXML Controller class

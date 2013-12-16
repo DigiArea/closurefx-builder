@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import com.digiarea.closure.core.IPathResolver;
-import com.digiarea.closure.core.PathResolverFactory;
 import com.digiarea.closure.model.ClosureSoy;
 import com.digiarea.closure.model.SoyCssSchemeType;
 import com.digiarea.closure.model.SoyLocale;

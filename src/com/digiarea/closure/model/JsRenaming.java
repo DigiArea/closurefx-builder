@@ -1,22 +1,17 @@
 package com.digiarea.closure.model;
 
-import com.digiarea.closure.model.Node;
-import com.digiarea.closure.model.JsVariableMap;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import com.digiarea.closure.model.JsFunctionMap;
-import com.digiarea.closure.model.JsPropertyMap;
-import com.digiarea.closure.model.JsRenamingVariablePolice;
-import com.digiarea.closure.model.JsRenamingFunctionPolice;
-import com.digiarea.closure.model.JsRenamingPropertyPolice;
-import javafx.beans.property.StringProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import com.digiarea.closure.model.visitor.VoidVisitor;
-import com.digiarea.closure.model.visitor.GenericVisitor;
-import com.dagxp.zippy.ZippyBuffer;
 import java.io.IOException;
+
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
+import com.dagxp.zippy.ZippyBuffer;
+import com.digiarea.closure.model.visitor.GenericVisitor;
+import com.digiarea.closure.model.visitor.VoidVisitor;
 
 public class JsRenaming extends Node {
 

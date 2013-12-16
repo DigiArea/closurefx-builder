@@ -1,14 +1,15 @@
 package com.digiarea.closure.preferences.model;
 
-import com.digiarea.closure.preferences.model.ClosureLibrary;
+import java.util.ArrayList;
+import java.util.List;
+
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
-import java.util.ArrayList;
 import javafx.collections.FXCollections;
-import java.util.List;
-import com.digiarea.closure.preferences.model.visitor.VoidVisitor;
-import com.digiarea.closure.preferences.model.visitor.GenericVisitor;
+
 import com.digiarea.closure.preferences.model.visitor.CloneVisitor;
+import com.digiarea.closure.preferences.model.visitor.GenericVisitor;
+import com.digiarea.closure.preferences.model.visitor.VoidVisitor;
 
 public class ClosureLibraries {
 

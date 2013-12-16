@@ -1,40 +1,43 @@
 package com.digiarea.closure.model.controller;
 
-import java.util.*;
-import javafx.geometry.*;
-import javafx.scene.*;
-import javafx.scene.control.*;
-import javafx.scene.layout.*;
-import com.digiarea.closure.model.controller.ClosureController;
-import javafx.fxml.Initializable;
-import com.digiarea.closure.model.bind.ModelFacade;
-import java.util.ResourceBundle;
-import com.digiarea.closure.model.SoyLocale;
-import javafx.scene.control.ListView;
-import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Button;
+import java.io.File;
 import java.net.URL;
-import javafx.event.ActionEvent;
-import com.digiarea.closure.model.controller.dialogs.PlaceholderDialogController;
-import com.digiarea.closure.model.entity.MessagePlaceholder;
 import java.util.Arrays;
-import com.digiarea.closurefx.ResourceUtils;
+import java.util.ResourceBundle;
+
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.geometry.HPos;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.control.Control;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TitledPane;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.RowConstraints;
+import javafx.scene.layout.VBox;
+import javafx.util.Callback;
+
+import com.digiarea.closure.model.SoyLocale;
+import com.digiarea.closure.model.bind.ModelFacade;
 import com.digiarea.closure.model.controller.dialogs.DialogFactory;
 import com.digiarea.closure.model.controller.dialogs.FolderDialogController;
-import com.digiarea.closurefx.IConstants;
-import com.digiarea.closurefx.build.validation.IStatus.StatusType;
-import java.io.File;
-import com.digiarea.closure.model.controller.UIUtils;
 import com.digiarea.closure.model.controller.dialogs.LocaleDialogController;
-import javafx.collections.ObservableList;
-import javafx.scene.control.ListCell;
-import javafx.util.Callback;
-import javafx.scene.control.Control;
-import javafx.geometry.Pos;
-import javafx.event.EventHandler;
-import javafx.scene.layout.Priority;
-import javafx.geometry.HPos;
+import com.digiarea.closure.model.controller.dialogs.PlaceholderDialogController;
+import com.digiarea.closure.model.entity.MessagePlaceholder;
+import com.digiarea.closurefx.IConstants;
+import com.digiarea.closurefx.ResourceUtils;
+import com.digiarea.closurefx.build.validation.IStatus.StatusType;
 
 /**
  * FXML Controller class

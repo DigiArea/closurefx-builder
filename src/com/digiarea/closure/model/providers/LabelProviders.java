@@ -7,9 +7,6 @@ import com.digiarea.closure.model.JsRenamingVariablePolice;
 import com.digiarea.closure.model.LangType;
 import com.digiarea.closure.model.OptimizationType;
 import com.digiarea.closure.model.WarningType;
-import com.google.javascript.jscomp.DiagnosticGroup;
-import com.google.javascript.jscomp.DiagnosticGroups;
-import com.google.javascript.jscomp.DiagnosticType;
 
 public class LabelProviders {
 

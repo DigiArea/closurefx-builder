@@ -1,8 +1,8 @@
 package com.digiarea.closure.model.visitor;
 
-import com.digiarea.closure.model.Node;
-import com.digiarea.closure.model.visitor.VoidVisitor;
 import java.util.List;
+
+import com.digiarea.closure.model.Node;
 
 public class VoidPipeline<C> implements Runnable {
 

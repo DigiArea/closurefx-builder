@@ -33,10 +33,6 @@ public class ResourceUtils {
 			ResourceUtils.class
 					.getResourceAsStream("resources/buildpath-library.png"));
 
-	public static final Image BUILDPATH_ARCHIVE = new Image(
-			ResourceUtils.class
-					.getResourceAsStream("resources/buildpath-archive.png"));
-
 	public static final Image BUILDPATH_JS = new Image(
 			ResourceUtils.class
 					.getResourceAsStream("resources/buildpath-js.png"));

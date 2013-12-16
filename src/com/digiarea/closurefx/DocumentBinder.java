@@ -2,6 +2,12 @@ package com.digiarea.closurefx;
 
 import java.io.File;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.util.Callback;
+
 import com.digiarea.closure.model.controller.GSSLibrariesSectionController;
 import com.digiarea.closure.model.controller.GSSOutputSectionController;
 import com.digiarea.closure.model.controller.GSSRenamingSectionController;
@@ -18,12 +24,6 @@ import com.digiarea.closure.model.controller.SOYLocalizationSectionController;
 import com.digiarea.closure.model.controller.SOYOptionsSectionController;
 import com.digiarea.closure.model.controller.SOYOutputSectionController;
 import com.digiarea.closure.model.controller.SOYSourceSectionController;
-
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.util.Callback;
 
 public class DocumentBinder {
 

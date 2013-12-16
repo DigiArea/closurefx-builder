@@ -1,16 +1,16 @@
 package com.digiarea.closure.model;
 
-import com.digiarea.closure.model.Node;
-import com.digiarea.closure.model.InputFilterPattern;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
-import java.util.ArrayList;
 import javafx.collections.FXCollections;
-import java.util.List;
-import com.digiarea.closure.model.visitor.VoidVisitor;
-import com.digiarea.closure.model.visitor.GenericVisitor;
+
 import com.dagxp.zippy.ZippyBuffer;
-import java.io.IOException;
+import com.digiarea.closure.model.visitor.GenericVisitor;
+import com.digiarea.closure.model.visitor.VoidVisitor;
 
 public class IncludeInputFilter extends Node {
 

@@ -1,10 +1,11 @@
 package com.digiarea.closure.preferences.model;
 
-import javafx.beans.property.StringProperty;
 import javafx.beans.property.SimpleStringProperty;
-import com.digiarea.closure.preferences.model.visitor.VoidVisitor;
-import com.digiarea.closure.preferences.model.visitor.GenericVisitor;
+import javafx.beans.property.StringProperty;
+
 import com.digiarea.closure.preferences.model.visitor.CloneVisitor;
+import com.digiarea.closure.preferences.model.visitor.GenericVisitor;
+import com.digiarea.closure.preferences.model.visitor.VoidVisitor;
 
 public class Variable {
 

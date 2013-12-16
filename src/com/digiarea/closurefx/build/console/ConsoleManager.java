@@ -1,5 +1,6 @@
 package com.digiarea.closurefx.build.console;
 
+import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.application.Platform;
@@ -53,6 +54,15 @@ public abstract class ConsoleManager {
 			@Override
 			public void run() {
 				console.addError(error);
+			}
+		});
+	}
+
+	public void reportErrors(final List<ClosureStatus> error) {
+		Platform.runLater(new Runnable() {
+			@Override
+			public void run() {
+				console.addErrors(error);
 			}
 		});
 	}

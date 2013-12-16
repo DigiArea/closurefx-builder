@@ -1,60 +1,64 @@
 package com.digiarea.closure.model.controller;
 
-import java.util.*;
-import javafx.geometry.*;
-import javafx.scene.control.*;
-import javafx.scene.image.*;
-import javafx.scene.layout.*;
-import javafx.scene.paint.*;
-import javafx.scene.text.*;
-import com.digiarea.closure.model.controller.ClosureController;
-import javafx.fxml.Initializable;
-import com.digiarea.closure.model.controller.IConsole;
-import javafx.scene.control.Tab;
-import javafx.fxml.FXML;
-import javafx.scene.control.ProgressBar;
-import com.digiarea.closurefx.build.console.ClosureStatus;
-import javafx.scene.control.TableView;
-import com.digiarea.closurefx.build.validation.Status;
-import javafx.scene.control.ListView;
-import com.digiarea.closurefx.build.validation.IStatus;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.Label;
-import javafx.collections.ObservableList;
-import com.digiarea.closure.model.bind.ModelFacade;
-import java.util.ResourceBundle;
-import com.digiarea.closurefx.build.console.SOYConsoleManager;
 import java.net.URL;
-import com.digiarea.closurefx.IConstants;
 import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
-import com.digiarea.closure.model.providers.ConsoleCellFactory;
-import javafx.beans.value.ObservableValue;
-import javafx.util.Callback;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.scene.control.TableCell;
-import javafx.scene.image.ImageView;
-import com.digiarea.closurefx.ResourceUtils;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.TableRow;
-import com.digiarea.closure.preferences.model.bind.PreferencesSerializer;
-import com.digiarea.closure.preferences.model.Editors;
-import com.digiarea.closure.preferences.model.Editor;
-import com.digiarea.closurefx.cli.EditorLoader;
-import javafx.scene.input.MouseEvent;
-import javafx.event.EventHandler;
-import javafx.scene.control.MenuItem;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Menu;
-import javafx.stage.WindowEvent;
-import javafx.scene.control.Tooltip;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.Control;
-import javafx.scene.layout.Priority;
+import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.Control;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TabPane.TabClosingPolicy;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
+import javafx.scene.control.TableView;
+import javafx.scene.control.Tooltip;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.RowConstraints;
+import javafx.scene.layout.VBox;
+import javafx.stage.WindowEvent;
+import javafx.util.Callback;
+
+import com.digiarea.closure.model.bind.ModelFacade;
+import com.digiarea.closure.model.providers.ConsoleCellFactory;
+import com.digiarea.closure.preferences.model.Editor;
+import com.digiarea.closure.preferences.model.Editors;
+import com.digiarea.closure.preferences.model.bind.PreferencesSerializer;
+import com.digiarea.closurefx.IConstants;
+import com.digiarea.closurefx.ResourceUtils;
+import com.digiarea.closurefx.build.console.ClosureStatus;
+import com.digiarea.closurefx.build.console.SOYConsoleManager;
+import com.digiarea.closurefx.build.validation.IStatus;
+import com.digiarea.closurefx.build.validation.Status;
+import com.digiarea.closurefx.cli.EditorLoader;
 
 /**
  * FXML Controller class
@@ -416,6 +420,11 @@ public class SOYConsoleSectionController extends ClosureController implements In
     public ProgressBar getProgressBar() {
         return progressBar;
     }
+    
+	@Override
+	public void addErrors(List<ClosureStatus> error) {
+		errors.addAll(new ArrayList<ClosureStatus>(error));
+	}
 
     public void addError(ClosureStatus error) {
         errors.add(error);

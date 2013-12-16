@@ -1,17 +1,18 @@
 package com.digiarea.closure.preferences.model.bind;
 
-import com.digiarea.closure.preferences.model.visitor.VoidVisitorAdapter;
+import javafx.util.Callback;
+
 import com.digiarea.closure.preferences.model.ClosureLibraries;
-import com.digiarea.closure.preferences.model.controller.PreferenceClosureController;
 import com.digiarea.closure.preferences.model.ClosureLibrary;
 import com.digiarea.closure.preferences.model.Editor;
 import com.digiarea.closure.preferences.model.Editors;
-import com.digiarea.closure.preferences.model.controller.PreferenceEditorsController;
 import com.digiarea.closure.preferences.model.Preferences;
 import com.digiarea.closure.preferences.model.Variable;
 import com.digiarea.closure.preferences.model.Variables;
+import com.digiarea.closure.preferences.model.controller.PreferenceClosureController;
+import com.digiarea.closure.preferences.model.controller.PreferenceEditorsController;
 import com.digiarea.closure.preferences.model.controller.PreferenceVariablesController;
-import javafx.util.Callback;
+import com.digiarea.closure.preferences.model.visitor.VoidVisitorAdapter;
 
 public class Binder extends VoidVisitorAdapter<Object> {
 

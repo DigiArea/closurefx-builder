@@ -1,26 +1,26 @@
 package com.digiarea.closure.model.controller;
 
-import java.util.*;
-import javafx.scene.*;
-import javafx.scene.control.*;
-import javafx.scene.image.*;
-import javafx.scene.layout.*;
-import com.digiarea.closure.model.controller.ClosureController;
-import javafx.fxml.Initializable;
-import com.digiarea.closure.model.bind.ModelFacade;
-import java.util.ResourceBundle;
-import javafx.scene.control.Tab;
-import javafx.fxml.FXML;
 import java.net.URL;
-import javafx.scene.control.Control;
-import javafx.geometry.Side;
-import javafx.scene.control.TabPane.TabClosingPolicy;
-import com.digiarea.closure.model.controller.JSPageController;
+import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.geometry.HPos;
-import javafx.scene.layout.Priority;
+import javafx.geometry.Side;
 import javafx.geometry.VPos;
-import com.digiarea.closure.model.controller.SOYPageController;
-import com.digiarea.closure.model.controller.GSSPageController;
+import javafx.scene.control.Control;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.TabPane.TabClosingPolicy;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.RowConstraints;
+
+import com.digiarea.closure.model.bind.ModelFacade;
 
 /**
  * FXML Controller class

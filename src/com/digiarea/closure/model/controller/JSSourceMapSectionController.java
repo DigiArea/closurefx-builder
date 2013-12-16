@@ -1,32 +1,35 @@
 package com.digiarea.closure.model.controller;
 
-import java.util.*;
-import javafx.collections.*;
-import javafx.geometry.*;
-import javafx.scene.*;
-import javafx.scene.control.*;
-import javafx.scene.layout.*;
-import com.digiarea.closure.model.controller.ClosureController;
-import javafx.fxml.Initializable;
-import com.digiarea.closure.model.bind.ModelFacade;
-import java.util.ResourceBundle;
-import javafx.scene.control.TextField;
-import javafx.fxml.FXML;
-import com.digiarea.closure.model.JsSourceMapFormat;
-import javafx.scene.control.ComboBox;
+import java.io.File;
 import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.geometry.HPos;
+import javafx.geometry.Insets;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Control;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TitledPane;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.RowConstraints;
+import javafx.scene.layout.VBox;
+
+import com.digiarea.closure.model.JsSourceMapFormat;
+import com.digiarea.closure.model.bind.ModelFacade;
+import com.digiarea.closure.model.controller.dialogs.DialogFactory;
 import com.digiarea.closure.model.controller.dialogs.FolderDialogController;
 import com.digiarea.closurefx.IConstants;
-import com.digiarea.closure.model.controller.dialogs.DialogFactory;
 import com.digiarea.closurefx.build.validation.IStatus.StatusType;
-import java.io.File;
-import com.digiarea.closure.model.controller.UIUtils;
-import javafx.scene.control.Control;
-import javafx.geometry.HPos;
-import javafx.scene.layout.Priority;
-import javafx.event.EventHandler;
 
 /**
  * FXML Controller class

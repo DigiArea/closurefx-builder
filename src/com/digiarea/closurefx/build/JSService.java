@@ -96,12 +96,16 @@ public class JSService extends Service<Closure> {
 									closure.getClosureJs(), options,
 									resolver.getSources(),
 									resolver.getExterns(), pathResolver);
-							compiler.setErrorManager(new JSCErrorManager(
-									consoleManager));
+							JSCErrorManager manager = new JSCErrorManager(consoleManager);
+							compiler.setErrorManager(manager);
 							compiler.setResourceBundle(bundle);
 							com.google.javascript.jscomp.Compiler
 									.setLoggingLevel(Level.SEVERE);
 							compiler.build();
+							//final error reporting
+							consoleManager.reportErrors(manager
+									.getErrorStatuses());
+							manager.clear();
 							if (IConstants.IS_TRIAL) {
 								Platform.runLater(new Runnable() {
 									@Override

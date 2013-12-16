@@ -1,13 +1,11 @@
 package com.digiarea.closure.preferences.model;
 
-import com.digiarea.closure.preferences.model.Editors;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import com.digiarea.closure.preferences.model.Variables;
-import com.digiarea.closure.preferences.model.ClosureLibraries;
-import com.digiarea.closure.preferences.model.visitor.VoidVisitor;
-import com.digiarea.closure.preferences.model.visitor.GenericVisitor;
+
 import com.digiarea.closure.preferences.model.visitor.CloneVisitor;
+import com.digiarea.closure.preferences.model.visitor.GenericVisitor;
+import com.digiarea.closure.preferences.model.visitor.VoidVisitor;
 
 public class Preferences {
 

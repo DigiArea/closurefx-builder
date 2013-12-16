@@ -1,43 +1,38 @@
 package com.digiarea.closure.model.controller;
 
-import java.util.*;
-import javafx.geometry.*;
-import javafx.scene.*;
-import javafx.scene.control.*;
-import javafx.scene.image.*;
-import javafx.scene.layout.*;
-import com.digiarea.closure.model.controller.ClosureController;
-import javafx.fxml.Initializable;
-import com.digiarea.closure.model.bind.ModelFacade;
-import java.util.ResourceBundle;
-import javafx.scene.control.TabPane;
-import javafx.fxml.FXML;
-import javafx.scene.control.Tab;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.SplitMenuButton;
-import javafx.scene.control.Label;
 import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
-import javafx.scene.control.SingleSelectionModel;
-import javafx.scene.control.Control;
-import javafx.geometry.Pos;
-import javafx.scene.control.ContentDisplay;
 import javafx.event.EventHandler;
-import javafx.scene.layout.Priority;
-import javafx.scene.control.TabPane.TabClosingPolicy;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.geometry.VPos;
-import com.digiarea.closure.model.controller.GSSInfoSectionController;
-import com.digiarea.closure.model.controller.GSSCopySectionController;
-import com.digiarea.closure.model.controller.GSSVendorSectionController;
-import com.digiarea.closure.model.controller.GSSFormattingSectionController;
-import com.digiarea.closure.model.controller.GSSDefinesSectionController;
-import com.digiarea.closure.model.controller.GSSSourceSectionController;
-import com.digiarea.closure.model.controller.GSSOrderSectionController;
-import com.digiarea.closure.model.controller.GSSLibrariesSectionController;
-import com.digiarea.closure.model.controller.GSSOutputSectionController;
-import com.digiarea.closure.model.controller.GSSRenamingSectionController;
-import com.digiarea.closure.model.controller.GSSLintingSectionController;
-import com.digiarea.closure.model.controller.GSSConsoleSectionController;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.Control;
+import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.SingleSelectionModel;
+import javafx.scene.control.SplitMenuButton;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.TabPane.TabClosingPolicy;
+import javafx.scene.control.Tooltip;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.RowConstraints;
+import javafx.scene.layout.VBox;
+
+import com.digiarea.closure.model.bind.ModelFacade;
 
 /**
  * FXML Controller class

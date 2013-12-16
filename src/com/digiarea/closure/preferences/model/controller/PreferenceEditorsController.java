@@ -1,35 +1,36 @@
 package com.digiarea.closure.preferences.model.controller;
 
-import com.digiarea.closure.preferences.model.controller.ClosurePreferencesController;
-import javafx.fxml.Initializable;
-import com.digiarea.closure.preferences.model.bind.ModelFacade;
-import java.util.ResourceBundle;
-import com.digiarea.closure.preferences.model.Editor;
-import javafx.scene.control.TableView;
-import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
+import java.io.File;
 import java.net.URL;
-import javafx.scene.control.SelectionMode;
-import javafx.scene.control.ToggleGroup;
+import java.util.ResourceBundle;
+
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.scene.layout.Pane;
-import javafx.util.Callback;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.scene.control.TableCell;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
-import com.digiarea.closurefx.cli.EditorLoader;
-import javafx.scene.control.Tooltip;
-import javafx.scene.paint.Color;
-import javafx.scene.text.FontPosture;
-import javafx.scene.text.Font;
-import javafx.scene.control.Button;
-import com.digiarea.closurefx.IConstants;
 import javafx.event.EventHandler;
-import java.io.File;
-import com.digiarea.closure.model.controller.UIUtils;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.Tooltip;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.util.Callback;
+
+import com.digiarea.closure.model.controller.UIUtils;
+import com.digiarea.closure.preferences.model.Editor;
+import com.digiarea.closure.preferences.model.bind.ModelFacade;
+import com.digiarea.closurefx.IConstants;
+import com.digiarea.closurefx.cli.EditorLoader;
 
 /**
  * FXML Controller class

@@ -1,8 +1,9 @@
 package com.digiarea.closure.model.controller;
 
 import java.io.File;
-import javafx.stage.FileChooser;
+
 import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 
 public class UIUtils {
 

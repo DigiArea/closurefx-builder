@@ -1,32 +1,37 @@
 package com.digiarea.closure.model.controller;
 
-import java.util.*;
-import javafx.geometry.*;
-import javafx.scene.*;
-import javafx.scene.control.*;
-import javafx.scene.layout.*;
-import com.digiarea.closure.model.controller.ClosureController;
-import javafx.fxml.Initializable;
-import com.digiarea.closure.model.bind.ModelFacade;
-import java.util.ResourceBundle;
-import com.digiarea.closure.model.JsDefine;
-import javafx.scene.control.TableView;
-import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import com.digiarea.closure.model.JsDefineType;
 import java.net.URL;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.event.EventHandler;
-import javafx.event.ActionEvent;
-import javafx.collections.ObservableList;
-import javafx.scene.control.TableCell;
-import javafx.util.Callback;
-import com.digiarea.closure.model.providers.ComboboxTableCell;
-import javafx.scene.control.TextField;
+import java.util.ResourceBundle;
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.scene.control.Button;
 import javafx.scene.control.Control;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TitledPane;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.RowConstraints;
+import javafx.util.Callback;
+
+import com.digiarea.closure.model.JsDefine;
+import com.digiarea.closure.model.JsDefineType;
+import com.digiarea.closure.model.bind.ModelFacade;
+import com.digiarea.closure.model.providers.ComboboxTableCell;
 
 /**
  * FXML Controller class

@@ -1,31 +1,17 @@
 package com.digiarea.closure.model;
 
-import com.digiarea.closure.model.Node;
-import com.digiarea.closure.model.Info;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import com.digiarea.closure.model.Buildpath;
-import com.digiarea.closure.model.Output;
-import javafx.beans.property.StringProperty;
-import javafx.beans.property.SimpleStringProperty;
-import com.digiarea.closure.model.GssDefines;
-import com.digiarea.closure.model.GssNonStandardFunctions;
-import com.digiarea.closure.model.GssUnrecognizeProperties;
-import com.digiarea.closure.model.GssAtRules;
-import com.digiarea.closure.model.GssExcludedClasses;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import com.digiarea.closure.model.GssRenamingType;
-import com.digiarea.closure.model.GssVendor;
-import com.digiarea.closure.model.GssOutputRenamingMapFormat;
-import com.digiarea.closure.model.GssOptimizationLevel;
-import com.digiarea.closure.model.GssOutputFormat;
-import com.digiarea.closure.model.GssInputOrientation;
-import com.digiarea.closure.model.GssOutputOrientation;
-import com.digiarea.closure.model.visitor.VoidVisitor;
-import com.digiarea.closure.model.visitor.GenericVisitor;
-import com.dagxp.zippy.ZippyBuffer;
 import java.io.IOException;
+
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
+import com.dagxp.zippy.ZippyBuffer;
+import com.digiarea.closure.model.visitor.GenericVisitor;
+import com.digiarea.closure.model.visitor.VoidVisitor;
 
 public class ClosureGss extends Node {
 

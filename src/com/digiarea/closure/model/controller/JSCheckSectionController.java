@@ -1,40 +1,46 @@
 package com.digiarea.closure.model.controller;
 
-import java.util.*;
-import javafx.geometry.*;
-import javafx.scene.*;
-import javafx.scene.control.*;
-import javafx.scene.image.*;
-import javafx.scene.layout.*;
-import com.digiarea.closure.model.controller.ClosureController;
-import javafx.fxml.Initializable;
-import com.digiarea.closure.model.bind.ModelFacade;
-import java.util.ResourceBundle;
-import javafx.scene.control.ToggleGroup;
-import javafx.fxml.FXML;
-import com.digiarea.closure.model.Check;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TableColumn;
-import com.digiarea.closure.model.Optimization;
-import javafx.scene.control.ToggleButton;
 import java.net.URL;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.TableCell;
-import javafx.util.Callback;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ContentDisplay;
+import java.util.ResourceBundle;
+
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.beans.property.SimpleStringProperty;
-import com.digiarea.closure.model.providers.LabelProviders;
-import javafx.scene.control.Tooltip;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Control;
-import javafx.scene.layout.Priority;
-import javafx.geometry.Pos;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.geometry.HPos;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.geometry.VPos;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.Control;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TitledPane;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.Tooltip;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.RowConstraints;
+import javafx.scene.layout.VBox;
+import javafx.util.Callback;
+
+import com.digiarea.closure.model.Check;
+import com.digiarea.closure.model.Optimization;
+import com.digiarea.closure.model.bind.ModelFacade;
+import com.digiarea.closure.model.providers.LabelProviders;
 
 /**
  * FXML Controller class

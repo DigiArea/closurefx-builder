@@ -15,11 +15,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import com.digiarea.closure.model.controller.UIUtils;
-import com.digiarea.closure.model.entity.OutputPlaceholder;
 import com.digiarea.closure.preferences.model.ClosureLibraries;
 import com.digiarea.closure.preferences.model.ClosureLibrary;
-import com.digiarea.closure.preferences.model.Variable;
-import com.digiarea.closure.preferences.model.Variables;
 import com.digiarea.closurefx.IConstants;
 import com.digiarea.closurefx.build.validation.IStatus;
 import com.digiarea.closurefx.build.validation.Status;

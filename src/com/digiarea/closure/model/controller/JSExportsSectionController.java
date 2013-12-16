@@ -1,33 +1,36 @@
 package com.digiarea.closure.model.controller;
 
-import java.util.*;
-import javafx.geometry.*;
-import javafx.scene.*;
-import javafx.scene.control.*;
-import javafx.scene.layout.*;
-import com.digiarea.closure.model.controller.ClosureController;
-import javafx.fxml.Initializable;
-import com.digiarea.closure.model.bind.ModelFacade;
-import java.util.ResourceBundle;
-import javafx.scene.control.CheckBox;
-import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Button;
+import java.io.File;
 import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.geometry.HPos;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.Control;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TitledPane;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.RowConstraints;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.TextAlignment;
+
+import com.digiarea.closure.model.bind.ModelFacade;
+import com.digiarea.closure.model.controller.dialogs.DialogFactory;
 import com.digiarea.closure.model.controller.dialogs.FolderDialogController;
 import com.digiarea.closurefx.IConstants;
-import com.digiarea.closure.model.controller.dialogs.DialogFactory;
 import com.digiarea.closurefx.build.validation.IStatus.StatusType;
-import java.io.File;
-import com.digiarea.closure.model.controller.UIUtils;
-import javafx.scene.control.Control;
-import javafx.geometry.Pos;
-import javafx.scene.layout.Priority;
-import javafx.scene.control.ContentDisplay;
-import javafx.event.EventHandler;
-import javafx.scene.text.TextAlignment;
-import javafx.geometry.HPos;
 
 /**
  * FXML Controller class

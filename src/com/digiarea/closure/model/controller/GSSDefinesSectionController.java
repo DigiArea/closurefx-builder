@@ -1,31 +1,35 @@
 package com.digiarea.closure.model.controller;
 
-import java.util.*;
-import javafx.collections.*;
-import javafx.geometry.*;
-import javafx.scene.*;
-import javafx.scene.control.*;
-import javafx.scene.layout.*;
-import com.digiarea.closure.model.controller.ClosureController;
-import javafx.fxml.Initializable;
-import com.digiarea.closure.model.bind.ModelFacade;
-import java.util.ResourceBundle;
-import com.digiarea.closure.model.GssDefine;
-import javafx.scene.control.ListView;
-import javafx.fxml.FXML;
 import java.net.URL;
-import javafx.event.ActionEvent;
-import javafx.collections.ObservableList;
-import javafx.scene.control.ListCell;
-import javafx.util.Callback;
-import javafx.scene.control.TextField;
+import java.util.ResourceBundle;
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.scene.control.Control;
-import javafx.geometry.HPos;
-import javafx.scene.layout.Priority;
-import javafx.geometry.Pos;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.geometry.HPos;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.control.Control;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TitledPane;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.RowConstraints;
+import javafx.util.Callback;
+
+import com.digiarea.closure.model.GssDefine;
+import com.digiarea.closure.model.bind.ModelFacade;
 
 /**
  * FXML Controller class

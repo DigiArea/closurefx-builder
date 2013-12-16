@@ -1,17 +1,14 @@
 package com.digiarea.closure.model.visitor;
 
-import com.digiarea.closure.model.visitor.VoidVisitor;
 import com.digiarea.closure.model.Buildpath;
-import com.digiarea.closure.model.Source;
 import com.digiarea.closure.model.Check;
-import com.digiarea.closure.model.Checks;
 import com.digiarea.closure.model.CheckType;
+import com.digiarea.closure.model.Checks;
 import com.digiarea.closure.model.Closure;
 import com.digiarea.closure.model.ClosureGss;
 import com.digiarea.closure.model.ClosureJs;
 import com.digiarea.closure.model.ClosureSoy;
 import com.digiarea.closure.model.ExcludeInputFilter;
-import com.digiarea.closure.model.InputFilterPattern;
 import com.digiarea.closure.model.GssAtRule;
 import com.digiarea.closure.model.GssAtRules;
 import com.digiarea.closure.model.GssDefine;
@@ -31,10 +28,11 @@ import com.digiarea.closure.model.GssUnrecognizeProperty;
 import com.digiarea.closure.model.GssVendor;
 import com.digiarea.closure.model.IncludeInputFilter;
 import com.digiarea.closure.model.Info;
+import com.digiarea.closure.model.InputFilterPattern;
 import com.digiarea.closure.model.InputFilterType;
 import com.digiarea.closure.model.JsDefine;
-import com.digiarea.closure.model.JsDefines;
 import com.digiarea.closure.model.JsDefineType;
+import com.digiarea.closure.model.JsDefines;
 import com.digiarea.closure.model.JsDoc;
 import com.digiarea.closure.model.JsDocs;
 import com.digiarea.closure.model.JsFunctionMap;
@@ -48,10 +46,11 @@ import com.digiarea.closure.model.JsVariableMap;
 import com.digiarea.closure.model.LangType;
 import com.digiarea.closure.model.Language;
 import com.digiarea.closure.model.Optimization;
-import com.digiarea.closure.model.Optimizations;
 import com.digiarea.closure.model.OptimizationType;
+import com.digiarea.closure.model.Optimizations;
 import com.digiarea.closure.model.Output;
 import com.digiarea.closure.model.SeverityType;
+import com.digiarea.closure.model.Source;
 import com.digiarea.closure.model.SourceEntity;
 import com.digiarea.closure.model.SourceEntry;
 import com.digiarea.closure.model.SoyCodeStyle;
@@ -59,8 +58,8 @@ import com.digiarea.closure.model.SoyCssSchemeType;
 import com.digiarea.closure.model.SoyLocale;
 import com.digiarea.closure.model.SoyLocales;
 import com.digiarea.closure.model.Warning;
-import com.digiarea.closure.model.Warnings;
 import com.digiarea.closure.model.WarningType;
+import com.digiarea.closure.model.Warnings;
 
 public class VoidVisitorAdapter<C> implements VoidVisitor<C> {
 
@@ -552,6 +551,7 @@ public class VoidVisitorAdapter<C> implements VoidVisitor<C> {
                 }
             }
         }
+        
     }
 
     @Override

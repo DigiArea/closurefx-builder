@@ -1,7 +1,8 @@
 package com.digiarea.closure.preferences.model.controller;
 
-import com.digiarea.closure.preferences.model.bind.ModelFacade;
 import java.util.ResourceBundle;
+
+import com.digiarea.closure.preferences.model.bind.ModelFacade;
 
 public abstract class ClosurePreferencesController {
 

@@ -1,5 +1,9 @@
 package com.digiarea.closurefx.build.compiler;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.digiarea.closurefx.build.console.ClosureStatus;
 import com.digiarea.closurefx.build.console.ConsoleManager;
 import com.digiarea.closurefx.build.console.JSCClosureStatus;
 import com.digiarea.closurefx.build.validation.IStatus.StatusType;
@@ -10,17 +14,27 @@ import com.google.javascript.jscomp.JSError;
 public class JSCErrorManager implements ErrorManager {
 
 	private ConsoleManager consoleManager;
+	private List<ClosureStatus> errors;
 
 	public JSCErrorManager(ConsoleManager consoleManager) {
 		this.consoleManager = consoleManager;
+		this.errors = new ArrayList<ClosureStatus>();
 	}
 
 	public void report(CheckLevel level, JSError error) {
 		if (error != null) {
-			consoleManager.reportError(new JSCClosureStatus(mapSeverity(level),
+			errors.add(new JSCClosureStatus(mapSeverity(level),
 					error.description, error.lineNumber, error.sourceName,
 					error.getType()));
 		}
+	}
+
+	public List<ClosureStatus> getErrorStatuses() {
+		return errors;
+	}
+
+	public void clear() {
+		errors = null;
 	}
 
 	private StatusType mapSeverity(CheckLevel level) {

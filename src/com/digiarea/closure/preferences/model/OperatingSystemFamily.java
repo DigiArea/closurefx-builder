@@ -1,7 +1,7 @@
 package com.digiarea.closure.preferences.model;
 
-import com.digiarea.closure.preferences.model.visitor.VoidVisitor;
 import com.digiarea.closure.preferences.model.visitor.GenericVisitor;
+import com.digiarea.closure.preferences.model.visitor.VoidVisitor;
 
 public enum OperatingSystemFamily {
 

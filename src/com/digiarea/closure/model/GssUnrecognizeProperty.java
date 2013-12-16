@@ -1,12 +1,13 @@
 package com.digiarea.closure.model;
 
-import com.digiarea.closure.model.Node;
-import javafx.beans.property.StringProperty;
-import javafx.beans.property.SimpleStringProperty;
-import com.digiarea.closure.model.visitor.VoidVisitor;
-import com.digiarea.closure.model.visitor.GenericVisitor;
-import com.dagxp.zippy.ZippyBuffer;
 import java.io.IOException;
+
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
+import com.dagxp.zippy.ZippyBuffer;
+import com.digiarea.closure.model.visitor.GenericVisitor;
+import com.digiarea.closure.model.visitor.VoidVisitor;
 
 public class GssUnrecognizeProperty extends Node {
 

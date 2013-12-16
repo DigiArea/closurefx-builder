@@ -1,12 +1,13 @@
 package com.digiarea.closure.preferences.model.bind;
 
+import java.util.ResourceBundle;
+
 import javafx.util.Callback;
+
+import com.digiarea.closure.preferences.model.controller.PreferenceClosureController;
+import com.digiarea.closure.preferences.model.controller.PreferenceEditorsController;
 import com.digiarea.closure.preferences.model.controller.PreferenceVariablesController;
 import com.digiarea.closure.preferences.model.controller.PreferencesController;
-import com.digiarea.closure.preferences.model.controller.PreferenceEditorsController;
-import com.digiarea.closure.preferences.model.controller.PreferenceClosureController;
-import com.digiarea.closure.preferences.model.bind.ModelFacade;
-import java.util.ResourceBundle;
 
 public class ControllerFactory implements Callback<Class<?>, Object> {
 

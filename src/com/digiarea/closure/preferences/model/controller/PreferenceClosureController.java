@@ -1,29 +1,29 @@
 package com.digiarea.closure.preferences.model.controller;
 
-import com.digiarea.closure.preferences.model.controller.ClosurePreferencesController;
-import javafx.fxml.Initializable;
-import com.digiarea.closure.preferences.model.bind.ModelFacade;
-import java.util.ResourceBundle;
-import com.digiarea.closure.preferences.model.ClosureLibrary;
-import javafx.scene.control.TableView;
-import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
+import java.io.File;
 import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableCell;
-import javafx.util.Callback;
-import javafx.beans.value.ObservableValue;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.event.ActionEvent;
-import com.digiarea.closure.preferences.model.controller.dialogs.AddClosureLibraryDialogController;
-import com.digiarea.closure.preferences.model.controller.PreferencesFactory;
-import com.digiarea.closurefx.build.validation.IStatus.StatusType;
-import javafx.collections.ObservableList;
-import java.io.File;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.Tooltip;
 import javafx.scene.paint.Color;
-import javafx.scene.text.FontPosture;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.util.Callback;
+
+import com.digiarea.closure.preferences.model.ClosureLibrary;
+import com.digiarea.closure.preferences.model.bind.ModelFacade;
+import com.digiarea.closure.preferences.model.controller.dialogs.AddClosureLibraryDialogController;
+import com.digiarea.closurefx.build.validation.IStatus.StatusType;
 
 /**
  * FXML Controller class

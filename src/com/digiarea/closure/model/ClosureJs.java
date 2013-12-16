@@ -1,27 +1,17 @@
 package com.digiarea.closure.model;
 
-import com.digiarea.closure.model.Node;
-import com.digiarea.closure.model.Info;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import com.digiarea.closure.model.Buildpath;
-import com.digiarea.closure.model.Output;
-import javafx.beans.property.StringProperty;
-import javafx.beans.property.SimpleStringProperty;
-import com.digiarea.closure.model.Warnings;
-import com.digiarea.closure.model.Checks;
-import com.digiarea.closure.model.Optimizations;
-import com.digiarea.closure.model.JsDocs;
-import com.digiarea.closure.model.Language;
-import com.digiarea.closure.model.JsDefines;
-import com.digiarea.closure.model.JsRenaming;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import com.digiarea.closure.model.JsSourceMapFormat;
-import com.digiarea.closure.model.visitor.VoidVisitor;
-import com.digiarea.closure.model.visitor.GenericVisitor;
-import com.dagxp.zippy.ZippyBuffer;
 import java.io.IOException;
+
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
+import com.dagxp.zippy.ZippyBuffer;
+import com.digiarea.closure.model.visitor.GenericVisitor;
+import com.digiarea.closure.model.visitor.VoidVisitor;
 
 public class ClosureJs extends Node {
 

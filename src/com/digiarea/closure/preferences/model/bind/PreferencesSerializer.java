@@ -42,7 +42,7 @@ public class PreferencesSerializer {
 	public ClosureLibrary readLibrary(String name) {
 		ClosureLibraries libraries = readLibraries();
 		for (ClosureLibrary closureLibrary : libraries.getLibraries()) {
-			if (closureLibrary.getName().equals(name)) {
+			if (closureLibrary.getPlaceholder().equals(name)) {
 				return closureLibrary;
 			}
 		}

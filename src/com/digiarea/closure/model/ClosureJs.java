@@ -102,7 +102,9 @@ public class ClosureJs extends Node {
     }
 
     public final void setInfo(Info info) {
-        info.parent = this;
+        if (info != null) {
+            info.parent = this;
+        }
         this.info.set(info);
     }
 
@@ -111,7 +113,9 @@ public class ClosureJs extends Node {
     }
 
     public final void setBuildpath(Buildpath buildpath) {
-        buildpath.parent = this;
+        if (buildpath != null) {
+            buildpath.parent = this;
+        }
         this.buildpath.set(buildpath);
     }
 
@@ -120,7 +124,9 @@ public class ClosureJs extends Node {
     }
 
     public final void setOutput(Output output) {
-        output.parent = this;
+        if (output != null) {
+            output.parent = this;
+        }
         this.output.set(output);
     }
 
@@ -137,7 +143,9 @@ public class ClosureJs extends Node {
     }
 
     public final void setWarnings(Warnings warnings) {
-        warnings.parent = this;
+        if (warnings != null) {
+            warnings.parent = this;
+        }
         this.warnings.set(warnings);
     }
 
@@ -146,7 +154,9 @@ public class ClosureJs extends Node {
     }
 
     public final void setChecks(Checks checks) {
-        checks.parent = this;
+        if (checks != null) {
+            checks.parent = this;
+        }
         this.checks.set(checks);
     }
 
@@ -155,7 +165,9 @@ public class ClosureJs extends Node {
     }
 
     public final void setOptimizations(Optimizations optimizations) {
-        optimizations.parent = this;
+        if (optimizations != null) {
+            optimizations.parent = this;
+        }
         this.optimizations.set(optimizations);
     }
 
@@ -164,7 +176,9 @@ public class ClosureJs extends Node {
     }
 
     public final void setJsDocs(JsDocs jsDocs) {
-        jsDocs.parent = this;
+        if (jsDocs != null) {
+            jsDocs.parent = this;
+        }
         this.jsDocs.set(jsDocs);
     }
 
@@ -173,7 +187,9 @@ public class ClosureJs extends Node {
     }
 
     public final void setLanguage(Language language) {
-        language.parent = this;
+        if (language != null) {
+            language.parent = this;
+        }
         this.language.set(language);
     }
 
@@ -182,7 +198,9 @@ public class ClosureJs extends Node {
     }
 
     public final void setJsDefines(JsDefines jsDefines) {
-        jsDefines.parent = this;
+        if (jsDefines != null) {
+            jsDefines.parent = this;
+        }
         this.jsDefines.set(jsDefines);
     }
 
@@ -191,7 +209,9 @@ public class ClosureJs extends Node {
     }
 
     public final void setRenaming(JsRenaming renaming) {
-        renaming.parent = this;
+        if (renaming != null) {
+            renaming.parent = this;
+        }
         this.renaming.set(renaming);
     }
 

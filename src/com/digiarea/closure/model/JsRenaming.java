@@ -57,7 +57,9 @@ public class JsRenaming extends Node {
     }
 
     public final void setVariableMap(JsVariableMap variableMap) {
-        variableMap.parent = this;
+        if (variableMap != null) {
+            variableMap.parent = this;
+        }
         this.variableMap.set(variableMap);
     }
 
@@ -66,7 +68,9 @@ public class JsRenaming extends Node {
     }
 
     public final void setFunctionMap(JsFunctionMap functionMap) {
-        functionMap.parent = this;
+        if (functionMap != null) {
+            functionMap.parent = this;
+        }
         this.functionMap.set(functionMap);
     }
 
@@ -75,7 +79,9 @@ public class JsRenaming extends Node {
     }
 
     public final void setPropertyMap(JsPropertyMap propertyMap) {
-        propertyMap.parent = this;
+        if (propertyMap != null) {
+            propertyMap.parent = this;
+        }
         this.propertyMap.set(propertyMap);
     }
 

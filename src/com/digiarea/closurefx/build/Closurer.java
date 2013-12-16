@@ -189,9 +189,9 @@ public class Closurer extends VoidVisitorAdapter<Object> {
 		// we manage optimization first because other options can modify
 		// skipAllPasses to be evaluated
 		// we skip all passes when it is true or checks is empty list
-		if (n.isSkipAllPasses()) {
+		if (!n.isDevmode() && n.isSkipAllPasses()) {
 			jsOptions.setSkipAllPasses(n.isSkipAllPasses());
-		} else if (n.isFunctionsOnly()) {
+		} else if (!n.isDevmode() && n.isFunctionsOnly()) {
 			jsOptions.setNameAnonymousFunctionsOnly(n.isFunctionsOnly());
 		} else {
 			if ((n.getChecks() == null || n.getChecks().getCheck().isEmpty()

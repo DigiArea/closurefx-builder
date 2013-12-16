@@ -19,7 +19,9 @@ public class GssNonStandardFunctions extends Node {
     public boolean addGssNonStandardFunction(GssNonStandardFunction gssNonStandardFunction) {
         boolean res = getGssNonStandardFunction().add(gssNonStandardFunction);
         if (res) {
-            gssNonStandardFunction.parent = this;
+            if (gssNonStandardFunction != null) {
+                gssNonStandardFunction.parent = this;
+            }
         }
         return res;
     }
@@ -27,7 +29,9 @@ public class GssNonStandardFunctions extends Node {
     public boolean removeGssNonStandardFunction(GssNonStandardFunction gssNonStandardFunction) {
         boolean res = getGssNonStandardFunction().remove(gssNonStandardFunction);
         if (res) {
-            gssNonStandardFunction.parent = this;
+            if (gssNonStandardFunction != null) {
+                gssNonStandardFunction.parent = this;
+            }
         }
         return res;
     }
@@ -37,8 +41,10 @@ public class GssNonStandardFunctions extends Node {
     }
 
     public final void setGssNonStandardFunction(List<GssNonStandardFunction> gssNonStandardFunction) {
-        for (GssNonStandardFunction item : gssNonStandardFunction) {
-            item.parent = this;
+        if (gssNonStandardFunction != null) {
+            for (GssNonStandardFunction item : gssNonStandardFunction) {
+                item.parent = this;
+            }
         }
         this.gssNonStandardFunction.addAll(gssNonStandardFunction);
     }

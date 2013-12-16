@@ -19,7 +19,9 @@ public class GssAtRules extends Node {
     public boolean addGssAtRule(GssAtRule gssAtRule) {
         boolean res = getGssAtRule().add(gssAtRule);
         if (res) {
-            gssAtRule.parent = this;
+            if (gssAtRule != null) {
+                gssAtRule.parent = this;
+            }
         }
         return res;
     }
@@ -27,7 +29,9 @@ public class GssAtRules extends Node {
     public boolean removeGssAtRule(GssAtRule gssAtRule) {
         boolean res = getGssAtRule().remove(gssAtRule);
         if (res) {
-            gssAtRule.parent = this;
+            if (gssAtRule != null) {
+                gssAtRule.parent = this;
+            }
         }
         return res;
     }
@@ -37,8 +41,10 @@ public class GssAtRules extends Node {
     }
 
     public final void setGssAtRule(List<GssAtRule> gssAtRule) {
-        for (GssAtRule item : gssAtRule) {
-            item.parent = this;
+        if (gssAtRule != null) {
+            for (GssAtRule item : gssAtRule) {
+                item.parent = this;
+            }
         }
         this.gssAtRule.addAll(gssAtRule);
     }

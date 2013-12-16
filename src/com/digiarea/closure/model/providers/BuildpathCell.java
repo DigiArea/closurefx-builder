@@ -13,6 +13,8 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
 
 import com.digiarea.closure.core.IPathResolver;
 import com.digiarea.closure.model.Source;
@@ -176,6 +178,10 @@ public class BuildpathCell extends ListCell<Source> implements IConstants {
 					break;
 				case PROJECT:
 					classes.add(CSS_BUILDPATH_PROJECT);
+					label.setText("- not supported");
+					setTooltip(new Tooltip("Projects are not supported by Closure FX Builder."));
+					label.setTextFill(Color.RED);
+					label.setFont(Font.font("Arial", FontPosture.ITALIC, 11));
 					break;
 				case SOURCE:
 					if (!exist) {

@@ -24,7 +24,9 @@ public class Closure extends Node {
     }
 
     public final void setClosureJs(ClosureJs closureJs) {
-        closureJs.parent = this;
+        if (closureJs != null) {
+            closureJs.parent = this;
+        }
         this.closureJs.set(closureJs);
     }
 
@@ -33,7 +35,9 @@ public class Closure extends Node {
     }
 
     public final void setClosureGss(ClosureGss closureGss) {
-        closureGss.parent = this;
+        if (closureGss != null) {
+            closureGss.parent = this;
+        }
         this.closureGss.set(closureGss);
     }
 
@@ -42,7 +46,9 @@ public class Closure extends Node {
     }
 
     public final void setClosureSoy(ClosureSoy closureSoy) {
-        closureSoy.parent = this;
+        if (closureSoy != null) {
+            closureSoy.parent = this;
+        }
         this.closureSoy.set(closureSoy);
     }
 

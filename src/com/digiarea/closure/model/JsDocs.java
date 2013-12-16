@@ -19,7 +19,9 @@ public class JsDocs extends Node {
     public boolean addJsDoc(JsDoc jsDoc) {
         boolean res = getJsDoc().add(jsDoc);
         if (res) {
-            jsDoc.parent = this;
+            if (jsDoc != null) {
+                jsDoc.parent = this;
+            }
         }
         return res;
     }
@@ -27,7 +29,9 @@ public class JsDocs extends Node {
     public boolean removeJsDoc(JsDoc jsDoc) {
         boolean res = getJsDoc().remove(jsDoc);
         if (res) {
-            jsDoc.parent = this;
+            if (jsDoc != null) {
+                jsDoc.parent = this;
+            }
         }
         return res;
     }
@@ -37,8 +41,10 @@ public class JsDocs extends Node {
     }
 
     public final void setJsDoc(List<JsDoc> jsDoc) {
-        for (JsDoc item : jsDoc) {
-            item.parent = this;
+        if (jsDoc != null) {
+            for (JsDoc item : jsDoc) {
+                item.parent = this;
+            }
         }
         this.jsDoc.addAll(jsDoc);
     }

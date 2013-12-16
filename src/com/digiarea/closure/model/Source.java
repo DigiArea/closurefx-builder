@@ -39,7 +39,9 @@ public class Source extends Node {
     }
 
     public final void setExcluded(ExcludeInputFilter excluded) {
-        excluded.parent = this;
+        if (excluded != null) {
+            excluded.parent = this;
+        }
         this.excluded.set(excluded);
     }
 
@@ -48,7 +50,9 @@ public class Source extends Node {
     }
 
     public final void setIncluded(IncludeInputFilter included) {
-        included.parent = this;
+        if (included != null) {
+            included.parent = this;
+        }
         this.included.set(included);
     }
 

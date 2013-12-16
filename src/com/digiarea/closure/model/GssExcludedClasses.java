@@ -19,7 +19,9 @@ public class GssExcludedClasses extends Node {
     public boolean addGssExcludedClass(GssExcludedClass gssExcludedClass) {
         boolean res = getGssExcludedClass().add(gssExcludedClass);
         if (res) {
-            gssExcludedClass.parent = this;
+            if (gssExcludedClass != null) {
+                gssExcludedClass.parent = this;
+            }
         }
         return res;
     }
@@ -27,7 +29,9 @@ public class GssExcludedClasses extends Node {
     public boolean removeGssExcludedClass(GssExcludedClass gssExcludedClass) {
         boolean res = getGssExcludedClass().remove(gssExcludedClass);
         if (res) {
-            gssExcludedClass.parent = this;
+            if (gssExcludedClass != null) {
+                gssExcludedClass.parent = this;
+            }
         }
         return res;
     }
@@ -37,8 +41,10 @@ public class GssExcludedClasses extends Node {
     }
 
     public final void setGssExcludedClass(List<GssExcludedClass> gssExcludedClass) {
-        for (GssExcludedClass item : gssExcludedClass) {
-            item.parent = this;
+        if (gssExcludedClass != null) {
+            for (GssExcludedClass item : gssExcludedClass) {
+                item.parent = this;
+            }
         }
         this.gssExcludedClass.addAll(gssExcludedClass);
     }

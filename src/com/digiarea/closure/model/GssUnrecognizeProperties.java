@@ -19,7 +19,9 @@ public class GssUnrecognizeProperties extends Node {
     public boolean addGssUnrecognizeProperty(GssUnrecognizeProperty gssUnrecognizeProperty) {
         boolean res = getGssUnrecognizeProperty().add(gssUnrecognizeProperty);
         if (res) {
-            gssUnrecognizeProperty.parent = this;
+            if (gssUnrecognizeProperty != null) {
+                gssUnrecognizeProperty.parent = this;
+            }
         }
         return res;
     }
@@ -27,7 +29,9 @@ public class GssUnrecognizeProperties extends Node {
     public boolean removeGssUnrecognizeProperty(GssUnrecognizeProperty gssUnrecognizeProperty) {
         boolean res = getGssUnrecognizeProperty().remove(gssUnrecognizeProperty);
         if (res) {
-            gssUnrecognizeProperty.parent = this;
+            if (gssUnrecognizeProperty != null) {
+                gssUnrecognizeProperty.parent = this;
+            }
         }
         return res;
     }
@@ -37,8 +41,10 @@ public class GssUnrecognizeProperties extends Node {
     }
 
     public final void setGssUnrecognizeProperty(List<GssUnrecognizeProperty> gssUnrecognizeProperty) {
-        for (GssUnrecognizeProperty item : gssUnrecognizeProperty) {
-            item.parent = this;
+        if (gssUnrecognizeProperty != null) {
+            for (GssUnrecognizeProperty item : gssUnrecognizeProperty) {
+                item.parent = this;
+            }
         }
         this.gssUnrecognizeProperty.addAll(gssUnrecognizeProperty);
     }

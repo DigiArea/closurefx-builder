@@ -64,7 +64,9 @@ public class ClosureSoy extends Node {
     }
 
     public final void setInfo(Info info) {
-        info.parent = this;
+        if (info != null) {
+            info.parent = this;
+        }
         this.info.set(info);
     }
 
@@ -73,7 +75,9 @@ public class ClosureSoy extends Node {
     }
 
     public final void setBuildpath(Buildpath buildpath) {
-        buildpath.parent = this;
+        if (buildpath != null) {
+            buildpath.parent = this;
+        }
         this.buildpath.set(buildpath);
     }
 
@@ -82,7 +86,9 @@ public class ClosureSoy extends Node {
     }
 
     public final void setSoyLocales(SoyLocales soyLocales) {
-        soyLocales.parent = this;
+        if (soyLocales != null) {
+            soyLocales.parent = this;
+        }
         this.soyLocales.set(soyLocales);
     }
 

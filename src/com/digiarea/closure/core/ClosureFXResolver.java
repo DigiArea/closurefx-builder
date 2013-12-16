@@ -15,20 +15,29 @@ public class ClosureFXResolver implements IPathResolver {
 	 * path to .closure file.
 	 * */
 	private String basePath;
+	private File rootFile;
 
 	public ClosureFXResolver(String basePath) {
 		this.basePath = basePath;
 	}
 
+	public File getRootFile() {
+		if (rootFile == null && basePath != null) {
+			rootFile = new File(basePath).getParentFile().getParentFile();
+		}
+		return rootFile;
+	}
+
 	@Override
 	public void setBasePath(String path) {
 		this.basePath = path;
+		this.rootFile = null;
 	}
 
 	public String getBasePath() {
 		return basePath;
 	}
-	
+
 	@Override
 	public String toRealPath(String input) {
 		String path = input;
@@ -49,13 +58,14 @@ public class ClosureFXResolver implements IPathResolver {
 			if (closureLibraries != null
 					&& !closureLibraries.getLibraries().isEmpty()) {
 				for (ClosureLibrary var : closureLibraries.getLibraries()) {
-					if (path.contains(var.getName())) {
-						path = path.replace(var.getName(), var.getPath());
+					if (path.contains(var.getPlaceholder())) {
+						path = path
+								.replace(var.getPlaceholder(), var.getPath());
 					}
 				}
 			}
 			if (basePath != null && !basePath.isEmpty()) {
-				File a = new File(basePath).getParentFile();
+				File a = getRootFile();
 				File b = new File(a, path);
 				if (!new Path(path).isAbsolute()) {
 					try {
@@ -72,8 +82,8 @@ public class ClosureFXResolver implements IPathResolver {
 	@Override
 	public String toRelativePath(String input) {
 		if (basePath != null && input != null) {
-			return new File(basePath).getParentFile().toURI()
-					.relativize(new File(input).toURI()).getPath();
+			return getRootFile().toURI().relativize(new File(input).toURI())
+					.getPath();
 		}
 		return input;
 	}

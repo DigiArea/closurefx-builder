@@ -19,7 +19,9 @@ public class Warnings extends Node {
     public boolean addWarning(Warning warning) {
         boolean res = getWarning().add(warning);
         if (res) {
-            warning.parent = this;
+            if (warning != null) {
+                warning.parent = this;
+            }
         }
         return res;
     }
@@ -27,7 +29,9 @@ public class Warnings extends Node {
     public boolean removeWarning(Warning warning) {
         boolean res = getWarning().remove(warning);
         if (res) {
-            warning.parent = this;
+            if (warning != null) {
+                warning.parent = this;
+            }
         }
         return res;
     }
@@ -37,8 +41,10 @@ public class Warnings extends Node {
     }
 
     public final void setWarning(List<Warning> warning) {
-        for (Warning item : warning) {
-            item.parent = this;
+        if (warning != null) {
+            for (Warning item : warning) {
+                item.parent = this;
+            }
         }
         this.warning.addAll(warning);
     }

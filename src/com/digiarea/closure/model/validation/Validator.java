@@ -888,7 +888,6 @@ public class Validator extends VoidVisitorAdapter<Object> {
 	}
 
 	private boolean validate(Source n, Object ctx) {
-		System.out.println("HELLO: " + pathResolver.getBasePath());
 		if (n.getPath() != null) {
 			if (!new File(pathResolver.toRealPath(n.getPath())).exists()) {
 				return false;

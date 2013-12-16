@@ -88,7 +88,7 @@ public class JSLibrariesSectionController extends ClosureController implements I
     private void handleAddClosureButtonAction(ActionEvent event) {
         SelectClosureDialogController controller = DialogFactory.getSelectClosureDialog(bundle, bundle.getString(IConstants.PreferencesClosure_Select));
         if (controller.getStatus().getSeverity() == StatusType.OK) {
-            modelFacade.addJSSourceClosure(controller.getClosureLibrary().getName(), true, true, false);
+            modelFacade.addJSSourceClosure(controller.getClosureLibrary().getPlaceholder(), true, true, false);
         }
     }
 

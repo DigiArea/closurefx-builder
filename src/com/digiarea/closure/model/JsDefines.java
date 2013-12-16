@@ -19,7 +19,9 @@ public class JsDefines extends Node {
     public boolean addJsDefine(JsDefine jsDefine) {
         boolean res = getJsDefine().add(jsDefine);
         if (res) {
-            jsDefine.parent = this;
+            if (jsDefine != null) {
+                jsDefine.parent = this;
+            }
         }
         return res;
     }
@@ -27,7 +29,9 @@ public class JsDefines extends Node {
     public boolean removeJsDefine(JsDefine jsDefine) {
         boolean res = getJsDefine().remove(jsDefine);
         if (res) {
-            jsDefine.parent = this;
+            if (jsDefine != null) {
+                jsDefine.parent = this;
+            }
         }
         return res;
     }
@@ -37,8 +41,10 @@ public class JsDefines extends Node {
     }
 
     public final void setJsDefine(List<JsDefine> jsDefine) {
-        for (JsDefine item : jsDefine) {
-            item.parent = this;
+        if (jsDefine != null) {
+            for (JsDefine item : jsDefine) {
+                item.parent = this;
+            }
         }
         this.jsDefine.addAll(jsDefine);
     }

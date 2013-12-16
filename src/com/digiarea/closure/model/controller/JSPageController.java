@@ -1,49 +1,39 @@
 package com.digiarea.closure.model.controller;
 
-import java.net.*;
-import java.util.*;
-import javafx.geometry.*;
-import javafx.scene.*;
-import javafx.scene.control.*;
-import javafx.scene.image.*;
-import javafx.scene.layout.*;
-import com.digiarea.closure.model.controller.ClosureController;
-import javafx.fxml.Initializable;
-import com.digiarea.closure.model.bind.ModelFacade;
-import java.util.ResourceBundle;
-import javafx.scene.control.TabPane;
-import javafx.fxml.FXML;
-import javafx.scene.control.Tab;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.SplitMenuButton;
-import javafx.scene.control.Label;
 import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
-import javafx.scene.control.SingleSelectionModel;
-import javafx.scene.control.Control;
-import javafx.scene.layout.Priority;
-import javafx.geometry.Pos;
-import javafx.scene.control.ContentDisplay;
 import javafx.event.EventHandler;
-import javafx.scene.control.TabPane.TabClosingPolicy;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.geometry.VPos;
-import com.digiarea.closure.model.controller.JSInfoSectionController;
-import com.digiarea.closure.model.controller.JSHelperSectionController;
-import com.digiarea.closure.model.controller.JSExportsSectionController;
-import com.digiarea.closure.model.controller.JSFormattingSectionController;
-import com.digiarea.closure.model.controller.JSLanguageSectionController;
-import com.digiarea.closure.model.controller.JSSourceSectionController;
-import com.digiarea.closure.model.controller.JSOrderSectionController;
-import com.digiarea.closure.model.controller.JSLibrariesSectionController;
-import com.digiarea.closure.model.controller.JSOutputSectionController;
-import com.digiarea.closure.model.controller.JSWarningsSectionController;
-import com.digiarea.closure.model.controller.JSCheckSectionController;
-import com.digiarea.closure.model.controller.JSRenamingSectionController;
-import com.digiarea.closure.model.controller.JSSourceMapSectionController;
-import com.digiarea.closure.model.controller.JSDefinesSectionController;
-import com.digiarea.closure.model.controller.JSTranslationSectionController;
-import com.digiarea.closure.model.controller.JSDocsSectionController;
-import com.digiarea.closure.model.controller.JSConsoleSectionController;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.Control;
+import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.SingleSelectionModel;
+import javafx.scene.control.SplitMenuButton;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.TabPane.TabClosingPolicy;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.Tooltip;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.RowConstraints;
+import javafx.scene.layout.VBox;
+
+import com.digiarea.closure.model.bind.ModelFacade;
 
 /**
  * Compiler Tab Controller class.
@@ -64,6 +54,9 @@ public class JSPageController extends ClosureController implements Initializable
 
     @FXML
     private CheckBox controlBuild;
+    
+    @FXML
+    private ToggleButton controlDevMode;
 
     @FXML
     private SplitMenuButton btnRun;
@@ -108,6 +101,10 @@ public class JSPageController extends ClosureController implements Initializable
     public CheckBox getControlBuild() {
         return controlBuild;
     }
+    
+    public ToggleButton getControlDevMode() {
+		return controlDevMode;
+	}
 
     public Label getLabelMessageError() {
         return labelMessageError;
@@ -187,6 +184,27 @@ public class JSPageController extends ClosureController implements Initializable
         tooltip14.setText("Empty Tooltip");
         labelMessageError.setTooltip(tooltip14);
         compilerTitleBox.getChildren().add(labelMessageError);
+        ImageView imageView30 = new ImageView();
+        imageView30.setFitHeight(16.0);
+        imageView30.setFitWidth(16.0);
+        imageView30.setMouseTransparent(true);
+        imageView30.setPickOnBounds(true);
+        imageView30.setPreserveRatio(true);
+        imageView30.setSmooth(true);
+        Image image30 = new Image(getClass().getResource("/com/digiarea/closurefx/resources/gear.png").openStream());
+        imageView30.setImage(image30);
+        controlDevMode = new ToggleButton();
+        controlDevMode.setId("devMode");
+        controlDevMode.setGraphic(imageView30);
+        controlDevMode.setAlignment(Pos.CENTER_RIGHT);
+        //controlDevMode.setContentDisplay(ContentDisplay.RIGHT);
+        controlDevMode.setDisable(false);
+        controlDevMode.setMnemonicParsing(false);
+       controlDevMode.getStyleClass().add("activate_devmode");
+        //controlDevMode.setText(bundle.getString("ClosureActivate_Compiler"));
+        GridPane.setColumnIndex(controlDevMode, 3);
+        GridPane.setRowIndex(controlDevMode, 0);
+        compilerTitleBox.getChildren().add(controlDevMode);
         controlBuild = new CheckBox();
         controlBuild.setId("btnActivate");
         controlBuild.setAlignment(Pos.CENTER_RIGHT);
@@ -195,7 +213,7 @@ public class JSPageController extends ClosureController implements Initializable
         controlBuild.setMnemonicParsing(false);
         controlBuild.getStyleClass().add("activate_checkbox");
         controlBuild.setText(bundle.getString("ClosureActivate_Compiler"));
-        GridPane.setColumnIndex(controlBuild, 4);
+        GridPane.setColumnIndex(controlBuild, 5);
         GridPane.setRowIndex(controlBuild, 0);
         compilerTitleBox.getChildren().add(controlBuild);
         btnRun = new SplitMenuButton();
@@ -211,7 +229,7 @@ public class JSPageController extends ClosureController implements Initializable
         });
         btnRun.getStyleClass().add("activate_split-menu-button");
         btnRun.setText(bundle.getString("ClosureMenu_RunCompiler"));
-        GridPane.setColumnIndex(btnRun, 3);
+        GridPane.setColumnIndex(btnRun, 4);
         GridPane.setRowIndex(btnRun, 0);
         ImageView imageView28 = new ImageView();
         imageView28.setFitHeight(16.0);

@@ -19,7 +19,9 @@ public class SoyLocales extends Node {
     public boolean addSoyLocale(SoyLocale soyLocale) {
         boolean res = getSoyLocale().add(soyLocale);
         if (res) {
-            soyLocale.parent = this;
+            if (soyLocale != null) {
+                soyLocale.parent = this;
+            }
         }
         return res;
     }
@@ -27,7 +29,9 @@ public class SoyLocales extends Node {
     public boolean removeSoyLocale(SoyLocale soyLocale) {
         boolean res = getSoyLocale().remove(soyLocale);
         if (res) {
-            soyLocale.parent = this;
+            if (soyLocale != null) {
+                soyLocale.parent = this;
+            }
         }
         return res;
     }
@@ -37,8 +41,10 @@ public class SoyLocales extends Node {
     }
 
     public final void setSoyLocale(List<SoyLocale> soyLocale) {
-        for (SoyLocale item : soyLocale) {
-            item.parent = this;
+        if (soyLocale != null) {
+            for (SoyLocale item : soyLocale) {
+                item.parent = this;
+            }
         }
         this.soyLocale.addAll(soyLocale);
     }

@@ -19,7 +19,9 @@ public class Checks extends Node {
     public boolean addCheck(Check check) {
         boolean res = getCheck().add(check);
         if (res) {
-            check.parent = this;
+            if (check != null) {
+                check.parent = this;
+            }
         }
         return res;
     }
@@ -27,7 +29,9 @@ public class Checks extends Node {
     public boolean removeCheck(Check check) {
         boolean res = getCheck().remove(check);
         if (res) {
-            check.parent = this;
+            if (check != null) {
+                check.parent = this;
+            }
         }
         return res;
     }
@@ -37,8 +41,10 @@ public class Checks extends Node {
     }
 
     public final void setCheck(List<Check> check) {
-        for (Check item : check) {
-            item.parent = this;
+        if (check != null) {
+            for (Check item : check) {
+                item.parent = this;
+            }
         }
         this.check.addAll(check);
     }

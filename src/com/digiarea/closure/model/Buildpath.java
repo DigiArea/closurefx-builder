@@ -19,7 +19,9 @@ public class Buildpath extends Node {
     public boolean addSource(Source source) {
         boolean res = getSource().add(source);
         if (res) {
-            source.parent = this;
+            if (source != null) {
+                source.parent = this;
+            }
         }
         return res;
     }
@@ -27,7 +29,9 @@ public class Buildpath extends Node {
     public boolean removeSource(Source source) {
         boolean res = getSource().remove(source);
         if (res) {
-            source.parent = this;
+            if (source != null) {
+                source.parent = this;
+            }
         }
         return res;
     }
@@ -37,8 +41,10 @@ public class Buildpath extends Node {
     }
 
     public final void setSource(List<Source> source) {
-        for (Source item : source) {
-            item.parent = this;
+        if (source != null) {
+            for (Source item : source) {
+                item.parent = this;
+            }
         }
         this.source.addAll(source);
     }

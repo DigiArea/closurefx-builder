@@ -19,7 +19,9 @@ public class IncludeInputFilter extends Node {
     public boolean addPattern(InputFilterPattern pattern) {
         boolean res = getPattern().add(pattern);
         if (res) {
-            pattern.parent = this;
+            if (pattern != null) {
+                pattern.parent = this;
+            }
         }
         return res;
     }
@@ -27,7 +29,9 @@ public class IncludeInputFilter extends Node {
     public boolean removePattern(InputFilterPattern pattern) {
         boolean res = getPattern().remove(pattern);
         if (res) {
-            pattern.parent = this;
+            if (pattern != null) {
+                pattern.parent = this;
+            }
         }
         return res;
     }
@@ -37,8 +41,10 @@ public class IncludeInputFilter extends Node {
     }
 
     public final void setPattern(List<InputFilterPattern> pattern) {
-        for (InputFilterPattern item : pattern) {
-            item.parent = this;
+        if (pattern != null) {
+            for (InputFilterPattern item : pattern) {
+                item.parent = this;
+            }
         }
         this.pattern.addAll(pattern);
     }

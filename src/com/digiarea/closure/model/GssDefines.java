@@ -19,7 +19,9 @@ public class GssDefines extends Node {
     public boolean addGssDefine(GssDefine gssDefine) {
         boolean res = getGssDefine().add(gssDefine);
         if (res) {
-            gssDefine.parent = this;
+            if (gssDefine != null) {
+                gssDefine.parent = this;
+            }
         }
         return res;
     }
@@ -27,7 +29,9 @@ public class GssDefines extends Node {
     public boolean removeGssDefine(GssDefine gssDefine) {
         boolean res = getGssDefine().remove(gssDefine);
         if (res) {
-            gssDefine.parent = this;
+            if (gssDefine != null) {
+                gssDefine.parent = this;
+            }
         }
         return res;
     }
@@ -37,8 +41,10 @@ public class GssDefines extends Node {
     }
 
     public final void setGssDefine(List<GssDefine> gssDefine) {
-        for (GssDefine item : gssDefine) {
-            item.parent = this;
+        if (gssDefine != null) {
+            for (GssDefine item : gssDefine) {
+                item.parent = this;
+            }
         }
         this.gssDefine.addAll(gssDefine);
     }

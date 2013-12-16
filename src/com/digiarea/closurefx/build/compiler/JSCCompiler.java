@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -18,6 +19,7 @@ import com.google.common.io.Files;
 import com.google.javascript.jscomp.CommandLineRunner;
 import com.google.javascript.jscomp.Compiler;
 import com.google.javascript.jscomp.CompilerOptions;
+import com.google.javascript.jscomp.JSModule;
 import com.google.javascript.jscomp.Result;
 import com.google.javascript.jscomp.SourceFile;
 
@@ -117,11 +119,25 @@ public class JSCCompiler extends Compiler {
 			}
 		}
 
-		build(units, unitExterns);
+		if (closureJs.isDevmode()) {
+			devBuild(units, unitExterns);
+		} else {
+			build(units, unitExterns);
+		}
 	}
 
 	private Charset getCharset(String charset) {
 		return Charset.forName(charset);
+	}
+
+	private void devBuild(List<SourceFile> sources, List<SourceFile> externs) {
+		JSModule module = new JSModule("DevMode Module");
+		for (SourceFile sourceFile : sources) {
+			module.add(sourceFile);
+		}
+		initModules(externs, Arrays.asList(module), options);
+		parse();
+		check();
 	}
 
 	/**
@@ -140,7 +156,7 @@ public class JSCCompiler extends Compiler {
 						closureJs.getOutput().getFile()).toString());
 				if (realPath != null) {
 					File file = new File(realPath);
-					if(file.exists()){
+					if (file.exists()) {
 						file.delete();
 					}
 					try {

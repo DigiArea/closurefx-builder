@@ -19,7 +19,9 @@ public class Optimizations extends Node {
     public boolean addOptimization(Optimization optimization) {
         boolean res = getOptimization().add(optimization);
         if (res) {
-            optimization.parent = this;
+            if (optimization != null) {
+                optimization.parent = this;
+            }
         }
         return res;
     }
@@ -27,7 +29,9 @@ public class Optimizations extends Node {
     public boolean removeOptimization(Optimization optimization) {
         boolean res = getOptimization().remove(optimization);
         if (res) {
-            optimization.parent = this;
+            if (optimization != null) {
+                optimization.parent = this;
+            }
         }
         return res;
     }
@@ -37,8 +41,10 @@ public class Optimizations extends Node {
     }
 
     public final void setOptimization(List<Optimization> optimization) {
-        for (Optimization item : optimization) {
-            item.parent = this;
+        if (optimization != null) {
+            for (Optimization item : optimization) {
+                item.parent = this;
+            }
         }
         this.optimization.addAll(optimization);
     }

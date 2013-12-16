@@ -76,7 +76,9 @@ public class ClosureGss extends Node {
     }
 
     public final void setInfo(Info info) {
-        info.parent = this;
+        if (info != null) {
+            info.parent = this;
+        }
         this.info.set(info);
     }
 
@@ -85,7 +87,9 @@ public class ClosureGss extends Node {
     }
 
     public final void setBuildpath(Buildpath buildpath) {
-        buildpath.parent = this;
+        if (buildpath != null) {
+            buildpath.parent = this;
+        }
         this.buildpath.set(buildpath);
     }
 
@@ -94,7 +98,9 @@ public class ClosureGss extends Node {
     }
 
     public final void setOutput(Output output) {
-        output.parent = this;
+        if (output != null) {
+            output.parent = this;
+        }
         this.output.set(output);
     }
 
@@ -111,7 +117,9 @@ public class ClosureGss extends Node {
     }
 
     public final void setGssDefines(GssDefines gssDefines) {
-        gssDefines.parent = this;
+        if (gssDefines != null) {
+            gssDefines.parent = this;
+        }
         this.gssDefines.set(gssDefines);
     }
 
@@ -120,7 +128,9 @@ public class ClosureGss extends Node {
     }
 
     public final void setGssNonStandardFunctions(GssNonStandardFunctions gssNonStandardFunctions) {
-        gssNonStandardFunctions.parent = this;
+        if (gssNonStandardFunctions != null) {
+            gssNonStandardFunctions.parent = this;
+        }
         this.gssNonStandardFunctions.set(gssNonStandardFunctions);
     }
 
@@ -129,7 +139,9 @@ public class ClosureGss extends Node {
     }
 
     public final void setGssUnrecognizeProperties(GssUnrecognizeProperties gssUnrecognizeProperties) {
-        gssUnrecognizeProperties.parent = this;
+        if (gssUnrecognizeProperties != null) {
+            gssUnrecognizeProperties.parent = this;
+        }
         this.gssUnrecognizeProperties.set(gssUnrecognizeProperties);
     }
 
@@ -138,7 +150,9 @@ public class ClosureGss extends Node {
     }
 
     public final void setGssAtRules(GssAtRules gssAtRules) {
-        gssAtRules.parent = this;
+        if (gssAtRules != null) {
+            gssAtRules.parent = this;
+        }
         this.gssAtRules.set(gssAtRules);
     }
 
@@ -147,7 +161,9 @@ public class ClosureGss extends Node {
     }
 
     public final void setGssExcludedClasses(GssExcludedClasses gssExcludedClasses) {
-        gssExcludedClasses.parent = this;
+        if (gssExcludedClasses != null) {
+            gssExcludedClasses.parent = this;
+        }
         this.gssExcludedClasses.set(gssExcludedClasses);
     }
 

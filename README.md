@@ -1,6 +1,3 @@
-Closure FX Builder
-==================
-
 ![Closure FX Builder](https://lh3.googleusercontent.com/-9LcW4jwPA_M/UaB15ZMidnI/AAAAAAAABK8/a5uQ1ju3Gvg/w573-h131-no/ClosureFXLogo.png)
 
 Closure FX Builder is an open-source web development toolkit powered by [Google Closure Tools](https://developers.google.com/closure/) that allows you to minify, obfuscate and debug JavaScript code, dynamically build reusable HTML with Closure Templates and compile Google Stylesheets. 

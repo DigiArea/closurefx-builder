@@ -19,9 +19,9 @@ import com.google.javascript.jscomp.JSError;
 public class JSCPrintStreamErrorManager extends PrintStreamConsole implements
 		ErrorManager {
 
-	public JSCPrintStreamErrorManager(PrintStream stream,
-			IStatusFormatter formatter) {
-		super(stream, formatter);
+	public JSCPrintStreamErrorManager(PrintStream errorStream,
+			PrintStream messageStream, IStatusFormatter formatter) {
+		super(errorStream, messageStream, formatter);
 	}
 
 	@Override

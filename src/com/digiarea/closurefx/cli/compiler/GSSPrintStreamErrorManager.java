@@ -17,9 +17,9 @@ import com.google.common.css.compiler.ast.GssError;
 public class GSSPrintStreamErrorManager extends PrintStreamConsole implements
 		com.google.common.css.compiler.ast.ErrorManager {
 
-	public GSSPrintStreamErrorManager(PrintStream stream,
-			IStatusFormatter formatter) {
-		super(stream, formatter);
+	public GSSPrintStreamErrorManager(PrintStream errorStream,
+			PrintStream messageStream, IStatusFormatter formatter) {
+		super(errorStream, messageStream, formatter);
 	}
 
 	@Override

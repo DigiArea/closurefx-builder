@@ -10,16 +10,33 @@ import com.digiarea.closurefx.build.validation.IStatusFormatter;
 
 public class PrintStreamConsole extends AbstractCliConsole {
 
-	private PrintStream stream;
+	private PrintStream errorStream;
+	private PrintStream messageStream;
 	private boolean isLazy = false;
 
-	public PrintStreamConsole(PrintStream stream, IStatusFormatter formatter) {
+	public PrintStreamConsole(PrintStream errorStream,
+			PrintStream messageStream, IStatusFormatter formatter) {
 		super(new HashMap<StatusType, List<IStatus>>(), formatter);
-		this.stream = stream;
+		this.errorStream = errorStream;
+		this.messageStream = messageStream;
 	}
 
 	public void reportMessage(IStatus status) {
-		stream.println(formatter.format(status));
+		switch (status.getSeverity()) {
+		case CANCEL:
+		case NO:
+		case DEFAULT:
+		case ERROR:
+			errorStream.println(formatter.format(status));
+			break;
+		case WARNING:
+		case INFO:
+		case OFF:
+		case OK:
+			messageStream.println(formatter.format(status));
+			break;
+		}
+
 	}
 
 	@Override
@@ -27,7 +44,7 @@ public class PrintStreamConsole extends AbstractCliConsole {
 		for (StatusType type : errors.keySet()) {
 			List<IStatus> status = errors.get(type);
 			for (IStatus iStatus : status) {
-				stream.println(formatter.format(iStatus));
+				reportMessage(iStatus);
 			}
 		}
 	}

@@ -19,9 +19,9 @@ import com.google.template.soy.base.SoySyntaxException;
  */
 public class SOYPrintStreamErrorManager extends PrintStreamConsole {
 
-	public SOYPrintStreamErrorManager(PrintStream stream,
-			IStatusFormatter formatter) {
-		super(stream, formatter);
+	public SOYPrintStreamErrorManager(PrintStream errorStream,
+			PrintStream messageStream, IStatusFormatter formatter) {
+		super(errorStream, messageStream, formatter);
 	}
 
 	public void report(SoySyntaxException error) {

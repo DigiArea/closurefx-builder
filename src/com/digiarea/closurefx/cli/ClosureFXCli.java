@@ -72,7 +72,7 @@ public class ClosureFXCli {
 
 	private void runGSS(Closure closure, JobDescriptionBuilder options) {
 		GSSPrintStreamErrorManager manager = new GSSPrintStreamErrorManager(
-				System.out, new ClosureStatusFormatter());
+				System.err, System.out,new ClosureStatusFormatter());
 
 		if (ClosureModelManager.canBuild(closure.getClosureJs())) {
 			try {
@@ -106,7 +106,7 @@ public class ClosureFXCli {
 
 	private void runSOY(Closure closure, SoyJsSrcOptions options) {
 		SOYPrintStreamErrorManager manager = new SOYPrintStreamErrorManager(
-				System.out, new ClosureStatusFormatter());
+				System.err, System.out,new ClosureStatusFormatter());
 
 		if (ClosureModelManager.canBuild(closure.getClosureJs())) {
 			try {
@@ -144,7 +144,7 @@ public class ClosureFXCli {
 
 	private void runJS(Closure closure, CompilerOptions options) {
 		JSCPrintStreamErrorManager manager = new JSCPrintStreamErrorManager(
-				System.out, new ClosureStatusFormatter());
+				System.err, System.out,new ClosureStatusFormatter());
 
 		if (ClosureModelManager.canBuild(closure.getClosureJs())) {
 			try {

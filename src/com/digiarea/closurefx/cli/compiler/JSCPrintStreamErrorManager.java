@@ -3,8 +3,8 @@ package com.digiarea.closurefx.cli.compiler;
 import java.io.PrintStream;
 
 import com.digiarea.closurefx.build.console.ClosureStatus;
-import com.digiarea.closurefx.build.validation.IStatusFormatter;
 import com.digiarea.closurefx.build.validation.IStatus.StatusType;
+import com.digiarea.closurefx.build.validation.IStatusFormatter;
 import com.digiarea.closurefx.cli.console.PrintStreamConsole;
 import com.google.javascript.jscomp.CheckLevel;
 import com.google.javascript.jscomp.ErrorManager;

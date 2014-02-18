@@ -2,9 +2,9 @@ package com.digiarea.closure.model;
 
 import java.io.IOException;
 
-import com.dagxp.zippy.ZippyBuffer;
 import com.digiarea.closure.model.visitor.GenericVisitor;
 import com.digiarea.closure.model.visitor.VoidVisitor;
+import com.digiarea.zippy.ZippyBuffer;
 
 public enum GssOutputRenamingMapFormat {
 

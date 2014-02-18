@@ -8,9 +8,9 @@ import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 
-import com.dagxp.zippy.ZippyBuffer;
 import com.digiarea.closure.model.visitor.GenericVisitor;
 import com.digiarea.closure.model.visitor.VoidVisitor;
+import com.digiarea.zippy.ZippyBuffer;
 
 public class SoyLocales extends Node {
 

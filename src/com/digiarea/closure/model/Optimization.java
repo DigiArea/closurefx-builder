@@ -7,9 +7,9 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
 
-import com.dagxp.zippy.ZippyBuffer;
 import com.digiarea.closure.model.visitor.GenericVisitor;
 import com.digiarea.closure.model.visitor.VoidVisitor;
+import com.digiarea.zippy.ZippyBuffer;
 
 public class Optimization extends Node {
 

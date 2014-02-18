@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+<?scenebuilder-preview-i18n-resource ../../../../closurefx/locale/editor_en.properties?>
+<?scenebuilder-stylesheet ../../../../closurefx/themes/default.css?>
+
+<VBox id="VBox" fx:id="container" alignment="CENTER" spacing="5.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closure.help.model.controller.HelpController">
+  <children>
+    <SplitPane fx:id="controlSplit" dividerPositions="0.10792951541850221" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <items>
+        <VBox prefHeight="-1.0" prefWidth="-1.0">
+          <children>
+            <GridPane hgap="5.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="-1.0" styleClass="dialog-buttons" VBox.vgrow="NEVER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="-1.0" />
+              </columnConstraints>
+              <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x1" />
+              </padding>
+              <rowConstraints>
+                <RowConstraints minHeight="-Infinity" prefHeight="-1.0" valignment="CENTER" vgrow="ALWAYS" />
+              </rowConstraints>
+            </GridPane>
+            <TreeView fx:id="controlTree" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS" />
+          </children>
+        </VBox>
+        <VBox prefHeight="-1.0" prefWidth="-1.0">
+          <children>
+            <GridPane hgap="5.0" maxHeight="40.0" minHeight="40.0" padding="$x1" prefHeight="40.0" prefWidth="-1.0" styleClass="dialog-buttons" VBox.vgrow="NEVER">
+              <children>
+                <HBox alignment="CENTER_RIGHT" prefHeight="-1.0" prefWidth="-1.0" spacing="5.0" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.vgrow="NEVER">
+                  <children>
+                    <Button mnemonicParsing="false" onAction="#handleBackButtonAction" text="">
+                      <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../../../../closurefx/resources/back.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%Help_Back" />
+                      </tooltip>
+                    </Button>
+                    <Button mnemonicParsing="false" onAction="#handleForwardButtonAction" text="">
+                      <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../../../../closurefx/resources/forward.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%Help_Forward" />
+                      </tooltip>
+                    </Button>
+                    <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#handleUpdateButtonAction" text="">
+                      <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../../../../closurefx/resources/update.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%FolderDialog_Desc_Update" />
+                      </tooltip>
+                    </Button>
+                    <Button mnemonicParsing="false" onAction="#handleHomeButtonAction" text="">
+                      <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../../../../closurefx/resources/home.png" />
+                          </image>
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%Help_Home" />
+                      </tooltip>
+                    </Button>
+                  </children>
+                </HBox>
+              </children>
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" minWidth="-Infinity" prefWidth="-1.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="-Infinity" prefHeight="-1.0" valignment="CENTER" vgrow="ALWAYS" />
+              </rowConstraints>
+            </GridPane>
+            <WebView fx:id="controlWebview" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+            <ProgressBar fx:id="controlProgress" maxWidth="1.7976931348623157E308" prefWidth="-1.0" progress="0.0" VBox.vgrow="NEVER" />
+          </children>
+        </VBox>
+      </items>
+    </SplitPane>
+  </children>
+</VBox>

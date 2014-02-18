@@ -84,10 +84,6 @@ public class GSSCompiler extends DefaultCommandLineCompiler {
 					new GSSExitCodeHandler(), errorManager, externs);
 			String output = compiler.execute(renameFile);
 
-			if (IConstants.IS_TRIAL) {
-				return;
-			}
-
 			String realPath = pathResolver.toRealPath(new Path(closureGss
 					.getOutput().getPath()).append(
 					closureGss.getOutput().getFile()).toString());

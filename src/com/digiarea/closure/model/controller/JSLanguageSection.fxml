@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?scenebuilder-preview-i18n-resource ../locale/editor_en.properties?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closure.model.controller.JSLanguageSectionController">
+  <children>
+    <TitledPane animated="false" collapsible="false" prefHeight="-1.0" prefWidth="-1.0" text="%JSLanguageSection" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <content>
+        <VBox prefHeight="-1.0" prefWidth="-1.0" spacing="5.0">
+          <children>
+            <Label text="%JSLanguageSection_Desc" wrapText="true" />
+            <GridPane alignment="TOP_LEFT" hgap="5.0" vgap="5.0">
+              <children>
+                <Label contentDisplay="TOP" text="%JSLanguageSection_Input" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0" />
+                <Label text="%JSLanguageSection_Output" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                <GridPane hgap="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <children>
+                    <TextField fx:id="controlCharset" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <Button mnemonicParsing="false" onAction="#handleCharsetButtonAction" text="%Button_Browse" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="-1.0" prefWidth="-1.0" />
+                    <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" prefWidth="-1.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+                  </rowConstraints>
+                </GridPane>
+                <Label alignment="CENTER_LEFT" text="%JSLanguageSection_Charset" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                <ComboBox fx:id="controlInputLanguage" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                </ComboBox>
+                <ComboBox fx:id="controlOutputLanguage" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                </ComboBox>
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" prefWidth="-1.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="-1.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <CheckBox fx:id="controlAcceptConstKeyword" mnemonicParsing="false" text="%JSLanguageSection_Const" />
+            <CheckBox fx:id="controlClosureStyle" mnemonicParsing="false" text="%JSLanguageSection_ClosureStyle" />
+            <CheckBox fx:id="controlClosurePass" mnemonicParsing="false" text="%JSLanguageSection_ClosurePrimitives" />
+            <CheckBox fx:id="controlJqueryPass" mnemonicParsing="false" text="%JSLanguageSection_JQueryPrimitives" />
+            <CheckBox fx:id="controlAngularPass" mnemonicParsing="false" text="%JSLanguageSection_AngularPrimitives" />
+          </children>
+          <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+          </padding>
+        </VBox>
+      </content>
+    </TitledPane>
+  </children>
+</AnchorPane>

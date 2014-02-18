@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?scenebuilder-preview-i18n-resource ../locale/editor_en.properties?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closure.model.controller.JSFormattingSectionController">
+  <children>
+    <TitledPane animated="false" collapsible="false" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" text="%JSFormattingSection" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <content>
+        <VBox id="VBox" alignment="TOP_LEFT" spacing="5.0">
+          <children>
+            <Label text="%JSFormattingSection_Desc" wrapText="true" />
+            <VBox id="VBox" alignment="CENTER_LEFT" spacing="5.0">
+              <children>
+                <GridPane id="GridPane" hgap="5.0" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0">
+                  <children>
+                    <CheckBox id="btnPrettyPrint" fx:id="controlPrintInputDelimeter" mnemonicParsing="false" text="%JSFormattingSection_InputDelimiter" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <TextField id="txtInputDelimiter" fx:id="controlInputDelimiter" alignment="CENTER_LEFT" editable="true" maxWidth="-1.0" minWidth="100.0" prefHeight="-1.0" prefWidth="-1.0" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                    <CheckBox id="btnPrettyPrint" fx:id="controlPrettyPrint" mnemonicParsing="false" text="%JSFormattingSection_PrettyPrint" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="NEVER" maxWidth="-1.0" minWidth="-Infinity" prefWidth="-1.0" />
+                    <ColumnConstraints hgrow="NEVER" maxWidth="-1.0" minWidth="-Infinity" prefWidth="-1.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-1.0" minWidth="-1.0" prefWidth="-1.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints minHeight="-Infinity" vgrow="NEVER" />
+                  </rowConstraints>
+                </GridPane>
+                <CheckBox id="btnLineBreaks" fx:id="controlSingleQuotes" mnemonicParsing="false" text="%JSFormattingSection_SingleQuotes" />
+                <CheckBox id="btnLineBreaks" fx:id="controlLineBreaks" mnemonicParsing="false" text="%JSFormattingSection_LineBreaks" />
+                <CheckBox id="btnAggressiveLineBreaks" fx:id="controlLineBreaksAggressive" mnemonicParsing="false" text="%JSFormattingSection_AggressiveLineBreaks" />
+              </children>
+            </VBox>
+          </children>
+          <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+          </padding>
+        </VBox>
+      </content>
+    </TitledPane>
+  </children>
+</AnchorPane>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-preview-i18n-resource ../../../../closurefx/locale/editor_en.properties?>
+<?scenebuilder-stylesheet ../../../../closurefx/themes/default.css?>
+
+<VBox id="VBox" alignment="CENTER_LEFT" minWidth="200.0" spacing="0.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closure.model.controller.dialogs.FolderDialogController">
+  <children>
+    <Label fx:id="controlStatus" text="%FolderDialog_Desc">
+      <VBox.margin>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </VBox.margin>
+    </Label>
+    <TreeView fx:id="controlTree" prefHeight="200.0" prefWidth="300.0" VBox.vgrow="ALWAYS" />
+    <GridPane alignment="CENTER_RIGHT" hgap="5.0" styleClass="dialog-buttons" VBox.vgrow="NEVER">
+      <children>
+        <Button fx:id="controlOk" maxWidth="-1.0" minWidth="50.0" mnemonicParsing="false" onAction="#handleOkButtonAction" text="%Button_Ok" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="0" />
+        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleCancelButtonAction" text="%SaveDialog_Cancel" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+        <Button mnemonicParsing="false" onAction="#handleNewButtonAction" text="" GridPane.columnIndex="0" GridPane.rowIndex="0">
+          <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../../closurefx/resources/new-folder.png" />
+              </image>
+            </ImageView>
+          </graphic>
+          <tooltip>
+            <Tooltip text="%FolderDialog_Desc_NewFolder" />
+          </tooltip>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#handleRefreshButtonAction" text="" GridPane.columnIndex="1" GridPane.rowIndex="0">
+          <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../../closurefx/resources/update.png" />
+              </image>
+            </ImageView>
+          </graphic>
+          <tooltip>
+            <Tooltip text="%FolderDialog_Desc_Update" />
+          </tooltip>
+        </Button>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" />
+        <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" />
+        <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" />
+        <ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="-Infinity" prefWidth="-1.0" />
+      </columnConstraints>
+      <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+      <rowConstraints>
+        <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+  <padding>
+    <Insets />
+  </padding>
+</VBox>

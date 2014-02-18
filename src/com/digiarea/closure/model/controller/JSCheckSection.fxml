@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?scenebuilder-preview-i18n-resource ../locale/editor_en.properties?>
+
+<AnchorPane id="AnchorPane" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closure.model.controller.JSCheckSectionController">
+  <children>
+    <TitledPane animated="false" collapsible="false" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" text="%JSChecksSection" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <content>
+        <VBox prefHeight="-1.0" prefWidth="-1.0" spacing="6.0">
+          <children>
+            <Label text="%JSChecksSection_Desc" />
+            <GridPane id="GridPane" hgap="5.0" VBox.vgrow="NEVER">
+              <children>
+                <ToggleButton fx:id="controlSkipAllPasses" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%JSChecksSection_SkipAllPasses" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                  <toggleGroup>
+                    <ToggleGroup fx:id="toggleGroup" />
+                  </toggleGroup>
+                </ToggleButton>
+                <ToggleButton fx:id="controlFunctionsOnly" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%JSChecksSection_FunctionsOnly" toggleGroup="$toggleGroup" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <ToggleButton fx:id="controlPerformCheck" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%JSChecksSection_PerformChecks" toggleGroup="$toggleGroup" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="-Infinity" vgrow="NEVER" />
+              </rowConstraints>
+            </GridPane>
+            <GridPane id="GridPane" hgap="5.0" VBox.vgrow="NEVER">
+              <children>
+                <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#handleUncheckAllChecksAction" text="" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="0">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../../../closurefx/resources/editor-uncheck.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                  <tooltip>
+                    <Tooltip text="%JSChecksSection_UncheckAll" />
+                  </tooltip>
+                </Button>
+                <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#handleCheckAllChecksAction" text="" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="0">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../../../closurefx/resources/editor-check.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                  <tooltip>
+                    <Tooltip text="%JSChecksSection_CheckAll" />
+                  </tooltip>
+                </Button>
+              </children>
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" minWidth="-Infinity" />
+                <ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="-Infinity" />
+                <ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="-Infinity" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="-Infinity" valignment="CENTER" vgrow="NEVER" />
+              </rowConstraints>
+            </GridPane>
+            <TableView fx:id="controlCheck" maxHeight="-1.0" minHeight="-1.0" prefHeight="100.0" prefWidth="-1.0" tableMenuButtonVisible="false" VBox.vgrow="ALWAYS">
+              <columns>
+                <TableColumn maxWidth="25.0" minWidth="25.0" prefWidth="25.0" text="." fx:id="conrolCheckBox" />
+                <TableColumn minWidth="100.0" prefWidth="400.0" text="%JSChecksSection_Column_Checks" visible="true" fx:id="conrolCheckDescription" />
+              </columns>
+            </TableView>
+            <GridPane id="GridPane" hgap="5.0" VBox.vgrow="NEVER">
+              <children>
+                <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#handleUncheckAllOptimizationsAction" text="" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="0">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../../../closurefx/resources/editor-uncheck.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                  <tooltip>
+                    <Tooltip text="%JSChecksSection_UncheckAll" />
+                  </tooltip>
+                </Button>
+                <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#handleCheckAllOptimizationsAction" text="" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="0">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../../../closurefx/resources/editor-check.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                  <tooltip>
+                    <Tooltip text="%JSChecksSection_CheckAll" />
+                  </tooltip>
+                </Button>
+              </children>
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" minWidth="-Infinity" />
+                <ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="-Infinity" />
+                <ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="-Infinity" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="-Infinity" valignment="CENTER" vgrow="NEVER" />
+              </rowConstraints>
+            </GridPane>
+            <TableView fx:id="controlOptimization" maxHeight="-1.0" minHeight="-1.0" prefHeight="100.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+              <columns>
+                <TableColumn maxWidth="25.0" minWidth="25.0" prefWidth="25.0" text="." fx:id="conrolOptimizationBox" />
+                <TableColumn minWidth="100.0" prefWidth="400.0" text="%JSChecksSection_Column_Optimizations" fx:id="conrolOptimizationDescription" />
+              </columns>
+            </TableView>
+          </children>
+          <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+          </padding>
+        </VBox>
+      </content>
+    </TitledPane>
+  </children>
+</AnchorPane>

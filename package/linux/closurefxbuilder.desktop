@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Closure FX Builder
+Comment=Web development toolkit powered by Google Closure Tools
+Exec=/bin/closurefxbuilder
+Icon=/usr/share/doc/closurefxbuilder/logo-256.png
+Terminal=false
+Type=Application
+Categories=GNOME;Application;Development
+StartupNotify=true

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closure.model.controller.JSRenamingSectionController">
+  <children>
+    <TitledPane animated="false" collapsible="false" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" text="%JSRenamingSection" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <content>
+        <VBox prefHeight="-1.0" prefWidth="-1.0" spacing="5.0">
+          <children>
+            <Label minHeight="-Infinity" text="%JSRenamingSection_Desc" wrapText="true" VBox.vgrow="NEVER" />
+            <CheckBox fx:id="controlRenameLabels" alignment="CENTER_LEFT" contentDisplay="RIGHT" mnemonicParsing="false" text="%JSRenamingSection_RenameLabels" textOverrun="ELLIPSIS" wrapText="true" />
+            <CheckBox id="devirtualizePrototypeMethods" fx:id="controlDevirtualizePrototypeMethods" mnemonicParsing="false" text="%JSRenamingSection_DevirtualizePrototype" wrapText="true" />
+            <CheckBox fx:id="controlGeneratePseudoNames" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="100.0" text="%JSRenamingSection_PseudoNames" wrapText="true" VBox.vgrow="ALWAYS" />
+            <CheckBox fx:id="controlExportTestFunctions" mnemonicParsing="false" text="%JSRenamingSection_ExportTest" wrapText="true" />
+            <Label text="%JSRenamingSection_Variables" />
+            <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="NEVER">
+              <children>
+                <GridPane hgap="5.0" vgap="5.0">
+                  <children>
+                    <Label text="%JSRenamingSection_RenamingPolice" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <Label text="%JSRenamingSection_InputFile" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <Label contentDisplay="RIGHT" graphicTextGap="0.0" text="%JSRenamingSection_OutputFile" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="controlVariableInput" minWidth="100.0" prefWidth="-1.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                    <ComboBox fx:id="controlVariablePolice" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" />
+                    <TextField fx:id="controlVariableOutput" minWidth="100.0" prefWidth="-1.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+                    <Button fx:id="btnVariableInput" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVariableInputButtonAction" text="%Button_Browse" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                    <Button fx:id="btnVariableOutput" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVariableOutputButtonAction" text="%Button_Browse" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+                    <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVariableInputExternalButtonAction" text="%OutputSection_Browse_External" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                    <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleVariableOutputExternalButtonAction" text="%OutputSection_Browse_External" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" percentWidth="-1.0" prefWidth="-1.0" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" percentWidth="-1.0" prefWidth="-1.0" />
+                    <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" percentWidth="-1.0" prefWidth="-1.0" />
+                    <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" />
+                  </columnConstraints>
+                  <padding>
+                    <Insets />
+                  </padding>
+                  <rowConstraints>
+                    <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+                    <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+                    <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+                  </rowConstraints>
+                </GridPane>
+                <CheckBox fx:id="controlShadowVariables" mnemonicParsing="false" text="%JSRenamingSection_VariablesShadow" wrapText="true" />
+              </children>
+              <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+              </padding>
+            </VBox>
+            <Label text="%JSRenamingSection_Properties" />
+            <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" spacing="5.0" VBox.vgrow="NEVER">
+              <children>
+                <GridPane hgap="5.0" vgap="5.0">
+                  <children>
+                    <Label text="%JSRenamingSection_RenamingPolice" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <Label text="%JSRenamingSection_InputFile" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <Label text="%JSRenamingSection_OutputFile" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="controlPropertyInput" prefWidth="-1.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                    <TextField fx:id="controlPropertyOutput" prefWidth="-1.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+                    <ComboBox fx:id="controlPropertyPolice" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" />
+                    <Button id="btnFunctionOutput" fx:id="btnFunctionInput" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handlePropertyInputButtonAction" text="%Button_Browse" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                    <Button fx:id="btnFunctionOutput" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handlePropertyOutputButtonAction" text="%Button_Browse" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+                    <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handlePropertyInputExternalButtonAction" text="%OutputSection_Browse_External" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                    <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handlePropertyOutputExternalButtonAction" text="%OutputSection_Browse_External" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" percentWidth="-1.0" prefWidth="-1.0" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" percentWidth="-1.0" prefWidth="-1.0" />
+                    <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" percentWidth="-1.0" prefWidth="-1.0" />
+                    <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" />
+                  </columnConstraints>
+                  <padding>
+                    <Insets />
+                  </padding>
+                  <rowConstraints>
+                    <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+                    <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+                    <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+                  </rowConstraints>
+                </GridPane>
+                <CheckBox fx:id="controlPropertyAffinity" contentDisplay="RIGHT" disable="false" focusTraversable="true" graphicTextGap="0.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="100.0" text="%JSRenamingSection_PropertiesAffinity" visible="true" wrapText="true" VBox.vgrow="ALWAYS" />
+                <CheckBox fx:id="controlDisambiguateProperties" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="100.0" text="%JSRenamingSection_PropertiesDisambiguate" wrapText="true" VBox.vgrow="ALWAYS" />
+                <CheckBox fx:id="controlAmbiguateProperties" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="100.0" text="%JSRenamingSection_PropertiesAmbiguate" wrapText="true" VBox.vgrow="ALWAYS" />
+              </children>
+              <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+              </padding>
+            </VBox>
+            <Label text="%JSRenamingSection_Functions" />
+            <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="NEVER">
+              <children>
+                <GridPane hgap="5.0" vgap="5.0">
+                  <children>
+                    <Label text="%JSRenamingSection_RenamingPolice" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <Label text="%JSRenamingSection_InputFile" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <Label text="%JSRenamingSection_OutputFile" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="controlFunctionInput" prefWidth="-1.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                    <TextField fx:id="controlFunctionOutput" prefWidth="-1.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+                    <ComboBox fx:id="controlFunctionPolice" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" />
+                    <Button id="btnFunctionInput" fx:id="btnPropertyInput" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleFunctionInputButtonAction" text="%Button_Browse" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                    <Button fx:id="btnPropertyOutput" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleFunctionOutputButtonAction" text="%Button_Browse" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+                    <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleFunctionInputExternalButtonAction" text="%OutputSection_Browse_External" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                    <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleFunctionOutputExternalButtonAction" text="%OutputSection_Browse_External" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" percentWidth="-1.0" prefWidth="-1.0" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" percentWidth="-1.0" prefWidth="-1.0" />
+                    <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" percentWidth="-1.0" prefWidth="-1.0" />
+                    <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" />
+                  </columnConstraints>
+                  <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </padding>
+                  <rowConstraints>
+                    <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+                    <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+                    <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+                  </rowConstraints>
+                </GridPane>
+              </children>
+            </VBox>
+          </children>
+          <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+          </padding>
+        </VBox>
+      </content>
+    </TitledPane>
+  </children>
+</AnchorPane>

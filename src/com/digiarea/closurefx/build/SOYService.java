@@ -93,21 +93,6 @@ public class SOYService extends Service<Closure> {
 									consoleManager));
 							compiler.setResourceBundle(bundle);
 							compiler.compile();
-							if (IConstants.IS_TRIAL) {
-								Platform.runLater(new Runnable() {
-									@Override
-									public void run() {
-										DialogFactory.getStatusDialog(
-												consoleManager
-														.getResourceBundle(),
-												new Status(
-														StatusType.WARNING,
-														bundle.getString(IConstants.StatusDialog_Desc_Trial),
-														null),
-												bundle.getString(IConstants.StatusDialog_Title_Trial));
-									}
-								});
-							}
 						}
 					} catch (Exception e1) {
 						e1.printStackTrace();

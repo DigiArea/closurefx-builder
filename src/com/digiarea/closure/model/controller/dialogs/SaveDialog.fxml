@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-preview-i18n-resource ../../../../closurefx/locale/editor_en.properties?>
+<?scenebuilder-stylesheet ../../../../closurefx/themes/default.css?>
+
+<VBox id="VBox" alignment="CENTER" minWidth="200.0" spacing="0.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closure.model.controller.dialogs.SaveDialogController">
+  <children>
+    <GridPane hgap="5.0" styleClass="dialog-top" VBox.vgrow="ALWAYS">
+      <children>
+        <Label id="conrolMessage" fx:id="controlMessage" text="%SaveDialog_Desc" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
+          <image>
+            <Image url="@../../../../closurefx/resources/status-big.png" />
+          </image>
+        </ImageView>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" />
+        <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="-1.0" />
+      </columnConstraints>
+      <padding>
+        <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+      </padding>
+      <rowConstraints>
+        <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="ALWAYS" />
+      </rowConstraints>
+    </GridPane>
+    <GridPane alignment="CENTER_RIGHT" hgap="5.0" styleClass="dialog-buttons" VBox.vgrow="NEVER">
+      <children>
+        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleSaveButtonAction" text="%SaveDialog_Save" GridPane.columnIndex="0" GridPane.rowIndex="0">
+          <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../../closurefx/resources/mark-off.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleDoNotSaveButtonAction" text="%SaveDialog_DoNotSave" GridPane.columnIndex="1" GridPane.rowIndex="0">
+          <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../../closurefx/resources/optimization-advanced.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleCancelButtonAction" text="%SaveDialog_Cancel" GridPane.columnIndex="2" GridPane.rowIndex="0">
+          <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../../closurefx/resources/mark-error.png" />
+              </image>
+            </ImageView>
+          </graphic>
+        </Button>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="-1.0" />
+        <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" />
+        <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" minWidth="-Infinity" prefWidth="-1.0" />
+      </columnConstraints>
+      <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+      <rowConstraints>
+        <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+  <padding>
+    <Insets />
+  </padding>
+</VBox>

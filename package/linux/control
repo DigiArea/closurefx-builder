@@ -1,0 +1,19 @@
+Section: devel
+Priority: optional
+Architecture: all
+Maintainer: DigiArea, Inc. <support@digi-area.com>
+Description: Closure FX Builder
+ Closure FX Builder is an open-source web development toolkit powered by Google Closure Tools that allows you to minify, obfuscate and debug JavaScript code, dynamically build reusable HTML with Closure Templates and compile Google Stylesheets.
+ .
+ Main features:
+ - JavaScript code Validation with dozens of checks using Closure Compiler
+ - Automatic Dependency Management with Closure Library
+ - Development Mode for faster coding
+ - JavaScript Code Minification and Optimization
+ - Integration with popular JavaScript Editors (WebStorm, Notepad++, Komodo Edit, Sublime Text, Emacs, jEdit).
+ - Console and Problems views to explore and navigate errors and warnings in your code
+ - Team friendly to work smoothly in groups
+ - Soy Templates Validation
+ - Extensive compiling tools for Google Stylesheets
+Depends: openjdk-8-jre | openjdk-7-jre | openjdk-6-jre | oracle-java8-installer | oracle-java7-installer | oracle-java6-installer
+Homepage: http://digi-area.com/ClosureFX/

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-preview-i18n-resource ../../../../closurefx/locale/editor_en.properties?>
+<?scenebuilder-stylesheet ../../../../closurefx/themes/default.css?>
+
+<GridPane id="AboutBox" minHeight="-Infinity" minWidth="-Infinity" vgap="20.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closure.model.controller.dialogs.AboutDialogController">
+  <children>
+    <TextArea fx:id="controlAbout" disable="false" editable="false" focusTraversable="false" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="500.0" text="%About_Desc" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <GridPane alignment="CENTER_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="2">
+      <children>
+        <Label alignment="CENTER_LEFT" contentDisplay="LEFT" text="© 2013 DigiArea, Inc." GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="0" />
+        <ImageView fitHeight="20.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
+          <image>
+            <Image url="@../../../../closurefx/resources/digiarea.png" />
+          </image>
+        </ImageView>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints fillWidth="false" hgrow="NEVER" minWidth="-Infinity" prefWidth="-1.0" />
+        <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="-1.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+  <columnConstraints>
+    <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" />
+  </columnConstraints>
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="100.0" />
+  </padding>
+  <rowConstraints>
+    <RowConstraints maxHeight="240.0" minHeight="-Infinity" prefHeight="240.0" vgrow="NEVER" />
+    <RowConstraints maxHeight="-1.0" minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+    <RowConstraints maxHeight="-1.0" minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+  </rowConstraints>
+</GridPane>

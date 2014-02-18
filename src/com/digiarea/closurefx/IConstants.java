@@ -2,8 +2,6 @@ package com.digiarea.closurefx;
 
 public interface IConstants {
 
-	public static Boolean IS_TRIAL = false;
-
 	public static String CLOSURE_BASE = "base.js";
 
 	public static String PACKAGE_CLOSURE = "/com/digiarea/closure";

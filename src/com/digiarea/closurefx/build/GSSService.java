@@ -92,21 +92,6 @@ public class GSSService extends Service<Closure> {
 											resolver.getSources(), resolver
 													.getExterns(), bundle,
 											pathResolver);
-							if (IConstants.IS_TRIAL) {
-								Platform.runLater(new Runnable() {
-									@Override
-									public void run() {
-										DialogFactory
-												.getStatusDialog(
-														bundle,
-														new Status(
-																StatusType.WARNING,
-																bundle.getString(IConstants.StatusDialog_Desc_Trial),
-																null),
-														bundle.getString(IConstants.StatusDialog_Title_Trial));
-									}
-								});
-							}
 						}
 					} catch (Exception e1) {
 						e1.printStackTrace();

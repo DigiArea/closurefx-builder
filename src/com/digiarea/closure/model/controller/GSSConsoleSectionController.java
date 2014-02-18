@@ -58,7 +58,7 @@ import com.digiarea.closurefx.build.console.ClosureStatus;
 import com.digiarea.closurefx.build.console.GSSConsoleManager;
 import com.digiarea.closurefx.build.validation.IStatus;
 import com.digiarea.closurefx.build.validation.Status;
-import com.digiarea.closurefx.cli.EditorLoader;
+import com.digiarea.closurefx.editors.EditorLoader;
 
 /**
  * FXML Controller class

@@ -106,21 +106,6 @@ public class JSService extends Service<Closure> {
 							consoleManager.reportErrors(manager
 									.getErrorStatuses());
 							manager.clear();
-							if (IConstants.IS_TRIAL) {
-								Platform.runLater(new Runnable() {
-									@Override
-									public void run() {
-										DialogFactory.getStatusDialog(
-												consoleManager
-														.getResourceBundle(),
-												new Status(
-														StatusType.WARNING,
-														bundle.getString(IConstants.StatusDialog_Desc_Trial),
-														null),
-												bundle.getString(IConstants.StatusDialog_Title_Trial));
-									}
-								});
-							}
 						}
 					} catch (CircularDependencyException e) {
 						consoleManager

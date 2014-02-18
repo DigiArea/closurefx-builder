@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-preview-i18n-resource ../../../../closurefx/locale/editor_en.properties?>
+<?scenebuilder-stylesheet ../../../../closurefx/themes/default.css?>
+
+<Tab closable="false" text="" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closure.preferences.model.controller.PreferenceEditorsController">
+  <content>
+    <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" spacing="6.0">
+      <children>
+        <VBox id="VBox" alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" spacing="5.0" VBox.vgrow="ALWAYS">
+          <children>
+            <Label text="%PreferencesEditors">
+              <font>
+                <Font size="17.0" />
+              </font>
+            </Label>
+            <Label text="%PreferencesEditors_Desc" />
+            <TableView fx:id="controlEditors" prefHeight="200.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+              <columns>
+                <TableColumn prefWidth="20.0" text="" fx:id="controlDefault" />
+                <TableColumn prefWidth="75.0" text="" fx:id="controlName" />
+                <TableColumn prefWidth="300.0" text="" fx:id="controlEditorPath" />
+                <TableColumn prefWidth="70.0" text="" fx:id="controlButton" />
+              </columns>
+            </TableView>
+          </children>
+          <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x1" />
+          </padding>
+        </VBox>
+        <GridPane minHeight="-Infinity" minWidth="-Infinity" padding="$x1" styleClass="dialog-buttons" VBox.vgrow="NEVER">
+          <children>
+            <Button mnemonicParsing="false" onAction="#handleApplyButtonAction" text="Apply" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="-1.0" />
+            <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" prefWidth="-1.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+          </rowConstraints>
+        </GridPane>
+      </children>
+      <padding>
+        <Insets />
+      </padding>
+    </VBox>
+  </content>
+  <graphic>
+    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../../../../closurefx/resources/preference-edit.png" />
+      </image>
+    </ImageView>
+  </graphic>
+  <tooltip>
+    <Tooltip text="%PreferencesEditors" />
+  </tooltip>
+</Tab>

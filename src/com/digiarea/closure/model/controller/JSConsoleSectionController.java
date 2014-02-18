@@ -63,7 +63,7 @@ import com.digiarea.closurefx.build.console.JSCClosureStatus;
 import com.digiarea.closurefx.build.console.JSCConsoleManager;
 import com.digiarea.closurefx.build.validation.IStatus;
 import com.digiarea.closurefx.build.validation.Status;
-import com.digiarea.closurefx.cli.EditorLoader;
+import com.digiarea.closurefx.editors.EditorLoader;
 
 /**
  * FXML Controller class

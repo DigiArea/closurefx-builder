@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closure.model.controller.SOYPageController">
+  <children>
+    <VBox minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <GridPane id="SOYTitleBox" disable="false" hgap="5.0" prefHeight="40.0" prefWidth="-1.0">
+          <children>
+            <Label id="labelMessage" fx:id="labelMessageError" text="" visible="false" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="0">
+              <tooltip>
+                <Tooltip text="Empty Tooltip" />
+              </tooltip>
+            </Label>
+            <Label id="labelMessage" fx:id="labelMessageWarning" text="" visible="false" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="0">
+              <tooltip>
+                <Tooltip text="Empty Tooltip" />
+              </tooltip>
+            </Label>
+            <Label id="SOYTitle" text="%SOYPage" GridPane.columnIndex="0" GridPane.rowIndex="0">
+              <graphic>
+                <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../../../closurefx/resources/closure-white.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </Label>
+            <CheckBox id="btnActivate" fx:id="controlBuild" alignment="CENTER_RIGHT" contentDisplay="RIGHT" disable="false" mnemonicParsing="false" styleClass="activate_checkbox" text="%ClosureActivate_Templates" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+            <SplitMenuButton fx:id="btnRun" contentDisplay="LEFT" disable="false" mnemonicParsing="false" onAction="#handleRunButton" styleClass="activate_split-menu-button" text="%ClosureMenu_RunTemplates" GridPane.columnIndex="3" GridPane.rowIndex="0">
+              <graphic>
+                <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../../../closurefx/resources/launch-blue.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleRunAllButton" text="%ClosureMenu_RunConf">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../../../closurefx/resources/launch.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                </MenuItem>
+              </items>
+            </SplitMenuButton>
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" />
+            <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" />
+            <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" />
+            <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" />
+          </columnConstraints>
+          <padding>
+            <Insets left="10.0" right="10.0" />
+          </padding>
+          <rowConstraints>
+            <RowConstraints minHeight="40.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <TabPane fx:id="tabs" disable="false" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+          <tabs>
+            <Tab closable="false" text="%CompilerPage_Basic">
+              <content>
+                <ScrollPane id="ScrollPane" fitToHeight="true" fitToWidth="true" prefViewportHeight="400.0" prefViewportWidth="600.0">
+                  <content>
+                    <GridPane id="GridPane" alignment="TOP_CENTER" disable="false" focusTraversable="false" gridLinesVisible="false" hgap="5.0" minHeight="-Infinity" minWidth="-Infinity" visible="true">
+                      <children>
+                        <VBox prefHeight="-1.0" prefWidth="-1.0" spacing="6.0" GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+                          <children>
+                            <fx:include fx:id="info" source="SOYInfoSection.fxml" VBox.vgrow="NEVER" />
+                            <fx:include fx:id="localization" source="SOYLocalizationSection.fxml" VBox.vgrow="ALWAYS" />
+                          </children>
+                          <padding>
+                            <Insets bottom="10.0" left="10.0" top="10.0" />
+                          </padding>
+                        </VBox>
+                        <VBox prefHeight="-1.0" prefWidth="-1.0" spacing="6.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+                          <children>
+                            <fx:include fx:id="codeStyle" source="SOYStyleSection.fxml" VBox.vgrow="NEVER" />
+                            <fx:include fx:id="options" source="SOYOptionsSection.fxml" VBox.vgrow="SOMETIMES" />
+                          </children>
+                          <padding>
+                            <Insets bottom="10.0" right="10.0" top="10.0" />
+                          </padding>
+                        </VBox>
+                      </children>
+                      <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="-1.0" percentWidth="50.0" />
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="-1.0" percentWidth="50.0" />
+                      </columnConstraints>
+                      <rowConstraints>
+                        <RowConstraints minHeight="10.0" valignment="TOP" vgrow="SOMETIMES" />
+                      </rowConstraints>
+                    </GridPane>
+                  </content>
+                </ScrollPane>
+              </content>
+            </Tab>
+            <Tab closable="false" text="%CompilerPage_BuildPath">
+              <content>
+                <ScrollPane id="ScrollPane" fitToHeight="true" fitToWidth="true" prefViewportHeight="400.0" prefViewportWidth="600.0">
+                  <content>
+                    <GridPane id="GridPane" hgap="5.0" minHeight="-Infinity" minWidth="-Infinity">
+                      <children>
+                        <VBox id="basicTabRight" prefHeight="-1.0" prefWidth="-1.0" spacing="6.0" GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+                          <children>
+                            <fx:include fx:id="source" source="SOYSourceSection.fxml" VBox.vgrow="ALWAYS" />
+                            <fx:include fx:id="order" source="SOYOrderSection.fxml" VBox.vgrow="ALWAYS" />
+                          </children>
+                          <padding>
+                            <Insets bottom="10.0" left="10.0" top="10.0" />
+                          </padding>
+                        </VBox>
+                        <VBox id="basicTabLeft" prefHeight="-1.0" prefWidth="-1.0" spacing="6.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+                          <children>
+                            <fx:include source="SOYLibrariesSection.fxml" VBox.vgrow="ALWAYS" />
+                            <fx:include fx:id="output" source="SOYOutputSection.fxml" VBox.vgrow="NEVER" />
+                          </children>
+                          <padding>
+                            <Insets bottom="10.0" right="10.0" top="10.0" />
+                          </padding>
+                        </VBox>
+                      </children>
+                      <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="-1.0" percentWidth="50.0" />
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="-1.0" percentWidth="50.0" />
+                      </columnConstraints>
+                      <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                      </rowConstraints>
+                    </GridPane>
+                  </content>
+                </ScrollPane>
+              </content>
+            </Tab>
+            <Tab fx:id="controlConsole" text="%CompilerPage_Console">
+              <content>
+                <ScrollPane id="ScrollPane" fitToHeight="true" fitToWidth="true" prefViewportHeight="400.0" prefViewportWidth="600.0">
+                  <content>
+                    <VBox id="VBox" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" spacing="5.0">
+                      <children>
+                        <fx:include source="SOYConsoleSection.fxml" VBox.vgrow="ALWAYS" />
+                      </children>
+                      <padding>
+                        <Insets />
+                      </padding>
+                    </VBox>
+                  </content>
+                </ScrollPane>
+              </content>
+            </Tab>
+          </tabs>
+        </TabPane>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

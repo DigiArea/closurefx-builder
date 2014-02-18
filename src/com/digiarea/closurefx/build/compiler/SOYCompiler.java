@@ -122,15 +122,9 @@ public class SOYCompiler {
 
 			if (getOutputPath() != null) {
 				try {
-					if (IConstants.IS_TRIAL) {
-						method.invoke(sfs, "", "", options,
-								getSoyLocales(closureSoy.getSoyLocales()),
-								getMessagePath());
-					} else {
-						method.invoke(sfs, getOutputPath(), "", options,
-								getSoyLocales(closureSoy.getSoyLocales()),
-								getMessagePath());
-					}
+					method.invoke(sfs, getOutputPath(), "", options,
+							getSoyLocales(closureSoy.getSoyLocales()),
+							getMessagePath());
 				} catch (IllegalArgumentException e) {
 					errorManager.getConsoleManager().reportMessage(
 							new Status(StatusType.ERROR, "", e));

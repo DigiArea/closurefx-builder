@@ -1037,10 +1037,6 @@ public class Closurer extends VoidVisitorAdapter<Object> {
 				jsOptions.setReportMissingOverride(mapSeverityType(n
 						.getSeverity()));
 				break;
-			case REPORT_UNKNOWN_TYPES:
-				jsOptions
-						.setReportUnknownTypes(mapSeverityType(n.getSeverity()));
-				break;
 			default:
 				DiagnosticGroup group = mapWarningType(n.getType());
 				CheckLevel level = mapSeverityType(n.getSeverity());
@@ -1113,9 +1109,7 @@ public class Closurer extends VoidVisitorAdapter<Object> {
 			case VISIBILITY:
 				return DiagnosticGroups.VISIBILITY;
 			case CHECK_STRUCT_DICT_INHERITENCE:
-				// TODO in the source only
-				// return DiagnosticGroups.CHECK_STRUCT_DICT_INHERITENCE;
-				break;
+				return DiagnosticGroups.CHECK_STRUCT_DICT_INHERITANCE;
 			case DUPLICATE_MESSAGES:
 				return DiagnosticGroups.DUPLICATE_MESSAGE;
 			case DUPLICATE_VARS:
@@ -1128,6 +1122,8 @@ public class Closurer extends VoidVisitorAdapter<Object> {
 				return DiagnosticGroups.TYPE_INVALIDATION;
 			case VIOLATED_MODULE_DEP:
 				return DiagnosticGroups.VIOLATED_MODULE_DEP;
+			case REPORT_UNKNOWN_TYPES:
+				return DiagnosticGroups.REPORT_UNKNOWN_TYPES;
 			case AGGRESSIVE_VAR_CHECK:
 			case BROKEN_REQUIRES_LEVEL:
 			case CHECK_GLOBAL_NAMES_LEVEL:
@@ -1137,7 +1133,6 @@ public class Closurer extends VoidVisitorAdapter<Object> {
 			case CHECK_REQUIRES:
 			case CHECK_UNREACHABLE_CODE:
 			case REPORT_MISSING_OVERRIDE:
-			case REPORT_UNKNOWN_TYPES:
 				// options are setted by separated methods
 				break;
 			}

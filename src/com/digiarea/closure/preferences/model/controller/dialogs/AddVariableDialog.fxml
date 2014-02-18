@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-preview-i18n-resource ../../../../../closurefx/locale/editor_en.properties?>
+<?scenebuilder-stylesheet ../../../../../closurefx/themes/default.css?>
+
+<VBox id="VBox" alignment="CENTER_LEFT" minWidth="200.0" spacing="0.0" styleClass="dialog-top" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closure.preferences.model.controller.dialogs.AddVariableDialogController">
+  <children>
+    <Label fx:id="controlLabel" text="%PreferencesVariables_Label">
+      <VBox.margin>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </VBox.margin>
+    </Label>
+    <GridPane hgap="5.0" vgap="5.0" VBox.vgrow="ALWAYS">
+      <children>
+        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
+          <image>
+            <Image url="@../../../../closurefx/resources/status-big.png" />
+          </image>
+        </ImageView>
+        <Label text="%PreferencesVariables_Name" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="controlName" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Label text="%PreferencesVariables_Path" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="controlPath" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <GridPane hgap="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+          <children>
+            <Button mnemonicParsing="false" onAction="#handleFolderButtonAction" text="%Button_Folder" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Button mnemonicParsing="false" onAction="#handleFileButtonAction" text="%Button_File" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="-1.0" />
+            <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" prefWidth="-1.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+          </rowConstraints>
+        </GridPane>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" />
+        <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="-1.0" />
+      </columnConstraints>
+      <padding>
+        <Insets bottom="20.0" left="10.0" right="10.0" />
+      </padding>
+      <rowConstraints>
+        <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="ALWAYS" />
+        <RowConstraints minHeight="-Infinity" vgrow="ALWAYS" />
+        <RowConstraints minHeight="-Infinity" vgrow="ALWAYS" />
+      </rowConstraints>
+    </GridPane>
+    <GridPane alignment="CENTER_RIGHT" hgap="5.0" styleClass="dialog-buttons" VBox.vgrow="NEVER">
+      <children>
+        <Button fx:id="controlOk" maxWidth="-1.0" minWidth="50.0" mnemonicParsing="false" onAction="#handleOkButtonAction" text="%Button_Ok" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleCancelButtonAction" text="%SaveDialog_Cancel" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" minWidth="-Infinity" />
+        <ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="-Infinity" prefWidth="-1.0" />
+      </columnConstraints>
+      <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+      <rowConstraints>
+        <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+  <padding>
+    <Insets />
+  </padding>
+</VBox>

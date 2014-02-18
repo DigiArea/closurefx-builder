@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+<?scenebuilder-preview-i18n-resource locale/editor_en.properties?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closurefx.ClosureFXController">
+  <children>
+    <Label fx:id="label" layoutX="126.0" layoutY="120.0" minHeight="16.0" minWidth="69.0" />
+    <BorderPane prefHeight="-1.0" prefWidth="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <center>
+        <TabPane fx:id="docTabPane" prefHeight="-1.0" prefWidth="-1.0" rotateGraphic="true" tabClosingPolicy="ALL_TABS" />
+      </center>
+      <top>
+        <VBox prefHeight="-1.0" prefWidth="-1.0">
+          <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="%ClosureMenu_File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#handleNewButtonAction" text="%ClosureMenu_FileNew">
+                      <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                      </accelerator>
+                    </MenuItem>
+                    <MenuItem mnemonicParsing="false" onAction="#handleOpenButtonAction" text="%ClosureMenu_FileOpen">
+                      <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                      </accelerator>
+                    </MenuItem>
+                    <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem mnemonicParsing="false" onAction="#handleSaveButtonAction" text="%ClosureMenu_FileSave">
+                      <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                      </accelerator>
+                    </MenuItem>
+                    <MenuItem mnemonicParsing="false" onAction="#handleSaveAllButtonAction" text="%ClosureMenu_FileSaveAll" />
+                    <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem mnemonicParsing="false" onAction="#handleCloseButtonAction" text="%ClosureMenu_FileClose" />
+                    <MenuItem mnemonicParsing="false" onAction="#handleCloseAllButtonAction" text="%ClosureMenu_FileCloseAll" />
+                    <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem mnemonicParsing="false" onAction="#handleExitButtonAction" text="%ClosureMenu_FileExit" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="%ClosureMenu_Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#handleDuplicateButtonAction" text="%ClosureMenu_Duplicate" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="%ClosureMenu_Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#handleAboutButtonAction" text="%ClosureMenu_About" />
+                    <MenuItem mnemonicParsing="false" onAction="#handleHelpContentsButtonAction" text="%ClosureMenu_HelpContents" />
+                    <MenuItem mnemonicParsing="false" onAction="#handleSettingsButtonAction" text="%ClosureToolbar_Settings" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <ToolBar>
+              <items>
+                <Button fx:id="newButton" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#handleNewButtonAction" text="%ClosureToolbar_New">
+                  <graphic>
+                    <ImageView fitHeight="150.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@resources/new.png" preserveRatio="false" smooth="false" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                  <tooltip>
+                    <Tooltip text="%ClosureToolbar_New" />
+                  </tooltip>
+                </Button>
+                <Button fx:id="openButton" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#handleOpenButtonAction" text="%ClosureToolbar_Open">
+                  <graphic>
+                    <ImageView fitHeight="150.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@resources/open.png" preserveRatio="false" smooth="false" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                  <tooltip>
+                    <Tooltip text="%ClosureToolbar_Open" textAlignment="CENTER" />
+                  </tooltip>
+                </Button>
+                <Button fx:id="saveButton" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#handleSaveButtonAction" text="%ClosureToolbar_Save">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@resources/save.png" preserveRatio="false" smooth="false" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                  <tooltip>
+                    <Tooltip text="%ClosureToolbar_Save" />
+                  </tooltip>
+                </Button>
+                <Separator orientation="VERTICAL" prefHeight="-1.0" />
+                <Button id="saveButton" fx:id="runButton" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#handleRunButton" text="%ClosureMenu_RunAll">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@resources/launch.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                  <tooltip>
+                    <Tooltip text="%ClosureMenu_RunAll" />
+                  </tooltip>
+                </Button>
+                <Separator orientation="VERTICAL" prefHeight="-1.0" />
+                <Button id="settingsButton" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#handleSettingsButtonAction" text="%ClosureToolbar_Settings">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@resources/gear.png" preserveRatio="false" smooth="false" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                  <tooltip>
+                    <Tooltip text="%ClosureToolbar_Settings" />
+                  </tooltip>
+                </Button>
+              </items>
+            </ToolBar>
+          </children>
+        </VBox>
+      </top>
+    </BorderPane>
+    <VBox fx:id="controlTooltips" minWidth="-Infinity" prefHeight="-1.0" prefWidth="200.0" spacing="5.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+  </children>
+</AnchorPane>

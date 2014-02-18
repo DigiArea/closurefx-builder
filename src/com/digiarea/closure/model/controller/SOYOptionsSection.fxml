@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closure.model.controller.SOYOptionsSectionController">
+  <children>
+    <TitledPane animated="false" collapsible="false" prefHeight="-1.0" prefWidth="-1.0" text="%SOYOptionsSection" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <content>
+        <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+          <children>
+            <Label text="%SOYOptionsSection_Desc" />
+            <GridPane alignment="TOP_LEFT" hgap="5.0" minHeight="-Infinity" minWidth="-Infinity" VBox.vgrow="NEVER">
+              <children>
+                <TextField fx:id="controlGlobalsPath" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label contentDisplay="LEFT" text="%SOYOptionsSection_GlobalsFile" textAlignment="LEFT" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0" />
+                <Button fx:id="btnBrowse" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBrowseButtonAction" text="%Button_Browse" GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+                  <GridPane.margin>
+                    <Insets top="-2.0" />
+                  </GridPane.margin>
+                </Button>
+                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBrowseExternalButtonAction" text="%OutputSection_Browse_External" GridPane.columnIndex="3" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+                  <GridPane.margin>
+                    <Insets top="-2.0" />
+                  </GridPane.margin>
+                </Button>
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" minWidth="-1.0" prefWidth="-1.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="NEVER" minWidth="-1.0" prefWidth="-1.0" />
+                <ColumnConstraints hgrow="NEVER" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+              </rowConstraints>
+            </GridPane>
+            <GridPane alignment="TOP_LEFT" hgap="5.0" minHeight="-Infinity" minWidth="-Infinity" VBox.vgrow="NEVER">
+              <children>
+                <ComboBox fx:id="controlCssScheme" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label text="%SOYOptionsSection_Css" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0" />
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" minWidth="-1.0" prefWidth="-1.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+              </rowConstraints>
+            </GridPane>
+            <CheckBox fx:id="controlProvideRequireSoyNamespaces" mnemonicParsing="false" text="%SOYOptionsSection_Check_GoogProvide" wrapText="true" />
+            <CheckBox fx:id="controlDeclareTopLevelNamespace" mnemonicParsing="false" text="%SOYOptionsSection_Check_Namespace" />
+            <CheckBox fx:id="controlGenerateJsDoc" mnemonicParsing="false" text="%SOYOptionsSection_Check_Docs" />
+            <CheckBox fx:id="controlGenerateGoogMessagesDefs" mnemonicParsing="false" text="%SOYOptionsSection_Check_Msg">
+              <VBox.margin>
+                <Insets top="10.0" />
+              </VBox.margin>
+            </CheckBox>
+            <CheckBox fx:id="controlGoogMessagesExternal" mnemonicParsing="false" text="%SOYOptionsSection_Check_MsgExternal" />
+            <CheckBox fx:id="controlRightToLeftDir" mnemonicParsing="false" text="%SOYOptionsSection_Check_Rtl" />
+            <CheckBox fx:id="controlRightToLeftDirGoog" mnemonicParsing="false" text="%SOYOptionsSection_Check_RtlGoog" />
+            <CheckBox fx:id="controlUsingIjData" mnemonicParsing="false" text="%SOYOptionsSection_Check_Injected">
+              <VBox.margin>
+                <Insets top="10.0" />
+              </VBox.margin>
+            </CheckBox>
+            <CheckBox fx:id="controlAllowExternalCalls" mnemonicParsing="false" text="%SOYOptionsSection_Check_ExternalCalls" />
+          </children>
+          <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+          </padding>
+        </VBox>
+      </content>
+    </TitledPane>
+  </children>
+</AnchorPane>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-preview-i18n-resource ../../../closurefx/locale/editor_en.properties?>
+
+<HBox id="HBox" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" spacing="5.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closure.model.controller.GSSConsoleSectionController">
+  <children>
+    <VBox maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" prefWidth="-1.0" spacing="0.0" HBox.hgrow="ALWAYS">
+      <children>
+        <VBox id="ConsoleBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+          <children>
+            <GridPane hgap="5.0" prefWidth="377.0001220703125" VBox.vgrow="NEVER">
+              <children>
+                <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#handleStartButton" text="" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../../../closurefx/resources/launch.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                  <tooltip>
+                    <Tooltip text="%ProgressDialog_Run" />
+                  </tooltip>
+                </Button>
+                <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#handleStopButton" text="" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../../../closurefx/resources/mark-error.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                  <tooltip>
+                    <Tooltip text="%ProgressDialog_Cancel" />
+                  </tooltip>
+                </Button>
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="-1.0" />
+                <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" prefWidth="-1.0" />
+                <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" prefWidth="-1.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+              </rowConstraints>
+            </GridPane>
+            <ProgressBar fx:id="progressBar" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="25.0" prefWidth="-1.0" progress="0.0" VBox.vgrow="NEVER" />
+          </children>
+          <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+          </padding>
+        </VBox>
+        <TabPane prefHeight="-1.0" prefWidth="-1.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+          <tabs>
+            <Tab fx:id="tabMessages" closable="false" text="%ProgressDialog_Console">
+              <content>
+                <VBox id="VBox" alignment="CENTER" spacing="5.0">
+                  <children>
+                    <ListView fx:id="controlConsole" prefHeight="100.0" prefWidth="-1.0" VBox.vgrow="ALWAYS" />
+                  </children>
+                </VBox>
+              </content>
+              <graphic>
+                <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../../../closurefx/resources/launch.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </Tab>
+            <Tab fx:id="tabProblems" closable="false" text="%ProgressDialog_Problems">
+              <content>
+                <VBox prefHeight="-1.0" prefWidth="-1.0" spacing="6.0">
+                  <children>
+                    <GridPane hgap="5.0">
+                      <children>
+                        <Label fx:id="controlErrors" text="%ProgressDialog_Errors" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label fx:id="controlWarnings" text="%ProgressDialog_Warnings" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                      </children>
+                      <columnConstraints>
+                        <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" prefWidth="-1.0" />
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="-1.0" />
+                      </columnConstraints>
+                      <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                      </padding>
+                      <rowConstraints>
+                        <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+                      </rowConstraints>
+                    </GridPane>
+                    <TableView fx:id="controlProblems" minHeight="-1.0" minWidth="-Infinity" prefHeight="100.0" prefWidth="-1.0" tableMenuButtonVisible="false" VBox.vgrow="ALWAYS">
+                      <columns>
+                        <TableColumn maxWidth="20.0" minWidth="16.0" prefWidth="20.0" text="" fx:id="controlProblemsLevel" />
+                        <TableColumn minWidth="100.0" prefWidth="300.0" text="%ProgressDialog_Table_Description" fx:id="controlProblemsDescription" />
+                        <TableColumn prefWidth="100.0" text="%ProgressDialog_Table_Resource" fx:id="controlProblemsResource" />
+                        <TableColumn prefWidth="200.0" text="%ProgressDialog_Table_Path" fx:id="controlProblemsPath" />
+                        <TableColumn prefWidth="100.0" text="%ProgressDialog_Table_Location" fx:id="controlProblemsLocation" />
+                        <TableColumn prefWidth="100.0" text="%ProgressDialog_Table_Type" fx:id="controlProblemsType" />
+                      </columns>
+                    </TableView>
+                  </children>
+                  <padding>
+                    <Insets top="5.0" />
+                  </padding>
+                </VBox>
+              </content>
+              <graphic>
+                <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../../../closurefx/resources/mark-exclamation.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </Tab>
+          </tabs>
+        </TabPane>
+      </children>
+      <padding>
+        <Insets />
+      </padding>
+    </VBox>
+  </children>
+  <padding>
+    <Insets />
+  </padding>
+</HBox>

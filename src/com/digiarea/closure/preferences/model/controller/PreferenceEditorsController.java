@@ -30,7 +30,7 @@ import com.digiarea.closure.model.controller.UIUtils;
 import com.digiarea.closure.preferences.model.Editor;
 import com.digiarea.closure.preferences.model.bind.ModelFacade;
 import com.digiarea.closurefx.IConstants;
-import com.digiarea.closurefx.cli.EditorLoader;
+import com.digiarea.closurefx.editors.EditorLoader;
 
 /**
  * FXML Controller class

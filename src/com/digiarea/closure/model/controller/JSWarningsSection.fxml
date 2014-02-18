@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closure.model.controller.JSWarningsSectionController">
+  <children>
+    <TitledPane animated="false" collapsible="false" prefHeight="-1.0" prefWidth="-1.0" text="%JSWarningsSection" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <content>
+        <VBox prefHeight="-1.0" prefWidth="-1.0" spacing="6.0">
+          <children>
+            <Label text="%JSWarningsSection_Desc" />
+            <GridPane hgap="5.0" VBox.vgrow="NEVER">
+              <children>
+                <Button id="btnError" mnemonicParsing="false" onAction="#handleErrorButtonAction" text="" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../../../closurefx/resources/mark-error.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                  <tooltip>
+                    <Tooltip text="%JSWarningsSection_Column_Tooltip_Error" />
+                  </tooltip>
+                </Button>
+                <Button id="btnDefault" mnemonicParsing="false" onAction="#handleOffButtonAction" text="" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../../../closurefx/resources/mark-off.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                  <tooltip>
+                    <Tooltip text="%JSWarningsSection_Column_Tooltip_Off" />
+                  </tooltip>
+                </Button>
+                <Button id="btnWarning" mnemonicParsing="false" onAction="#handleWarningButtonAction" text="" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                  <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../../../closurefx/resources/mark-exclamation.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                  <tooltip>
+                    <Tooltip text="%JSWarningsSection_Column_Tooltip_Warning" />
+                  </tooltip>
+                </Button>
+              </children>
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" minWidth="-Infinity" prefWidth="-1.0" />
+                <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" prefWidth="-1.0" />
+                <ColumnConstraints hgrow="NEVER" minWidth="-Infinity" prefWidth="-1.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="-Infinity" prefHeight="-1.0" vgrow="NEVER" />
+              </rowConstraints>
+            </GridPane>
+            <TableView fx:id="controlWarning" editable="false" maxHeight="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="-1.0" tableMenuButtonVisible="false" VBox.vgrow="ALWAYS">
+              <columns>
+                <TableColumn editable="false" minWidth="150.0" prefWidth="150.0" text="%JSWarningsSection_Column_Name" fx:id="controlName" />
+                <TableColumn minWidth="100.0" prefWidth="100.0" text="%JSWarningsSection_Column_Level" fx:id="controlLevel" />
+                <TableColumn editable="false" minWidth="300.0" prefWidth="300.0" text="%JSWarningsSection_Column_Description" fx:id="controlDescription" />
+              </columns>
+            </TableView>
+          </children>
+          <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+          </padding>
+        </VBox>
+      </content>
+    </TitledPane>
+  </children>
+</AnchorPane>

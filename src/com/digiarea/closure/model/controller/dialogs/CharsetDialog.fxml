@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-stylesheet ../../../../closurefx/themes/default.css?>
+
+<HBox id="HBox" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" padding="$x3" spacing="5.0" styleClass="dialog_back" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closure.model.controller.dialogs.CharsetDialogController">
+  <children>
+    <VBox maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" prefWidth="-1.0" spacing="7.0" HBox.hgrow="ALWAYS">
+      <children>
+        <Label fx:id="labelTitle" text="">
+          <VBox.margin>
+            <Insets left="10.0" top="10.0" />
+          </VBox.margin>
+        </Label>
+        <ListView fx:id="listView" editable="true" minHeight="50.0" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+          <VBox.margin>
+            <Insets left="10.0" right="10.0" fx:id="x2" />
+          </VBox.margin>
+        </ListView>
+        <Label fx:id="labelDesc" text="">
+          <VBox.margin>
+            <Insets left="10.0" fx:id="x1" />
+          </VBox.margin>
+        </Label>
+        <TextArea fx:id="txtDescription" editable="false" minHeight="50.0" prefHeight="100.0" prefWidth="200.0" wrapText="true" VBox.margin="$x2" VBox.vgrow="ALWAYS" />
+        <HBox maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" styleClass="dialog-buttons">
+          <children>
+            <HBox id="HBox" fx:id="actionParent" alignment="CENTER">
+              <HBox.margin>
+                <Insets fx:id="x3" />
+              </HBox.margin>
+            </HBox>
+            <Pane maxWidth="+Infinity" HBox.hgrow="ALWAYS" />
+            <Button fx:id="cancelButton" cancelButton="true" minWidth="80.0" mnemonicParsing="false" onAction="#handleCancelButtonAction" text="Cancel" HBox.hgrow="NEVER">
+              <HBox.margin>
+                <Insets fx:id="x3" />
+              </HBox.margin>
+            </Button>
+            <HBox id="HBox" fx:id="okParent" alignment="CENTER">
+              <children>
+                <Button fx:id="okButton" minWidth="80.0" mnemonicParsing="false" onAction="#handleOkButtonAction" text="Ok" HBox.hgrow="NEVER">
+                  <HBox.margin>
+                    <Insets left="5.0" />
+                  </HBox.margin>
+                </Button>
+              </children>
+            </HBox>
+          </children>
+          <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+          </padding>
+          <VBox.margin>
+            <Insets fx:id="x3" />
+          </VBox.margin>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+</HBox>

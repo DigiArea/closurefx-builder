@@ -147,9 +147,6 @@ public class JSCCompiler extends Compiler {
 	public void build(List<SourceFile> sources, List<SourceFile> externs) {
 		try {
 			Result result = compile(externs, sources, options);
-			if (IConstants.IS_TRIAL) {
-				return;
-			}
 			if (result.success && !isIdeMode()) {
 				String realPath = pathResolver.toRealPath(new Path(closureJs
 						.getOutput().getPath()).append(

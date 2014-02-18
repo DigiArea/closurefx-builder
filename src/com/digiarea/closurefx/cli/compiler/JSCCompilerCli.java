@@ -66,13 +66,17 @@ public class JSCCompilerCli extends Compiler {
 	 *            the buildpath, perform full build.
 	 */
 	public void build() {
+		
+		getErrorManager().reportMessage(new Status(StatusType.INFO, resourceBundle
+				.getString(IConstants.Console_Start), null));
+		
 		List<SourceFile> units = new ArrayList<SourceFile>();
 		List<SourceFile> unitExterns = new ArrayList<SourceFile>();
 		try {
 			unitExterns.addAll(CommandLineRunner.getDefaultExterns());
 		} catch (IOException e) {
 			getErrorManager().reportMessage(
-					new Status(StatusType.ERROR, resourceBundle
+					new Status(StatusType.WARNING, resourceBundle
 							.getString(IConstants.JSConsole_Externs), null));
 		}
 
@@ -162,7 +166,7 @@ public class JSCCompilerCli extends Compiler {
 												StatusType.INFO,
 												resourceBundle
 														.getString(IConstants.JSConsole_Output),
-												null));
+														null));
 					} catch (IOException e) {
 						e.printStackTrace();
 						getErrorManager()
@@ -172,7 +176,7 @@ public class JSCCompilerCli extends Compiler {
 												MessageFormat.format(
 														resourceBundle
 																.getString(IConstants.JSConsole_OutputFailed),
-														realPath), null));
+														realPath), e));
 					}
 				}
 				if (result.externExport != null
@@ -273,6 +277,10 @@ public class JSCCompilerCli extends Compiler {
 						new Status(StatusType.ERROR, "", e));
 			}
 		}
+
+		getErrorManager().reportMessage(
+				new Status(StatusType.INFO, resourceBundle
+						.getString(IConstants.Console_Finish), null));
 
 	}
 }

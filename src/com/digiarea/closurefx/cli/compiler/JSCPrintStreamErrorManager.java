@@ -2,48 +2,76 @@ package com.digiarea.closurefx.cli.compiler;
 
 import java.io.PrintStream;
 
+import com.digiarea.closurefx.build.console.ClosureStatus;
+import com.digiarea.closurefx.build.validation.IStatusFormatter;
 import com.digiarea.closurefx.build.validation.IStatus.StatusType;
-import com.digiarea.closurefx.build.validation.Status;
-import com.google.javascript.jscomp.MessageFormatter;
-import com.google.javascript.jscomp.PrintStreamErrorManager;
+import com.digiarea.closurefx.cli.console.PrintStreamConsole;
+import com.google.javascript.jscomp.CheckLevel;
+import com.google.javascript.jscomp.ErrorManager;
+import com.google.javascript.jscomp.JSError;
 
 /**
  * dummy impl
  * 
  * @author daginno
- *
+ * 
  */
-public class JSCPrintStreamErrorManager extends PrintStreamErrorManager {
-	
-	private PrintStream stream;
+public class JSCPrintStreamErrorManager extends PrintStreamConsole implements
+		ErrorManager {
 
-	public JSCPrintStreamErrorManager(MessageFormatter formatter,
-			PrintStream stream) {
-		super(formatter, stream);
-		this.stream = stream;
+	public JSCPrintStreamErrorManager(PrintStream stream,
+			IStatusFormatter formatter) {
+		super(stream, formatter);
 	}
 
-	public JSCPrintStreamErrorManager(PrintStream stream) {
-		super(stream);
-		this.stream = stream;
+	@Override
+	public int getErrorCount() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
-	
-	public void reportMessage(Status status) {
-		StringBuffer buffer = new StringBuffer();
-		buffer.append(getLabel(status.getSeverity()));
-		buffer.append(status.getMessage());
-		stream.println(buffer.toString());
+
+	@Override
+	public JSError[] getErrors() {
+		return new JSError[]{};
 	}
-	
-	private String getLabel(StatusType type) {
-		switch (type) {
+
+	@Override
+	public double getTypedPercent() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getWarningCount() {
+		return 0;
+	}
+
+	@Override
+	public JSError[] getWarnings() {
+		return new JSError[]{};
+	}
+
+	@Override
+	public void report(CheckLevel arg0, JSError arg1) {
+		report(new ClosureStatus(getSeverity(arg0), arg1.description, null,
+				arg1.getLineNumber(), arg1.getCharno(), arg1.sourceName));
+	}
+
+	private StatusType getSeverity(CheckLevel arg0) {
+		switch (arg0) {
 		case ERROR:
-			return "!ERROR ";
+			return StatusType.ERROR;
 		case WARNING:
-			return "!WARNING ";
+			return StatusType.WARNING;
 		default:
-			return "!INFO ";
+			return StatusType.INFO;
 		}
 	}
-	
+
+	@Override
+	public void setTypedPercent(double arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
 }

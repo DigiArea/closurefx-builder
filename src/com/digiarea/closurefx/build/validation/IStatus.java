@@ -59,6 +59,8 @@ public interface IStatus {
 	 * @return a localized message
 	 */
 	public String getMessage();
+	
+	public String getExceptionMessage();
 
 	/**
 	 * Returns the severity. The severities are as follows (in descending

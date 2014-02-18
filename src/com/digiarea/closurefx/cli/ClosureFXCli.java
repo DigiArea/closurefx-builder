@@ -14,6 +14,10 @@ import com.digiarea.closurefx.IConstants;
 import com.digiarea.closurefx.build.Closurer;
 import com.digiarea.closurefx.build.compiler.JSBuildpathContainerResolver;
 import com.digiarea.closurefx.build.validation.BasicValidator;
+import com.digiarea.closurefx.build.validation.ClosureStatusFormatter;
+import com.digiarea.closurefx.build.validation.IStatus;
+import com.digiarea.closurefx.build.validation.Status;
+import com.digiarea.closurefx.build.validation.IStatus.StatusType;
 import com.digiarea.closurefx.cli.compiler.JSCCompilerCli;
 import com.digiarea.closurefx.cli.compiler.JSCPrintStreamErrorManager;
 import com.google.javascript.jscomp.CompilerOptions;
@@ -51,14 +55,18 @@ public class ClosureFXCli {
 	}
 
 	private void runJS(Closure closure, CompilerOptions options) {
+		JSCPrintStreamErrorManager manager = new JSCPrintStreamErrorManager(
+				System.out, new ClosureStatusFormatter());
+
 		if (ClosureModelManager.canBuild(closure.getClosureJs())) {
 			try {
 				BasicValidator validator = new BasicValidator(bundle,
 						pathResolver);
 				closure.getClosureJs().accept(validator, null);
 				if (!validator.isValid()) {
-					System.err.print(bundle
-							.getString(IConstants.JSConsole_Invalid));
+					manager.reportMessage(new Status(StatusType.ERROR, bundle
+							.getString(IConstants.JSConsole_Invalid), null));
+					reportJSErrors(validator, manager);
 				} else {
 					JSBuildpathContainerResolver resolver = new JSBuildpathContainerResolver(
 							closure.getClosureJs().getBuildpath(), pathResolver);
@@ -68,26 +76,31 @@ public class ClosureFXCli {
 							closure.getClosureJs(), options,
 							resolver.getSources(), resolver.getExterns(),
 							pathResolver);
-					JSCPrintStreamErrorManager manager = new JSCPrintStreamErrorManager(
-							System.out);
+
 					compiler.setErrorManager(manager);
 					compiler.setResourceBundle(bundle);
 					com.google.javascript.jscomp.Compiler
 							.setLoggingLevel(Level.SEVERE);
 					compiler.build();
-					// final error reporting
-					manager.generateReport();
 				}
 			} catch (CircularDependencyException e) {
-				System.err.print(MessageFormat.format(
-						bundle.getString(IConstants.JSConsole_CicleDeps),
-						e.getLocalizedMessage()));
+				manager.reportMessage(new Status(StatusType.ERROR, bundle
+						.getString(IConstants.JSConsole_CicleDeps), e));
 			} catch (Exception e1) {
-				System.err.print(e1.getMessage());
-				e1.printStackTrace();
+				manager.reportMessage(new Status(StatusType.ERROR, "", e1));
 			}
 		} else {
-			System.err.print(bundle.getString(IConstants.Console_NoResources));
+			manager.reportMessage(new Status(StatusType.ERROR, bundle
+					.getString(IConstants.Console_NoResources), null));
+		}
+	}
+	
+	private void reportJSErrors(BasicValidator validator, JSCPrintStreamErrorManager manager) {
+		for (IStatus status : validator.getErrors()) {
+			manager.reportMessage(status);
+		}
+		for (IStatus status : validator.getWarnings()) {
+			manager.reportMessage(status);
 		}
 	}
 

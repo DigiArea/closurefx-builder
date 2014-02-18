@@ -67,19 +67,10 @@ public class ClosureFX extends Application {
 				.withDescription(
 						"a path to the Build Configuration File (*.closure) to run")
 				.create("closure");
-		Option js = new Option("js",
-				"run Closure Compiler to compile JavaScript sources");
-		Option soy = new Option("soy",
-				"run Closure Templates to compile Soy Templates sources");
-		Option gss = new Option("gss",
-				"run Closure Stylesheets to compile GSS/CSS sources");
 
 		Options options = new Options();
 		options.addOption(help);
 		options.addOption(closure);
-		options.addOption(js);
-		options.addOption(soy);
-		options.addOption(gss);
 
 		// create the parser
 		CommandLineParser parser = new BasicParser();
@@ -88,27 +79,12 @@ public class ClosureFX extends Application {
 			CommandLine line = parser.parse(options, args);
 			if (line.hasOption(help.getOpt())) {
 				HelpFormatter formatter = new HelpFormatter();
-				formatter.printHelp("ClosureFX Builder", options);
+				formatter.printHelp("Closure FX Builder", options);
 				return;
 			}
 			if (line.hasOption(closure.getOpt())) {
 				ClosureFXCliOptions cliOptions = new ClosureFXCliOptions();
 				cliOptions.setClosure(line.getOptionValue(closure.getOpt()));
-
-				if (line.hasOption(js.getOpt())) {
-					cliOptions.setJs(Boolean.valueOf(line.getOptionValue(js
-							.getOpt())));
-				}
-
-				if (line.hasOption(soy.getOpt())) {
-					cliOptions.setSoy(Boolean.valueOf(line.getOptionValue(soy
-							.getOpt())));
-				}
-
-				if (line.hasOption(gss.getOpt())) {
-					cliOptions.setGss(Boolean.valueOf(line.getOptionValue(gss
-							.getOpt())));
-				}
 
 				ClosureFXCli runner = new ClosureFXCli(cliOptions,
 						ResourceBundle.getBundle(

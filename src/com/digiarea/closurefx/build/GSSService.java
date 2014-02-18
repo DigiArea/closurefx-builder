@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.ResourceBundle;
 
-import javafx.application.Platform;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.scene.control.ProgressBar;
@@ -12,7 +11,6 @@ import javafx.scene.control.ProgressBar;
 import com.digiarea.closure.core.IPathResolver;
 import com.digiarea.closure.model.Closure;
 import com.digiarea.closure.model.bind.ClosureModelManager;
-import com.digiarea.closure.model.controller.dialogs.DialogFactory;
 import com.digiarea.closurefx.IConstants;
 import com.digiarea.closurefx.build.compiler.BuildpathManager;
 import com.digiarea.closurefx.build.compiler.GSSBuildpathContainerResolver;

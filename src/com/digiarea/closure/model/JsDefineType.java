@@ -24,7 +24,7 @@ public enum JsDefineType {
     public final int sizeOfJsDefineType() {
         int size = 0;
         size += ZippyBuffer.sizeOfRawVarInt(ordinal());
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

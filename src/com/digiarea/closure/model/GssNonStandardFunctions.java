@@ -73,20 +73,20 @@ public class GssNonStandardFunctions extends Node {
     }
 
     public final int sizeOfGssNonStandardFunctions(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(20) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getGssNonStandardFunction() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             final List<GssNonStandardFunction> gssNonStandardFunction = this.getGssNonStandardFunction();
             size += ZippyBuffer.sizeOfRawVarInt(gssNonStandardFunction.size());
             for (GssNonStandardFunction entry : gssNonStandardFunction) {
                 if (entry != null) {
                     size += entry.sizeOfGssNonStandardFunction(false);
                 } else {
-                    size += ZippyBuffer.sizeOfRawVarInt(0);
+                    size += 1;
                 }
             }
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

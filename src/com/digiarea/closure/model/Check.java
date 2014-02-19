@@ -62,14 +62,14 @@ public class Check extends Node {
     }
 
     public final int sizeOfCheck(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(2) : 0;
-        size += ZippyBuffer.sizeOfRawVarInt(1);
+        int size = isExternal ? 1 : 0;
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isCheck());
         if (this.getType() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(2);
+            size += 1;
             size += this.getType().sizeOfCheckType();
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

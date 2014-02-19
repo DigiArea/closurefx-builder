@@ -1135,6 +1135,14 @@ public class Closurer extends VoidVisitorAdapter<Object> {
 			case REPORT_MISSING_OVERRIDE:
 				// options are setted by separated methods
 				break;
+			case CHECK_EVENTFUL_OBJECT_DISPOSAL:
+				return DiagnosticGroups.CHECK_EVENTFUL_OBJECT_DISPOSAL;
+			case ES3:
+				return DiagnosticGroups.ES3;
+			case UNNECESSARY_CASTS:
+				return DiagnosticGroups.UNNECESSARY_CASTS;
+			default:
+				break;
 			}
 		}
 		return null;

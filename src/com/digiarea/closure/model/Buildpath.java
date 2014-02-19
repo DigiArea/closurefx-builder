@@ -73,20 +73,20 @@ public class Buildpath extends Node {
     }
 
     public final int sizeOfBuildpath(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(1) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getSource() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             final List<Source> source = this.getSource();
             size += ZippyBuffer.sizeOfRawVarInt(source.size());
             for (Source entry : source) {
                 if (entry != null) {
                     size += entry.sizeOfSource(false);
                 } else {
-                    size += ZippyBuffer.sizeOfRawVarInt(0);
+                    size += 1;
                 }
             }
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

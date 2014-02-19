@@ -160,34 +160,34 @@ public class Source extends Node {
     }
 
     public final int sizeOfSource(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(52) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getExcluded() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             size += this.getExcluded().sizeOfExcludeInputFilter(false);
         }
         if (this.getIncluded() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(2);
+            size += 1;
             size += this.getIncluded().sizeOfIncludeInputFilter(false);
         }
-        size += ZippyBuffer.sizeOfRawVarInt(3);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isExtern());
         if (this.getPath() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(4);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getPath());
         }
         if (this.getEntryKind() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(5);
+            size += 1;
             size += this.getEntryKind().sizeOfSourceEntry();
         }
         if (this.getEntityKind() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(6);
+            size += 1;
             size += this.getEntityKind().sizeOfSourceEntity();
         }
-        size += ZippyBuffer.sizeOfRawVarInt(7);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isIncludeClosure());
-        size += ZippyBuffer.sizeOfRawVarInt(8);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isIncludeSimple());
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

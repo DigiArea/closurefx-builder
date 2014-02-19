@@ -90,24 +90,24 @@ public class Info extends Node {
     }
 
     public final int sizeOfInfo(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(30) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getId() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getId());
         }
         if (this.getVersion() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(2);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getVersion());
         }
         if (this.getName() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(3);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getName());
         }
         if (this.getVendor() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(4);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getVendor());
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

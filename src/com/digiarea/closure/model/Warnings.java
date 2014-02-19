@@ -73,20 +73,20 @@ public class Warnings extends Node {
     }
 
     public final int sizeOfWarnings(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(62) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getWarning() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             final List<Warning> warning = this.getWarning();
             size += ZippyBuffer.sizeOfRawVarInt(warning.size());
             for (Warning entry : warning) {
                 if (entry != null) {
                     size += entry.sizeOfWarning(false);
                 } else {
-                    size += ZippyBuffer.sizeOfRawVarInt(0);
+                    size += 1;
                 }
             }
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

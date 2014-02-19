@@ -63,124 +63,124 @@ import com.digiarea.closure.model.Warnings;
 
 public interface VoidVisitor<C> {
 
-	public void visit(Buildpath n, C ctx) throws Exception;
+    public void visit(GssRenamingType n, C ctx) throws Exception;
 
-	public void visit(Check n, C ctx) throws Exception;
+    public void visit(LangType n, C ctx) throws Exception;
 
-	public void visit(Checks n, C ctx) throws Exception;
+    public void visit(GssExcludedClasses n, C ctx) throws Exception;
 
-	public void visit(CheckType n, C ctx) throws Exception;
+    public void visit(GssOutputOrientation n, C ctx) throws Exception;
 
-	public void visit(Closure n, C ctx) throws Exception;
+    public void visit(Warning n, C ctx) throws Exception;
 
-	public void visit(ClosureGss n, C ctx) throws Exception;
+    public void visit(GssAtRule n, C ctx) throws Exception;
 
-	public void visit(ClosureJs n, C ctx) throws Exception;
+    public void visit(GssUnrecognizeProperties n, C ctx) throws Exception;
 
-	public void visit(ClosureSoy n, C ctx) throws Exception;
+    public void visit(InputFilterType n, C ctx) throws Exception;
 
-	public void visit(ExcludeInputFilter n, C ctx) throws Exception;
+    public void visit(SourceEntry n, C ctx) throws Exception;
 
-	public void visit(GssAtRule n, C ctx) throws Exception;
+    public void visit(JsDefineType n, C ctx) throws Exception;
 
-	public void visit(GssAtRules n, C ctx) throws Exception;
+    public void visit(Optimizations n, C ctx) throws Exception;
 
-	public void visit(GssDefine n, C ctx) throws Exception;
+    public void visit(SoyCodeStyle n, C ctx) throws Exception;
 
-	public void visit(GssDefines n, C ctx) throws Exception;
+    public void visit(SourceEntity n, C ctx) throws Exception;
 
-	public void visit(GssExcludedClass n, C ctx) throws Exception;
+    public void visit(ClosureJs n, C ctx) throws Exception;
 
-	public void visit(GssExcludedClasses n, C ctx) throws Exception;
+    public void visit(GssVendor n, C ctx) throws Exception;
 
-	public void visit(GssInputOrientation n, C ctx) throws Exception;
+    public void visit(JsFunctionMap n, C ctx) throws Exception;
 
-	public void visit(GssNonStandardFunction n, C ctx) throws Exception;
+    public void visit(JsDoc n, C ctx) throws Exception;
 
-	public void visit(GssNonStandardFunctions n, C ctx) throws Exception;
+    public void visit(ClosureGss n, C ctx) throws Exception;
 
-	public void visit(GssOptimizationLevel n, C ctx) throws Exception;
+    public void visit(Check n, C ctx) throws Exception;
 
-	public void visit(GssOutputFormat n, C ctx) throws Exception;
+    public void visit(JsSourceMapFormat n, C ctx) throws Exception;
 
-	public void visit(GssOutputOrientation n, C ctx) throws Exception;
+    public void visit(JsDocs n, C ctx) throws Exception;
 
-	public void visit(GssOutputRenamingMapFormat n, C ctx) throws Exception;
+    public void visit(GssDefine n, C ctx) throws Exception;
 
-	public void visit(GssRenamingType n, C ctx) throws Exception;
+    public void visit(GssNonStandardFunctions n, C ctx) throws Exception;
 
-	public void visit(GssUnrecognizeProperties n, C ctx) throws Exception;
+    public void visit(ClosureSoy n, C ctx) throws Exception;
 
-	public void visit(GssUnrecognizeProperty n, C ctx) throws Exception;
+    public void visit(GssOutputFormat n, C ctx) throws Exception;
 
-	public void visit(GssVendor n, C ctx) throws Exception;
+    public void visit(SoyLocale n, C ctx) throws Exception;
 
-	public void visit(IncludeInputFilter n, C ctx) throws Exception;
+    public void visit(ExcludeInputFilter n, C ctx) throws Exception;
 
-	public void visit(Info n, C ctx) throws Exception;
+    public void visit(JsPropertyMap n, C ctx) throws Exception;
 
-	public void visit(InputFilterPattern n, C ctx) throws Exception;
+    public void visit(GssInputOrientation n, C ctx) throws Exception;
 
-	public void visit(InputFilterType n, C ctx) throws Exception;
+    public void visit(GssOutputRenamingMapFormat n, C ctx) throws Exception;
 
-	public void visit(JsDefine n, C ctx) throws Exception;
+    public void visit(Checks n, C ctx) throws Exception;
 
-	public void visit(JsDefines n, C ctx) throws Exception;
+    public void visit(SoyCssSchemeType n, C ctx) throws Exception;
 
-	public void visit(JsDefineType n, C ctx) throws Exception;
+    public void visit(IncludeInputFilter n, C ctx) throws Exception;
 
-	public void visit(JsDoc n, C ctx) throws Exception;
+    public void visit(GssDefines n, C ctx) throws Exception;
 
-	public void visit(JsDocs n, C ctx) throws Exception;
+    public void visit(Optimization n, C ctx) throws Exception;
 
-	public void visit(JsFunctionMap n, C ctx) throws Exception;
+    public void visit(Buildpath n, C ctx) throws Exception;
 
-	public void visit(JsPropertyMap n, C ctx) throws Exception;
+    public void visit(JsRenamingVariablePolice n, C ctx) throws Exception;
 
-	public void visit(JsRenaming n, C ctx) throws Exception;
+    public void visit(InputFilterPattern n, C ctx) throws Exception;
 
-	public void visit(JsRenamingFunctionPolice n, C ctx) throws Exception;
+    public void visit(WarningType n, C ctx) throws Exception;
 
-	public void visit(JsRenamingPropertyPolice n, C ctx) throws Exception;
+    public void visit(Warnings n, C ctx) throws Exception;
 
-	public void visit(JsRenamingVariablePolice n, C ctx) throws Exception;
+    public void visit(JsRenaming n, C ctx) throws Exception;
 
-	public void visit(JsSourceMapFormat n, C ctx) throws Exception;
+    public void visit(OptimizationType n, C ctx) throws Exception;
 
-	public void visit(JsVariableMap n, C ctx) throws Exception;
+    public void visit(SoyLocales n, C ctx) throws Exception;
 
-	public void visit(LangType n, C ctx) throws Exception;
+    public void visit(GssAtRules n, C ctx) throws Exception;
 
-	public void visit(Language n, C ctx) throws Exception;
+    public void visit(JsRenamingPropertyPolice n, C ctx) throws Exception;
 
-	public void visit(Optimization n, C ctx) throws Exception;
+    public void visit(JsDefines n, C ctx) throws Exception;
 
-	public void visit(Optimizations n, C ctx) throws Exception;
+    public void visit(SeverityType n, C ctx) throws Exception;
 
-	public void visit(OptimizationType n, C ctx) throws Exception;
+    public void visit(GssUnrecognizeProperty n, C ctx) throws Exception;
 
-	public void visit(Output n, C ctx) throws Exception;
+    public void visit(Language n, C ctx) throws Exception;
 
-	public void visit(SeverityType n, C ctx) throws Exception;
+    public void visit(GssOptimizationLevel n, C ctx) throws Exception;
 
-	public void visit(Source n, C ctx) throws Exception;
+    public void visit(CheckType n, C ctx) throws Exception;
 
-	public void visit(SourceEntity n, C ctx) throws Exception;
+    public void visit(Source n, C ctx) throws Exception;
 
-	public void visit(SourceEntry n, C ctx) throws Exception;
+    public void visit(Info n, C ctx) throws Exception;
 
-	public void visit(SoyCodeStyle n, C ctx) throws Exception;
+    public void visit(GssNonStandardFunction n, C ctx) throws Exception;
 
-	public void visit(SoyCssSchemeType n, C ctx) throws Exception;
+    public void visit(Closure n, C ctx) throws Exception;
 
-	public void visit(SoyLocale n, C ctx) throws Exception;
+    public void visit(GssExcludedClass n, C ctx) throws Exception;
 
-	public void visit(SoyLocales n, C ctx) throws Exception;
+    public void visit(JsDefine n, C ctx) throws Exception;
 
-	public void visit(Warning n, C ctx) throws Exception;
+    public void visit(JsRenamingFunctionPolice n, C ctx) throws Exception;
 
-	public void visit(Warnings n, C ctx) throws Exception;
+    public void visit(Output n, C ctx) throws Exception;
 
-	public void visit(WarningType n, C ctx) throws Exception;
+    public void visit(JsVariableMap n, C ctx) throws Exception;
 
 }

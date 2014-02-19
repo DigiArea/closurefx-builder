@@ -60,16 +60,16 @@ public class Output extends Node {
     }
 
     public final int sizeOfOutput(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(50) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getPath() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getPath());
         }
         if (this.getFile() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(2);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getFile());
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

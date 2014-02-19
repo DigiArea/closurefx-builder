@@ -604,116 +604,116 @@ public class ClosureJs extends Node {
     }
 
     public final int sizeOfClosureJs(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(7) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getInfo() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             size += this.getInfo().sizeOfInfo(false);
         }
         if (this.getBuildpath() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(2);
+            size += 1;
             size += this.getBuildpath().sizeOfBuildpath(false);
         }
         if (this.getOutput() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(3);
+            size += 1;
             size += this.getOutput().sizeOfOutput(false);
         }
         if (this.getOutputWrapper() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(4);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getOutputWrapper());
         }
         if (this.getWarnings() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(5);
+            size += 1;
             size += this.getWarnings().sizeOfWarnings(false);
         }
         if (this.getChecks() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(6);
+            size += 1;
             size += this.getChecks().sizeOfChecks(false);
         }
         if (this.getOptimizations() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(7);
+            size += 1;
             size += this.getOptimizations().sizeOfOptimizations(false);
         }
         if (this.getJsDocs() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(8);
+            size += 1;
             size += this.getJsDocs().sizeOfJsDocs(false);
         }
         if (this.getLanguage() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(9);
+            size += 1;
             size += this.getLanguage().sizeOfLanguage(false);
         }
         if (this.getJsDefines() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(10);
+            size += 1;
             size += this.getJsDefines().sizeOfJsDefines(false);
         }
         if (this.getRenaming() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(11);
+            size += 1;
             size += this.getRenaming().sizeOfJsRenaming(false);
         }
-        size += ZippyBuffer.sizeOfRawVarInt(12);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isBuild());
-        size += ZippyBuffer.sizeOfRawVarInt(13);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isAcceptConstKeyword());
-        size += ZippyBuffer.sizeOfRawVarInt(14);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isClosureStyle());
-        size += ZippyBuffer.sizeOfRawVarInt(15);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isClosurePass());
-        size += ZippyBuffer.sizeOfRawVarInt(16);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isJqueryPass());
-        size += ZippyBuffer.sizeOfRawVarInt(17);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isAngularPass());
         if (this.getCharset() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(18);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getCharset());
         }
-        size += ZippyBuffer.sizeOfRawVarInt(19);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isManageClosureDependencies());
-        size += ZippyBuffer.sizeOfRawVarInt(20);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isExternExports());
-        size += ZippyBuffer.sizeOfRawVarInt(21);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isGenerateExports());
         if (this.getExternExportsPath() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(22);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getExternExportsPath());
         }
         if (this.getTranslationsFile() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(23);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getTranslationsFile());
         }
         if (this.getTranslationsProject() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(24);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getTranslationsProject());
         }
         if (this.getSourceMapFile() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(25);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getSourceMapFile());
         }
         if (this.getSourceMapFormat() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(26);
+            size += 1;
             size += this.getSourceMapFormat().sizeOfJsSourceMapFormat();
         }
-        size += ZippyBuffer.sizeOfRawVarInt(27);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isPrintInputDelimeter());
         if (this.getInputDelimiter() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(28);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getInputDelimiter());
         }
-        size += ZippyBuffer.sizeOfRawVarInt(29);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isLineBreaks());
-        size += ZippyBuffer.sizeOfRawVarInt(30);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isLineBreaksAggressive());
-        size += ZippyBuffer.sizeOfRawVarInt(31);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isSingleQuotes());
-        size += ZippyBuffer.sizeOfRawVarInt(32);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isPrettyPrint());
-        size += ZippyBuffer.sizeOfRawVarInt(33);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isSkipAllPasses());
-        size += ZippyBuffer.sizeOfRawVarInt(34);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isFunctionsOnly());
-        size += ZippyBuffer.sizeOfRawVarInt(35);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isDebug());
-        size += ZippyBuffer.sizeOfRawVarInt(36);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isDevmode());
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

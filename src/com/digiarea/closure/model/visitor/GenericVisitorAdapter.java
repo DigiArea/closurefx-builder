@@ -63,308 +63,422 @@ import com.digiarea.closure.model.Warnings;
 
 public class GenericVisitorAdapter<R, C> implements GenericVisitor<R, C> {
 
-	@Override
-	public R visit(Buildpath n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(GssRenamingType n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(Check n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(LangType n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(Checks n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(GssExcludedClasses n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(CheckType n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(GssOutputOrientation n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(Closure n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(Warning n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(ClosureGss n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(GssAtRule n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(ClosureJs n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(GssUnrecognizeProperties n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(ClosureSoy n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(InputFilterType n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(ExcludeInputFilter n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(SourceEntry n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(GssAtRule n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(JsDefineType n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(GssAtRules n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(Optimizations n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(GssDefine n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(SoyCodeStyle n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(GssDefines n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(SourceEntity n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(GssExcludedClass n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(ClosureJs n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(GssExcludedClasses n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(GssVendor n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(GssInputOrientation n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(JsFunctionMap n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(GssNonStandardFunction n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(JsDoc n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(GssNonStandardFunctions n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(ClosureGss n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(GssOptimizationLevel n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(Check n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(GssOutputFormat n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(JsSourceMapFormat n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(GssOutputOrientation n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(JsDocs n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(GssOutputRenamingMapFormat n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(GssDefine n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(GssRenamingType n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(GssNonStandardFunctions n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(GssUnrecognizeProperties n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(ClosureSoy n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(GssUnrecognizeProperty n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(GssOutputFormat n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(GssVendor n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(SoyLocale n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(IncludeInputFilter n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(ExcludeInputFilter n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(Info n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(JsPropertyMap n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(InputFilterPattern n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(GssInputOrientation n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(InputFilterType n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(GssOutputRenamingMapFormat n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(JsDefine n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(Checks n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(JsDefines n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(SoyCssSchemeType n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(JsDefineType n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(IncludeInputFilter n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(JsDoc n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(GssDefines n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(JsDocs n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(Optimization n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(JsFunctionMap n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(Buildpath n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(JsPropertyMap n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(JsRenamingVariablePolice n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(JsRenaming n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(InputFilterPattern n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(JsRenamingFunctionPolice n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(WarningType n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(JsRenamingPropertyPolice n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(Warnings n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(JsRenamingVariablePolice n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(JsRenaming n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(JsSourceMapFormat n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(OptimizationType n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(JsVariableMap n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(SoyLocales n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(LangType n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(GssAtRules n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(Language n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(JsRenamingPropertyPolice n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(Optimization n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(JsDefines n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(Optimizations n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(SeverityType n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(OptimizationType n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(GssUnrecognizeProperty n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(Output n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(Language n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(SeverityType n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(GssOptimizationLevel n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(Source n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(CheckType n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(SourceEntity n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(Source n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(SourceEntry n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(Info n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(SoyCodeStyle n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(GssNonStandardFunction n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(SoyCssSchemeType n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(Closure n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(SoyLocale n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(GssExcludedClass n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(SoyLocales n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(JsDefine n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(Warning n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(JsRenamingFunctionPolice n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public R visit(Warnings n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(Output n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	@Override
-	public R visit(WarningType n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public R visit(JsVariableMap n, C ctx) throws Exception {
+        if (n.getParent() != null) {
+            n.getParent().accept(this, ctx);
+        }
+        return null;
+    }
 
-	public GenericVisitorAdapter() {
-		super();
-	}
+    public GenericVisitorAdapter() {
+        super();
+    }
 
 }

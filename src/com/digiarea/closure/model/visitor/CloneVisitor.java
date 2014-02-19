@@ -46,6 +46,7 @@ import com.digiarea.closure.model.JsVariableMap;
 import com.digiarea.closure.model.LangType;
 import com.digiarea.closure.model.Language;
 import com.digiarea.closure.model.Node;
+import com.digiarea.closure.model.NodeFacade;
 import com.digiarea.closure.model.Optimization;
 import com.digiarea.closure.model.OptimizationType;
 import com.digiarea.closure.model.Optimizations;
@@ -62,348 +63,463 @@ import com.digiarea.closure.model.Warning;
 import com.digiarea.closure.model.WarningType;
 import com.digiarea.closure.model.Warnings;
 
+@SuppressWarnings("unchecked")
 public class CloneVisitor<C> implements GenericVisitor<Node, C> {
 
-	@Override
-	public Node visit(Buildpath n, C ctx) throws Exception {
-		Buildpath img = new Buildpath();
-		return img;
-	}
+    @Override
+    public Node visit(GssRenamingType n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(Check n, C ctx) throws Exception {
-		Check img = new Check();
-		return img;
-	}
+    @Override
+    public Node visit(LangType n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(Checks n, C ctx) throws Exception {
-		Checks img = new Checks();
-		return img;
-	}
+    @Override
+    public Node visit(GssExcludedClasses n, C ctx) throws Exception {
+        GssExcludedClasses img = NodeFacade.GssExcludedClasses();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(CheckType n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(GssOutputOrientation n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(Closure n, C ctx) throws Exception {
-		Closure img = new Closure();
-		return img;
-	}
+    @Override
+    public Node visit(Warning n, C ctx) throws Exception {
+        Warning img = NodeFacade.Warning();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(ClosureGss n, C ctx) throws Exception {
-		ClosureGss img = new ClosureGss();
-		return img;
-	}
+    @Override
+    public Node visit(GssAtRule n, C ctx) throws Exception {
+        GssAtRule img = NodeFacade.GssAtRule();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(ClosureJs n, C ctx) throws Exception {
-		ClosureJs img = new ClosureJs();
-		return img;
-	}
+    @Override
+    public Node visit(GssUnrecognizeProperties n, C ctx) throws Exception {
+        GssUnrecognizeProperties img = NodeFacade.GssUnrecognizeProperties();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(ClosureSoy n, C ctx) throws Exception {
-		ClosureSoy img = new ClosureSoy();
-		return img;
-	}
+    @Override
+    public Node visit(InputFilterType n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(ExcludeInputFilter n, C ctx) throws Exception {
-		ExcludeInputFilter img = new ExcludeInputFilter();
-		return img;
-	}
+    @Override
+    public Node visit(SourceEntry n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(GssAtRule n, C ctx) throws Exception {
-		GssAtRule img = new GssAtRule();
-		return img;
-	}
+    @Override
+    public Node visit(JsDefineType n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(GssAtRules n, C ctx) throws Exception {
-		GssAtRules img = new GssAtRules();
-		return img;
-	}
+    @Override
+    public Node visit(Optimizations n, C ctx) throws Exception {
+        Optimizations img = NodeFacade.Optimizations();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(GssDefine n, C ctx) throws Exception {
-		GssDefine img = new GssDefine();
-		return img;
-	}
+    @Override
+    public Node visit(SoyCodeStyle n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(GssDefines n, C ctx) throws Exception {
-		GssDefines img = new GssDefines();
-		return img;
-	}
+    @Override
+    public Node visit(SourceEntity n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(GssExcludedClass n, C ctx) throws Exception {
-		GssExcludedClass img = new GssExcludedClass();
-		return img;
-	}
+    @Override
+    public Node visit(ClosureJs n, C ctx) throws Exception {
+        ClosureJs img = NodeFacade.ClosureJs();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(GssExcludedClasses n, C ctx) throws Exception {
-		GssExcludedClasses img = new GssExcludedClasses();
-		return img;
-	}
+    @Override
+    public Node visit(GssVendor n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(GssInputOrientation n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(JsFunctionMap n, C ctx) throws Exception {
+        JsFunctionMap img = NodeFacade.JsFunctionMap();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(GssNonStandardFunction n, C ctx) throws Exception {
-		GssNonStandardFunction img = new GssNonStandardFunction();
-		return img;
-	}
+    @Override
+    public Node visit(JsDoc n, C ctx) throws Exception {
+        JsDoc img = NodeFacade.JsDoc();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(GssNonStandardFunctions n, C ctx) throws Exception {
-		GssNonStandardFunctions img = new GssNonStandardFunctions();
-		return img;
-	}
+    @Override
+    public Node visit(ClosureGss n, C ctx) throws Exception {
+        ClosureGss img = NodeFacade.ClosureGss();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(GssOptimizationLevel n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(Check n, C ctx) throws Exception {
+        Check img = NodeFacade.Check();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(GssOutputFormat n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(JsSourceMapFormat n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(GssOutputOrientation n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(JsDocs n, C ctx) throws Exception {
+        JsDocs img = NodeFacade.JsDocs();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(GssOutputRenamingMapFormat n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(GssDefine n, C ctx) throws Exception {
+        GssDefine img = NodeFacade.GssDefine();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(GssRenamingType n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(GssNonStandardFunctions n, C ctx) throws Exception {
+        GssNonStandardFunctions img = NodeFacade.GssNonStandardFunctions();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(GssUnrecognizeProperties n, C ctx) throws Exception {
-		GssUnrecognizeProperties img = new GssUnrecognizeProperties();
-		return img;
-	}
+    @Override
+    public Node visit(ClosureSoy n, C ctx) throws Exception {
+        ClosureSoy img = NodeFacade.ClosureSoy();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(GssUnrecognizeProperty n, C ctx) throws Exception {
-		GssUnrecognizeProperty img = new GssUnrecognizeProperty();
-		return img;
-	}
+    @Override
+    public Node visit(GssOutputFormat n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(GssVendor n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(SoyLocale n, C ctx) throws Exception {
+        SoyLocale img = NodeFacade.SoyLocale();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(IncludeInputFilter n, C ctx) throws Exception {
-		IncludeInputFilter img = new IncludeInputFilter();
-		return img;
-	}
+    @Override
+    public Node visit(ExcludeInputFilter n, C ctx) throws Exception {
+        ExcludeInputFilter img = NodeFacade.ExcludeInputFilter();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(Info n, C ctx) throws Exception {
-		Info img = new Info();
-		return img;
-	}
+    @Override
+    public Node visit(JsPropertyMap n, C ctx) throws Exception {
+        JsPropertyMap img = NodeFacade.JsPropertyMap();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(InputFilterPattern n, C ctx) throws Exception {
-		InputFilterPattern img = new InputFilterPattern();
-		return img;
-	}
+    @Override
+    public Node visit(GssInputOrientation n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(InputFilterType n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(GssOutputRenamingMapFormat n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(JsDefine n, C ctx) throws Exception {
-		JsDefine img = new JsDefine();
-		return img;
-	}
+    @Override
+    public Node visit(Checks n, C ctx) throws Exception {
+        Checks img = NodeFacade.Checks();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(JsDefines n, C ctx) throws Exception {
-		JsDefines img = new JsDefines();
-		return img;
-	}
+    @Override
+    public Node visit(SoyCssSchemeType n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(JsDefineType n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(IncludeInputFilter n, C ctx) throws Exception {
+        IncludeInputFilter img = NodeFacade.IncludeInputFilter();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(JsDoc n, C ctx) throws Exception {
-		JsDoc img = new JsDoc();
-		return img;
-	}
+    @Override
+    public Node visit(GssDefines n, C ctx) throws Exception {
+        GssDefines img = NodeFacade.GssDefines();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(JsDocs n, C ctx) throws Exception {
-		JsDocs img = new JsDocs();
-		return img;
-	}
+    @Override
+    public Node visit(Optimization n, C ctx) throws Exception {
+        Optimization img = NodeFacade.Optimization();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(JsFunctionMap n, C ctx) throws Exception {
-		JsFunctionMap img = new JsFunctionMap();
-		return img;
-	}
+    @Override
+    public Node visit(Buildpath n, C ctx) throws Exception {
+        Buildpath img = NodeFacade.Buildpath();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(JsPropertyMap n, C ctx) throws Exception {
-		JsPropertyMap img = new JsPropertyMap();
-		return img;
-	}
+    @Override
+    public Node visit(JsRenamingVariablePolice n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(JsRenaming n, C ctx) throws Exception {
-		JsRenaming img = new JsRenaming();
-		return img;
-	}
+    @Override
+    public Node visit(InputFilterPattern n, C ctx) throws Exception {
+        InputFilterPattern img = NodeFacade.InputFilterPattern();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(JsRenamingFunctionPolice n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(WarningType n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(JsRenamingPropertyPolice n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(Warnings n, C ctx) throws Exception {
+        Warnings img = NodeFacade.Warnings();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(JsRenamingVariablePolice n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(JsRenaming n, C ctx) throws Exception {
+        JsRenaming img = NodeFacade.JsRenaming();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(JsSourceMapFormat n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(OptimizationType n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(JsVariableMap n, C ctx) throws Exception {
-		JsVariableMap img = new JsVariableMap();
-		return img;
-	}
+    @Override
+    public Node visit(SoyLocales n, C ctx) throws Exception {
+        SoyLocales img = NodeFacade.SoyLocales();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(LangType n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(GssAtRules n, C ctx) throws Exception {
+        GssAtRules img = NodeFacade.GssAtRules();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(Language n, C ctx) throws Exception {
-		Language img = new Language();
-		return img;
-	}
+    @Override
+    public Node visit(JsRenamingPropertyPolice n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(Optimization n, C ctx) throws Exception {
-		Optimization img = new Optimization();
-		return img;
-	}
+    @Override
+    public Node visit(JsDefines n, C ctx) throws Exception {
+        JsDefines img = NodeFacade.JsDefines();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(Optimizations n, C ctx) throws Exception {
-		Optimizations img = new Optimizations();
-		return img;
-	}
+    @Override
+    public Node visit(SeverityType n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(OptimizationType n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(GssUnrecognizeProperty n, C ctx) throws Exception {
+        GssUnrecognizeProperty img = NodeFacade.GssUnrecognizeProperty();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(Output n, C ctx) throws Exception {
-		Output img = new Output();
-		return img;
-	}
+    @Override
+    public Node visit(Language n, C ctx) throws Exception {
+        Language img = NodeFacade.Language();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(SeverityType n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(GssOptimizationLevel n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(Source n, C ctx) throws Exception {
-		Source img = new Source();
-		return img;
-	}
+    @Override
+    public Node visit(CheckType n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(SourceEntity n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(Source n, C ctx) throws Exception {
+        Source img = NodeFacade.Source();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(SourceEntry n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(Info n, C ctx) throws Exception {
+        Info img = NodeFacade.Info();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(SoyCodeStyle n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(GssNonStandardFunction n, C ctx) throws Exception {
+        GssNonStandardFunction img = NodeFacade.GssNonStandardFunction();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(SoyCssSchemeType n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(Closure n, C ctx) throws Exception {
+        Closure img = NodeFacade.Closure();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(SoyLocale n, C ctx) throws Exception {
-		SoyLocale img = new SoyLocale();
-		return img;
-	}
+    @Override
+    public Node visit(GssExcludedClass n, C ctx) throws Exception {
+        GssExcludedClass img = NodeFacade.GssExcludedClass();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(SoyLocales n, C ctx) throws Exception {
-		SoyLocales img = new SoyLocales();
-		return img;
-	}
+    @Override
+    public Node visit(JsDefine n, C ctx) throws Exception {
+        JsDefine img = NodeFacade.JsDefine();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(Warning n, C ctx) throws Exception {
-		Warning img = new Warning();
-		return img;
-	}
+    @Override
+    public Node visit(JsRenamingFunctionPolice n, C ctx) throws Exception {
+        return null;
+    }
 
-	@Override
-	public Node visit(Warnings n, C ctx) throws Exception {
-		Warnings img = new Warnings();
-		return img;
-	}
+    @Override
+    public Node visit(Output n, C ctx) throws Exception {
+        Output img = NodeFacade.Output();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	@Override
-	public Node visit(WarningType n, C ctx) throws Exception {
-		return null;
-	}
+    @Override
+    public Node visit(JsVariableMap n, C ctx) throws Exception {
+        JsVariableMap img = NodeFacade.JsVariableMap();
+        if (n.getParent() != null) {
+            img.setParent((Node) n.getParent().accept(this, ctx));
+        }
+        return img;
+    }
 
-	public CloneVisitor() {
-		super();
-	}
+    public CloneVisitor() {
+        super();
+    }
 
 }

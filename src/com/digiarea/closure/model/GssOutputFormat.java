@@ -23,7 +23,7 @@ public enum GssOutputFormat {
     public final int sizeOfGssOutputFormat() {
         int size = 0;
         size += ZippyBuffer.sizeOfRawVarInt(ordinal());
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

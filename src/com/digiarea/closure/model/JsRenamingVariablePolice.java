@@ -23,7 +23,7 @@ public enum JsRenamingVariablePolice {
     public final int sizeOfJsRenamingVariablePolice() {
         int size = 0;
         size += ZippyBuffer.sizeOfRawVarInt(ordinal());
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

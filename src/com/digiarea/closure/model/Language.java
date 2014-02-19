@@ -60,16 +60,16 @@ public class Language extends Node {
     }
 
     public final int sizeOfLanguage(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(45) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getInput() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             size += this.getInput().sizeOfLangType();
         }
         if (this.getOutput() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(2);
+            size += 1;
             size += this.getOutput().sizeOfLangType();
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

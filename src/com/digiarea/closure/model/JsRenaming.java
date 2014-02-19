@@ -283,56 +283,56 @@ public class JsRenaming extends Node {
     }
 
     public final int sizeOfJsRenaming(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(39) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getVariableMap() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             size += this.getVariableMap().sizeOfJsVariableMap(false);
         }
         if (this.getFunctionMap() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(2);
+            size += 1;
             size += this.getFunctionMap().sizeOfJsFunctionMap(false);
         }
         if (this.getPropertyMap() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(3);
+            size += 1;
             size += this.getPropertyMap().sizeOfJsPropertyMap(false);
         }
         if (this.getVariablePolice() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(4);
+            size += 1;
             size += this.getVariablePolice().sizeOfJsRenamingVariablePolice();
         }
         if (this.getFunctionPolice() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(5);
+            size += 1;
             size += this.getFunctionPolice().sizeOfJsRenamingFunctionPolice();
         }
         if (this.getPropertyPolice() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(6);
+            size += 1;
             size += this.getPropertyPolice().sizeOfJsRenamingPropertyPolice();
         }
         if (this.getPrefix() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(7);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getPrefix());
         }
         if (this.getPrefixNamespace() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(8);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getPrefixNamespace());
         }
-        size += ZippyBuffer.sizeOfRawVarInt(9);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isDevirtualizePrototypeMethods());
-        size += ZippyBuffer.sizeOfRawVarInt(10);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isGeneratePseudoNames());
-        size += ZippyBuffer.sizeOfRawVarInt(11);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isShadowVariables());
-        size += ZippyBuffer.sizeOfRawVarInt(12);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isPropertyAffinity());
-        size += ZippyBuffer.sizeOfRawVarInt(13);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isDisambiguateProperties());
-        size += ZippyBuffer.sizeOfRawVarInt(14);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isAmbiguateProperties());
-        size += ZippyBuffer.sizeOfRawVarInt(15);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isExportTestFunctions());
-        size += ZippyBuffer.sizeOfRawVarInt(16);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isRenameLabels());
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

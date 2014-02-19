@@ -343,64 +343,64 @@ public class ClosureSoy extends Node {
     }
 
     public final int sizeOfClosureSoy(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(8) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getInfo() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             size += this.getInfo().sizeOfInfo(false);
         }
         if (this.getBuildpath() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(2);
+            size += 1;
             size += this.getBuildpath().sizeOfBuildpath(false);
         }
         if (this.getSoyLocales() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(3);
+            size += 1;
             size += this.getSoyLocales().sizeOfSoyLocales(false);
         }
         if (this.getCssScheme() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(4);
+            size += 1;
             size += this.getCssScheme().sizeOfSoyCssSchemeType();
         }
         if (this.getCodeStyle() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(5);
+            size += 1;
             size += this.getCodeStyle().sizeOfSoyCodeStyle();
         }
-        size += ZippyBuffer.sizeOfRawVarInt(6);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isBuild());
-        size += ZippyBuffer.sizeOfRawVarInt(7);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isAllowExternalCalls());
-        size += ZippyBuffer.sizeOfRawVarInt(8);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isAllowDeprecatedSyntax());
-        size += ZippyBuffer.sizeOfRawVarInt(9);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isUsingIjData());
-        size += ZippyBuffer.sizeOfRawVarInt(10);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isGenerateJsDoc());
-        size += ZippyBuffer.sizeOfRawVarInt(11);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isProvideRequireSoyNamespaces());
-        size += ZippyBuffer.sizeOfRawVarInt(12);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isProvideRequireJsFunctions());
-        size += ZippyBuffer.sizeOfRawVarInt(13);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isDeclareTopLevelNamespace());
-        size += ZippyBuffer.sizeOfRawVarInt(14);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isGenerateGoogMessagesDefs());
-        size += ZippyBuffer.sizeOfRawVarInt(15);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isGoogMessagesExternal());
-        size += ZippyBuffer.sizeOfRawVarInt(16);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isRightToLeftDir());
-        size += ZippyBuffer.sizeOfRawVarInt(17);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isRightToLeftDirGoog());
         if (this.getGlobalsPath() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(18);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getGlobalsPath());
         }
         if (this.getMessagesPath() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(19);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getMessagesPath());
         }
         if (this.getOutputPath() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(20);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getOutputPath());
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

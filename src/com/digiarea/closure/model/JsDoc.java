@@ -45,12 +45,12 @@ public class JsDoc extends Node {
     }
 
     public final int sizeOfJsDoc(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(36) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getValue() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getValue());
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

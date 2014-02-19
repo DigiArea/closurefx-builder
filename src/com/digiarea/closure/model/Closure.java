@@ -84,20 +84,20 @@ public class Closure extends Node {
     }
 
     public final int sizeOfClosure(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(5) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getClosureJs() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             size += this.getClosureJs().sizeOfClosureJs(false);
         }
         if (this.getClosureGss() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(2);
+            size += 1;
             size += this.getClosureGss().sizeOfClosureGss(false);
         }
         if (this.getClosureSoy() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(3);
+            size += 1;
             size += this.getClosureSoy().sizeOfClosureSoy(false);
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

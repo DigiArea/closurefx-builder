@@ -8,6 +8,9 @@ import com.digiarea.zippy.ZippyBuffer;
 
 public enum WarningType {
 
+    ES3, 
+    CHECK_EVENTFUL_OBJECT_DISPOSAL, 
+    UNNECESSARY_CASTS, 
     ACCESS_CONTROLS, 
     AMBIGUOUS_FUNCTION_DECL, 
     DEBUGGER_STATEMENT_PRESENT, 
@@ -61,7 +64,7 @@ public enum WarningType {
     public final int sizeOfWarningType() {
         int size = 0;
         size += ZippyBuffer.sizeOfRawVarInt(ordinal());
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

@@ -373,86 +373,86 @@ public class ClosureGss extends Node {
     }
 
     public final int sizeOfClosureGss(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(6) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getInfo() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             size += this.getInfo().sizeOfInfo(false);
         }
         if (this.getBuildpath() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(2);
+            size += 1;
             size += this.getBuildpath().sizeOfBuildpath(false);
         }
         if (this.getOutput() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(3);
+            size += 1;
             size += this.getOutput().sizeOfOutput(false);
         }
         if (this.getCopyrightNotice() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(4);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getCopyrightNotice());
         }
         if (this.getGssDefines() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(5);
+            size += 1;
             size += this.getGssDefines().sizeOfGssDefines(false);
         }
         if (this.getGssNonStandardFunctions() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(6);
+            size += 1;
             size += this.getGssNonStandardFunctions().sizeOfGssNonStandardFunctions(false);
         }
         if (this.getGssUnrecognizeProperties() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(7);
+            size += 1;
             size += this.getGssUnrecognizeProperties().sizeOfGssUnrecognizeProperties(false);
         }
         if (this.getGssAtRules() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(8);
+            size += 1;
             size += this.getGssAtRules().sizeOfGssAtRules(false);
         }
         if (this.getGssExcludedClasses() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(9);
+            size += 1;
             size += this.getGssExcludedClasses().sizeOfGssExcludedClasses(false);
         }
-        size += ZippyBuffer.sizeOfRawVarInt(10);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isBuild());
-        size += ZippyBuffer.sizeOfRawVarInt(11);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isAllowUnrecognizedFunctions());
-        size += ZippyBuffer.sizeOfRawVarInt(12);
+        size += 1;
         size += ZippyBuffer.sizeOfBoolean(this.isAllowUnrecognizedProperties());
         if (this.getCssRenamingPrefix() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(13);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getCssRenamingPrefix());
         }
         if (this.getOutputRenamingMap() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(14);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getOutputRenamingMap());
         }
         if (this.getRenamingType() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(15);
+            size += 1;
             size += this.getRenamingType().sizeOfGssRenamingType();
         }
         if (this.getVendor() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(16);
+            size += 1;
             size += this.getVendor().sizeOfGssVendor();
         }
         if (this.getOutputRenamingMapFormat() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(17);
+            size += 1;
             size += this.getOutputRenamingMapFormat().sizeOfGssOutputRenamingMapFormat();
         }
         if (this.getOptimizationLevel() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(18);
+            size += 1;
             size += this.getOptimizationLevel().sizeOfGssOptimizationLevel();
         }
         if (this.getOutputFormat() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(19);
+            size += 1;
             size += this.getOutputFormat().sizeOfGssOutputFormat();
         }
         if (this.getInputOrientation() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(20);
+            size += 1;
             size += this.getInputOrientation().sizeOfGssInputOrientation();
         }
         if (this.getOutputOrientation() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(21);
+            size += 1;
             size += this.getOutputOrientation().sizeOfGssOutputOrientation();
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

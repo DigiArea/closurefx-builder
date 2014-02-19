@@ -251,6 +251,14 @@ public class LabelProviders {
 			return "violatedModuleDependencies";
 		case VISIBILITY:
 			return "visibility";
+		case CHECK_EVENTFUL_OBJECT_DISPOSAL:
+			return "checkEventfulObjectDisposal";
+		case ES3:
+			return "es3";
+		case UNNECESSARY_CASTS:
+			break;
+		default:
+			break;
 		}
 		return null;
 	}
@@ -339,6 +347,14 @@ public class LabelProviders {
 			return "Warnings about violated module dependencies.";
 		case VISIBILITY:
 			return "Warnings when @private and @protected are violated.";
+		case CHECK_EVENTFUL_OBJECT_DISPOSAL:
+			return "Check to ensure there exists a path to dispose of each eventful object created.";
+		case ES3:
+			return "Checks ES3-specifix stuff such as treling comas and keywords in names of properties.";
+		case UNNECESSARY_CASTS:
+			return "Warnings when unnecessary type cast is found.";
+		default:
+			break;
 		}
 		return null;
 	}

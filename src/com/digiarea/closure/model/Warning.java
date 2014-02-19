@@ -60,16 +60,16 @@ public class Warning extends Node {
     }
 
     public final int sizeOfWarning(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(59) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getSeverity() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             size += this.getSeverity().sizeOfSeverityType();
         }
         if (this.getType() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(2);
+            size += 1;
             size += this.getType().sizeOfWarningType();
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

@@ -73,20 +73,20 @@ public class GssAtRules extends Node {
     }
 
     public final int sizeOfGssAtRules(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(13) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getGssAtRule() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             final List<GssAtRule> gssAtRule = this.getGssAtRule();
             size += ZippyBuffer.sizeOfRawVarInt(gssAtRule.size());
             for (GssAtRule entry : gssAtRule) {
                 if (entry != null) {
                     size += entry.sizeOfGssAtRule(false);
                 } else {
-                    size += ZippyBuffer.sizeOfRawVarInt(0);
+                    size += 1;
                 }
             }
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

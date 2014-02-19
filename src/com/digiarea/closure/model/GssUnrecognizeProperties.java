@@ -73,20 +73,20 @@ public class GssUnrecognizeProperties extends Node {
     }
 
     public final int sizeOfGssUnrecognizeProperties(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(26) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getGssUnrecognizeProperty() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             final List<GssUnrecognizeProperty> gssUnrecognizeProperty = this.getGssUnrecognizeProperty();
             size += ZippyBuffer.sizeOfRawVarInt(gssUnrecognizeProperty.size());
             for (GssUnrecognizeProperty entry : gssUnrecognizeProperty) {
                 if (entry != null) {
                     size += entry.sizeOfGssUnrecognizeProperty(false);
                 } else {
-                    size += ZippyBuffer.sizeOfRawVarInt(0);
+                    size += 1;
                 }
             }
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

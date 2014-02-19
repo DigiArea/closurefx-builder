@@ -73,20 +73,20 @@ public class Optimizations extends Node {
     }
 
     public final int sizeOfOptimizations(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(48) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getOptimization() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             final List<Optimization> optimization = this.getOptimization();
             size += ZippyBuffer.sizeOfRawVarInt(optimization.size());
             for (Optimization entry : optimization) {
                 if (entry != null) {
                     size += entry.sizeOfOptimization(false);
                 } else {
-                    size += ZippyBuffer.sizeOfRawVarInt(0);
+                    size += 1;
                 }
             }
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

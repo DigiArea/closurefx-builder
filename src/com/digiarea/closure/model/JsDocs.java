@@ -73,20 +73,20 @@ public class JsDocs extends Node {
     }
 
     public final int sizeOfJsDocs(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(37) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getJsDoc() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             final List<JsDoc> jsDoc = this.getJsDoc();
             size += ZippyBuffer.sizeOfRawVarInt(jsDoc.size());
             for (JsDoc entry : jsDoc) {
                 if (entry != null) {
                     size += entry.sizeOfJsDoc(false);
                 } else {
-                    size += ZippyBuffer.sizeOfRawVarInt(0);
+                    size += 1;
                 }
             }
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

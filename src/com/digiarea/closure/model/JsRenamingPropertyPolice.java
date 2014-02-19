@@ -24,7 +24,7 @@ public enum JsRenamingPropertyPolice {
     public final int sizeOfJsRenamingPropertyPolice() {
         int size = 0;
         size += ZippyBuffer.sizeOfRawVarInt(ordinal());
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

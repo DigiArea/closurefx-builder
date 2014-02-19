@@ -73,20 +73,20 @@ public class GssExcludedClasses extends Node {
     }
 
     public final int sizeOfGssExcludedClasses(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(17) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getGssExcludedClass() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             final List<GssExcludedClass> gssExcludedClass = this.getGssExcludedClass();
             size += ZippyBuffer.sizeOfRawVarInt(gssExcludedClass.size());
             for (GssExcludedClass entry : gssExcludedClass) {
                 if (entry != null) {
                     size += entry.sizeOfGssExcludedClass(false);
                 } else {
-                    size += ZippyBuffer.sizeOfRawVarInt(0);
+                    size += 1;
                 }
             }
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

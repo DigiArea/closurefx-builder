@@ -60,16 +60,16 @@ public class JsFunctionMap extends Node {
     }
 
     public final int sizeOfJsFunctionMap(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(38) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getInput() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getInput());
         }
         if (this.getOutput() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(2);
+            size += 1;
             size += ZippyBuffer.sizeOfString(this.getOutput());
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

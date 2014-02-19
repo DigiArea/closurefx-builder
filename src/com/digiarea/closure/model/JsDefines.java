@@ -73,20 +73,20 @@ public class JsDefines extends Node {
     }
 
     public final int sizeOfJsDefines(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(34) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getJsDefine() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             final List<JsDefine> jsDefine = this.getJsDefine();
             size += ZippyBuffer.sizeOfRawVarInt(jsDefine.size());
             for (JsDefine entry : jsDefine) {
                 if (entry != null) {
                     size += entry.sizeOfJsDefine(false);
                 } else {
-                    size += ZippyBuffer.sizeOfRawVarInt(0);
+                    size += 1;
                 }
             }
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

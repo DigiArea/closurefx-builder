@@ -73,20 +73,20 @@ public class ExcludeInputFilter extends Node {
     }
 
     public final int sizeOfExcludeInputFilter(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(11) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getPattern() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             final List<InputFilterPattern> pattern = this.getPattern();
             size += ZippyBuffer.sizeOfRawVarInt(pattern.size());
             for (InputFilterPattern entry : pattern) {
                 if (entry != null) {
                     size += entry.sizeOfInputFilterPattern(false);
                 } else {
-                    size += ZippyBuffer.sizeOfRawVarInt(0);
+                    size += 1;
                 }
             }
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

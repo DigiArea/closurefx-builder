@@ -73,20 +73,20 @@ public class SoyLocales extends Node {
     }
 
     public final int sizeOfSoyLocales(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(58) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getSoyLocale() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             final List<SoyLocale> soyLocale = this.getSoyLocale();
             size += ZippyBuffer.sizeOfRawVarInt(soyLocale.size());
             for (SoyLocale entry : soyLocale) {
                 if (entry != null) {
                     size += entry.sizeOfSoyLocale(false);
                 } else {
-                    size += ZippyBuffer.sizeOfRawVarInt(0);
+                    size += 1;
                 }
             }
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

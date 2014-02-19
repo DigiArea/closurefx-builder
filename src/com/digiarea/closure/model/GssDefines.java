@@ -73,20 +73,20 @@ public class GssDefines extends Node {
     }
 
     public final int sizeOfGssDefines(final boolean isExternal) {
-        int size = isExternal ? ZippyBuffer.sizeOfRawVarInt(15) : 0;
+        int size = isExternal ? 1 : 0;
         if (this.getGssDefine() != null) {
-            size += ZippyBuffer.sizeOfRawVarInt(1);
+            size += 1;
             final List<GssDefine> gssDefine = this.getGssDefine();
             size += ZippyBuffer.sizeOfRawVarInt(gssDefine.size());
             for (GssDefine entry : gssDefine) {
                 if (entry != null) {
                     size += entry.sizeOfGssDefine(false);
                 } else {
-                    size += ZippyBuffer.sizeOfRawVarInt(0);
+                    size += 1;
                 }
             }
         }
-        size += ZippyBuffer.sizeOfRawVarInt(0);
+        size += 1;
         return size;
     }
 

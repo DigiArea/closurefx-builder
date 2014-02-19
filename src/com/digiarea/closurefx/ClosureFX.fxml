@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?scenebuilder-preview-i18n-resource locale/editor_en.properties?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closurefx.ClosureFXController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.digiarea.closurefx.ClosureFXController">
   <children>
     <Label fx:id="label" layoutX="126.0" layoutY="120.0" minHeight="16.0" minWidth="69.0" />
     <BorderPane prefHeight="-1.0" prefWidth="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -41,8 +41,12 @@
                     </MenuItem>
                     <MenuItem mnemonicParsing="false" onAction="#handleSaveAllButtonAction" text="%ClosureMenu_FileSaveAll" />
                     <SeparatorMenuItem mnemonicParsing="false" />
-                    <MenuItem mnemonicParsing="false" onAction="#handleExportCommandLineButtonAction" text="%ClosureMenu_FileExport_CommandLine" />
-                     <SeparatorMenuItem mnemonicParsing="false" />
+                    <Menu mnemonicParsing="false" text="%ClosureMenu_FileExport">
+                      <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleExportCommandLineButtonAction" text="%ClosureMenu_FileExport_CommandLine" />
+                      </items>
+                    </Menu>
+                    <SeparatorMenuItem mnemonicParsing="false" />
                     <MenuItem mnemonicParsing="false" onAction="#handleCloseButtonAction" text="%ClosureMenu_FileClose" />
                     <MenuItem mnemonicParsing="false" onAction="#handleCloseAllButtonAction" text="%ClosureMenu_FileCloseAll" />
                     <SeparatorMenuItem mnemonicParsing="false" />

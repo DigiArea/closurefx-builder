@@ -8,8 +8,9 @@ import javafx.scene.control.ProgressBar;
 
 import com.digiarea.closurefx.build.console.ClosureStatus;
 import com.digiarea.closurefx.build.validation.Status;
+import com.digiarea.closurefx.cli.console.ICliConsole;
 
-public interface IConsole {
+public interface IConsole extends ICliConsole{
 
 	public ProgressBar getProgressBar();
 

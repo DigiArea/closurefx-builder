@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?scenebuilder-preview-i18n-resource ../../../../closurefx/locale/editor_en.properties?>
+<?scenebuilder-stylesheet ../../../../closurefx/themes/default.css?>
+
+<VBox id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="0.0" styleClass="dialog-top" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.digiarea.closure.model.controller.dialogs.ExportCLIDialogController">
+  <children>
+    <VBox padding="$x1" prefHeight="-1.0" prefWidth="-1.0" spacing="10.0" VBox.vgrow="ALWAYS">
+      <children>
+        <GridPane hgap="5.0" minHeight="-Infinity" minWidth="-1.0">
+          <children>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBrowseButtonAction" text="%Button_Browse" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" />
+            <TextField fx:id="controlFile" maxHeight="1.7976931348623157E308" prefWidth="-1.0" GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.vgrow="ALWAYS" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="25.0" prefHeight="-1.0" vgrow="NEVER" />
+          </rowConstraints>
+        </GridPane>
+        <TitledPane animated="false" expanded="true" minHeight="-Infinity" text="%ExportCLIDialog_AdditionalOptions" VBox.vgrow="NEVER">
+          <content>
+            <VBox prefHeight="-1.0" prefWidth="-1.0">
+              <children>
+                <Label maxHeight="-Infinity" minHeight="-Infinity" text="%ExportCLIDialog_AdditionalOptions_Desc" VBox.vgrow="NEVER">
+                  <VBox.margin>
+                    <Insets bottom="10.0" />
+                  </VBox.margin>
+                </Label>
+                <HBox fillHeight="true" maxHeight="-1.0" minHeight="-1.0" prefHeight="-1.0" prefWidth="-1.0" spacing="10.0" VBox.vgrow="ALWAYS">
+                  <children>
+                    <GridPane minWidth="-Infinity" vgap="5.0" HBox.hgrow="NEVER">
+                      <children>
+                        <Label text="%JSHelperSection_Optimization" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <ToggleButton alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" styleClass="invisible-button" text="%JSHelperSection_Whitespaces" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                          <graphic>
+                            <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@../../../../closurefx/resources/optimization-whitespases.png" />
+                              </image>
+                            </ImageView>
+                          </graphic>
+                        </ToggleButton>
+                        <ToggleButton alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" styleClass="invisible-button" text="%JSHelperSection_Simple" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                          <graphic>
+                            <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@../../../../closurefx/resources/optimization-simple.png" />
+                              </image>
+                            </ImageView>
+                          </graphic>
+                        </ToggleButton>
+                        <ToggleButton alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" styleClass="invisible-button" text="%JSHelperSection_Advance" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                          <graphic>
+                            <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@../../../../closurefx/resources/optimization-advanced.png" />
+                              </image>
+                            </ImageView>
+                          </graphic>
+                        </ToggleButton>
+                      </children>
+                      <columnConstraints>
+                        <ColumnConstraints hgrow="NEVER" minWidth="-1.0" prefWidth="-1.0" />
+                      </columnConstraints>
+                      <rowConstraints>
+                        <RowConstraints maxHeight="-1.0" minHeight="-1.0" prefHeight="-1.0" vgrow="NEVER" />
+                        <RowConstraints minHeight="-1.0" prefHeight="-1.0" vgrow="NEVER" />
+                        <RowConstraints fillHeight="true" maxHeight="-1.0" minHeight="-1.0" prefHeight="-1.0" vgrow="NEVER" />
+                        <RowConstraints maxHeight="-1.0" minHeight="-1.0" prefHeight="-1.0" vgrow="NEVER" />
+                      </rowConstraints>
+                    </GridPane>
+                    <GridPane vgap="5.0" HBox.hgrow="NEVER">
+                      <children>
+                        <Label text="%JSHelperSection_Warning" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <ToggleButton alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" styleClass="invisible-button" text="%JSHelperSection_Default" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                          <graphic>
+                            <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@../../../../closurefx/resources/mark-exclamation.png" />
+                              </image>
+                            </ImageView>
+                          </graphic>
+                        </ToggleButton>
+                        <ToggleButton alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" prefWidth="-1.0" styleClass="invisible-button" text="%JSHelperSection_Quite" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                          <graphic>
+                            <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@../../../../closurefx/resources/mark-off.png" />
+                              </image>
+                            </ImageView>
+                          </graphic>
+                        </ToggleButton>
+                        <ToggleButton alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" styleClass="invisible-button" text="%JSHelperSection_Verbose" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                          <graphic>
+                            <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="@../../../../closurefx/resources/mark-error.png" />
+                              </image>
+                            </ImageView>
+                          </graphic>
+                        </ToggleButton>
+                      </children>
+                      <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="-1.0" prefWidth="-1.0" />
+                      </columnConstraints>
+                      <rowConstraints>
+                        <RowConstraints maxHeight="-1.0" minHeight="-1.0" prefHeight="-1.0" vgrow="NEVER" />
+                        <RowConstraints maxHeight="-1.0" minHeight="-1.0" prefHeight="-1.0" vgrow="NEVER" />
+                        <RowConstraints maxHeight="-1.0" minHeight="-1.0" prefHeight="-1.0" vgrow="NEVER" />
+                        <RowConstraints maxHeight="-1.0" minHeight="-1.0" prefHeight="-1.0" vgrow="NEVER" />
+                      </rowConstraints>
+                    </GridPane>
+                  </children>
+                </HBox>
+              </children>
+              <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x1" />
+              </padding>
+            </VBox>
+          </content>
+          <VBox.margin>
+            <Insets />
+          </VBox.margin>
+        </TitledPane>
+        <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="%ExportCLIDialog_Details" VBox.vgrow="ALWAYS">
+          <content>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+              <children>
+                <ListView fx:id="controlDetails" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                <ProgressBar fx:id="progressBar" maxWidth="1.7976931348623157E308" prefWidth="-1.0" progress="0.0" VBox.vgrow="NEVER" />
+              </children>
+            </VBox>
+          </content>
+        </TitledPane>
+      </children>
+    </VBox>
+    <GridPane alignment="CENTER_LEFT" disable="false" focusTraversable="false" gridLinesVisible="false" padding="$x1" styleClass="dialog-buttons">
+      <children>
+        <Button alignment="CENTER_LEFT" contentDisplay="LEFT" mnemonicParsing="false" text="Button" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleStartButton" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" minWidth="-1.0" prefWidth="-1.0" />
+        <ColumnConstraints hgrow="NEVER" minWidth="-1.0" prefWidth="-1.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="-1.0" prefHeight="-1.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+  <padding>
+    <Insets />
+  </padding>
+</VBox>

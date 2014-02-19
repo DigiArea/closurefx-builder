@@ -38,6 +38,7 @@ import com.digiarea.closure.help.model.controller.HelpController;
 import com.digiarea.closure.help.model.controller.HelpFactory;
 import com.digiarea.closure.model.Closure;
 import com.digiarea.closure.model.controller.dialogs.DialogFactory;
+import com.digiarea.closure.model.controller.dialogs.ExportCLIDialogController;
 import com.digiarea.closure.model.controller.dialogs.FolderDialogController;
 import com.digiarea.closure.model.export.ClosureCLExporter;
 import com.digiarea.closure.preferences.model.controller.PreferencesFactory;
@@ -118,34 +119,7 @@ public class ClosureFXController implements Initializable {
 		if (activeTab != null) {
 			Document document = getDocument(activeTab);
 			if (document != null) {
-
-				try {
-					FolderDialogController controller = DialogFactory
-							.getFolderDialog(bundle,
-									IConstants.ExportDialog_CLI,
-									IConstants.ExportDialog_CLI_desc, document
-											.getFile().getParentFile(), true,
-									true, (String[]) null);
-					if (controller != null
-							&& controller.getStatus().getSeverity() != StatusType.CANCEL) {
-						if (controller.getSelectedFile() != null) {
-							File newFile = new File(new Path(controller
-									.getSelectedFile().getAbsolutePath())
-									.append("build.cli").toString());
-							if (!newFile.exists()) {
-								newFile.createNewFile();
-							}
-							Closure closure = document.getClosure();
-//							ClosureCLExporter exporter = new ClosureCLExporter(
-//									document.getPathResolver(),
-//									new FileOutputStream(newFile));
-//							closure.accept(exporter, null);
-						}
-					}
-
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+				DialogFactory.getExportCLIDialog(bundle, IConstants.ExportDialog_CLI, IConstants.ExportDialog_CLI_desc, document);
 			}
 		}
 	}

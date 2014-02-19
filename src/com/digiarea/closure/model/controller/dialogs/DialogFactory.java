@@ -23,11 +23,41 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import com.digiarea.closure.model.entity.IPlaceholder;
+import com.digiarea.closurefx.Document;
 import com.digiarea.closurefx.IConstants;
 import com.digiarea.closurefx.ResourceUtils;
 import com.digiarea.closurefx.build.validation.IStatus;
 
 public class DialogFactory {
+	
+	public static ExportCLIDialogController getExportCLIDialog(ResourceBundle bundle,
+			String title, String desc, Document document) {
+		Stage stage = new Stage();
+		stage.initModality(Modality.APPLICATION_MODAL);
+		stage.getIcons().add(ResourceUtils.CLOSURE_ICON);
+		stage.setTitle(bundle.getString(title));
+		stage.centerOnScreen();
+		try {
+			FXMLLoader fxmlLoader = new FXMLLoader(
+					DialogFactory.class.getResource("ExportCLIDialog.fxml"));
+			fxmlLoader.setResources(bundle);
+			VBox dialog = (VBox) fxmlLoader.load();
+			ExportCLIDialogController controller = (ExportCLIDialogController) fxmlLoader
+					.getController();
+			controller.setBundle(bundle);
+			controller.setDocument(document);
+			controller.setStage(stage);
+			Scene dialogScene = new Scene(dialog);
+			dialogScene.getStylesheets().add(
+					ResourceUtils.getStylesheets().toExternalForm());
+			stage.setScene(dialogScene);
+			stage.showAndWait();
+			return controller;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 	public static FolderDialogController getFolderDialog(ResourceBundle bundle,
 			String title, String desc, File file, boolean allowFolders,

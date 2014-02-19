@@ -728,4 +728,16 @@ public class GSSConsoleSectionController extends ClosureController implements In
         return hBox;
     }
 
+	@Override
+	public void report(IStatus status) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void generateReport() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

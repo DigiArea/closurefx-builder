@@ -59,12 +59,12 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 			resolver.getDependencies();
 			resolver.resolve();
 			for (File source : resolver.getSources()) {
-				printOption(IClosureCLConstants.JS, source.getAbsolutePath(),
+				printOption(IClosureCLConstants.JS, quote(source.getAbsolutePath()),
 						" ", true);
 			}
 			for (File source : resolver.getExterns()) {
 				printOption(IClosureCLConstants.JS_EXTERNS,
-						source.getAbsolutePath(), " ", true);
+						quote(source.getAbsolutePath()), " ", true);
 			}
 		} else {
 			super.visit(n, ctx);
@@ -73,6 +73,7 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 
 	@Override
 	public void visit(ClosureJs n, Void ctx) throws Exception {
+		printer.printLn("!HELLO");
 		// if (n.getInfo() != null) {
 		// n.getInfo().accept(this, ctx);
 		// }
@@ -153,7 +154,7 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 
 		if (n.getSourceMapFile() != null && !n.getSourceMapFile().isEmpty()) {
 			printOption(IClosureCLConstants.JS_SOURCE_MAP,
-					pathResolver.toRealPath(n.getSourceMapFile()), " ", true);
+					quote(pathResolver.toRealPath(n.getSourceMapFile())), " ", true);
 			printOption(IClosureCLConstants.JS_SOURCE_MAP_FORMAT, ClosurerUtils
 					.toSourceMapFormat(n.getSourceMapFormat()).name(), " ",
 					true);
@@ -176,8 +177,8 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 		if (n.getParent() instanceof ClosureJs) {
 			printOption(
 					IClosureCLConstants.JS_OUTPUT,
-					new Path(pathResolver.toRealPath(n.getPath())).append(
-							n.getFile()).toString(), " ", true);
+					quote(new Path(pathResolver.toRealPath(n.getPath())).append(
+							n.getFile()).toString()), " ", true);
 		} else {
 			super.visit(n, ctx);
 		}
@@ -372,11 +373,11 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 	public void visit(JsVariableMap n, Void ctx) throws Exception {
 		if (n.getInput() != null) {
 			printOption(IClosureCLConstants.JS_VARIABLE_MAP_INPUT,
-					pathResolver.toRealPath(n.getInput()), " ", true);
+					quote(pathResolver.toRealPath(n.getInput())), " ", true);
 		}
 		if (n.getOutput() != null) {
 			printOption(IClosureCLConstants.JS_VARIABLE_MAP_OUTPUT,
-					pathResolver.toRealPath(n.getOutput()), " ", true);
+					quote(pathResolver.toRealPath(n.getOutput())), " ", true);
 		}
 	}
 
@@ -384,11 +385,11 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 	public void visit(JsPropertyMap n, Void ctx) throws Exception {
 		if (n.getInput() != null) {
 			printOption(IClosureCLConstants.JS_PROPERTY_MAP_INPUT,
-					pathResolver.toRealPath(n.getInput()), " ", true);
+					quote(pathResolver.toRealPath(n.getInput())), " ", true);
 		}
 		if (n.getOutput() != null) {
 			printOption(IClosureCLConstants.JS_PROPERTY_MAP_OUTPUT,
-					pathResolver.toRealPath(n.getOutput()), " ", true);
+					quote(pathResolver.toRealPath(n.getOutput())), " ", true);
 		}
 	}
 
@@ -402,6 +403,10 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 			boolean newLine) throws IOException {
 		printer.print(key + delimiter + value);
 		printer.print(" ");
+	}
+	
+	private String quote(Object string) {
+		return "\"" + string + "\"";
 	}
 
 }

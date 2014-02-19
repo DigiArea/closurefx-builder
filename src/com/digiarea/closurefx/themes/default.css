@@ -351,9 +351,9 @@
 
 #AboutBox {
     -fx-background-image: url("../resources/splash.png");
-    -fx-background-color: #eaeaea;
+    -fx-background-color: #e4e4ec;
      -fx-background-repeat: no-repeat;
-     -fx-background-position: 20.0px -20.0px;
+     -fx-background-position: 20.0px 0.0px;
 }
 
 #AboutBox .text-area{

@@ -1,5 +1,8 @@
 package com.digiarea.closure.model.visitor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.digiarea.closure.model.Buildpath;
 import com.digiarea.closure.model.Check;
 import com.digiarea.closure.model.CheckType;
@@ -79,8 +82,14 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(GssExcludedClasses n, C ctx) throws Exception {
         GssExcludedClasses img = NodeFacade.GssExcludedClasses();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
+        if (n.getGssExcludedClass() != null) {
+            List<GssExcludedClass> gssExcludedClass = new ArrayList<GssExcludedClass>();
+            for (GssExcludedClass item : n.getGssExcludedClass()) {
+                if (item != null) {
+                    gssExcludedClass.add((GssExcludedClass) item.accept(this, ctx));
+                }
+            }
+            img.setGssExcludedClass(gssExcludedClass);
         }
         return img;
     }
@@ -93,26 +102,29 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(Warning n, C ctx) throws Exception {
         Warning img = NodeFacade.Warning();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
-        }
+        img.setSeverity(n.getSeverity());
+        img.setType(n.getType());
         return img;
     }
 
     @Override
     public Node visit(GssAtRule n, C ctx) throws Exception {
         GssAtRule img = NodeFacade.GssAtRule();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
-        }
+        img.setValue(n.getValue());
         return img;
     }
 
     @Override
     public Node visit(GssUnrecognizeProperties n, C ctx) throws Exception {
         GssUnrecognizeProperties img = NodeFacade.GssUnrecognizeProperties();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
+        if (n.getGssUnrecognizeProperty() != null) {
+            List<GssUnrecognizeProperty> gssUnrecognizeProperty = new ArrayList<GssUnrecognizeProperty>();
+            for (GssUnrecognizeProperty item : n.getGssUnrecognizeProperty()) {
+                if (item != null) {
+                    gssUnrecognizeProperty.add((GssUnrecognizeProperty) item.accept(this, ctx));
+                }
+            }
+            img.setGssUnrecognizeProperty(gssUnrecognizeProperty);
         }
         return img;
     }
@@ -135,8 +147,14 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(Optimizations n, C ctx) throws Exception {
         Optimizations img = NodeFacade.Optimizations();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
+        if (n.getOptimization() != null) {
+            List<Optimization> optimization = new ArrayList<Optimization>();
+            for (Optimization item : n.getOptimization()) {
+                if (item != null) {
+                    optimization.add((Optimization) item.accept(this, ctx));
+                }
+            }
+            img.setOptimization(optimization);
         }
         return img;
     }
@@ -154,9 +172,62 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(ClosureJs n, C ctx) throws Exception {
         ClosureJs img = NodeFacade.ClosureJs();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
+        if (n.getInfo() != null) {
+            img.setInfo((Info) n.getInfo().accept(this, ctx));
         }
+        if (n.getBuildpath() != null) {
+            img.setBuildpath((Buildpath) n.getBuildpath().accept(this, ctx));
+        }
+        if (n.getOutput() != null) {
+            img.setOutput((Output) n.getOutput().accept(this, ctx));
+        }
+        img.setOutputWrapper(n.getOutputWrapper());
+        if (n.getWarnings() != null) {
+            img.setWarnings((Warnings) n.getWarnings().accept(this, ctx));
+        }
+        if (n.getChecks() != null) {
+            img.setChecks((Checks) n.getChecks().accept(this, ctx));
+        }
+        if (n.getOptimizations() != null) {
+            img.setOptimizations((Optimizations) n.getOptimizations().accept(this, ctx));
+        }
+        if (n.getJsDocs() != null) {
+            img.setJsDocs((JsDocs) n.getJsDocs().accept(this, ctx));
+        }
+        if (n.getLanguage() != null) {
+            img.setLanguage((Language) n.getLanguage().accept(this, ctx));
+        }
+        if (n.getJsDefines() != null) {
+            img.setJsDefines((JsDefines) n.getJsDefines().accept(this, ctx));
+        }
+        if (n.getRenaming() != null) {
+            img.setRenaming((JsRenaming) n.getRenaming().accept(this, ctx));
+        }
+        img.setBuild(n.isBuild());
+        img.setAcceptConstKeyword(n.isAcceptConstKeyword());
+        img.setClosureStyle(n.isClosureStyle());
+        img.setClosurePass(n.isClosurePass());
+        img.setJqueryPass(n.isJqueryPass());
+        img.setAngularPass(n.isAngularPass());
+        img.setCharset(n.getCharset());
+        img.setManageClosureDependencies(n.isManageClosureDependencies());
+        img.setExternExports(n.isExternExports());
+        img.setGenerateExports(n.isGenerateExports());
+        img.setExternExportsPath(n.getExternExportsPath());
+        img.setTranslationsFile(n.getTranslationsFile());
+        img.setTranslationsProject(n.getTranslationsProject());
+        img.setSourceMapFile(n.getSourceMapFile());
+        img.setSourceMapFormat(n.getSourceMapFormat());
+        img.setPrintInputDelimeter(n.isPrintInputDelimeter());
+        img.setInputDelimiter(n.getInputDelimiter());
+        img.setLineBreaks(n.isLineBreaks());
+        img.setLineBreaksAggressive(n.isLineBreaksAggressive());
+        img.setSingleQuotes(n.isSingleQuotes());
+        img.setPrettyPrint(n.isPrettyPrint());
+        img.setSkipAllPasses(n.isSkipAllPasses());
+        img.setFunctionsOnly(n.isFunctionsOnly());
+        img.setDebug(n.isDebug());
+        img.setDevmode(n.isDevmode());
         return img;
     }
 
@@ -168,36 +239,66 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(JsFunctionMap n, C ctx) throws Exception {
         JsFunctionMap img = NodeFacade.JsFunctionMap();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
-        }
+        img.setInput(n.getInput());
+        img.setOutput(n.getOutput());
         return img;
     }
 
     @Override
     public Node visit(JsDoc n, C ctx) throws Exception {
         JsDoc img = NodeFacade.JsDoc();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
-        }
+        img.setValue(n.getValue());
         return img;
     }
 
     @Override
     public Node visit(ClosureGss n, C ctx) throws Exception {
         ClosureGss img = NodeFacade.ClosureGss();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
+        if (n.getInfo() != null) {
+            img.setInfo((Info) n.getInfo().accept(this, ctx));
         }
+        if (n.getBuildpath() != null) {
+            img.setBuildpath((Buildpath) n.getBuildpath().accept(this, ctx));
+        }
+        if (n.getOutput() != null) {
+            img.setOutput((Output) n.getOutput().accept(this, ctx));
+        }
+        img.setCopyrightNotice(n.getCopyrightNotice());
+        if (n.getGssDefines() != null) {
+            img.setGssDefines((GssDefines) n.getGssDefines().accept(this, ctx));
+        }
+        if (n.getGssNonStandardFunctions() != null) {
+            img.setGssNonStandardFunctions((GssNonStandardFunctions) n.getGssNonStandardFunctions().accept(this, ctx));
+        }
+        if (n.getGssUnrecognizeProperties() != null) {
+            img.setGssUnrecognizeProperties((GssUnrecognizeProperties) n.getGssUnrecognizeProperties().accept(this, ctx));
+        }
+        if (n.getGssAtRules() != null) {
+            img.setGssAtRules((GssAtRules) n.getGssAtRules().accept(this, ctx));
+        }
+        if (n.getGssExcludedClasses() != null) {
+            img.setGssExcludedClasses((GssExcludedClasses) n.getGssExcludedClasses().accept(this, ctx));
+        }
+        img.setBuild(n.isBuild());
+        img.setAllowUnrecognizedFunctions(n.isAllowUnrecognizedFunctions());
+        img.setAllowUnrecognizedProperties(n.isAllowUnrecognizedProperties());
+        img.setCssRenamingPrefix(n.getCssRenamingPrefix());
+        img.setOutputRenamingMap(n.getOutputRenamingMap());
+        img.setRenamingType(n.getRenamingType());
+        img.setVendor(n.getVendor());
+        img.setOutputRenamingMapFormat(n.getOutputRenamingMapFormat());
+        img.setOptimizationLevel(n.getOptimizationLevel());
+        img.setOutputFormat(n.getOutputFormat());
+        img.setInputOrientation(n.getInputOrientation());
+        img.setOutputOrientation(n.getOutputOrientation());
         return img;
     }
 
     @Override
     public Node visit(Check n, C ctx) throws Exception {
         Check img = NodeFacade.Check();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
-        }
+        img.setCheck(n.isCheck());
+        img.setType(n.getType());
         return img;
     }
 
@@ -209,8 +310,14 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(JsDocs n, C ctx) throws Exception {
         JsDocs img = NodeFacade.JsDocs();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
+        if (n.getJsDoc() != null) {
+            List<JsDoc> jsDoc = new ArrayList<JsDoc>();
+            for (JsDoc item : n.getJsDoc()) {
+                if (item != null) {
+                    jsDoc.add((JsDoc) item.accept(this, ctx));
+                }
+            }
+            img.setJsDoc(jsDoc);
         }
         return img;
     }
@@ -218,17 +325,21 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(GssDefine n, C ctx) throws Exception {
         GssDefine img = NodeFacade.GssDefine();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
-        }
+        img.setValue(n.getValue());
         return img;
     }
 
     @Override
     public Node visit(GssNonStandardFunctions n, C ctx) throws Exception {
         GssNonStandardFunctions img = NodeFacade.GssNonStandardFunctions();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
+        if (n.getGssNonStandardFunction() != null) {
+            List<GssNonStandardFunction> gssNonStandardFunction = new ArrayList<GssNonStandardFunction>();
+            for (GssNonStandardFunction item : n.getGssNonStandardFunction()) {
+                if (item != null) {
+                    gssNonStandardFunction.add((GssNonStandardFunction) item.accept(this, ctx));
+                }
+            }
+            img.setGssNonStandardFunction(gssNonStandardFunction);
         }
         return img;
     }
@@ -236,9 +347,32 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(ClosureSoy n, C ctx) throws Exception {
         ClosureSoy img = NodeFacade.ClosureSoy();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
+        if (n.getInfo() != null) {
+            img.setInfo((Info) n.getInfo().accept(this, ctx));
         }
+        if (n.getBuildpath() != null) {
+            img.setBuildpath((Buildpath) n.getBuildpath().accept(this, ctx));
+        }
+        if (n.getSoyLocales() != null) {
+            img.setSoyLocales((SoyLocales) n.getSoyLocales().accept(this, ctx));
+        }
+        img.setCssScheme(n.getCssScheme());
+        img.setCodeStyle(n.getCodeStyle());
+        img.setBuild(n.isBuild());
+        img.setAllowExternalCalls(n.isAllowExternalCalls());
+        img.setAllowDeprecatedSyntax(n.isAllowDeprecatedSyntax());
+        img.setUsingIjData(n.isUsingIjData());
+        img.setGenerateJsDoc(n.isGenerateJsDoc());
+        img.setProvideRequireSoyNamespaces(n.isProvideRequireSoyNamespaces());
+        img.setProvideRequireJsFunctions(n.isProvideRequireJsFunctions());
+        img.setDeclareTopLevelNamespace(n.isDeclareTopLevelNamespace());
+        img.setGenerateGoogMessagesDefs(n.isGenerateGoogMessagesDefs());
+        img.setGoogMessagesExternal(n.isGoogMessagesExternal());
+        img.setRightToLeftDir(n.isRightToLeftDir());
+        img.setRightToLeftDirGoog(n.isRightToLeftDirGoog());
+        img.setGlobalsPath(n.getGlobalsPath());
+        img.setMessagesPath(n.getMessagesPath());
+        img.setOutputPath(n.getOutputPath());
         return img;
     }
 
@@ -250,17 +384,21 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(SoyLocale n, C ctx) throws Exception {
         SoyLocale img = NodeFacade.SoyLocale();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
-        }
+        img.setValue(n.getValue());
         return img;
     }
 
     @Override
     public Node visit(ExcludeInputFilter n, C ctx) throws Exception {
         ExcludeInputFilter img = NodeFacade.ExcludeInputFilter();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
+        if (n.getPattern() != null) {
+            List<InputFilterPattern> pattern = new ArrayList<InputFilterPattern>();
+            for (InputFilterPattern item : n.getPattern()) {
+                if (item != null) {
+                    pattern.add((InputFilterPattern) item.accept(this, ctx));
+                }
+            }
+            img.setPattern(pattern);
         }
         return img;
     }
@@ -268,9 +406,8 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(JsPropertyMap n, C ctx) throws Exception {
         JsPropertyMap img = NodeFacade.JsPropertyMap();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
-        }
+        img.setInput(n.getInput());
+        img.setOutput(n.getOutput());
         return img;
     }
 
@@ -287,8 +424,14 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(Checks n, C ctx) throws Exception {
         Checks img = NodeFacade.Checks();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
+        if (n.getCheck() != null) {
+            List<Check> check = new ArrayList<Check>();
+            for (Check item : n.getCheck()) {
+                if (item != null) {
+                    check.add((Check) item.accept(this, ctx));
+                }
+            }
+            img.setCheck(check);
         }
         return img;
     }
@@ -301,8 +444,14 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(IncludeInputFilter n, C ctx) throws Exception {
         IncludeInputFilter img = NodeFacade.IncludeInputFilter();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
+        if (n.getPattern() != null) {
+            List<InputFilterPattern> pattern = new ArrayList<InputFilterPattern>();
+            for (InputFilterPattern item : n.getPattern()) {
+                if (item != null) {
+                    pattern.add((InputFilterPattern) item.accept(this, ctx));
+                }
+            }
+            img.setPattern(pattern);
         }
         return img;
     }
@@ -310,8 +459,14 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(GssDefines n, C ctx) throws Exception {
         GssDefines img = NodeFacade.GssDefines();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
+        if (n.getGssDefine() != null) {
+            List<GssDefine> gssDefine = new ArrayList<GssDefine>();
+            for (GssDefine item : n.getGssDefine()) {
+                if (item != null) {
+                    gssDefine.add((GssDefine) item.accept(this, ctx));
+                }
+            }
+            img.setGssDefine(gssDefine);
         }
         return img;
     }
@@ -319,17 +474,22 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(Optimization n, C ctx) throws Exception {
         Optimization img = NodeFacade.Optimization();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
-        }
+        img.setOptimize(n.isOptimize());
+        img.setType(n.getType());
         return img;
     }
 
     @Override
     public Node visit(Buildpath n, C ctx) throws Exception {
         Buildpath img = NodeFacade.Buildpath();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
+        if (n.getSource() != null) {
+            List<Source> source = new ArrayList<Source>();
+            for (Source item : n.getSource()) {
+                if (item != null) {
+                    source.add((Source) item.accept(this, ctx));
+                }
+            }
+            img.setSource(source);
         }
         return img;
     }
@@ -342,9 +502,8 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(InputFilterPattern n, C ctx) throws Exception {
         InputFilterPattern img = NodeFacade.InputFilterPattern();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
-        }
+        img.setValue(n.getValue());
+        img.setType(n.getType());
         return img;
     }
 
@@ -356,8 +515,14 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(Warnings n, C ctx) throws Exception {
         Warnings img = NodeFacade.Warnings();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
+        if (n.getWarning() != null) {
+            List<Warning> warning = new ArrayList<Warning>();
+            for (Warning item : n.getWarning()) {
+                if (item != null) {
+                    warning.add((Warning) item.accept(this, ctx));
+                }
+            }
+            img.setWarning(warning);
         }
         return img;
     }
@@ -365,9 +530,28 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(JsRenaming n, C ctx) throws Exception {
         JsRenaming img = NodeFacade.JsRenaming();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
+        if (n.getVariableMap() != null) {
+            img.setVariableMap((JsVariableMap) n.getVariableMap().accept(this, ctx));
         }
+        if (n.getFunctionMap() != null) {
+            img.setFunctionMap((JsFunctionMap) n.getFunctionMap().accept(this, ctx));
+        }
+        if (n.getPropertyMap() != null) {
+            img.setPropertyMap((JsPropertyMap) n.getPropertyMap().accept(this, ctx));
+        }
+        img.setVariablePolice(n.getVariablePolice());
+        img.setFunctionPolice(n.getFunctionPolice());
+        img.setPropertyPolice(n.getPropertyPolice());
+        img.setPrefix(n.getPrefix());
+        img.setPrefixNamespace(n.getPrefixNamespace());
+        img.setDevirtualizePrototypeMethods(n.isDevirtualizePrototypeMethods());
+        img.setGeneratePseudoNames(n.isGeneratePseudoNames());
+        img.setShadowVariables(n.isShadowVariables());
+        img.setPropertyAffinity(n.isPropertyAffinity());
+        img.setDisambiguateProperties(n.isDisambiguateProperties());
+        img.setAmbiguateProperties(n.isAmbiguateProperties());
+        img.setExportTestFunctions(n.isExportTestFunctions());
+        img.setRenameLabels(n.isRenameLabels());
         return img;
     }
 
@@ -379,8 +563,14 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(SoyLocales n, C ctx) throws Exception {
         SoyLocales img = NodeFacade.SoyLocales();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
+        if (n.getSoyLocale() != null) {
+            List<SoyLocale> soyLocale = new ArrayList<SoyLocale>();
+            for (SoyLocale item : n.getSoyLocale()) {
+                if (item != null) {
+                    soyLocale.add((SoyLocale) item.accept(this, ctx));
+                }
+            }
+            img.setSoyLocale(soyLocale);
         }
         return img;
     }
@@ -388,8 +578,14 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(GssAtRules n, C ctx) throws Exception {
         GssAtRules img = NodeFacade.GssAtRules();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
+        if (n.getGssAtRule() != null) {
+            List<GssAtRule> gssAtRule = new ArrayList<GssAtRule>();
+            for (GssAtRule item : n.getGssAtRule()) {
+                if (item != null) {
+                    gssAtRule.add((GssAtRule) item.accept(this, ctx));
+                }
+            }
+            img.setGssAtRule(gssAtRule);
         }
         return img;
     }
@@ -402,8 +598,14 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(JsDefines n, C ctx) throws Exception {
         JsDefines img = NodeFacade.JsDefines();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
+        if (n.getJsDefine() != null) {
+            List<JsDefine> jsDefine = new ArrayList<JsDefine>();
+            for (JsDefine item : n.getJsDefine()) {
+                if (item != null) {
+                    jsDefine.add((JsDefine) item.accept(this, ctx));
+                }
+            }
+            img.setJsDefine(jsDefine);
         }
         return img;
     }
@@ -416,18 +618,15 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(GssUnrecognizeProperty n, C ctx) throws Exception {
         GssUnrecognizeProperty img = NodeFacade.GssUnrecognizeProperty();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
-        }
+        img.setValue(n.getValue());
         return img;
     }
 
     @Override
     public Node visit(Language n, C ctx) throws Exception {
         Language img = NodeFacade.Language();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
-        }
+        img.setInput(n.getInput());
+        img.setOutput(n.getOutput());
         return img;
     }
 
@@ -444,35 +643,49 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(Source n, C ctx) throws Exception {
         Source img = NodeFacade.Source();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
+        if (n.getExcluded() != null) {
+            img.setExcluded((ExcludeInputFilter) n.getExcluded().accept(this, ctx));
         }
+        if (n.getIncluded() != null) {
+            img.setIncluded((IncludeInputFilter) n.getIncluded().accept(this, ctx));
+        }
+        img.setExtern(n.isExtern());
+        img.setPath(n.getPath());
+        img.setEntryKind(n.getEntryKind());
+        img.setEntityKind(n.getEntityKind());
+        img.setIncludeClosure(n.isIncludeClosure());
+        img.setIncludeSimple(n.isIncludeSimple());
         return img;
     }
 
     @Override
     public Node visit(Info n, C ctx) throws Exception {
         Info img = NodeFacade.Info();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
-        }
+        img.setId(n.getId());
+        img.setVersion(n.getVersion());
+        img.setName(n.getName());
+        img.setVendor(n.getVendor());
         return img;
     }
 
     @Override
     public Node visit(GssNonStandardFunction n, C ctx) throws Exception {
         GssNonStandardFunction img = NodeFacade.GssNonStandardFunction();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
-        }
+        img.setValue(n.getValue());
         return img;
     }
 
     @Override
     public Node visit(Closure n, C ctx) throws Exception {
         Closure img = NodeFacade.Closure();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
+        if (n.getClosureJs() != null) {
+            img.setClosureJs((ClosureJs) n.getClosureJs().accept(this, ctx));
+        }
+        if (n.getClosureGss() != null) {
+            img.setClosureGss((ClosureGss) n.getClosureGss().accept(this, ctx));
+        }
+        if (n.getClosureSoy() != null) {
+            img.setClosureSoy((ClosureSoy) n.getClosureSoy().accept(this, ctx));
         }
         return img;
     }
@@ -480,18 +693,16 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(GssExcludedClass n, C ctx) throws Exception {
         GssExcludedClass img = NodeFacade.GssExcludedClass();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
-        }
+        img.setValue(n.getValue());
         return img;
     }
 
     @Override
     public Node visit(JsDefine n, C ctx) throws Exception {
         JsDefine img = NodeFacade.JsDefine();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
-        }
+        img.setName(n.getName());
+        img.setValue(n.getValue());
+        img.setType(n.getType());
         return img;
     }
 
@@ -503,18 +714,16 @@ public class CloneVisitor<C> implements GenericVisitor<Node, C> {
     @Override
     public Node visit(Output n, C ctx) throws Exception {
         Output img = NodeFacade.Output();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
-        }
+        img.setPath(n.getPath());
+        img.setFile(n.getFile());
         return img;
     }
 
     @Override
     public Node visit(JsVariableMap n, C ctx) throws Exception {
         JsVariableMap img = NodeFacade.JsVariableMap();
-        if (n.getParent() != null) {
-            img.setParent((Node) n.getParent().accept(this, ctx));
-        }
+        img.setInput(n.getInput());
+        img.setOutput(n.getOutput());
         return img;
     }
 

@@ -1,64 +1,86 @@
 package com.digiarea.closure.model.controller.dialogs;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 
-import com.digiarea.closure.model.controller.IConsole;
-import com.digiarea.closure.model.export.ExportCLIConsole;
-import com.digiarea.closure.model.providers.ConsoleCellFactory;
+import com.digiarea.closure.core.Path;
+import com.digiarea.closure.model.export.ClosureCLExporter;
 import com.digiarea.closurefx.Document;
-import com.digiarea.closurefx.build.console.ClosureStatus;
+import com.digiarea.closurefx.IConstants;
 import com.digiarea.closurefx.build.validation.IStatus;
 import com.digiarea.closurefx.build.validation.Status;
+import com.digiarea.closurefx.cli.console.BasicConsole;
 
 /**
  * FXML Controller class
  * 
  * @author daginno
  */
-public class ExportCLIDialogController implements Initializable, IConsole {
-
-	@FXML
-	private ProgressBar progressBar;
-
-	private ObservableList<Status> messages;
+public class ExportCLIDialogController implements Initializable {
 
 	private ResourceBundle bundle;
 	private Document document;
 	private Stage stage;
 
 	@FXML
-	private Label controlMessage;
-	@FXML
 	private TextField controlFile;
 	@FXML
 	private ListView<Status> controlDetails;
 
-	private IStatus status = Status.CANCEL_STATUS;
+	@FXML
+	private ToggleButton controlWhite;
+	@FXML
+	private ToggleButton controlSimple;
+	@FXML
+	private ToggleButton controlAdvanced;
+	@FXML
+	private ToggleButton controlDefault;
+	@FXML
+	private ToggleButton controlQuite;
+	@FXML
+	private ToggleButton controlVerbose;
 
 	/**
 	 * Initializes the controller class.
 	 */
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-		messages = FXCollections.observableArrayList();
-		controlDetails.setItems(messages);
-		controlDetails.setCellFactory(new ConsoleCellFactory());
+	}
+
+	private String getCompilationLevel() {
+		if (controlWhite.isPressed()) {
+			return "WHITESPACE_ONLY";
+		} else if (controlSimple.isPressed()) {
+			return "SIMPLE_OPTIMIZATIONS";
+		} else if (controlAdvanced.isPressed()) {
+			return "ADVANCED_OPTIMIZATIONS";
+		}
+		return null;
+	}
+
+	private String getWarningLevel() {
+		if (controlDefault.isPressed()) {
+			return "DEFAULT";
+		} else if (controlQuite.isPressed()) {
+			return "QUIET";
+		} else if (controlVerbose.isPressed()) {
+			return "VERBOSE";
+		}
+		return null;
 	}
 
 	@FXML
@@ -66,12 +88,34 @@ public class ExportCLIDialogController implements Initializable, IConsole {
 		if (controlFile.getText() != null && !controlFile.getText().isEmpty()) {
 			File file = new File(controlFile.getText());
 			if (file.exists()) {
-				ExportCLIConsole console = new ExportCLIConsole(this,
-						document.getClosure(), bundle,
-						document.getPathResolver());
-				console.setFile(file);
-				console.setName(document.getName());
-				console.start();
+				File newFile = new File(new Path(file.getAbsolutePath())
+						.append(document.getName()).addFileExtension("cli")
+						.toString());
+				try {
+					if (!newFile.exists()) {
+						newFile.createNewFile();
+					}
+					BasicConsole console = new BasicConsole(
+							new HashMap<IStatus.StatusType, List<IStatus>>(),
+							null);
+					ClosureCLExporter exporter = new ClosureCLExporter(
+							document.getPathResolver(), new FileOutputStream(
+									newFile), console, bundle);
+					exporter.setWarningLevel(getWarningLevel());
+					exporter.setCompilationLevel(getCompilationLevel());
+					document.getClosure().accept(exporter, null);
+					List<IStatus> statuses = new ArrayList<IStatus>();
+					for (List<IStatus> iStatus : console.getErrors().values()) {
+						statuses.addAll(iStatus);
+					}
+					DialogFactory.getStatusesDialog(bundle,
+							IConstants.ExportCLIDialog_Result,
+							IConstants.ExportCLIDialog_Result_Desc, statuses);
+					stage.close();
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 		}
 	}
@@ -79,7 +123,8 @@ public class ExportCLIDialogController implements Initializable, IConsole {
 	@FXML
 	private void handleBrowseButtonAction(ActionEvent event) {
 		DirectoryChooser chooser = new DirectoryChooser();
-		chooser.setTitle("JavaFX Projects");
+		chooser.setTitle(bundle.getString(IConstants.ExportDialog_CLI));
+		chooser.setInitialDirectory(document.getFile().getParentFile());
 		File file = chooser.showDialog(stage);
 		controlFile.setText(file.getAbsolutePath());
 	}
@@ -94,53 +139,6 @@ public class ExportCLIDialogController implements Initializable, IConsole {
 
 	public void setStage(Stage stage) {
 		this.stage = stage;
-	}
-
-	public IStatus getStatus() {
-		return status;
-	}
-
-	@Override
-	public ProgressBar getProgressBar() {
-		return progressBar;
-	}
-
-	@Override
-	public void addErrors(List<ClosureStatus> error) {
-		messages.addAll(new ArrayList<ClosureStatus>(error));
-	}
-
-	public void addError(ClosureStatus error) {
-		messages.add(error);
-	}
-
-	public void addMessage(Status error) {
-		messages.add(error);
-	}
-
-	public Label getErrorLabel() {
-		return null;
-	}
-
-	public Label getWarningLabel() {
-		return null;
-	}
-
-	public ObservableList<Status> getConsole() {
-		return messages;
-	}
-
-	public ObservableList<ClosureStatus> getProblems() {
-		return null;
-	}
-
-	@Override
-	public void report(IStatus status) {
-		messages.add((Status) status);
-	}
-
-	@Override
-	public void generateReport() {
 	}
 
 }

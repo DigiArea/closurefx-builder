@@ -38,6 +38,9 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 	private IPathResolver pathResolver;
 	private ICliConsole console;
 	private ResourceBundle bundle;
+	
+	private String warningLevel;
+	private String compilationLevel;
 
 	public ClosureCLExporter(IPathResolver pathResolver, OutputStream stream, ICliConsole console, ResourceBundle bundle) {
 		this.bundle = bundle;
@@ -45,6 +48,14 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 		this.stream = stream;
 		this.printer = new SourcePrinter(this.stream, null);
 		this.pathResolver = pathResolver;
+	}
+	
+	public void setWarningLevel(String warningLevel) {
+		this.warningLevel = warningLevel;
+	}
+	
+	public void setCompilationLevel(String compilationLevel) {
+		this.compilationLevel = compilationLevel;
 	}
 
 	public OutputStream getStream() {
@@ -73,7 +84,6 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 
 	@Override
 	public void visit(ClosureJs n, Void ctx) throws Exception {
-		printer.printLn("!HELLO");
 		// if (n.getInfo() != null) {
 		// n.getInfo().accept(this, ctx);
 		// }
@@ -83,6 +93,15 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 		if (n.getOutput() != null) {
 			n.getOutput().accept(this, ctx);
 		}
+//		if(warningLevel != null){
+//			printOption(IClosureCLConstants.JS_WARNING_LEVEL,
+//					warningLevel, " ", true);
+//		}
+//		
+//		if(compilationLevel != null){
+//			printOption(IClosureCLConstants.JS_COMPILATION_LEVEL,
+//					compilationLevel, " ", true);
+//		}
 		if (n.getWarnings() != null) {
 			n.getWarnings().accept(this, ctx);
 		}
@@ -120,7 +139,7 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 		if (!n.isClosurePass() && !n.isJqueryPass()) {
 			printOption(IClosureCLConstants.JS_THIRD_PARTY, true, " ", true);
 		}
-
+		
 		printOption(IClosureCLConstants.JS_PROCESS_CLOSURE_PRIMITIVES,
 				n.isClosurePass(), " ", true);
 		printOption(IClosureCLConstants.JS_PROCESS_JQUERY_PRIMITIVES,
@@ -168,7 +187,7 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 
 	@Override
 	public void visit(Optimizations n, Void ctx) throws Exception {
-		console.report(new Status(StatusType.INFO, bundle
+		console.report(new Status(StatusType.WARNING, bundle
 				.getString(IConstants.ClosureCLExporter_Optimization), null));
 	}
 
@@ -310,7 +329,7 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 		case CHECK_GLOBAL_THIS_LEVEL:
 		case BROKEN_REQUIRES_LEVEL:
 		case AGGRESSIVE_VAR_CHECK:
-			console.report(new Status(StatusType.INFO, MessageFormat.format(
+			console.report(new Status(StatusType.WARNING, MessageFormat.format(
 					bundle.getString(IConstants.ClosureCLExporter_Warning), n
 							.getType().name()), null));
 			break;
@@ -339,7 +358,7 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 					getJSLanguageFlag(n.getInput()), " ", true);
 		}
 		if (n.getOutput() != null) {
-			console.report(new Status(StatusType.INFO, bundle
+			console.report(new Status(StatusType.WARNING, bundle
 					.getString(IConstants.ClosureCLExporter_LanguageOut), null));
 		}
 	}
@@ -371,11 +390,11 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 
 	@Override
 	public void visit(JsVariableMap n, Void ctx) throws Exception {
-		if (n.getInput() != null) {
+		if (n.getInput() != null && !n.getInput().isEmpty()) {
 			printOption(IClosureCLConstants.JS_VARIABLE_MAP_INPUT,
 					quote(pathResolver.toRealPath(n.getInput())), " ", true);
 		}
-		if (n.getOutput() != null) {
+		if (n.getOutput() != null && !n.getOutput().isEmpty()) {
 			printOption(IClosureCLConstants.JS_VARIABLE_MAP_OUTPUT,
 					quote(pathResolver.toRealPath(n.getOutput())), " ", true);
 		}
@@ -383,11 +402,11 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 
 	@Override
 	public void visit(JsPropertyMap n, Void ctx) throws Exception {
-		if (n.getInput() != null) {
+		if (n.getInput() != null && !n.getInput().isEmpty()) {
 			printOption(IClosureCLConstants.JS_PROPERTY_MAP_INPUT,
 					quote(pathResolver.toRealPath(n.getInput())), " ", true);
 		}
-		if (n.getOutput() != null) {
+		if (n.getOutput() != null && !n.getOutput().isEmpty()) {
 			printOption(IClosureCLConstants.JS_PROPERTY_MAP_OUTPUT,
 					quote(pathResolver.toRealPath(n.getOutput())), " ", true);
 		}
@@ -395,7 +414,7 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 
 	@Override
 	public void visit(JsFunctionMap n, Void ctx) throws Exception {
-		console.report(new Status(StatusType.INFO, bundle
+		console.report(new Status(StatusType.WARNING, bundle
 				.getString(IConstants.ClosureCLExporter_JSFunctionMap), null));
 	}
 

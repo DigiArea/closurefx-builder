@@ -18,8 +18,10 @@ public interface IConstants {
 	public static String ClosureCLExporter_LanguageOut = "ClosureCLExporter_LanguageOut";
 	public static String ClosureCLExporter_Warning = "ClosureCLExporter_Warning";
 	public static String ClosureCLExporter_Optimization = "ClosureCLExporter_Optimization";
-	
-	public static String ExportDialog_CLI="ExportDialog_CLI";
+
+	public static String ExportCLIDialog_Result = "ExportCLIDialog_Result";
+	public static String ExportCLIDialog_Result_Desc = "ExportCLIDialog_Result_Desc";
+	public static String ExportDialog_CLI = "ExportDialog_CLI";
 	public static String ExportDialog_CLI_desc = "ExportDialog_CLI_desc";
 
 	public static String JSRenamingSection_Select_InputFile = "JSRenamingSection_Select_InputFile";

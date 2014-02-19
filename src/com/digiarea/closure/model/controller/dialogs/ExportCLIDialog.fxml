@@ -10,10 +10,11 @@
 <?scenebuilder-preview-i18n-resource ../../../../closurefx/locale/editor_en.properties?>
 <?scenebuilder-stylesheet ../../../../closurefx/themes/default.css?>
 
-<VBox id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="0.0" styleClass="dialog-top" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.digiarea.closure.model.controller.dialogs.ExportCLIDialogController">
+<VBox id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" spacing="0.0" styleClass="dialog-top" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.digiarea.closure.model.controller.dialogs.ExportCLIDialogController">
   <children>
     <VBox padding="$x1" prefHeight="-1.0" prefWidth="-1.0" spacing="10.0" VBox.vgrow="ALWAYS">
       <children>
+        <Label text="%ExportCLIDialog_Desc" />
         <GridPane hgap="5.0" minHeight="-Infinity" minWidth="-1.0">
           <children>
             <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleBrowseButtonAction" text="%Button_Browse" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" />
@@ -27,7 +28,7 @@
             <RowConstraints minHeight="25.0" prefHeight="-1.0" vgrow="NEVER" />
           </rowConstraints>
         </GridPane>
-        <TitledPane animated="false" expanded="true" minHeight="-Infinity" text="%ExportCLIDialog_AdditionalOptions" VBox.vgrow="NEVER">
+        <TitledPane animated="false" collapsible="false" expanded="true" minHeight="-Infinity" text="%ExportCLIDialog_AdditionalOptions" VBox.vgrow="NEVER">
           <content>
             <VBox prefHeight="-1.0" prefWidth="-1.0">
               <children>
@@ -41,7 +42,7 @@
                     <GridPane minWidth="-Infinity" vgap="5.0" HBox.hgrow="NEVER">
                       <children>
                         <Label text="%JSHelperSection_Optimization" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                        <ToggleButton alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" styleClass="invisible-button" text="%JSHelperSection_Whitespaces" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                        <ToggleButton fx:id="controlWhite" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" text="%JSHelperSection_Whitespaces" GridPane.columnIndex="0" GridPane.rowIndex="1">
                           <graphic>
                             <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                               <image>
@@ -49,8 +50,11 @@
                               </image>
                             </ImageView>
                           </graphic>
+                          <toggleGroup>
+                            <ToggleGroup fx:id="toggleGroup" />
+                          </toggleGroup>
                         </ToggleButton>
-                        <ToggleButton alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" styleClass="invisible-button" text="%JSHelperSection_Simple" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                        <ToggleButton fx:id="controlSimple" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" text="%JSHelperSection_Simple" toggleGroup="$toggleGroup" GridPane.columnIndex="0" GridPane.rowIndex="2">
                           <graphic>
                             <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                               <image>
@@ -59,7 +63,7 @@
                             </ImageView>
                           </graphic>
                         </ToggleButton>
-                        <ToggleButton alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" styleClass="invisible-button" text="%JSHelperSection_Advance" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                        <ToggleButton fx:id="controlAdvanced" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" text="%JSHelperSection_Advance" toggleGroup="$toggleGroup" GridPane.columnIndex="0" GridPane.rowIndex="3">
                           <graphic>
                             <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                               <image>
@@ -82,7 +86,7 @@
                     <GridPane vgap="5.0" HBox.hgrow="NEVER">
                       <children>
                         <Label text="%JSHelperSection_Warning" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                        <ToggleButton alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" styleClass="invisible-button" text="%JSHelperSection_Default" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                        <ToggleButton fx:id="controlDefault" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" text="%JSHelperSection_Default" GridPane.columnIndex="0" GridPane.rowIndex="1">
                           <graphic>
                             <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                               <image>
@@ -90,8 +94,11 @@
                               </image>
                             </ImageView>
                           </graphic>
+                          <toggleGroup>
+                            <ToggleGroup fx:id="toggleGroup1" />
+                          </toggleGroup>
                         </ToggleButton>
-                        <ToggleButton alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" prefWidth="-1.0" styleClass="invisible-button" text="%JSHelperSection_Quite" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                        <ToggleButton fx:id="controlQuite" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" prefWidth="-1.0" text="%JSHelperSection_Quite" toggleGroup="$toggleGroup1" GridPane.columnIndex="0" GridPane.rowIndex="2">
                           <graphic>
                             <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                               <image>
@@ -100,7 +107,7 @@
                             </ImageView>
                           </graphic>
                         </ToggleButton>
-                        <ToggleButton alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" styleClass="invisible-button" text="%JSHelperSection_Verbose" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                        <ToggleButton fx:id="controlVerbose" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" text="%JSHelperSection_Verbose" toggleGroup="$toggleGroup1" GridPane.columnIndex="0" GridPane.rowIndex="3">
                           <graphic>
                             <ImageView fitHeight="16.0" fitWidth="16.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                               <image>
@@ -132,22 +139,11 @@
             <Insets />
           </VBox.margin>
         </TitledPane>
-        <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="%ExportCLIDialog_Details" VBox.vgrow="ALWAYS">
-          <content>
-            <VBox prefHeight="200.0" prefWidth="100.0">
-              <children>
-                <ListView fx:id="controlDetails" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-                <ProgressBar fx:id="progressBar" maxWidth="1.7976931348623157E308" prefWidth="-1.0" progress="0.0" VBox.vgrow="NEVER" />
-              </children>
-            </VBox>
-          </content>
-        </TitledPane>
       </children>
     </VBox>
     <GridPane alignment="CENTER_LEFT" disable="false" focusTraversable="false" gridLinesVisible="false" padding="$x1" styleClass="dialog-buttons">
       <children>
-        <Button alignment="CENTER_LEFT" contentDisplay="LEFT" mnemonicParsing="false" text="Button" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleStartButton" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleStartButton" text="%Button_Export" GridPane.columnIndex="1" GridPane.rowIndex="0" />
       </children>
       <columnConstraints>
         <ColumnConstraints hgrow="ALWAYS" minWidth="-1.0" prefWidth="-1.0" />

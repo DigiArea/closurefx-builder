@@ -1,6 +1,7 @@
 package com.digiarea.closurefx;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.net.URL;
 import java.text.MessageFormat;
 import java.util.Iterator;
@@ -32,10 +33,13 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
+import com.digiarea.closure.core.Path;
 import com.digiarea.closure.help.model.controller.HelpController;
 import com.digiarea.closure.help.model.controller.HelpFactory;
 import com.digiarea.closure.model.Closure;
 import com.digiarea.closure.model.controller.dialogs.DialogFactory;
+import com.digiarea.closure.model.controller.dialogs.FolderDialogController;
+import com.digiarea.closure.model.export.ClosureCLExporter;
 import com.digiarea.closure.preferences.model.controller.PreferencesFactory;
 import com.digiarea.closurefx.build.validation.IStatus;
 import com.digiarea.closurefx.build.validation.IStatus.StatusType;
@@ -105,6 +109,44 @@ public class ClosureFXController implements Initializable {
 			document.getModelFacade().getJsConsole().start();
 			document.getModelFacade().getSoyConsole().start();
 			document.getModelFacade().getGssConsole().start();
+		}
+	}
+
+	@FXML
+	private void handleExportCommandLineButtonAction(ActionEvent event) {
+		Tab activeTab = getActiveTab();
+		if (activeTab != null) {
+			Document document = getDocument(activeTab);
+			if (document != null) {
+
+				try {
+					FolderDialogController controller = DialogFactory
+							.getFolderDialog(bundle,
+									IConstants.ExportDialog_CLI,
+									IConstants.ExportDialog_CLI_desc, document
+											.getFile().getParentFile(), true,
+									true, (String[]) null);
+					if (controller != null
+							&& controller.getStatus().getSeverity() != StatusType.CANCEL) {
+						if (controller.getSelectedFile() != null) {
+							File newFile = new File(new Path(controller
+									.getSelectedFile().getAbsolutePath())
+									.append("build.cli").toString());
+							if (!newFile.exists()) {
+								newFile.createNewFile();
+							}
+							Closure closure = document.getClosure();
+//							ClosureCLExporter exporter = new ClosureCLExporter(
+//									document.getPathResolver(),
+//									new FileOutputStream(newFile));
+//							closure.accept(exporter, null);
+						}
+					}
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
 		}
 	}
 

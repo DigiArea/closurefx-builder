@@ -1,12 +1,14 @@
 package com.digiarea.closure.model.export;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.text.MessageFormat;
+import java.util.ResourceBundle;
 
 import com.digiarea.closure.core.IPathResolver;
 import com.digiarea.closure.core.Path;
 import com.digiarea.closure.model.Buildpath;
-import com.digiarea.closure.model.Check;
 import com.digiarea.closure.model.ClosureJs;
 import com.digiarea.closure.model.JsDefine;
 import com.digiarea.closure.model.JsDefineType;
@@ -16,131 +18,168 @@ import com.digiarea.closure.model.JsPropertyMap;
 import com.digiarea.closure.model.JsVariableMap;
 import com.digiarea.closure.model.LangType;
 import com.digiarea.closure.model.Language;
+import com.digiarea.closure.model.Optimizations;
 import com.digiarea.closure.model.Output;
 import com.digiarea.closure.model.SeverityType;
 import com.digiarea.closure.model.Warning;
 import com.digiarea.closure.model.visitor.VoidVisitorAdapter;
+import com.digiarea.closurefx.IConstants;
 import com.digiarea.closurefx.build.compiler.JSBuildpathContainerResolver;
+import com.digiarea.closurefx.build.validation.IStatus.StatusType;
+import com.digiarea.closurefx.build.validation.Status;
+import com.digiarea.closurefx.cli.console.ICliConsole;
 import com.digiarea.closurefx.utils.ClosurerUtils;
 import com.digiarea.closurefx.utils.SourcePrinter;
 
 public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 
-	private ByteArrayOutputStream stream;
+	private OutputStream stream;
 	private SourcePrinter printer;
-	
 	private IPathResolver pathResolver;
-	
+	private ICliConsole console;
+	private ResourceBundle bundle;
+
+	public ClosureCLExporter(IPathResolver pathResolver, OutputStream stream, ICliConsole console, ResourceBundle bundle) {
+		this.bundle = bundle;
+		this.console = console;
+		this.stream = stream;
+		this.printer = new SourcePrinter(this.stream, null);
+		this.pathResolver = pathResolver;
+	}
+
+	public OutputStream getStream() {
+		return stream;
+	}
+
 	@Override
 	public void visit(Buildpath n, Void ctx) throws Exception {
-		if(n.getParent() instanceof ClosureJs){
+		if (n.getParent() instanceof ClosureJs) {
 			JSBuildpathContainerResolver resolver = new JSBuildpathContainerResolver(
-					n,
-					pathResolver);
+					n, pathResolver);
 			resolver.getDependencies();
 			resolver.resolve();
 			for (File source : resolver.getSources()) {
-				printer.print(IClosureCLConstants.JS + " "
-						+ source.getAbsolutePath());
+				printOption(IClosureCLConstants.JS, source.getAbsolutePath(),
+						" ", true);
 			}
 			for (File source : resolver.getExterns()) {
-				printer.print(IClosureCLConstants.JS_EXTERNS + " "
-						+ source.getAbsolutePath());
+				printOption(IClosureCLConstants.JS_EXTERNS,
+						source.getAbsolutePath(), " ", true);
 			}
-		}else{
-			super.visit(n, ctx);
-		}
-	}
-	
-	@Override
-	public void visit(ClosureJs n, Void ctx) throws Exception {
-		super.visit(n, ctx);
-		
-		if(n.getTranslationsFile() != null && !n.getTranslationsFile().isEmpty()){
-			printer.print(IClosureCLConstants.JS_TRANSLATION_FILE + " "
-					+ n.getTranslationsFile());
-		}
-		
-		if(n.getTranslationsProject() != null && !n.getTranslationsProject().isEmpty()){
-			printer.print(IClosureCLConstants.JS_TRANSLATION_PROJECT + " "
-					+ n.getTranslationsProject());
-		}
-
-		printer.print(IClosureCLConstants.JS_PROCESS_CLOSURE_PRIMITIVES + " "
-				+ n.isClosurePass());
-		printer.print(IClosureCLConstants.JS_PROCESS_JQUERY_PRIMITIVES + " "
-				+ n.isJqueryPass());
-		printer.print(IClosureCLConstants.JS_PROCESS_ANGULAR + " "
-				+ n.isAngularPass());
-
-		printer.print(IClosureCLConstants.JS_ACCEPT_CONST + " "
-				+ n.isAcceptConstKeyword());
-
-		if (n.isPrettyPrint()) {
-			printer.print(IClosureCLConstants.JS_FORMATTING + " "
-					+ IClosureCLConstants.JS_FORMATTING_PRETTY_PRINT);
-		}
-
-		if (n.isPrintInputDelimeter()) {
-			printer.print(IClosureCLConstants.JS_FORMATTING + " "
-					+ IClosureCLConstants.JS_FORMATTING_PRINT_INPUT_DELIMITER);
-		}
-
-		if (n.isSingleQuotes()) {
-			printer.print(IClosureCLConstants.JS_FORMATTING + " "
-					+ IClosureCLConstants.JS_FORMATTING_SINGLE_QUOTES);
-		}
-
-		if (n.isGenerateExports()) {
-			printer.print(IClosureCLConstants.JS_GENERATE_EXPORTS + " "
-					+ n.isGenerateExports());
-		}
-
-		if (n.getSourceMapFile() != null && !n.getSourceMapFile().isEmpty()) {
-			printer.print(IClosureCLConstants.JS_SOURCE_MAP + " "
-					+ n.getSourceMapFile());
-			printer.print(IClosureCLConstants.JS_SOURCE_MAP_FORMAT
-					+ " "
-					+ ClosurerUtils.toSourceMapFormat(n.getSourceMapFormat())
-							.name());
-		}
-
-		if (n.getCharset() != null && !n.getCharset().isEmpty()) {
-			printer.print(IClosureCLConstants.JS_CHARSET + " " + n.getCharset());
-		}
-	}
-
-	@Override
-	public void visit(Output n, Void ctx) throws Exception {
-		if (n.getParent() instanceof ClosureJs) {
-			printer.print(IClosureCLConstants.JS_OUTPUT + " "
-					+ new Path(n.getPath()).append(n.getFile()).toString());
 		} else {
 			super.visit(n, ctx);
 		}
 	}
 
 	@Override
-	public void visit(Check n, Void ctx) throws Exception {
-		switch (n.getType()) {
-		case CHAIN_CALLS:
-			break;
-		case CHECK_CAJA:
-			break;
-		case CHECK_CONTROL_SCTRUCTURES:
-			break;
-		case CHECK_SUSPICIOUS_CODE:
-			break;
-		case CHECK_SYMBOLS:
-			break;
-		case CHECK_TYPES:
-			break;
-		case COMPUTE_FUNCTION_SIDE_EFFECTS:
-			break;
-		case TIGHTEN_TYPES:
-			break;
-		default:
-			break;
+	public void visit(ClosureJs n, Void ctx) throws Exception {
+		// if (n.getInfo() != null) {
+		// n.getInfo().accept(this, ctx);
+		// }
+		if (n.getBuildpath() != null) {
+			n.getBuildpath().accept(this, ctx);
+		}
+		if (n.getOutput() != null) {
+			n.getOutput().accept(this, ctx);
+		}
+		if (n.getWarnings() != null) {
+			n.getWarnings().accept(this, ctx);
+		}
+		// if (n.getChecks() != null) {
+		// n.getChecks().accept(this, ctx);
+		// }
+		if (n.getOptimizations() != null) {
+			n.getOptimizations().accept(this, ctx);
+		}
+		if (n.getJsDocs() != null) {
+			n.getJsDocs().accept(this, ctx);
+		}
+		if (n.getLanguage() != null) {
+			n.getLanguage().accept(this, ctx);
+		}
+		if (n.getJsDefines() != null) {
+			n.getJsDefines().accept(this, ctx);
+		}
+		if (n.getRenaming() != null) {
+			n.getRenaming().accept(this, ctx);
+		}
+
+		if (n.getTranslationsFile() != null
+				&& !n.getTranslationsFile().isEmpty()) {
+			printOption(IClosureCLConstants.JS_TRANSLATION_FILE,
+					n.getTranslationsFile(), " ", true);
+		}
+
+		if (n.getTranslationsProject() != null
+				&& !n.getTranslationsProject().isEmpty()) {
+			printOption(IClosureCLConstants.JS_TRANSLATION_PROJECT,
+					n.getTranslationsProject(), " ", true);
+		}
+
+		if (!n.isClosurePass() && !n.isJqueryPass()) {
+			printOption(IClosureCLConstants.JS_THIRD_PARTY, true, " ", true);
+		}
+
+		printOption(IClosureCLConstants.JS_PROCESS_CLOSURE_PRIMITIVES,
+				n.isClosurePass(), " ", true);
+		printOption(IClosureCLConstants.JS_PROCESS_JQUERY_PRIMITIVES,
+				n.isJqueryPass(), " ", true);
+
+		printOption(IClosureCLConstants.JS_PROCESS_ANGULAR, n.isAngularPass(),
+				" ", true);
+		printOption(IClosureCLConstants.JS_ACCEPT_CONST,
+				n.isAcceptConstKeyword(), " ", true);
+
+		if (n.isPrettyPrint()) {
+			printOption(IClosureCLConstants.JS_FORMATTING,
+					IClosureCLConstants.JS_FORMATTING_PRETTY_PRINT, " ", true);
+		}
+
+		if (n.isPrintInputDelimeter()) {
+			printOption(IClosureCLConstants.JS_FORMATTING,
+					IClosureCLConstants.JS_FORMATTING_PRINT_INPUT_DELIMITER,
+					" ", true);
+		}
+
+		if (n.isSingleQuotes()) {
+			printOption(IClosureCLConstants.JS_FORMATTING,
+					IClosureCLConstants.JS_FORMATTING_SINGLE_QUOTES, " ", true);
+		}
+
+		if (n.isGenerateExports()) {
+			printOption(IClosureCLConstants.JS_GENERATE_EXPORTS,
+					n.isGenerateExports(), " ", true);
+		}
+
+		if (n.getSourceMapFile() != null && !n.getSourceMapFile().isEmpty()) {
+			printOption(IClosureCLConstants.JS_SOURCE_MAP,
+					pathResolver.toRealPath(n.getSourceMapFile()), " ", true);
+			printOption(IClosureCLConstants.JS_SOURCE_MAP_FORMAT, ClosurerUtils
+					.toSourceMapFormat(n.getSourceMapFormat()).name(), " ",
+					true);
+		}
+
+		if (n.getCharset() != null && !n.getCharset().isEmpty()) {
+			printOption(IClosureCLConstants.JS_CHARSET, n.getCharset(), " ",
+					true);
+		}
+	}
+
+	@Override
+	public void visit(Optimizations n, Void ctx) throws Exception {
+		console.report(new Status(StatusType.INFO, bundle
+				.getString(IConstants.ClosureCLExporter_Optimization), null));
+	}
+
+	@Override
+	public void visit(Output n, Void ctx) throws Exception {
+		if (n.getParent() instanceof ClosureJs) {
+			printOption(
+					IClosureCLConstants.JS_OUTPUT,
+					new Path(pathResolver.toRealPath(n.getPath())).append(
+							n.getFile()).toString(), " ", true);
+		} else {
+			super.visit(n, ctx);
 		}
 	}
 
@@ -157,166 +196,150 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 
 	@Override
 	public void visit(Warning n, Void ctx) throws Exception {
-		printer.print(getWarningSeverityFlag(n.getSeverity()) + "=");
+		String value = null;
 		switch (n.getType()) {
 		case ACCESS_CONTROLS:
-			printer.print("accessControls");
+			value = "accessControls";
 			break;
-		case AGGRESSIVE_VAR_CHECK:
-			throw new UnsupportedOperationException(
-					"AGGRESSIVE_VAR_CHECK is unsupported! Implement me!");
-			// break;
 		case AMBIGUOUS_FUNCTION_DECL:
-			printer.print("ambiguousFunctionDecl");
+			value = "ambiguousFunctionDecl";
 			break;
-		case BROKEN_REQUIRES_LEVEL:
-			throw new UnsupportedOperationException(
-					"BROKEN_REQUIRES_LEVEL is unsupported! Implement me!");
-			// break;
-		case CHECK_GLOBAL_NAMES_LEVEL:
-			throw new UnsupportedOperationException(
-					"CHECK_GLOBAL_NAMES_LEVEL is unsupported! Implement me!");
-			// break;
-		case CHECK_GLOBAL_THIS_LEVEL:
-			throw new UnsupportedOperationException(
-					"CHECK_GLOBAL_THIS_LEVEL is unsupported! Implement me!");
-			// break;
 		case CHECK_MISSING_RETURN:
-			printer.print("missingReturn");
+			value = "missingReturn";
 			break;
 		case CHECK_PROVIDES:
-			printer.print("missingProvide");
+			value = "missingProvide";
 			break;
 		case CHECK_REGEXP:
-			printer.print("checkRegExp");
+			value = "checkRegExp";
 			break;
 		case CHECK_REQUIRES:
-			printer.print("missingRequire");
+			value = "missingRequire";
 			break;
 		case CHECK_STRUCT_DICT_INHERITENCE:
-			printer.print("checkStructDictInheritance");
+			value = "checkStructDictInheritance";
 			break;
 		case CHECK_TYPES:
-			printer.print("checkTypes");
+			value = "checkTypes";
 			break;
-		case CHECK_UNREACHABLE_CODE:
-			throw new UnsupportedOperationException(
-					"CHECK_UNREACHABLE_CODE is unsupported! Implement me!");
-			// break;
 		case CHECK_USELESS_CODE:
-			printer.print("uselessCode");
+			value = "uselessCode";
 			break;
 		case CHECK_VARS:
-			printer.print("checkVars");
+			value = "checkVars";
 			break;
 		case CONST:
-			printer.print("const");
+			value = "const";
 			break;
 		case CONSTANT_PROPERTY:
-			printer.print("constantProperty");
+			value = "constantProperty";
 			break;
-		case DEBUGGER_STATEMENT_PRESENT:
-			throw new UnsupportedOperationException(
-					"DEBUGGER_STATEMENT_PRESENT is unsupported! Implement me!");
-			// break;
 		case DEPRECATED:
-			printer.print("deprecated");
+			value = "deprecated";
 			break;
 		case DUPLICATE_MESSAGES:
-			printer.print("duplicateMessage");
+			value = "duplicateMessage";
 			break;
-		case DUPLICATE_VARS:
-			throw new UnsupportedOperationException(
-					"DUPLICATE_VARS is unsupported! Implement me!");
-			// break;
 		case ES_5_STRICT:
-			printer.print("es5Strict");
+			value = "es5Strict";
 			break;
 		case EXTERNS_VALIDATION:
-			printer.print("externsValidation");
+			value = "externsValidation";
 			break;
 		case FILEOVERVIEW_JSDOC:
-			printer.print("fileoverviewTags");
+			value = "fileoverviewTags";
 			break;
 		case GLOBAL_THIS:
-			printer.print("globalThis");
+			value = "globalThis";
 			break;
 		case INTERNET_EXPLORER_CHECKS:
-			printer.print("internetExplorerChecks");
+			value = "internetExplorerChecks";
 			break;
 		case INVALID_CASTS:
-			printer.print("invalidCasts");
+			value = "invalidCasts";
 			break;
 		case MISPLACED_TYPE_ANNOTATION:
-			printer.print("misplacedTypeAnnotation");
+			value = "misplacedTypeAnnotation";
 			break;
 		case MISSING_PROPERTIES:
-			printer.print("missingProperties");
+			value = "missingProperties";
 			break;
 		case NON_STANDARD_JS_DOCS:
-			printer.print("nonStandardJsDocs");
+			value = "nonStandardJsDocs";
 			break;
-		case REPORT_MISSING_OVERRIDE:
-			throw new UnsupportedOperationException(
-					"REPORT_MISSING_OVERRIDE is unsupported! Implement me!");
-			// break;
 		case REPORT_UNKNOWN_TYPES:
-			printer.print("reportUnknownTypes");
+			value = "reportUnknownTypes";
 			break;
 		case STRICT_MODULE_DEP_CHECK:
-			printer.print("strictModuleDepCheck");
+			value = "strictModuleDepCheck";
 			break;
 		case SUSPICIOUS_CODE:
-			printer.print("suspiciousCode");
+			value = "suspiciousCode";
 			break;
-		case TWEAKS:
-			throw new UnsupportedOperationException(
-					"TWEAKS is unsupported! Implement me!");
-			// break;
 		case TYPE_INVALIDATION:
-			printer.print("typeInvalidation");
+			value = "typeInvalidation";
 			break;
 		case UNDEFINED_NAMES:
-			printer.print("undefinedNames");
+			value = "undefinedNames";
 			break;
 		case UNDEFINED_VARS:
-			printer.print("undefinedVars");
+			value = "undefinedVars";
 			break;
 		case UNKNOWN_DEFINES:
-			printer.print("unknownDefines");
+			value = "unknownDefines";
 			break;
-		case VIOLATED_MODULE_DEP:
-			throw new UnsupportedOperationException(
-					"VIOLATED_MODULE_DEP is unsupported! Implement me!");
-			// break;
+
 		case VISIBILITY:
-			printer.print("visibility");
+			value = "visibility";
 			break;
 		case CHECK_EVENTFUL_OBJECT_DISPOSAL:
-			printer.print("checkEventfulObjectDisposal");
+			value = "checkEventfulObjectDisposal";
 			break;
 		case ES3:
-			printer.print("es3");
+			value = "es3";
 			break;
 		case UNNECESSARY_CASTS:
-			throw new UnsupportedOperationException(
-					"UNNECESSARY_CASTS is unsupported! Implement me!");
-			// break;
-		default:
+		case VIOLATED_MODULE_DEP:
+		case TWEAKS:
+		case REPORT_MISSING_OVERRIDE:
+		case DUPLICATE_VARS:
+		case DEBUGGER_STATEMENT_PRESENT:
+		case CHECK_UNREACHABLE_CODE:
+		case CHECK_GLOBAL_NAMES_LEVEL:
+		case CHECK_GLOBAL_THIS_LEVEL:
+		case BROKEN_REQUIRES_LEVEL:
+		case AGGRESSIVE_VAR_CHECK:
+			console.report(new Status(StatusType.INFO, MessageFormat.format(
+					bundle.getString(IConstants.ClosureCLExporter_Warning), n
+							.getType().name()), null));
 			break;
+		default:
+			console.report(new Status(StatusType.ERROR, "Strange option: "
+					+ n.getType().name(), null));
+			break;
+		}
+
+		if (value != null) {
+			printOption(getWarningSeverityFlag(n.getSeverity()), value, "=",
+					true);
 		}
 	}
 
 	@Override
 	public void visit(JsDoc n, Void ctx) throws Exception {
-		printer.print(IClosureCLConstants.JS_EXTRA_ANNOTATIONS_NAME + " " + n.getValue());
+		printOption(IClosureCLConstants.JS_EXTRA_ANNOTATIONS_NAME,
+				n.getValue(), " ", true);
 	}
 
 	@Override
 	public void visit(Language n, Void ctx) throws Exception {
 		if (n.getInput() != null) {
-			printer.print(IClosureCLConstants.JS_LANGUAGE_IN + " "
-					+ getJSLanguageFlag(n.getInput()));
+			printOption(IClosureCLConstants.JS_LANGUAGE_IN,
+					getJSLanguageFlag(n.getInput()), " ", true);
+		}
+		if (n.getOutput() != null) {
+			console.report(new Status(StatusType.INFO, bundle
+					.getString(IConstants.ClosureCLExporter_LanguageOut), null));
 		}
 	}
 
@@ -335,34 +358,50 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 
 	@Override
 	public void visit(JsDefine n, Void ctx) throws Exception {
-		printer.print(IClosureCLConstants.JS_DEFINE + " ");
-		printer.print(n.getName() + "=");
+		String value = n.getName() + "=";
 		if (n.getType() == JsDefineType.STRING) {
-			printer.print("'" + n.getValue() + "'");
+			value = value + "'" + n.getValue() + "'";
 		} else {
-			printer.print(n.getValue());
+			value = value + n.getValue();
 		}
+
+		printOption(IClosureCLConstants.JS_DEFINE, value, " ", true);
 	}
 
 	@Override
 	public void visit(JsVariableMap n, Void ctx) throws Exception {
-		printer.print(IClosureCLConstants.JS_VARIABLE_MAP_INPUT + " ");
-		printer.print(n.getInput());
-		printer.print(IClosureCLConstants.JS_VARIABLE_MAP_OUTPUT + " ");
-		printer.print(n.getOutput());
+		if (n.getInput() != null) {
+			printOption(IClosureCLConstants.JS_VARIABLE_MAP_INPUT,
+					pathResolver.toRealPath(n.getInput()), " ", true);
+		}
+		if (n.getOutput() != null) {
+			printOption(IClosureCLConstants.JS_VARIABLE_MAP_OUTPUT,
+					pathResolver.toRealPath(n.getOutput()), " ", true);
+		}
 	}
 
 	@Override
 	public void visit(JsPropertyMap n, Void ctx) throws Exception {
-		printer.print(IClosureCLConstants.JS_PROPERTY_MAP_INPUT + " ");
-		printer.print(n.getInput());
-		printer.print(IClosureCLConstants.JS_PROPERTY_MAP_OUTPUT + " ");
-		printer.print(n.getOutput());
+		if (n.getInput() != null) {
+			printOption(IClosureCLConstants.JS_PROPERTY_MAP_INPUT,
+					pathResolver.toRealPath(n.getInput()), " ", true);
+		}
+		if (n.getOutput() != null) {
+			printOption(IClosureCLConstants.JS_PROPERTY_MAP_OUTPUT,
+					pathResolver.toRealPath(n.getOutput()), " ", true);
+		}
 	}
 
 	@Override
 	public void visit(JsFunctionMap n, Void ctx) throws Exception {
-		System.out.println("JsFunctionMap is not supported");
+		console.report(new Status(StatusType.INFO, bundle
+				.getString(IConstants.ClosureCLExporter_JSFunctionMap), null));
+	}
+
+	private void printOption(String key, Object value, String delimiter,
+			boolean newLine) throws IOException {
+		printer.print(key + delimiter + value);
+		printer.print(" ");
 	}
 
 }

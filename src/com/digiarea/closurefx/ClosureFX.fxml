@@ -41,6 +41,8 @@
                     </MenuItem>
                     <MenuItem mnemonicParsing="false" onAction="#handleSaveAllButtonAction" text="%ClosureMenu_FileSaveAll" />
                     <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem mnemonicParsing="false" onAction="#handleExportCommandLineButtonAction" text="%ClosureMenu_FileExport_CommandLine" />
+                     <SeparatorMenuItem mnemonicParsing="false" />
                     <MenuItem mnemonicParsing="false" onAction="#handleCloseButtonAction" text="%ClosureMenu_FileClose" />
                     <MenuItem mnemonicParsing="false" onAction="#handleCloseAllButtonAction" text="%ClosureMenu_FileCloseAll" />
                     <SeparatorMenuItem mnemonicParsing="false" />

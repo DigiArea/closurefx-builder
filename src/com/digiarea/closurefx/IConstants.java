@@ -14,6 +14,13 @@ public interface IConstants {
 	public static String HELP_STYLESHEETS = HELP_HTML + "/stylesheets";
 
 	// LOCALES
+	public static String ClosureCLExporter_JSFunctionMap = "ClosureCLExporter_JSFunctionMap";
+	public static String ClosureCLExporter_LanguageOut = "ClosureCLExporter_LanguageOut";
+	public static String ClosureCLExporter_Warning = "ClosureCLExporter_Warning";
+	public static String ClosureCLExporter_Optimization = "ClosureCLExporter_Optimization";
+	
+	public static String ExportDialog_CLI="ExportDialog_CLI";
+	public static String ExportDialog_CLI_desc = "ExportDialog_CLI_desc";
 
 	public static String JSRenamingSection_Select_InputFile = "JSRenamingSection_Select_InputFile";
 	public static String JSRenamingSection_Select_OutputFile = "JSRenamingSection_Select_OutputFile";

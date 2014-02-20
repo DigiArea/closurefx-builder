@@ -21,17 +21,17 @@
 		
 		<copy todir="externalLibs">
 			<fileset dir="/home/daginno/git/closurefx-builder/libs">
+				<filename name="com.digiarea.zippy.jar"/>	
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/home/daginno/git/closurefx-builder/libs">
 				<filename name="guava-14.0.1.jar"/>	
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
 			<fileset dir="/home/daginno/git/closurefx-builder/libs">
 				<filename name="commons-cli-1.2.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="/home/daginno/git/closurefx-builder/libs">
-				<filename name="com.dagxp.lib.zippy.jse_1.0.0.201304130935.jar"/>	
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
@@ -50,17 +50,17 @@
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="/home/daginno/Java/jdk1.7.0_51/jre/lib">
-				<filename name="jfxrt.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
 			<fileset dir="/home/daginno/git/closurefx-builder/libs">
 				<filename name="templates.jar"/>	
 			</fileset>
 		</copy>
 		
 		<mkdir dir="project" />
+		<copy todir="project">
+			<fileset dir="/home/daginno/git/closurefx-builder">
+				<include name="tests/**" />
+			</fileset>
+		</copy>
 		<copy todir="project">
 			<fileset dir="/home/daginno/git/closurefx-builder">
 				<include name="src/**" />
@@ -79,12 +79,11 @@
 		<copy todir="build/libs">
 			<fileset dir="externalLibs">
 				<include name="templates-msg.jar"/>
-				<include name="com.dagxp.lib.zippy.jse_1.0.0.201304130935.jar"/>
 				<include name="templates.jar"/>
 				<include name="compiler.jar"/>
 				<include name="stylesheets.jar"/>
 				<include name="guava-14.0.1.jar"/>
-				<include name="jfxrt.jar"/>
+				<include name="com.digiarea.zippy.jar"/>
 				<include name="commons-cli-1.2.jar"/>
 			</fileset>
 		</copy>
@@ -92,6 +91,11 @@
 		<!-- Copy project references -->
 	
 		<!-- Copy project sources itself -->
+		<copy todir="build/src">
+			<fileset dir="project/tests">
+				<include name="**/*"/>
+			</fileset>
+		</copy>
 		<copy todir="build/src">
 			<fileset dir="project/src">
 				<include name="**/*"/>
@@ -111,6 +115,9 @@
 		
 		<!-- Copy over none Java-Files -->
 		<copy todir="build/classes">
+		<fileset dir="project/tests">
+			<exclude name="**/*.java"/>
+		</fileset>
 		<fileset dir="project/src">
 			<exclude name="**/*.java"/>
 		</fileset>

@@ -1,6 +1,7 @@
 Update 1.2.0
 - Implemented Command Line interface for Closure FX Builder
 - Export to Closure Compiler's command line
+- Added new compiler's checks
 
 Update 1.1.1
 - Added Development Mode feature

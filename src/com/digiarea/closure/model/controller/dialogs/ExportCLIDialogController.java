@@ -64,22 +64,22 @@ public class ExportCLIDialogController implements Initializable {
 	}
 
 	private String getCompilationLevel() {
-		if (controlWhite.isPressed()) {
+		if (controlWhite.isSelected()) {
 			return "WHITESPACE_ONLY";
-		} else if (controlSimple.isPressed()) {
+		} else if (controlSimple.isSelected()) {
 			return "SIMPLE_OPTIMIZATIONS";
-		} else if (controlAdvanced.isPressed()) {
+		} else if (controlAdvanced.isSelected()) {
 			return "ADVANCED_OPTIMIZATIONS";
 		}
 		return null;
 	}
 
 	private String getWarningLevel() {
-		if (controlDefault.isPressed()) {
+		if (controlDefault.isSelected()) {
 			return "DEFAULT";
-		} else if (controlQuite.isPressed()) {
+		} else if (controlQuite.isSelected()) {
 			return "QUIET";
-		} else if (controlVerbose.isPressed()) {
+		} else if (controlVerbose.isSelected()) {
 			return "VERBOSE";
 		}
 		return null;
@@ -115,6 +115,7 @@ public class ExportCLIDialogController implements Initializable {
 				DialogFactory.getStatusDialog(bundle, new Status(
 						StatusType.ERROR, e.getMessage(), e),
 						"An error occurred!");
+				stage.close();
 			}
 		}
 	}

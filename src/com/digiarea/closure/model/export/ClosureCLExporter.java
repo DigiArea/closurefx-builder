@@ -93,15 +93,15 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 		if (n.getOutput() != null) {
 			n.getOutput().accept(this, ctx);
 		}
-//		if(warningLevel != null){
-//			printOption(IClosureCLConstants.JS_WARNING_LEVEL,
-//					warningLevel, " ", true);
-//		}
-//		
-//		if(compilationLevel != null){
-//			printOption(IClosureCLConstants.JS_COMPILATION_LEVEL,
-//					compilationLevel, " ", true);
-//		}
+		if (warningLevel != null) {
+			printOption(IClosureCLConstants.JS_WARNING_LEVEL, warningLevel,
+					" ", true);
+		}
+
+		if (compilationLevel != null) {
+			printOption(IClosureCLConstants.JS_COMPILATION_LEVEL,
+					compilationLevel, " ", true);
+		}
 		if (n.getWarnings() != null) {
 			n.getWarnings().accept(this, ctx);
 		}

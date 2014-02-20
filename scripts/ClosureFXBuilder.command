@@ -12,4 +12,4 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 cd "$DIR"
 
-java -jar ./ClosureFX.jar
+java -jar ./ClosureFXBuilder.jar

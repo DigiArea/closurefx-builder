@@ -1,1 +1,0 @@
-start javaw -jar ClosureFX.jar

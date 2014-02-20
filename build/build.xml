@@ -58,12 +58,12 @@
 		<mkdir dir="project" />
 		<copy todir="project">
 			<fileset dir="/home/daginno/git/closurefx-builder">
-				<include name="tests/**" />
+				<include name="src/**" />
 			</fileset>
 		</copy>
 		<copy todir="project">
 			<fileset dir="/home/daginno/git/closurefx-builder">
-				<include name="src/**" />
+				<include name="tests/**" />
 			</fileset>
 		</copy>
 		

@@ -4,6 +4,11 @@ import com.digiarea.closurefx.build.validation.IStatus;
 import com.digiarea.closurefx.build.validation.IStatus.StatusType;
 import com.digiarea.closurefx.build.validation.Status;
 
+/**
+ * 
+ * @author daginno
+ * 
+ */
 public class ValidationUtils {
 
 	/**

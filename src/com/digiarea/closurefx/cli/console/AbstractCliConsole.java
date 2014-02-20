@@ -8,7 +8,7 @@ import com.digiarea.closurefx.build.validation.IStatus;
 import com.digiarea.closurefx.build.validation.IStatus.StatusType;
 import com.digiarea.closurefx.build.validation.IStatusFormatter;
 
-public abstract class AbstractCliConsole implements ICliConsole {
+public abstract class AbstractCliConsole implements IClosureConsole {
 
 	protected Map<StatusType, List<IStatus>> errors;
 	protected IStatusFormatter formatter;

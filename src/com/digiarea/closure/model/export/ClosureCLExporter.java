@@ -27,7 +27,7 @@ import com.digiarea.closurefx.IConstants;
 import com.digiarea.closurefx.build.compiler.JSBuildpathContainerResolver;
 import com.digiarea.closurefx.build.validation.IStatus.StatusType;
 import com.digiarea.closurefx.build.validation.Status;
-import com.digiarea.closurefx.cli.console.ICliConsole;
+import com.digiarea.closurefx.cli.console.IClosureConsole;
 import com.digiarea.closurefx.utils.ClosurerUtils;
 import com.digiarea.closurefx.utils.SourcePrinter;
 
@@ -36,13 +36,13 @@ public class ClosureCLExporter extends VoidVisitorAdapter<Void> {
 	private OutputStream stream;
 	private SourcePrinter printer;
 	private IPathResolver pathResolver;
-	private ICliConsole console;
+	private IClosureConsole console;
 	private ResourceBundle bundle;
 	
 	private String warningLevel;
 	private String compilationLevel;
 
-	public ClosureCLExporter(IPathResolver pathResolver, OutputStream stream, ICliConsole console, ResourceBundle bundle) {
+	public ClosureCLExporter(IPathResolver pathResolver, OutputStream stream, IClosureConsole console, ResourceBundle bundle) {
 		this.bundle = bundle;
 		this.console = console;
 		this.stream = stream;

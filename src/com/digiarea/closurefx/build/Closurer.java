@@ -630,8 +630,8 @@ public class Closurer extends VoidVisitorAdapter<Object> {
 	@Override
 	public void visit(JsVariableMap n, Object ctx) throws Exception {
 		super.visit(n, ctx);
-		String input = pathResolver.toRealPath(n.getInput());
-		if (input != null && !input.isEmpty()) {
+		if (n.getInput() != null && !n.getInput().isEmpty()) {
+			String input = pathResolver.toRealPath(n.getInput());
 			jsOptions.setInputVariableMap(VariableMap.load(input));
 		}
 	}
@@ -639,8 +639,8 @@ public class Closurer extends VoidVisitorAdapter<Object> {
 	@Override
 	public void visit(JsFunctionMap n, Object ctx) throws Exception {
 		super.visit(n, ctx);
-		String input = pathResolver.toRealPath(n.getInput());
-		if (input != null && !input.isEmpty()) {
+		if (n.getInput() != null && !n.getInput().isEmpty()) {
+			String input = pathResolver.toRealPath(n.getInput());
 			jsOptions.setInputAnonymousFunctionNamingMap(VariableMap
 					.load(input));
 		}
@@ -649,8 +649,8 @@ public class Closurer extends VoidVisitorAdapter<Object> {
 	@Override
 	public void visit(JsPropertyMap n, Object ctx) throws Exception {
 		super.visit(n, ctx);
-		String input = pathResolver.toRealPath(n.getInput());
-		if (input != null && !input.isEmpty()) {
+		if (n.getInput() != null && !n.getInput().isEmpty()) {
+			String input = pathResolver.toRealPath(n.getInput());
 			jsOptions.setInputPropertyMap(VariableMap.load(input));
 		}
 	}
@@ -1178,7 +1178,7 @@ public class Closurer extends VoidVisitorAdapter<Object> {
 	private CompilerOptions jsOptions;
 	private JobDescriptionBuilder gssOptions;
 	private SoyJsSrcOptions soyOptions;
-
+	
 	public Closurer(IPathResolver pathResolver) {
 		this(new CompilerOptions(), new JobDescriptionBuilder(),
 				new SoyJsSrcOptions(), pathResolver);

@@ -52,7 +52,7 @@ public class ClosureFX extends Application {
 
 		stage.show();
 	}
-
+	
 	private void checkCommandLine() {
 		Option help = new Option("help", "print this message");
 		Option closure = OptionBuilder
@@ -94,7 +94,7 @@ public class ClosureFX extends Application {
 			System.err.println("Parsing failed.  Reason: " + exp.getMessage());
 		}
 	}
-
+	
 	/**
 	 * The main() method is ignored in correctly deployed JavaFX application.
 	 * main() serves only as fallback in case the application can not be
@@ -107,4 +107,5 @@ public class ClosureFX extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
+	
 }

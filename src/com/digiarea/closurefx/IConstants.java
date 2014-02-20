@@ -60,6 +60,7 @@ public interface IConstants {
 	public static String Console_Finish = "Console_Finish";
 	public static String Console_Interrupted = "Console_Interrupted";
 	public static String Console_NoResources = "Console_NoResources";
+	public static String JSConsole_SourceMapFailed = "JSConsole_SourceMapFailed";
 	public static String JSConsole_Invalid = "JSConsole_Invalid";
 	public static String JSConsole_Externs = "JSConsole_Externs";
 	public static String JSConsole_Output = "JSConsole_Output";

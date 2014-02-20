@@ -66,10 +66,11 @@ public class JSCCompilerCli extends Compiler {
 	 *            the buildpath, perform full build.
 	 */
 	public void build() {
-		
-		getErrorManager().reportMessage(new Status(StatusType.INFO, resourceBundle
-				.getString(IConstants.Console_Start), null));
-		
+
+		getErrorManager().reportMessage(
+				new Status(StatusType.INFO, resourceBundle
+						.getString(IConstants.Console_Start), null));
+
 		List<SourceFile> units = new ArrayList<SourceFile>();
 		List<SourceFile> unitExterns = new ArrayList<SourceFile>();
 		try {
@@ -166,7 +167,7 @@ public class JSCCompilerCli extends Compiler {
 												StatusType.INFO,
 												resourceBundle
 														.getString(IConstants.JSConsole_Output),
-														null));
+												null));
 					} catch (IOException e) {
 						e.printStackTrace();
 						getErrorManager()
@@ -178,6 +179,12 @@ public class JSCCompilerCli extends Compiler {
 																.getString(IConstants.JSConsole_OutputFailed),
 														realPath), e));
 					}
+				}
+				if (result.sourceMap != null
+						&& closureJs.getSourceMapFile() != null
+						&& !closureJs.getSourceMapFile().isEmpty()) {
+					writeSourceMap(result, pathResolver.toRealPath(closureJs
+							.getSourceMapFile()), realPath);
 				}
 				if (result.externExport != null
 						&& !result.externExport.isEmpty()
@@ -283,4 +290,24 @@ public class JSCCompilerCli extends Compiler {
 						.getString(IConstants.Console_Finish), null));
 
 	}
+
+	private void writeSourceMap(Result result, String sourceMap, String output) {
+		File file = new File(sourceMap);
+		try {
+			StringBuffer buffer = new StringBuffer();
+			result.sourceMap.appendTo(buffer, output);
+			Files.createParentDirs(file);
+			Files.write(buffer.toString().getBytes(), file);
+		} catch (IOException e) {
+			getErrorManager()
+					.reportMessage(
+							new Status(
+									StatusType.ERROR,
+									MessageFormat.format(
+											resourceBundle
+													.getString(IConstants.JSConsole_SourceMapFailed),
+											sourceMap), null));
+		}
+	}
+
 }

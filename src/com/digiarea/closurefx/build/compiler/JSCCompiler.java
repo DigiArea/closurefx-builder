@@ -180,6 +180,12 @@ public class JSCCompiler extends Compiler {
 														realPath), null));
 					}
 				}
+				if (result.sourceMap != null
+						&& closureJs.getSourceMapFile() != null
+						&& !closureJs.getSourceMapFile().isEmpty()) {
+					writeSourceMap(result, pathResolver.toRealPath(closureJs
+							.getSourceMapFile()), realPath);
+				}
 				if (result.externExport != null
 						&& !result.externExport.isEmpty()
 						&& closureJs.getExternExportsPath() != null
@@ -283,5 +289,25 @@ public class JSCCompiler extends Compiler {
 			}
 		}
 
+	}
+
+	private void writeSourceMap(Result result, String sourceMap, String output) {
+		File file = new File(sourceMap);
+		try {
+			StringBuffer buffer = new StringBuffer();
+			result.sourceMap.appendTo(buffer, output);
+			Files.createParentDirs(file);
+			Files.write(buffer.toString().getBytes(), file);
+		} catch (IOException e) {
+			getErrorManager()
+					.getConsoleManager()
+					.reportMessage(
+							new Status(
+									StatusType.ERROR,
+									MessageFormat.format(
+											resourceBundle
+													.getString(IConstants.JSConsole_SourceMapFailed),
+											sourceMap), null));
+		}
 	}
 }

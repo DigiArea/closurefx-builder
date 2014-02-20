@@ -23,7 +23,9 @@ import com.digiarea.closurefx.Document;
 import com.digiarea.closurefx.IConstants;
 import com.digiarea.closurefx.build.validation.IStatus;
 import com.digiarea.closurefx.build.validation.Status;
+import com.digiarea.closurefx.build.validation.IStatus.StatusType;
 import com.digiarea.closurefx.cli.console.BasicConsole;
+import com.google.common.io.Files;
 
 /**
  * FXML Controller class
@@ -87,35 +89,32 @@ public class ExportCLIDialogController implements Initializable {
 	private void handleStartButton(ActionEvent event) {
 		if (controlFile.getText() != null && !controlFile.getText().isEmpty()) {
 			File file = new File(controlFile.getText());
-			if (file.exists()) {
-				File newFile = new File(new Path(file.getAbsolutePath())
-						.append(document.getName()).addFileExtension("cli")
-						.toString());
-				try {
-					if (!newFile.exists()) {
-						newFile.createNewFile();
-					}
-					BasicConsole console = new BasicConsole(
-							new HashMap<IStatus.StatusType, List<IStatus>>(),
-							null);
-					ClosureCLExporter exporter = new ClosureCLExporter(
-							document.getPathResolver(), new FileOutputStream(
-									newFile), console, bundle);
-					exporter.setWarningLevel(getWarningLevel());
-					exporter.setCompilationLevel(getCompilationLevel());
-					document.getClosure().accept(exporter, null);
-					List<IStatus> statuses = new ArrayList<IStatus>();
-					for (List<IStatus> iStatus : console.getErrors().values()) {
-						statuses.addAll(iStatus);
-					}
-					DialogFactory.getStatusesDialog(bundle,
-							IConstants.ExportCLIDialog_Result,
-							IConstants.ExportCLIDialog_Result_Desc, statuses);
-					stage.close();
-
-				} catch (Exception e) {
-					e.printStackTrace();
+			try {
+				Files.createParentDirs(file);
+				if (!file.exists()) {
+					file.createNewFile();
 				}
+				BasicConsole console = new BasicConsole(
+						new HashMap<IStatus.StatusType, List<IStatus>>(), null);
+				ClosureCLExporter exporter = new ClosureCLExporter(
+						document.getPathResolver(), new FileOutputStream(file),
+						console, bundle);
+				exporter.setWarningLevel(getWarningLevel());
+				exporter.setCompilationLevel(getCompilationLevel());
+				document.getClosure().accept(exporter, null);
+				List<IStatus> statuses = new ArrayList<IStatus>();
+				for (List<IStatus> iStatus : console.getErrors().values()) {
+					statuses.addAll(iStatus);
+				}
+				DialogFactory.getStatusesDialog(bundle,
+						IConstants.ExportCLIDialog_Result,
+						IConstants.ExportCLIDialog_Result_Desc, statuses);
+				stage.close();
+
+			} catch (Exception e) {
+				DialogFactory.getStatusDialog(bundle, new Status(
+						StatusType.ERROR, e.getMessage(), e),
+						"An error occurred!");
 			}
 		}
 	}
@@ -131,6 +130,8 @@ public class ExportCLIDialogController implements Initializable {
 
 	public void setDocument(Document document) {
 		this.document = document;
+		controlFile.setText(getDefaultFile(document.getFile())
+				.getAbsolutePath());
 	}
 
 	public void setBundle(ResourceBundle bundle) {
@@ -139,6 +140,14 @@ public class ExportCLIDialogController implements Initializable {
 
 	public void setStage(Stage stage) {
 		this.stage = stage;
+	}
+
+	public File getDefaultFile(File file) {
+		if (file.isFile()) {
+			file = file.getParentFile();
+		}
+		return new File(new Path(file.getAbsolutePath())
+				.append(document.getName()).addFileExtension("cli").toString());
 	}
 
 }

@@ -56,12 +56,14 @@ public interface IClosureCLConstants {
 	public static final String JS_MANAGE_DEPENDENCIES = "--manage_closure_dependencies";
 	public static final String JS_ONLY_CLOSURE_DEPENDENCIES = "--only_closure_dependencies";
 	public static final String JS_CLOSURE_ENTRY_POINT = "--closure_entry_point";
+	
+	//supported in the dialog
+	public static final String JS_COMPILATION_LEVEL = "--compilation_level";
+	public static final String JS_WARNING_LEVEL = "--warning_level";
 
 	// TODO ?
-	public static final String JS_COMPILATION_LEVEL = "--compilation_level";
-	public static final String JS_SUMMARY_LEVEL = "--summary_detail_level";
-	public static final String JS_WARNING_LEVEL = "--warning_level";
 	public static final String JS_LOGGING_LEVEL = "--logging_level";
+	public static final String JS_SUMMARY_LEVEL = "--summary_detail_level";
 	
 	public static final String JS_MODULE_OUTPUT_PATH_PREFIX ="--module_output_path_prefix";
 	public static final String JS_MODULE_WRAPPER ="--module_wrapper";

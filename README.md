@@ -9,11 +9,15 @@ Closure FX Builder is an open-source web development toolkit powered by [Google 
 ![Closure Compiler - Closure FX Builder](http://digi-area.com/images/closurefx/screens_compiler.png)
 
 ####For JavaScript Developers
- - Code Validation with dozens of checks using Closure Compiler
+ - Access to almost all options of Closure Compiler includng experimental and cutting-edge
+ - Maximally flexible configuration of Closure Compiler
+ - Super-simple command line interface with only one flag
+ - [Grunt Plugin](https://github.com/DigiArea/grunt-closurefx-builder) to use the builder in automated build tasks
+ - JavaScript code Validation with dozens of checks using Closure Compiler
  - Automatic Dependency Management with Closure Library
- - Development Mode for faster coding
- - Code Minification and Optimization
- - Integration with popular JS Editors (WebStorm, Notepad++, Komodo Edit, Sublime Text, Emacs, jEdit).
+ - Development Mode for effective coding and debugging
+ - JavaScript code Minification and Optimization
+ - Integration with popular JavaScript Editors (WebStorm, Notepad++, Komodo Edit, Sublime Text, Emacs, jEdit).
  - Team friendly to work smoothly in groups
 
 ####For Soy Templates Developers
@@ -47,6 +51,7 @@ To use the documentation do the following:
  - Go to About -> Help
 
 You also can explore online [Closure FX Builder Documentation](http://digi-area.com/ClosureFX/guide/).
+For details about the updates and development state, explore [DigiArea Blog](http://blog.digi-area.com/).
 
 ###License
 

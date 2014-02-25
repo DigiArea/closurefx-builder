@@ -42,8 +42,8 @@ Still can not resolve your problem? Go to [Issues](https://github.com/DigiArea/c
 
 ###Usage
 
-- [Video: Closure FX Builder Overview](http://www.youtube.com/watch?v=7b80rp1jY9M&feature=share&list=PLGTp2fACSjqDR60lTtxI5NJZ2LRS-yyrm)
-- [Video: Compile with Closure Library](http://www.youtube.com/watch?v=xzirOdVDjnI&feature=share&list=PLGTp2fACSjqDR60lTtxI5NJZ2LRS-yyrm&index=2)
+- [Video: Closure FX Builder Overview](http://www.youtube.com/watch?v=xB-sywkSmkQ&list=PLiJEZLFl_IrhsgLMtZF85YHTXd1akLkXH&feature=share)
+- [Video: Compile with Closure Library](http://www.youtube.com/watch?v=VsdeAUPVNus&list=PLiJEZLFl_IrhsgLMtZF85YHTXd1akLkXH&feature=share&index=2)
 
 Closure FX Builder contains built-in documentation.
 To use the documentation do the following:

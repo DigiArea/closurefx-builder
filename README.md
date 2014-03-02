@@ -53,6 +53,11 @@ To use the documentation do the following:
 You also can explore online [Closure FX Builder Documentation](http://digi-area.com/ClosureFX/guide/).
 For details about the updates and development state, explore [DigiArea Blog](http://blog.digi-area.com/).
 
+###Professional Development
+
+If you are developing large-scale JavaScript applications or libraries, we encourage you to use [Closure IDE](http://digi-area.com/ClosureIDE/) - JavaScript IDE powered by Google Closure Tools.
+You can apply for a free Closure IDE license for Open Source projects [here](http://digi-area.com/ClosureIDE/opensource.php).
+
 ###License
 
 This software is licensed under the Apache V2 License. See the LICENSE file for details.

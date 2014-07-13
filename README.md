@@ -39,7 +39,7 @@ Explore [Getting Started](http://digi-area.com/ClosureFX/getting-started.php) gu
 
 If you have any problems with installation or running, please explore [Known Issues](https://github.com/DigiArea/closurefx-builder/wiki/Known-Issues) page.
 
-Still can not resolve your problem? Go to [Issues](https://github.com/DigiArea/closurefx-builder/issues) page and post a request.
+Do you still have a problem? Go to [Issues](https://github.com/DigiArea/closurefx-builder/issues) page and post a request.
 
 ###Usage
 

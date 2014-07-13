@@ -20,7 +20,7 @@ Closure FX Builder is an open-source web development toolkit powered by [Google 
  - Integration with popular JavaScript Editors (WebStorm, Notepad++, Komodo Edit, Sublime Text, Emacs, jEdit).
  - Problems View to navigate through the errors and warnings in your code
  - Team Friendly to work smoothly in groups
- - 
+
 ####For Soy Templates Developers
  - Template Validation
  - Console to explore and navigate errors and warnings in your code

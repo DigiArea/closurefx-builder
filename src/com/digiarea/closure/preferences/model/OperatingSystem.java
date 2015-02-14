@@ -15,6 +15,8 @@ public enum OperatingSystem {
     WINDOWS_2000("Windows 2000", OperatingSystemFamily.WINDOWS), 
     WINDOWS_XP("Windows XP", OperatingSystemFamily.WINDOWS), 
     WINDOWS_7("Windows 7", OperatingSystemFamily.WINDOWS), 
+    WINDOWS_8("Windows 8", OperatingSystemFamily.WINDOWS), 
+    WINDOWS_81("Windows 8.1", OperatingSystemFamily.WINDOWS), 
     WINDOWS_2003("Windows 2003", OperatingSystemFamily.WINDOWS), 
     WINDOWS_2008("Windows 2008", OperatingSystemFamily.WINDOWS), 
     SUN_OS("Sun OS ", OperatingSystemFamily.UNIX), 

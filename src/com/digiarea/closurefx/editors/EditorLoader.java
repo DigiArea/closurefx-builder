@@ -99,6 +99,9 @@ public class EditorLoader {
 	public static boolean isSupported(Editor editor) {
 		if (editor != null) {
 			OperatingSystemFamily family = getOSFamily();
+			if (family == null) {
+				return false;
+			}
 			switch (editor.getType()) {
 			case KOMODO:
 				if (family == OperatingSystemFamily.WINDOWS
@@ -162,7 +165,11 @@ public class EditorLoader {
 	}
 
 	public static OperatingSystemFamily getOSFamily() {
-		return OperatingSystem.resolve(getOS()).getFamily();
+		OperatingSystem family = OperatingSystem.resolve(getOS());
+		if (family != null) {
+			return OperatingSystem.resolve(getOS()).getFamily();
+		}
+		return null;
 	}
 
 }

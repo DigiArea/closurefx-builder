@@ -36,22 +36,16 @@ Go to the [Releases page](https://github.com/DigiArea/closurefx-builder/releases
 
 Explore [Getting Started](http://digi-area.com/ClosureFX/getting-started.php) guide for installation instructions.
 
-If you have any problems with installation or running, please explore [Known Issues](https://github.com/DigiArea/closurefx-builder/wiki/Known-Issues) page.
+If you have any problems with installation or running, please explore the [Known Issues](https://github.com/DigiArea/closurefx-builder/wiki/Known-Issues) page.
 
-Do you still have a problem? Go to [Issues](https://github.com/DigiArea/closurefx-builder/issues) page and post a request.
+Do you still have a problem? Go to the [Issues](https://github.com/DigiArea/closurefx-builder/issues) page and post a request.
 
 ###Usage
-
-- [Video: Closure FX Builder Overview](http://www.youtube.com/watch?v=xB-sywkSmkQ&list=PLiJEZLFl_IrhsgLMtZF85YHTXd1akLkXH&feature=share)
-- [Video: Compile with Closure Library](http://www.youtube.com/watch?v=VsdeAUPVNus&list=PLiJEZLFl_IrhsgLMtZF85YHTXd1akLkXH&feature=share&index=2)
 
 Closure FX Builder contains built-in documentation.
 To use the documentation do the following:
  - Run Closure FX Builder
  - Go to About -> Help
-
-You also can explore online [Closure FX Builder Documentation](http://digi-area.com/ClosureFX/guide/).
-For details about the updates and development state, explore [DigiArea Blog](http://blog.digi-area.com/).
 
 ###Closure IDE
 

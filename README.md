@@ -1,7 +1,6 @@
 ![Closure FX Builder](https://lh3.googleusercontent.com/-L1qqs2JVZiM/UuTlLbtwbFI/AAAAAAAAAFI/ZWKLNZNAXM4/w697-h172-no/ClosureFXLogo.png)
 
 Closure FX Builder is an open-source web development toolkit powered by [Google Closure Tools](https://developers.google.com/closure/) that allows you to minify, obfuscate and debug JavaScript code, dynamically build reusable HTML with Closure Templates and compile Google Stylesheets. 
- - Watch [Overview Video](http://youtu.be/xB-sywkSmkQ) on [DigiArea YouTube Channel](https://www.youtube.com/DigiAreaChannel).
  - Read more on [Closure FX Builder website](http://digi-area.com/ClosureFX/).
 
 *Closure FX Builder is not affiliated with or sponsored by Google Inc.*
@@ -54,10 +53,9 @@ To use the documentation do the following:
 You also can explore online [Closure FX Builder Documentation](http://digi-area.com/ClosureFX/guide/).
 For details about the updates and development state, explore [DigiArea Blog](http://blog.digi-area.com/).
 
-###Professional Development
+###Closure IDE
 
-If you are developing large-scale JavaScript applications or libraries, we encourage you to use [Closure IDE](http://digi-area.com/ClosureIDE/) - JavaScript IDE powered by Google Closure Tools.
-You can apply for a free Closure IDE license for Open Source projects [here](http://digi-area.com/ClosureIDE/opensource.php).
+If you are developing complex JavaScript applications or libraries, try [Closure IDE](http://digi-area.com/ClosureIDE/) - an Eclipse-based development environment for large-scale JavaScript projects. It is particularly focused to work with Closure Compiler and Closure Library.
 
 ###License
 

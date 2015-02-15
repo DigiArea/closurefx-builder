@@ -1,3 +1,9 @@
+Update 1.2.1
+- Migrate to Closure Compiler v20150126 (ticket #12)
+- Fixed empty label in the Warnings table (ticket #11)
+- Fixed NullPointerException for unknown operating systems (#10)
+- Added support to run the builder on Java 8 (#9)
+
 Update 1.2.0
 - Implemented Command Line interface for Closure FX Builder
 - Export to Closure Compiler's command line

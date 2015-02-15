@@ -162,9 +162,9 @@
 			<fx:resources refid="appRes"/>
 			
 			<manifest>
-				<attribute name="Implementation-Vendor" value="DigiArea, Inc."/>
+				<attribute name="Implementation-Vendor" value="DigiArea"/>
 				<attribute name="Implementation-Title" value="Closure FX Builder"/>
-				<attribute name="Implementation-Version" value="1.2.0"/>
+				<attribute name="Implementation-Version" value="1.2.1"/>
 				<attribute name="JavaFX-Feature-Proxy" value="None"/>
 			</manifest>
 		</fx:jar>

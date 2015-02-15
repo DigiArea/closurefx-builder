@@ -454,7 +454,7 @@ public class JSRenamingSectionController extends ClosureController implements In
         controlGeneratePseudoNames = new CheckBox();
         controlGeneratePseudoNames.setMaxWidth(1.7976931348623157E308);
         controlGeneratePseudoNames.setMnemonicParsing(false);
-        controlGeneratePseudoNames.setPrefWidth(100.0);
+        controlGeneratePseudoNames.setPrefWidth(Control.USE_COMPUTED_SIZE);
         controlGeneratePseudoNames.setText(bundle.getString("JSRenamingSection_PseudoNames"));
         controlGeneratePseudoNames.setWrapText(true);
         VBox.setVgrow(controlGeneratePseudoNames, Priority.ALWAYS);
@@ -528,7 +528,7 @@ public class JSRenamingSectionController extends ClosureController implements In
         });
         btnVariableInput.setText(bundle.getString("Button_Browse"));
         GridPane.setColumnIndex(btnVariableInput, 2);
-        GridPane.setHgrow(btnVariableInput, Priority.ALWAYS);
+        GridPane.setHgrow(btnVariableInput, Priority.SOMETIMES);
         GridPane.setRowIndex(btnVariableInput, 1);
         gridPane50.getChildren().add(btnVariableInput);
         btnVariableOutput = new Button();
@@ -543,7 +543,7 @@ public class JSRenamingSectionController extends ClosureController implements In
         });
         btnVariableOutput.setText(bundle.getString("Button_Browse"));
         GridPane.setColumnIndex(btnVariableOutput, 2);
-        GridPane.setHgrow(btnVariableOutput, Priority.ALWAYS);
+        GridPane.setHgrow(btnVariableOutput, Priority.SOMETIMES);
         GridPane.setRowIndex(btnVariableOutput, 2);
         gridPane50.getChildren().add(btnVariableOutput);
         Button button46 = new Button();
@@ -558,7 +558,7 @@ public class JSRenamingSectionController extends ClosureController implements In
         });
         button46.setText(bundle.getString("OutputSection_Browse_External"));
         GridPane.setColumnIndex(button46, 3);
-        GridPane.setHgrow(button46, Priority.ALWAYS);
+        GridPane.setHgrow(button46, Priority.SOMETIMES);
         GridPane.setRowIndex(button46, 1);
         gridPane50.getChildren().add(button46);
         Button button47 = new Button();
@@ -573,7 +573,7 @@ public class JSRenamingSectionController extends ClosureController implements In
         });
         button47.setText(bundle.getString("OutputSection_Browse_External"));
         GridPane.setColumnIndex(button47, 3);
-        GridPane.setHgrow(button47, Priority.ALWAYS);
+        GridPane.setHgrow(button47, Priority.SOMETIMES);
         GridPane.setRowIndex(button47, 2);
         gridPane50.getChildren().add(button47);
         ColumnConstraints columnConstraints106 = new ColumnConstraints();
@@ -608,11 +608,13 @@ public class JSRenamingSectionController extends ClosureController implements In
         RowConstraints rowConstraints98 = new RowConstraints();
         rowConstraints98.setMinHeight(Control.USE_PREF_SIZE);
         rowConstraints98.setPrefHeight(Control.USE_COMPUTED_SIZE);
+        rowConstraints98.setMaxHeight(Control.USE_PREF_SIZE);
         rowConstraints98.setVgrow(Priority.NEVER);
         gridPane50.getRowConstraints().add(rowConstraints98);
         RowConstraints rowConstraints99 = new RowConstraints();
         rowConstraints99.setMinHeight(Control.USE_PREF_SIZE);
         rowConstraints99.setPrefHeight(Control.USE_COMPUTED_SIZE);
+        rowConstraints99.setMaxHeight(Control.USE_PREF_SIZE);
         rowConstraints99.setVgrow(Priority.NEVER);
         gridPane50.getRowConstraints().add(rowConstraints99);
         vBox44.getChildren().add(gridPane50);
@@ -684,7 +686,7 @@ public class JSRenamingSectionController extends ClosureController implements In
         });
         btnFunctionInput.setText(bundle.getString("Button_Browse"));
         GridPane.setColumnIndex(btnFunctionInput, 2);
-        GridPane.setHgrow(btnFunctionInput, Priority.ALWAYS);
+        GridPane.setHgrow(btnFunctionInput, Priority.SOMETIMES);
         GridPane.setRowIndex(btnFunctionInput, 1);
         gridPane51.getChildren().add(btnFunctionInput);
         btnFunctionOutput = new Button();
@@ -699,7 +701,7 @@ public class JSRenamingSectionController extends ClosureController implements In
         });
         btnFunctionOutput.setText(bundle.getString("Button_Browse"));
         GridPane.setColumnIndex(btnFunctionOutput, 2);
-        GridPane.setHgrow(btnFunctionOutput, Priority.ALWAYS);
+        GridPane.setHgrow(btnFunctionOutput, Priority.SOMETIMES);
         GridPane.setRowIndex(btnFunctionOutput, 2);
         gridPane51.getChildren().add(btnFunctionOutput);
         Button button48 = new Button();
@@ -714,7 +716,7 @@ public class JSRenamingSectionController extends ClosureController implements In
         });
         button48.setText(bundle.getString("OutputSection_Browse_External"));
         GridPane.setColumnIndex(button48, 3);
-        GridPane.setHgrow(button48, Priority.ALWAYS);
+        GridPane.setHgrow(button48, Priority.SOMETIMES);
         GridPane.setRowIndex(button48, 1);
         gridPane51.getChildren().add(button48);
         Button button49 = new Button();
@@ -729,7 +731,7 @@ public class JSRenamingSectionController extends ClosureController implements In
         });
         button49.setText(bundle.getString("OutputSection_Browse_External"));
         GridPane.setColumnIndex(button49, 3);
-        GridPane.setHgrow(button49, Priority.ALWAYS);
+        GridPane.setHgrow(button49, Priority.SOMETIMES);
         GridPane.setRowIndex(button49, 2);
         gridPane51.getChildren().add(button49);
         ColumnConstraints columnConstraints110 = new ColumnConstraints();
@@ -764,11 +766,13 @@ public class JSRenamingSectionController extends ClosureController implements In
         RowConstraints rowConstraints101 = new RowConstraints();
         rowConstraints101.setMinHeight(Control.USE_PREF_SIZE);
         rowConstraints101.setPrefHeight(Control.USE_COMPUTED_SIZE);
+        rowConstraints101.setMaxHeight(Control.USE_PREF_SIZE);
         rowConstraints101.setVgrow(Priority.NEVER);
         gridPane51.getRowConstraints().add(rowConstraints101);
         RowConstraints rowConstraints102 = new RowConstraints();
         rowConstraints102.setMinHeight(Control.USE_PREF_SIZE);
         rowConstraints102.setPrefHeight(Control.USE_COMPUTED_SIZE);
+        rowConstraints102.setMaxHeight(Control.USE_PREF_SIZE);
         rowConstraints102.setVgrow(Priority.NEVER);
         gridPane51.getRowConstraints().add(rowConstraints102);
         vBox45.getChildren().add(gridPane51);
@@ -779,7 +783,7 @@ public class JSRenamingSectionController extends ClosureController implements In
         controlPropertyAffinity.setGraphicTextGap(0.0);
         controlPropertyAffinity.setMaxWidth(1.7976931348623157E308);
         controlPropertyAffinity.setMnemonicParsing(false);
-        controlPropertyAffinity.setPrefWidth(100.0);
+        controlPropertyAffinity.setPrefWidth(Control.USE_COMPUTED_SIZE);
         controlPropertyAffinity.setText(bundle.getString("JSRenamingSection_PropertiesAffinity"));
         controlPropertyAffinity.setVisible(true);
         controlPropertyAffinity.setWrapText(true);
@@ -788,7 +792,7 @@ public class JSRenamingSectionController extends ClosureController implements In
         controlDisambiguateProperties = new CheckBox();
         controlDisambiguateProperties.setMaxWidth(1.7976931348623157E308);
         controlDisambiguateProperties.setMnemonicParsing(false);
-        controlDisambiguateProperties.setPrefWidth(100.0);
+        controlDisambiguateProperties.setPrefWidth(Control.USE_COMPUTED_SIZE);
         controlDisambiguateProperties.setText(bundle.getString("JSRenamingSection_PropertiesDisambiguate"));
         controlDisambiguateProperties.setWrapText(true);
         VBox.setVgrow(controlDisambiguateProperties, Priority.ALWAYS);
@@ -796,7 +800,7 @@ public class JSRenamingSectionController extends ClosureController implements In
         controlAmbiguateProperties = new CheckBox();
         controlAmbiguateProperties.setMaxWidth(1.7976931348623157E308);
         controlAmbiguateProperties.setMnemonicParsing(false);
-        controlAmbiguateProperties.setPrefWidth(100.0);
+        controlAmbiguateProperties.setPrefWidth(Control.USE_COMPUTED_SIZE);
         controlAmbiguateProperties.setText(bundle.getString("JSRenamingSection_PropertiesAmbiguate"));
         controlAmbiguateProperties.setWrapText(true);
         VBox.setVgrow(controlAmbiguateProperties, Priority.ALWAYS);
@@ -863,7 +867,7 @@ public class JSRenamingSectionController extends ClosureController implements In
         });
         btnPropertyInput.setText(bundle.getString("Button_Browse"));
         GridPane.setColumnIndex(btnPropertyInput, 2);
-        GridPane.setHgrow(btnPropertyInput, Priority.ALWAYS);
+        GridPane.setHgrow(btnPropertyInput, Priority.SOMETIMES);
         GridPane.setRowIndex(btnPropertyInput, 1);
         gridPane52.getChildren().add(btnPropertyInput);
         btnPropertyOutput = new Button();
@@ -878,7 +882,7 @@ public class JSRenamingSectionController extends ClosureController implements In
         });
         btnPropertyOutput.setText(bundle.getString("Button_Browse"));
         GridPane.setColumnIndex(btnPropertyOutput, 2);
-        GridPane.setHgrow(btnPropertyOutput, Priority.ALWAYS);
+        GridPane.setHgrow(btnPropertyOutput, Priority.SOMETIMES);
         GridPane.setRowIndex(btnPropertyOutput, 2);
         gridPane52.getChildren().add(btnPropertyOutput);
         Button button50 = new Button();
@@ -893,7 +897,7 @@ public class JSRenamingSectionController extends ClosureController implements In
         });
         button50.setText(bundle.getString("OutputSection_Browse_External"));
         GridPane.setColumnIndex(button50, 3);
-        GridPane.setHgrow(button50, Priority.ALWAYS);
+        GridPane.setHgrow(button50, Priority.SOMETIMES);
         GridPane.setRowIndex(button50, 1);
         gridPane52.getChildren().add(button50);
         Button button51 = new Button();
@@ -908,7 +912,7 @@ public class JSRenamingSectionController extends ClosureController implements In
         });
         button51.setText(bundle.getString("OutputSection_Browse_External"));
         GridPane.setColumnIndex(button51, 3);
-        GridPane.setHgrow(button51, Priority.ALWAYS);
+        GridPane.setHgrow(button51, Priority.SOMETIMES);
         GridPane.setRowIndex(button51, 2);
         gridPane52.getChildren().add(button51);
         ColumnConstraints columnConstraints114 = new ColumnConstraints();

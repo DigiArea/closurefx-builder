@@ -356,8 +356,21 @@
      -fx-background-position: 20.0px 0.0px;
 }
 
-#AboutBox .text-area{
-     -fx-background-color: rgb(255.0,255.0,255.0,0.7);
+#AboutBox .text-area {
+    -fx-background-color: rgba(255,255,255,0.5);
+}
+
+#AboutBox .text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+#AboutBox .text-area .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+
+#AboutBox .text-area .scroll-pane .content{
+    -fx-background-color: transparent;
 }
 
 #ConsoleBox {
@@ -436,3 +449,4 @@
 .status-simple{
 -fx-text-fill: black;
 }
+

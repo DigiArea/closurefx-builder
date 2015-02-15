@@ -41,7 +41,7 @@ public class ClosureFX extends Application {
 				"com.digiarea.closurefx.locale.editor", Locale.ENGLISH));
 
 		AnchorPane root = (AnchorPane) loader.load();
-
+		
 		Scene scene = new Scene(root);
 		scene.getStylesheets().add(
 				ResourceUtils.getStylesheets().toExternalForm());

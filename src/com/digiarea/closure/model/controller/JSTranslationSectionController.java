@@ -159,7 +159,7 @@ public class JSTranslationSectionController extends ClosureController implements
         btnBrowse.setPrefWidth(Control.USE_COMPUTED_SIZE);
         btnBrowse.setText(bundle.getString("Button_Browse"));
         GridPane.setColumnIndex(btnBrowse, 1);
-        GridPane.setHgrow(btnBrowse, Priority.ALWAYS);
+        GridPane.setHgrow(btnBrowse, Priority.SOMETIMES);
         GridPane.setRowIndex(btnBrowse, 0);
         gridPane57.getChildren().add(btnBrowse);
         Button button54 = new Button();
@@ -176,7 +176,7 @@ public class JSTranslationSectionController extends ClosureController implements
         button54.setPrefWidth(Control.USE_COMPUTED_SIZE);
         button54.setText(bundle.getString("OutputSection_Browse_External"));
         GridPane.setColumnIndex(button54, 2);
-        GridPane.setHgrow(button54, Priority.ALWAYS);
+        GridPane.setHgrow(button54, Priority.SOMETIMES);
         GridPane.setRowIndex(button54, 0);
         gridPane57.getChildren().add(button54);
         ColumnConstraints columnConstraints124 = new ColumnConstraints();

@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closure.model.controller.JSTranslationSectionController">
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.digiarea.closure.model.controller.JSTranslationSectionController">
   <children>
     <TitledPane animated="false" collapsible="false" prefHeight="-1.0" prefWidth="-1.0" text="%JSTranslationSection" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <content>
@@ -22,8 +22,8 @@
                 <GridPane hgap="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                   <children>
                     <TextField fx:id="controlTranslationsFile" maxWidth="1.7976931348623157E308" prefWidth="-1.0" GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" />
-                    <Button fx:id="btnBrowse" maxWidth="1.7976931348623157E308" minWidth="-1.0" mnemonicParsing="false" onAction="#handleBrowseButtonAction" prefWidth="-1.0" text="%Button_Browse" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" />
-                    <Button maxWidth="1.7976931348623157E308" minWidth="-1.0" mnemonicParsing="false" onAction="#handleBrowseExternalButtonAction" prefWidth="-1.0" text="%OutputSection_Browse_External" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" />
+                    <Button fx:id="btnBrowse" maxWidth="1.7976931348623157E308" minWidth="-1.0" mnemonicParsing="false" onAction="#handleBrowseButtonAction" prefWidth="-1.0" text="%Button_Browse" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="0" />
+                    <Button maxWidth="1.7976931348623157E308" minWidth="-1.0" mnemonicParsing="false" onAction="#handleBrowseExternalButtonAction" prefWidth="-1.0" text="%OutputSection_Browse_External" GridPane.columnIndex="2" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="0" />
                   </children>
                   <columnConstraints>
                     <ColumnConstraints hgrow="ALWAYS" minWidth="-1.0" percentWidth="-1.0" prefWidth="-1.0" />

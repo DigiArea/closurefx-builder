@@ -11,9 +11,9 @@
 <?scenebuilder-preview-i18n-resource ../../../../closurefx/locale/editor_en.properties?>
 <?scenebuilder-stylesheet ../../../../closurefx/themes/default.css?>
 
-<GridPane id="AboutBox" minHeight="-Infinity" minWidth="-Infinity" vgap="20.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closure.model.controller.dialogs.AboutDialogController">
+<GridPane id="AboutBox" minHeight="-Infinity" minWidth="-Infinity" vgap="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.digiarea.closure.model.controller.dialogs.AboutDialogController">
   <children>
-    <TextArea fx:id="controlAbout" disable="false" editable="false" focusTraversable="false" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="500.0" text="%About_Desc" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <TextArea id="AboutBoxText" fx:id="controlAbout" disable="false" editable="false" focusTraversable="false" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="500.0" text="%About_Desc" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
     <GridPane alignment="CENTER_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="2">
       <children>
         <Label alignment="CENTER_LEFT" contentDisplay="LEFT" text="© 2013 DigiArea, Inc." GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="0" />

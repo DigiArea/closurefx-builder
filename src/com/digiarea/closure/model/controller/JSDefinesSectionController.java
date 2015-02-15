@@ -298,13 +298,13 @@ public class JSDefinesSectionController extends ClosureController implements Ini
         columnConstraints68.setMinWidth(Control.USE_PREF_SIZE);
         gridPane34.getColumnConstraints().add(columnConstraints68);
         RowConstraints rowConstraints57 = new RowConstraints();
-        rowConstraints57.setMaxHeight(19.0);
-        rowConstraints57.setPrefHeight(19.0);
+        rowConstraints57.setMaxHeight(Control.USE_COMPUTED_SIZE);
+        rowConstraints57.setPrefHeight(Control.USE_COMPUTED_SIZE);
         rowConstraints57.setVgrow(Priority.NEVER);
         gridPane34.getRowConstraints().add(rowConstraints57);
         RowConstraints rowConstraints58 = new RowConstraints();
-        rowConstraints58.setMaxHeight(19.0);
-        rowConstraints58.setPrefHeight(19.0);
+        rowConstraints58.setMaxHeight(Control.USE_COMPUTED_SIZE);
+        rowConstraints58.setPrefHeight(Control.USE_COMPUTED_SIZE);
         rowConstraints58.setVgrow(Priority.NEVER);
         gridPane34.getRowConstraints().add(rowConstraints58);
         hBox6.getChildren().add(gridPane34);

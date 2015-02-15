@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?scenebuilder-preview-i18n-resource ../locale/editor_en.properties?>
 
-<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closure.model.controller.JSDocsSectionController">
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.digiarea.closure.model.controller.JSDocsSectionController">
   <children>
     <TitledPane animated="false" collapsible="false" prefHeight="-1.0" prefWidth="-1.0" text="%JSDocsSection" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <content>
@@ -31,7 +31,8 @@
                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                   </columnConstraints>
                   <rowConstraints>
-                    <RowConstraints maxHeight="19.0" prefHeight="19.0" vgrow="NEVER" />
+                    <RowConstraints vgrow="NEVER" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
                     <RowConstraints maxHeight="0.0" prefHeight="0.0" vgrow="NEVER" />
                   </rowConstraints>
                 </GridPane>

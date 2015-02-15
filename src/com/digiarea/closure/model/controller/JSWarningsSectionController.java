@@ -174,7 +174,6 @@ public class JSWarningsSectionController extends ClosureController implements In
 
                 @Override
                 public void updateItem(SeverityType item, boolean empty) {
-                    getTableView().edit(getTableRow().getIndex(), getTableColumn());
                     if (item != null) {
                         if (choice == null) {
                             createChoice();

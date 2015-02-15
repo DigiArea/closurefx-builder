@@ -117,9 +117,12 @@ public class GSSPageController extends ClosureController implements Initializabl
     public AnchorPane create() throws Exception {
         AnchorPane anchorPane8 = new AnchorPane();
         anchorPane8.setId("AnchorPane");
+        anchorPane8.setMinHeight(Control.USE_PREF_SIZE);
+        anchorPane8.setMinWidth(Control.USE_PREF_SIZE);
         anchorPane8.setPrefHeight(Control.USE_COMPUTED_SIZE);
         anchorPane8.setPrefWidth(Control.USE_COMPUTED_SIZE);
         VBox vBox10 = new VBox();
+        vBox10.setMinWidth(Control.USE_COMPUTED_SIZE);
         vBox10.setPrefHeight(Control.USE_COMPUTED_SIZE);
         vBox10.setPrefWidth(Control.USE_COMPUTED_SIZE);
         AnchorPane.setBottomAnchor(vBox10, 0.0);

@@ -8,7 +8,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closure.model.controller.GSSPageController">
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.digiarea.closure.model.controller.GSSPageController">
   <children>
     <VBox prefHeight="-1.0" prefWidth="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
@@ -88,7 +88,7 @@
                         </VBox>
                         <VBox prefHeight="-1.0" prefWidth="-1.0" spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.valignment="TOP">
                           <children>
-                            <fx:include fx:id="vendor" source="GSSVendorSection.fxml" minHeight="-Infinity" minWidth="-Infinity" VBox.vgrow="NEVER" />
+                            <fx:include fx:id="vendor" minHeight="-Infinity" minWidth="-Infinity" source="GSSVendorSection.fxml" VBox.vgrow="NEVER" />
                             <fx:include fx:id="formatting" source="GSSFormattingSection.fxml" VBox.vgrow="NEVER" />
                             <fx:include fx:id="defines" source="GSSDefinesSection.fxml" VBox.vgrow="ALWAYS" />
                           </children>

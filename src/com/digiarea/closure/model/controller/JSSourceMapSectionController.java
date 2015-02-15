@@ -154,7 +154,7 @@ public class JSSourceMapSectionController extends ClosureController implements I
         btnBrowse.setPrefWidth(Control.USE_COMPUTED_SIZE);
         btnBrowse.setText(bundle.getString("Button_Browse"));
         GridPane.setColumnIndex(btnBrowse, 1);
-        GridPane.setHgrow(btnBrowse, Priority.ALWAYS);
+        GridPane.setHgrow(btnBrowse, Priority.SOMETIMES);
         GridPane.setRowIndex(btnBrowse, 0);
         gridPane54.getChildren().add(btnBrowse);
         Button button52 = new Button();
@@ -171,7 +171,7 @@ public class JSSourceMapSectionController extends ClosureController implements I
         button52.setPrefWidth(Control.USE_COMPUTED_SIZE);
         button52.setText(bundle.getString("OutputSection_Browse_External"));
         GridPane.setColumnIndex(button52, 2);
-        GridPane.setHgrow(button52, Priority.ALWAYS);
+        GridPane.setHgrow(button52, Priority.SOMETIMES);
         GridPane.setRowIndex(button52, 0);
         gridPane54.getChildren().add(button52);
         ColumnConstraints columnConstraints118 = new ColumnConstraints();

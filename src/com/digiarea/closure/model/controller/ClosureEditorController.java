@@ -92,11 +92,9 @@ public class ClosureEditorController extends ClosureController implements Initia
         columnConstraints.setHalignment(HPos.LEFT);
         columnConstraints.setHgrow(Priority.SOMETIMES);
         columnConstraints.setMinWidth(Control.USE_COMPUTED_SIZE);
-        columnConstraints.setPercentWidth(0.0);
         gridPane.getColumnConstraints().add(columnConstraints);
         RowConstraints rowConstraints = new RowConstraints();
         rowConstraints.setMinHeight(Control.USE_COMPUTED_SIZE);
-        rowConstraints.setPercentHeight(0.0);
         rowConstraints.setValignment(VPos.TOP);
         rowConstraints.setVgrow(Priority.ALWAYS);
         gridPane.getRowConstraints().add(rowConstraints);
@@ -166,11 +164,9 @@ public class ClosureEditorController extends ClosureController implements Initia
         columnConstraints2.setHalignment(HPos.LEFT);
         columnConstraints2.setHgrow(Priority.SOMETIMES);
         columnConstraints2.setMinWidth(Control.USE_COMPUTED_SIZE);
-        columnConstraints2.setPercentWidth(0.0);
         gridPane2.getColumnConstraints().add(columnConstraints2);
         RowConstraints rowConstraints2 = new RowConstraints();
         rowConstraints2.setMinHeight(Control.USE_COMPUTED_SIZE);
-        rowConstraints2.setPercentHeight(0.0);
         rowConstraints2.setValignment(VPos.TOP);
         rowConstraints2.setVgrow(Priority.SOMETIMES);
         gridPane2.getRowConstraints().add(rowConstraints2);

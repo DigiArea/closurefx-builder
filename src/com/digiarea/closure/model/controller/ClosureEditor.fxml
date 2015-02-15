@@ -9,19 +9,19 @@
 <?scenebuilder-preview-i18n-resource ../../../closurefx/locale/editor_en.properties?>
 <?scenebuilder-stylesheet ../../../closurefx/themes/default.css?>
 
-<TabPane id="TabPane" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml" fx:controller="com.digiarea.closure.model.controller.ClosureEditorController">
+<TabPane id="TabPane" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.digiarea.closure.model.controller.ClosureEditorController">
   <tabs>
     <Tab fx:id="tabCompiler" text="%ClosureEditor_Compiler">
       <content>
         <GridPane id="GridPane" minHeight="-1.0" minWidth="-1.0">
           <children>
-            <fx:include id="compiler" source="JSPage.fxml" maxHeight="1.7976931348623157E308" minHeight="-1.0" minWidth="-1.0" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS" />
+            <fx:include id="compiler" maxHeight="1.7976931348623157E308" minHeight="-1.0" minWidth="-1.0" source="JSPage.fxml" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS" />
           </children>
           <columnConstraints>
-            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="-1.0" percentWidth="0.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="-1.0" />
           </columnConstraints>
           <rowConstraints>
-            <RowConstraints minHeight="-1.0" percentHeight="0.0" valignment="TOP" vgrow="ALWAYS" />
+            <RowConstraints minHeight="-1.0" valignment="TOP" vgrow="ALWAYS" />
           </rowConstraints>
         </GridPane>
       </content>
@@ -37,7 +37,7 @@
       <content>
         <GridPane id="GridPane">
           <children>
-            <fx:include source="SOYPage.fxml" maxHeight="1.7976931348623157E308" minHeight="-1.0" minWidth="-1.0" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS" />
+            <fx:include maxHeight="1.7976931348623157E308" minHeight="-1.0" minWidth="-1.0" source="SOYPage.fxml" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS" />
           </children>
           <columnConstraints>
             <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="-1.0" />
@@ -59,13 +59,13 @@
       <content>
         <GridPane id="GridPane">
           <children>
-            <fx:include source="GSSPage.fxml" maxHeight="1.7976931348623157E308" minHeight="-1.0" minWidth="-1.0" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS" />
+            <fx:include maxHeight="1.7976931348623157E308" minHeight="-1.0" minWidth="-1.0" source="GSSPage.fxml" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS" />
           </children>
           <columnConstraints>
-            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="-1.0" percentWidth="0.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="-1.0" />
           </columnConstraints>
           <rowConstraints>
-            <RowConstraints minHeight="-1.0" percentHeight="0.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="-1.0" valignment="TOP" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
       </content>

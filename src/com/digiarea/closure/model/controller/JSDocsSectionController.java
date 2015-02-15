@@ -228,13 +228,13 @@ public class JSDocsSectionController extends ClosureController implements Initia
         columnConstraints70.setMinWidth(10.0);
         gridPane35.getColumnConstraints().add(columnConstraints70);
         RowConstraints rowConstraints61 = new RowConstraints();
-        rowConstraints61.setMaxHeight(19.0);
-        rowConstraints61.setPrefHeight(19.0);
+        rowConstraints61.setMaxHeight(Control.USE_COMPUTED_SIZE);
+        rowConstraints61.setPrefHeight(Control.USE_COMPUTED_SIZE);
         rowConstraints61.setVgrow(Priority.NEVER);
         gridPane35.getRowConstraints().add(rowConstraints61);
         RowConstraints rowConstraints62 = new RowConstraints();
-        rowConstraints62.setMaxHeight(0.0);
-        rowConstraints62.setPrefHeight(0.0);
+        rowConstraints62.setMaxHeight(Control.USE_COMPUTED_SIZE);
+        rowConstraints62.setPrefHeight(Control.USE_COMPUTED_SIZE);
         rowConstraints62.setVgrow(Priority.NEVER);
         gridPane35.getRowConstraints().add(rowConstraints62);
         hBox7.getChildren().add(gridPane35);

@@ -20,49 +20,49 @@
 		<mkdir dir="externalLibs" />
 		
 		<copy todir="externalLibs">
-			<fileset dir="/home/daginno/git/closurefx-builder/libs">
+			<fileset dir="../libs">
 				<filename name="com.digiarea.zippy.jar"/>	
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="/home/daginno/git/closurefx-builder/libs">
+			<fileset dir="../libs">
 				<filename name="guava-14.0.1.jar"/>	
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="/home/daginno/git/closurefx-builder/libs">
+			<fileset dir="../libs">
 				<filename name="commons-cli-1.2.jar"/>	
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="/home/daginno/git/closurefx-builder/libs">
+			<fileset dir="../libs">
 				<filename name="compiler.jar"/>	
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="/home/daginno/git/closurefx-builder/libs">
+			<fileset dir="../libs">
 				<filename name="templates-msg.jar"/>	
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="/home/daginno/git/closurefx-builder/libs">
+			<fileset dir="../libs">
 				<filename name="stylesheets.jar"/>	
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="/home/daginno/git/closurefx-builder/libs">
+			<fileset dir="../libs">
 				<filename name="templates.jar"/>	
 			</fileset>
 		</copy>
 		
 		<mkdir dir="project" />
 		<copy todir="project">
-			<fileset dir="/home/daginno/git/closurefx-builder">
+			<fileset dir="../../closurefx-builder">
 				<include name="src/**" />
 			</fileset>
 		</copy>
 		<copy todir="project">
-			<fileset dir="/home/daginno/git/closurefx-builder">
+			<fileset dir="../../closurefx-builder">
 				<include name="tests/**" />
 			</fileset>
 		</copy>
@@ -92,11 +92,6 @@
 	
 		<!-- Copy project sources itself -->
 		<copy todir="build/src">
-			<fileset dir="project/tests">
-				<include name="**/*"/>
-			</fileset>
-		</copy>
-		<copy todir="build/src">
 			<fileset dir="project/src">
 				<include name="**/*"/>
 			</fileset>
@@ -115,9 +110,6 @@
 		
 		<!-- Copy over none Java-Files -->
 		<copy todir="build/classes">
-		<fileset dir="project/tests">
-			<exclude name="**/*.java"/>
-		</fileset>
 		<fileset dir="project/src">
 			<exclude name="**/*.java"/>
 		</fileset>

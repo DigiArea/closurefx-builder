@@ -686,7 +686,7 @@ public class ModelFacade {
 
 		applyJSCheck(CheckType.CHECK_TYPES, false);
 		applyJSCheck(CheckType.CHECK_SUSPICIOUS_CODE, false);
-		applyJSCheck(CheckType.CHECK_CAJA, false);
+		//applyJSCheck(CheckType.CHECK_CAJA, false);
 	}
 
 	public void applyDefaultWarningLevel() {
@@ -704,8 +704,7 @@ public class ModelFacade {
 		}
 
 		applyJSCheck(CheckType.CHECK_SUSPICIOUS_CODE, true);
-		applyJSCheck(CheckType.CHECK_SUSPICIOUS_CODE, true);
-		applyJSCheck(CheckType.CHECK_CONTROL_SCTRUCTURES, true);
+		//applyJSCheck(CheckType.CHECK_CONTROL_SCTRUCTURES, true);
 
 		Warnings warnings = ClosureModelManager.synchWarnings(new Warnings());
 		compiler.setWarnings(warnings);

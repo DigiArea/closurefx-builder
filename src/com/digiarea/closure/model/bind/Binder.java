@@ -605,8 +605,8 @@ public class Binder extends VoidVisitorAdapter<Object> {
         n.generatePseudoNamesProperty().bindBidirectional(jSRenamingSectionController.getControlGeneratePseudoNames().selectedProperty());
         jSRenamingSectionController.getControlShadowVariables().selectedProperty().set(n.shadowVariablesProperty().get());
         n.shadowVariablesProperty().bindBidirectional(jSRenamingSectionController.getControlShadowVariables().selectedProperty());
-        jSRenamingSectionController.getControlPropertyAffinity().selectedProperty().set(n.propertyAffinityProperty().get());
-        n.propertyAffinityProperty().bindBidirectional(jSRenamingSectionController.getControlPropertyAffinity().selectedProperty());
+        //jSRenamingSectionController.getControlPropertyAffinity().selectedProperty().set(n.propertyAffinityProperty().get());
+        //n.propertyAffinityProperty().bindBidirectional(jSRenamingSectionController.getControlPropertyAffinity().selectedProperty());
         jSRenamingSectionController.getControlDisambiguateProperties().selectedProperty().set(n.disambiguatePropertiesProperty().get());
         n.disambiguatePropertiesProperty().bindBidirectional(jSRenamingSectionController.getControlDisambiguateProperties().selectedProperty());
         jSRenamingSectionController.getControlAmbiguateProperties().selectedProperty().set(n.ambiguatePropertiesProperty().get());

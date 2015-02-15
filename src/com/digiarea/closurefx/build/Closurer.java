@@ -118,12 +118,12 @@ public class Closurer extends VoidVisitorAdapter<Object> {
 			case CHAIN_CALLS:
 				jsOptions.setChainCalls(n.isCheck());
 				break;
-			case CHECK_CAJA:
-				jsOptions.setCheckCaja(n.isCheck());
-				break;
-			case CHECK_CONTROL_SCTRUCTURES:
-				jsOptions.setCheckControlStructures(n.isCheck());
-				break;
+//			case CHECK_CAJA:
+//				jsOptions.setCheckCaja(n.isCheck());
+//				break;
+//			case CHECK_CONTROL_SCTRUCTURES:
+//				jsOptions.setCheckControlStructures(n.isCheck());
+//				break;
 			case CHECK_SUSPICIOUS_CODE:
 				jsOptions.setCheckSuspiciousCode(n.isCheck());
 				break;
@@ -136,9 +136,9 @@ public class Closurer extends VoidVisitorAdapter<Object> {
 			case COMPUTE_FUNCTION_SIDE_EFFECTS:
 				jsOptions.setComputeFunctionSideEffects(n.isCheck());
 				break;
-			case TIGHTEN_TYPES:
-				jsOptions.setTightenTypes(n.isCheck());
-				break;
+//			case TIGHTEN_TYPES:
+//				jsOptions.setTightenTypes(n.isCheck());
+//				break;
 			}
 			n.getType().accept(this, ctx);
 		}
@@ -670,7 +670,7 @@ public class Closurer extends VoidVisitorAdapter<Object> {
 				.isDevirtualizePrototypeMethods());
 		jsOptions.setGeneratePseudoNames(n.isGeneratePseudoNames());
 		jsOptions.setShadowVariables(n.isShadowVariables());
-		jsOptions.setPropertyAffinity(n.isPropertyAffinity());
+		//jsOptions.setPropertyAffinity(n.isPropertyAffinity());
 		jsOptions.setDisambiguateProperties(n.isDisambiguateProperties());
 		jsOptions.setAmbiguateProperties(n.isAmbiguateProperties());
 		jsOptions.setExportTestFunctions(n.isExportTestFunctions());
@@ -766,17 +766,12 @@ public class Closurer extends VoidVisitorAdapter<Object> {
 	public void visit(JsSourceMapFormat n, Object ctx) throws Exception {
 		super.visit(n, ctx);
 		switch (n) {
-		case DEFAULT:
-			jsOptions.setSourceMapFormat(SourceMap.Format.DEFAULT);
-			break;
-		case V_1:
-			jsOptions.setSourceMapFormat(SourceMap.Format.V1);
-			break;
-		case V_2:
-			jsOptions.setSourceMapFormat(SourceMap.Format.V2);
-			break;
 		case V_3:
 			jsOptions.setSourceMapFormat(SourceMap.Format.V3);
+			break;
+		case DEFAULT:
+		default:
+			jsOptions.setSourceMapFormat(SourceMap.Format.DEFAULT);
 			break;
 		}
 	}
@@ -821,9 +816,9 @@ public class Closurer extends VoidVisitorAdapter<Object> {
 			case ALIAS_EXTERNALS:
 				jsOptions.setAliasExternals(n.isOptimize());
 				break;
-			case ALIAS_KEYWORDS:
-				jsOptions.setAliasKeywords(n.isOptimize());
-				break;
+//			case ALIAS_KEYWORDS:
+//				jsOptions.setAliasKeywords(n.isOptimize());
+//				break;
 			case ASSUME_STRICT_THIS:
 				jsOptions.setAssumeStrictThis(n.isOptimize());
 				break;
@@ -839,9 +834,9 @@ public class Closurer extends VoidVisitorAdapter<Object> {
 			case COLLAPSE_PROPERTIES:
 				jsOptions.setCollapseProperties(n.isOptimize());
 				break;
-			case COLLAPSE_PROPERTIES_ON_EXTERN_TYPES:
-				jsOptions.setCollapsePropertiesOnExternTypes(n.isOptimize());
-				break;
+//			case COLLAPSE_PROPERTIES_ON_EXTERN_TYPES:
+//				jsOptions.setCollapsePropertiesOnExternTypes(n.isOptimize());
+//				break;
 			case COLLAPSE_VARIABLE_DECLARATIONS:
 				jsOptions.setCollapseVariableDeclarations(n.isOptimize());
 				break;
@@ -1027,12 +1022,14 @@ public class Closurer extends VoidVisitorAdapter<Object> {
 						.setCheckMissingReturn(mapSeverityType(n.getSeverity()));
 				break;
 			case CHECK_REQUIRES:
-				jsOptions.setCheckRequires(mapSeverityType(n.getSeverity()));
+				jsOptions.setWarningLevel(
+						DiagnosticGroups.MISSING_REQUIRE,
+						mapSeverityType(n.getSeverity()));
 				break;
-			case CHECK_UNREACHABLE_CODE:
-				jsOptions.setCheckUnreachableCode(mapSeverityType(n
-						.getSeverity()));
-				break;
+			// case CHECK_UNREACHABLE_CODE:
+			// jsOptions.setCheckUnreachableCode(mapSeverityType(n
+			// .getSeverity()));
+			// break;
 			case REPORT_MISSING_OVERRIDE:
 				jsOptions.setReportMissingOverride(mapSeverityType(n
 						.getSeverity()));
@@ -1063,7 +1060,7 @@ public class Closurer extends VoidVisitorAdapter<Object> {
 			case AMBIGUOUS_FUNCTION_DECL:
 				return DiagnosticGroups.AMBIGUOUS_FUNCTION_DECL;
 			case CHECK_PROVIDES:
-				return DiagnosticGroups.CHECK_PROVIDES;
+				return DiagnosticGroups.MISSING_PROVIDE;
 			case CHECK_REGEXP:
 				return DiagnosticGroups.CHECK_REGEXP;
 			case CHECK_TYPES:
@@ -1178,7 +1175,7 @@ public class Closurer extends VoidVisitorAdapter<Object> {
 	private CompilerOptions jsOptions;
 	private JobDescriptionBuilder gssOptions;
 	private SoyJsSrcOptions soyOptions;
-	
+
 	public Closurer(IPathResolver pathResolver) {
 		this(new CompilerOptions(), new JobDescriptionBuilder(),
 				new SoyJsSrcOptions(), pathResolver);

@@ -108,12 +108,24 @@ public class ClosureModelManager {
 	public static Checks getDefaultChecks() {
 		Checks checks = new Checks();
 		for (CheckType type : CheckType.values()) {
-			Check opt = new Check();
-			opt.setCheck(false);
-			opt.setType(type);
-			checks.addCheck(opt);
+			if (isValidCheck(type)) {
+				Check opt = new Check();
+				opt.setCheck(false);
+				opt.setType(type);
+				checks.addCheck(opt);
+			}
 		}
 		return checks;
+	}
+
+	private static boolean isValidCheck(CheckType type) {
+		switch (type) {
+		case CHECK_CAJA:
+		case CHECK_CONTROL_SCTRUCTURES:
+		case TIGHTEN_TYPES:
+			return false;
+		}
+		return true;
 	}
 
 	public static Closure getDefaultClosure() {
@@ -137,23 +149,44 @@ public class ClosureModelManager {
 	public static Optimizations getDefaultOptimizations() {
 		Optimizations optimizations = new Optimizations();
 		for (OptimizationType type : OptimizationType.values()) {
-			Optimization opt = new Optimization();
-			opt.setOptimize(false);
-			opt.setType(type);
-			optimizations.addOptimization(opt);
+			if (isValidOptimization(type)) {
+				Optimization opt = new Optimization();
+				opt.setOptimize(false);
+				opt.setType(type);
+				optimizations.addOptimization(opt);
+			}
 		}
 		return optimizations;
+	}
+
+	private static boolean isValidOptimization(OptimizationType type) {
+		switch (type) {
+		case ALIAS_KEYWORDS:
+		case COLLAPSE_PROPERTIES_ON_EXTERN_TYPES:
+			return false;
+		}
+		return true;
 	}
 
 	public static Warnings getDefaultWarnings() {
 		Warnings warnings = new Warnings();
 		for (WarningType type : WarningType.values()) {
-			Warning warning = new Warning();
-			warning.setSeverity(SeverityType.OFF);
-			warning.setType(type);
-			warnings.addWarning(warning);
+			if (isValidWarning(type)) {
+				Warning warning = new Warning();
+				warning.setSeverity(SeverityType.OFF);
+				warning.setType(type);
+				warnings.addWarning(warning);
+			}
 		}
 		return warnings;
+	}
+
+	private static boolean isValidWarning(WarningType type) {
+		switch (type) {
+		case CHECK_UNREACHABLE_CODE:
+			return false;
+		}
+		return true;
 	}
 
 	public static Warnings synchWarnings(Warnings warnings) {

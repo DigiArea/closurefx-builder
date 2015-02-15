@@ -68,8 +68,8 @@ public class LabelProviders {
 			return "alias all strings.";
 		case ALIAS_EXTERNALS:
 			return "alias externals.";
-		case ALIAS_KEYWORDS:
-			return "alias keywords.";
+//		case ALIAS_KEYWORDS:
+//			return "alias keywords.";
 		case ASSUME_CLOSURES_ONLY_CAPTURE_PREFERENCES:
 			return "assume closures only capture preferences.";
 		case ASSUME_STRICT_THIS:
@@ -82,8 +82,8 @@ public class LabelProviders {
 			return "collapse object literals.";
 		case COLLAPSE_PROPERTIES:
 			return "collapse properties.";
-		case COLLAPSE_PROPERTIES_ON_EXTERN_TYPES:
-			return "collapse properties on extern types.";
+			// case COLLAPSE_PROPERTIES_ON_EXTERN_TYPES:
+			// return "collapse properties on extern types.";
 		case COLLAPSE_VARIABLE_DECLARATIONS:
 			return "collapse variable declarations.";
 		case CONVERT_TO_DOTTED_PROPERTIES:
@@ -148,10 +148,10 @@ public class LabelProviders {
 		switch (type) {
 		case CHAIN_CALLS:
 			return "Chains calls to functions that return this.";
-		case CHECK_CAJA:
-			return "Checks that the syntactic restrictions of Caja are met.";
-		case CHECK_CONTROL_SCTRUCTURES:
-			return "Checks for invalid control structure.";
+//		case CHECK_CAJA:
+//			return "Checks that the syntactic restrictions of Caja are met.";
+//		case CHECK_CONTROL_SCTRUCTURES:
+//			return "Checks for invalid control structure.";
 		case CHECK_SUSPICIOUS_CODE:
 			return "Checks for suspicious code.";
 		case CHECK_SYMBOLS:
@@ -160,8 +160,8 @@ public class LabelProviders {
 			return "Checks types on expressions.";
 		case COMPUTE_FUNCTION_SIDE_EFFECTS:
 			return "Use @nosideeffects annotations, function bodies and name graph to determine if calls have side effects.  Requires --check_types.";
-		case TIGHTEN_TYPES:
-			return "Tightens types based on a global analysis. Experimental.";
+//		case TIGHTEN_TYPES:
+//			return "Tightens types based on a global analysis. Experimental.";
 		default:
 			return "unknown";
 		}
@@ -193,8 +193,8 @@ public class LabelProviders {
 			return "checkStructDictInheritence";
 		case CHECK_TYPES:
 			return "checkTypes";
-		case CHECK_UNREACHABLE_CODE:
-			return "checkUnreachableCode";
+//		case CHECK_UNREACHABLE_CODE:
+//			return "checkUnreachableCode";
 		case CHECK_USELESS_CODE:
 			return "checkUselessCode";
 		case CHECK_VARS:
@@ -256,7 +256,7 @@ public class LabelProviders {
 		case ES3:
 			return "es3";
 		case UNNECESSARY_CASTS:
-			break;
+			return "unnecessaryCasts";
 		default:
 			break;
 		}
@@ -289,8 +289,8 @@ public class LabelProviders {
 			return "Checks for struct dict inheritance.";
 		case CHECK_TYPES:
 			return "Performs type-checking.";
-		case CHECK_UNREACHABLE_CODE:
-			return "Checks for unreachable code.";
+//		case CHECK_UNREACHABLE_CODE:
+//			return "Checks for unreachable code.";
 		case CHECK_USELESS_CODE:
 			return "Checks useless code.";
 		case CHECK_VARS:

@@ -9,6 +9,7 @@ import com.digiarea.closure.core.IPathResolver;
 import com.digiarea.closure.model.Buildpath;
 import com.digiarea.closure.model.Source;
 import com.digiarea.closurefx.IConstants;
+import com.google.javascript.jscomp.SourceFile;
 import com.google.javascript.jscomp.deps.DependencyInfo;
 import com.google.javascript.jscomp.deps.JsFileParser;
 import com.google.javascript.jscomp.deps.SortedDependencies;
@@ -46,9 +47,12 @@ public class JSBuildpathContainerResolver {
 	}
 
 	private DependencyInfo getDependency(File file) {
+		SourceFile sourceFile = SourceFile.fromFile(file.toString());
+
 		JsFileParser parser = new JsFileParser(null);
 		try {
-			return parser.parseFile(file.toString(), null);
+			return parser.parseFile(sourceFile.getName(), null,
+					sourceFile.getCode());
 		} catch (IOException e) {
 			e.printStackTrace();
 			return null;

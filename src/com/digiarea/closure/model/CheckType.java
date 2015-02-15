@@ -10,9 +10,12 @@ public enum CheckType {
 
     CHECK_SYMBOLS, 
     CHECK_SUSPICIOUS_CODE, 
-    CHECK_CONTROL_SCTRUCTURES, 
+    @Deprecated
+   CHECK_CONTROL_SCTRUCTURES, 
     CHECK_TYPES, 
+    @Deprecated
     TIGHTEN_TYPES, 
+    @Deprecated
     CHECK_CAJA, 
     COMPUTE_FUNCTION_SIDE_EFFECTS, 
     CHAIN_CALLS;
